@@ -95,3 +95,48 @@ the installed application. You only need to do these once for all.
 
 To login into the application, you need to first sign up, with any of your email address, username and password.
 Then, you can login into the application with same email address and password at any time.
+
+
+FEATURE
+---------------
+
+      git pull origin dev
+      git checkout -b branch_name develop
+      git status
+      git add  (archivos que muestre el status)
+      git commit -a -m "Comentario de lo que se cambió"
+      git checkout dev
+      git merge --no-ff branch_name dev
+      git branch -d branch_name
+      git push origin dev
+
+HOTFIX
+---------------
+
+      git pull origin master
+      git checkout -b hotfix-0.0.x master
+      git commit -a -m "Comentario del Bug corregido"
+      git checkout master
+      git merge --no-ff hotfix-0.0.x
+      git tag -a v0.0.x
+      git push origin master
+      git checkout dev
+      git merge --no-ff hotfix-0.0.x
+      git branch -d hotfix-0.0.x
+      git push origin dev
+
+RELEASE
+---------------
+
+      git checkout dev
+      git checkout -b release-0.0.x dev
+      git commit -a -m "Comentario de la versión"
+      git checkout master
+      git merge --no-ff release-0.0.x
+      git tag -a v0.0.x
+      git checkout dev
+      git merge --no-ff release-0.0.x
+      git branch -d release-0.0
+      git push origin dev
+      git checkout master
+      git push origin master
