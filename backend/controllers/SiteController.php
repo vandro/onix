@@ -1,8 +1,10 @@
 <?php
 namespace backend\controllers;
 
+use common\models\User;
 use Yii;
 use yii\filters\AccessControl;
+use yii\helpers\VarDumper;
 use yii\web\Controller;
 use common\models\LoginForm;
 use yii\filters\VerbFilter;
@@ -80,4 +82,20 @@ class SiteController extends Controller
 
         return $this->goHome();
     }
+
+//    public function actionRegister()
+//    {
+//        $model = new User();
+//
+//        $model->username = 'admin';
+//        $model->email = 'admin@admin.com';
+//        $model->setPassword('admin');
+//        $model->status = User::STATUS_ACTIVE;
+//
+//        if($model->save()){
+//            echo "Registered :)";
+//        }else{
+//            echo VarDumper::dump($model->getErrors());
+//        }
+//    }
 }
