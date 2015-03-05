@@ -925,5 +925,103 @@
             "faker",
             "yii2"
         ]
+    },
+    {
+        "name": "zelenin/yii2-widgets",
+        "version": "0.0.3",
+        "version_normalized": "0.0.3.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/zelenin/yii2-widgets.git",
+            "reference": "8e2116ba2e6c97b09d15dce8b5d321c17bb4de05"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/zelenin/yii2-widgets/zipball/8e2116ba2e6c97b09d15dce8b5d321c17bb4de05",
+            "reference": "8e2116ba2e6c97b09d15dce8b5d321c17bb4de05",
+            "shasum": ""
+        },
+        "require": {
+            "yiisoft/yii2": "~2"
+        },
+        "time": "2014-11-02 00:00:00",
+        "type": "yii2-extension",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Zelenin\\yii\\widgets\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Aleksandr Zelenin",
+                "email": "aleksandr@zelenin.me",
+                "homepage": "http://zelenin.me",
+                "role": "Developer"
+            }
+        ],
+        "description": "Yii2 widgets",
+        "homepage": "https://github.com/zelenin/yii2-widgets",
+        "keywords": [
+            "alert",
+            "error",
+            "widgets",
+            "yii2"
+        ]
+    },
+    {
+        "name": "zelenin/yii2-i18n-module",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/zelenin/yii2-i18n-module.git",
+            "reference": "d18a798bd55a21e8726267faa560e268833a0a0a"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/zelenin/yii2-i18n-module/zipball/d18a798bd55a21e8726267faa560e268833a0a0a",
+            "reference": "d18a798bd55a21e8726267faa560e268833a0a0a",
+            "shasum": ""
+        },
+        "require": {
+            "yiisoft/yii2": "~2",
+            "zelenin/yii2-widgets": "~0.0@stable"
+        },
+        "time": "2014-11-02 00:00:00",
+        "type": "yii2-extension",
+        "extra": {
+            "bootstrap": "Zelenin\\yii\\modules\\I18n\\Bootstrap"
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Zelenin\\yii\\modules\\I18n\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Aleksandr Zelenin",
+                "email": "aleksandr@zelenin.me",
+                "homepage": "http://zelenin.me",
+                "role": "Developer"
+            }
+        ],
+        "description": "Yii2 i18n (internalization) module makes the translation of your application so simple",
+        "homepage": "https://github.com/zelenin/yii2-i18n-module",
+        "keywords": [
+            "i18n",
+            "translation",
+            "translations",
+            "yii2"
+        ]
     }
 ]

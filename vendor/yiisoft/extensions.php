@@ -57,4 +57,23 @@ return array (
       '@yii/faker' => $vendorDir . '/yiisoft/yii2-faker',
     ),
   ),
+  'zelenin/yii2-widgets' => 
+  array (
+    'name' => 'zelenin/yii2-widgets',
+    'version' => '0.0.3.0',
+    'alias' => 
+    array (
+      '@Zelenin/yii/widgets' => $vendorDir . '/zelenin/yii2-widgets',
+    ),
+  ),
+  'zelenin/yii2-i18n-module' => 
+  array (
+    'name' => 'zelenin/yii2-i18n-module',
+    'version' => '9999999-dev',
+    'alias' => 
+    array (
+      '@Zelenin/yii/modules/I18n' => $vendorDir . '/zelenin/yii2-i18n-module',
+    ),
+    'bootstrap' => 'Zelenin\\yii\\modules\\I18n\\Bootstrap',
+  ),
 );
