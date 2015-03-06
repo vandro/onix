@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "c81aa07fe4c00ce874a2aafbdaa36275",
+    "hash": "cea7d8284021060550e1fd14b9fa178d",
     "packages": [
         {
             "name": "bower-asset/bootstrap",
@@ -368,16 +368,16 @@
         },
         {
             "name": "yiisoft/yii2",
-            "version": "2.0.2",
+            "version": "2.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-framework.git",
-                "reference": "a0bb60febe1e886d7c45ab3a70e17a3b3149f1a3"
+                "reference": "85b773a384f3894d558905cb13522bb338c99dba"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/a0bb60febe1e886d7c45ab3a70e17a3b3149f1a3",
-                "reference": "a0bb60febe1e886d7c45ab3a70e17a3b3149f1a3",
+                "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/85b773a384f3894d558905cb13522bb338c99dba",
+                "reference": "85b773a384f3894d558905cb13522bb338c99dba",
                 "shasum": ""
             },
             "require": {
@@ -387,7 +387,6 @@
                 "bower-asset/yii2-pjax": ">=2.0.1",
                 "cebe/markdown": "~1.0.0",
                 "ext-mbstring": "*",
-                "ext-mcrypt": "*",
                 "ezyang/htmlpurifier": "4.6.*",
                 "lib-pcre": "*",
                 "php": ">=5.4.0",
@@ -453,20 +452,20 @@
                 "framework",
                 "yii2"
             ],
-            "time": "2015-01-11 03:57:55"
+            "time": "2015-03-01 06:22:44"
         },
         {
             "name": "yiisoft/yii2-bootstrap",
-            "version": "2.0.2",
+            "version": "2.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-bootstrap.git",
-                "reference": "e3e4fdebb911ed64075adc0bab1b718531331138"
+                "reference": "d4bd9c5f97ea891ebbfaf276d3083d85e27fbcb6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-bootstrap/zipball/e3e4fdebb911ed64075adc0bab1b718531331138",
-                "reference": "e3e4fdebb911ed64075adc0bab1b718531331138",
+                "url": "https://api.github.com/repos/yiisoft/yii2-bootstrap/zipball/d4bd9c5f97ea891ebbfaf276d3083d85e27fbcb6",
+                "reference": "d4bd9c5f97ea891ebbfaf276d3083d85e27fbcb6",
                 "shasum": ""
             },
             "require": {
@@ -499,20 +498,20 @@
                 "bootstrap",
                 "yii2"
             ],
-            "time": "2015-01-11 03:57:55"
+            "time": "2015-03-01 06:22:44"
         },
         {
             "name": "yiisoft/yii2-composer",
-            "version": "2.0.2",
+            "version": "2.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-composer.git",
-                "reference": "e0f95611402ad0e8e66f9764dddb6bac624b75c2"
+                "reference": "ca8d23707ae47d20b0454e4b135c156f6da6d7be"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-composer/zipball/e0f95611402ad0e8e66f9764dddb6bac624b75c2",
-                "reference": "e0f95611402ad0e8e66f9764dddb6bac624b75c2",
+                "url": "https://api.github.com/repos/yiisoft/yii2-composer/zipball/ca8d23707ae47d20b0454e4b135c156f6da6d7be",
+                "reference": "ca8d23707ae47d20b0454e4b135c156f6da6d7be",
                 "shasum": ""
             },
             "require": {
@@ -546,20 +545,20 @@
                 "extension installer",
                 "yii2"
             ],
-            "time": "2015-01-11 03:57:55"
+            "time": "2015-03-01 06:22:44"
         },
         {
             "name": "yiisoft/yii2-swiftmailer",
-            "version": "2.0.2",
+            "version": "2.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-swiftmailer.git",
-                "reference": "6a1545ff54410ca7fe48a014927f780e3f414a9f"
+                "reference": "cb5f0a70d871b409bef7333fc3e0d262fb57eb5c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-swiftmailer/zipball/6a1545ff54410ca7fe48a014927f780e3f414a9f",
-                "reference": "6a1545ff54410ca7fe48a014927f780e3f414a9f",
+                "url": "https://api.github.com/repos/yiisoft/yii2-swiftmailer/zipball/cb5f0a70d871b409bef7333fc3e0d262fb57eb5c",
+                "reference": "cb5f0a70d871b409bef7333fc3e0d262fb57eb5c",
                 "shasum": ""
             },
             "require": {
@@ -596,101 +595,7 @@
                 "swiftmailer",
                 "yii2"
             ],
-            "time": "2015-01-11 03:57:55"
-        },
-        {
-            "name": "zelenin/yii2-i18n-module",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/zelenin/yii2-i18n-module.git",
-                "reference": "d18a798bd55a21e8726267faa560e268833a0a0a"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/zelenin/yii2-i18n-module/zipball/d18a798bd55a21e8726267faa560e268833a0a0a",
-                "reference": "d18a798bd55a21e8726267faa560e268833a0a0a",
-                "shasum": ""
-            },
-            "require": {
-                "yiisoft/yii2": "~2",
-                "zelenin/yii2-widgets": "~0.0@stable"
-            },
-            "type": "yii2-extension",
-            "extra": {
-                "bootstrap": "Zelenin\\yii\\modules\\I18n\\Bootstrap"
-            },
-            "autoload": {
-                "psr-4": {
-                    "Zelenin\\yii\\modules\\I18n\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Aleksandr Zelenin",
-                    "email": "aleksandr@zelenin.me",
-                    "homepage": "http://zelenin.me",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Yii2 i18n (internalization) module makes the translation of your application so simple",
-            "homepage": "https://github.com/zelenin/yii2-i18n-module",
-            "keywords": [
-                "i18n",
-                "translation",
-                "translations",
-                "yii2"
-            ],
-            "time": "2014-11-02 00:00:00"
-        },
-        {
-            "name": "zelenin/yii2-widgets",
-            "version": "0.0.3",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/zelenin/yii2-widgets.git",
-                "reference": "8e2116ba2e6c97b09d15dce8b5d321c17bb4de05"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/zelenin/yii2-widgets/zipball/8e2116ba2e6c97b09d15dce8b5d321c17bb4de05",
-                "reference": "8e2116ba2e6c97b09d15dce8b5d321c17bb4de05",
-                "shasum": ""
-            },
-            "require": {
-                "yiisoft/yii2": "~2"
-            },
-            "type": "yii2-extension",
-            "autoload": {
-                "psr-4": {
-                    "Zelenin\\yii\\widgets\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Aleksandr Zelenin",
-                    "email": "aleksandr@zelenin.me",
-                    "homepage": "http://zelenin.me",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Yii2 widgets",
-            "homepage": "https://github.com/zelenin/yii2-widgets",
-            "keywords": [
-                "alert",
-                "error",
-                "widgets",
-                "yii2"
-            ],
-            "time": "2014-11-02 00:00:00"
+            "time": "2015-03-01 06:22:44"
         }
     ],
     "packages-dev": [
@@ -805,16 +710,16 @@
         },
         {
             "name": "yiisoft/yii2-codeception",
-            "version": "2.0.2",
+            "version": "2.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-codeception.git",
-                "reference": "aab5841badf988c5358409b312fd7cde407ae61b"
+                "reference": "c2fdee4e7e9846e141ceddeb4386325e921e375a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-codeception/zipball/aab5841badf988c5358409b312fd7cde407ae61b",
-                "reference": "aab5841badf988c5358409b312fd7cde407ae61b",
+                "url": "https://api.github.com/repos/yiisoft/yii2-codeception/zipball/c2fdee4e7e9846e141ceddeb4386325e921e375a",
+                "reference": "c2fdee4e7e9846e141ceddeb4386325e921e375a",
                 "shasum": ""
             },
             "require": {
@@ -846,20 +751,20 @@
                 "codeception",
                 "yii2"
             ],
-            "time": "2015-01-11 03:57:55"
+            "time": "2015-03-01 06:22:44"
         },
         {
             "name": "yiisoft/yii2-debug",
-            "version": "2.0.2",
+            "version": "2.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-debug.git",
-                "reference": "5bb8dd123ffd5d3f93ce1dcdbe16bf8b85d1b45a"
+                "reference": "8a0db5130a9ea3941304dd77cef23d69257e8d48"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-debug/zipball/5bb8dd123ffd5d3f93ce1dcdbe16bf8b85d1b45a",
-                "reference": "5bb8dd123ffd5d3f93ce1dcdbe16bf8b85d1b45a",
+                "url": "https://api.github.com/repos/yiisoft/yii2-debug/zipball/8a0db5130a9ea3941304dd77cef23d69257e8d48",
+                "reference": "8a0db5130a9ea3941304dd77cef23d69257e8d48",
                 "shasum": ""
             },
             "require": {
@@ -893,20 +798,20 @@
                 "debugger",
                 "yii2"
             ],
-            "time": "2015-01-11 03:57:55"
+            "time": "2015-03-01 06:22:44"
         },
         {
             "name": "yiisoft/yii2-faker",
-            "version": "2.0.2",
+            "version": "2.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-faker.git",
-                "reference": "5bc693c3f0c8b1f056427645253e46c9e5d5597c"
+                "reference": "b88ca69ee226a3610b2c26c026c3203d7ac50f6c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-faker/zipball/5bc693c3f0c8b1f056427645253e46c9e5d5597c",
-                "reference": "5bc693c3f0c8b1f056427645253e46c9e5d5597c",
+                "url": "https://api.github.com/repos/yiisoft/yii2-faker/zipball/b88ca69ee226a3610b2c26c026c3203d7ac50f6c",
+                "reference": "b88ca69ee226a3610b2c26c026c3203d7ac50f6c",
                 "shasum": ""
             },
             "require": {
@@ -940,20 +845,20 @@
                 "faker",
                 "yii2"
             ],
-            "time": "2015-01-11 03:57:55"
+            "time": "2015-03-01 06:22:44"
         },
         {
             "name": "yiisoft/yii2-gii",
-            "version": "2.0.2",
+            "version": "2.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-gii.git",
-                "reference": "81c5972de857aab908f92fdb2b979e8471d94b4c"
+                "reference": "bb79aeafa8e3b89dd25e07ac895b269680e537a8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-gii/zipball/81c5972de857aab908f92fdb2b979e8471d94b4c",
-                "reference": "81c5972de857aab908f92fdb2b979e8471d94b4c",
+                "url": "https://api.github.com/repos/yiisoft/yii2-gii/zipball/bb79aeafa8e3b89dd25e07ac895b269680e537a8",
+                "reference": "bb79aeafa8e3b89dd25e07ac895b269680e537a8",
                 "shasum": ""
             },
             "require": {
@@ -989,14 +894,12 @@
                 "gii",
                 "yii2"
             ],
-            "time": "2015-01-11 03:57:55"
+            "time": "2015-03-01 06:22:44"
         }
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "zelenin/yii2-i18n-module": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {

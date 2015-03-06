@@ -15,6 +15,4 @@ return array(
     'yii\\bootstrap\\' => array($vendorDir . '/yiisoft/yii2-bootstrap'),
     'yii\\' => array($vendorDir . '/yiisoft/yii2'),
     'cebe\\markdown\\' => array($vendorDir . '/cebe/markdown'),
-    'Zelenin\\yii\\widgets\\' => array($vendorDir . '/zelenin/yii2-widgets'),
-    'Zelenin\\yii\\modules\\I18n\\' => array($vendorDir . '/zelenin/yii2-i18n-module'),
 );
