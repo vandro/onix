@@ -25,15 +25,7 @@ AppAsset::register($this);
 
 
 <?php echo $content ?>
-
-
-<footer class="footer">
-    <div class="container">
-        <p class="pull-left">&copy; My Company <?= date('Y') ?></p>
-        <p class="pull-right"><?= Yii::powered() ?></p>
-    </div>
-</footer>
-
+<?= $this->render('//layouts/footer') ?>
 <?php $this->endBody() ?>
 </body>
 </html>

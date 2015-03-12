@@ -10,7 +10,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
 <div class="login-box">
     <div class="login-logo">
-        <a href="../../index2.html"><b>AS</b>WEBS <b>CMS</b></a>
+        <a href="http://as-webs.com"><b>AS</b>WEBS <b>CMS</b></a>
     </div>
     <!-- /.login-logo -->
     <div class="login-box-body">
@@ -40,8 +40,7 @@ $this->params['breadcrumbs'][] = $this->title;
         </div>
         <?php ActiveForm::end(); ?>
         <!-- /.social-auth-links -->
-
-        <a href="#">I forgot my password</a><br>
+        <?= \yii\helpers\Html::a(Yii::t('back','I forgot my password'), ['request-password-reset']) ?><br>
         <a href="register.html" class="text-center">Register a new membership</a>
 
     </div>
