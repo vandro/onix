@@ -23,9 +23,13 @@ AppAsset::register($this);
 <body class="login-page">
 <?php $this->beginBody() ?>
 
-
 <?php echo $content ?>
-<?= $this->render('//layouts/footer') ?>
+<footer class="footer">
+    <div class="container">
+        <p class="pull-left">&copy; <?= Yii::$app->params['companyName'] . ' ' . date('Y') ?></p>
+        <p class="pull-right"><?= Yii::powered() ?> & <?= \yii\helpers\Html::a(Yii::$app->params['companyName'], Yii::$app->params['companyUrl']) ?></p>
+    </div>
+</footer>
 <?php $this->endBody() ?>
 </body>
 </html>

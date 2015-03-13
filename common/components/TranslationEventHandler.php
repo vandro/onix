@@ -30,6 +30,8 @@ class TranslationEventHandler
         $message->translation = $event->message;
         // there will be a [true] text befor every valid translation
 //        \yii\helpers\VarDumper::dump($message->validate(),10,true);
-        $message->save();
+        if($message->validate()){
+            $message->save();
+        }
     }
 }
