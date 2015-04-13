@@ -3,34 +3,33 @@
 namespace common\components;
 
 use yii\i18n\MissingTranslationEvent;
-use common\models;
+use common\models\SourceMessage;
+use common\models\Message;
 
 class TranslationEventHandler
 {
+    /**
+     * 
+     * @param MissingTranslationEvent $event
+     */
     public static function handleMissingTranslation(MissingTranslationEvent $event) {
 
-        $source = new \common\models\SourceMessage();
-        $message = new \common\models\Message();
-
-        $test = \common\models\SourceMessage::find()
-            ->where(['category' => $event->category, 'message' => $event->message]);
-
-        if($test->exists()) {
-            $data = $test->one();
-            $message->id = $data->id;
-        } else {
-            $source->category = $event->category;
-            $source->message  = $event->message;
-            $source->save();
-
-            $message->id = $source->id;
+        $source_message = SourceMessage::findOne(['category' => $event->category, 'message' => $event->message]);
+        
+        if($source_message === null){
+            $source_message = new SourceMessage();
+            $source_message->category = $event->category;
+            $source_message->message = $event->message;
+            $source_message->save();
         }
 
-        $message->language = $event->language;
-        $message->translation = $event->message;
-        // there will be a [true] text befor every valid translation
-//        \yii\helpers\VarDumper::dump($message->validate(),10,true);
-        if($message->validate()){
+        $message = Message::findOne(['id' => $source_message->id, 'language' => $event->language]);
+        
+        if($message === null){
+            $message = new Message();
+            $message->id = $source_message->id;
+            $message->language = $event->language;
+            $message->translation = $source_message->message;
             $message->save();
         }
     }
