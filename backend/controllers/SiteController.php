@@ -7,8 +7,9 @@ use yii\filters\AccessControl;
 use yii\helpers\VarDumper;
 use yii\web\Controller;
 use common\models\LoginForm;
+use common\models\PasswordResetRequestForm;
+use common\models\ResetPasswordForm;
 use yii\filters\VerbFilter;
-
 /**
  * Site controller
  */
@@ -24,7 +25,7 @@ class SiteController extends Controller
                 'class' => AccessControl::className(),
                 'rules' => [
                     [
-                        'actions' => ['login', 'register', 'error'],
+                        'actions' => ['login', 'error', 'request-password-reset'],
                         'allow' => true,
                     ],
                     [
@@ -70,6 +71,7 @@ class SiteController extends Controller
         if ($model->load(Yii::$app->request->post()) && $model->login()) {
             return $this->goBack();
         } else {
+            $this->layout = 'login';
             return $this->render('login', [
                 'model' => $model,
             ]);
@@ -81,6 +83,25 @@ class SiteController extends Controller
         Yii::$app->user->logout();
 
         return $this->goHome();
+    }
+
+    public function actionRequestPasswordReset()
+    {
+        $model = new PasswordResetRequestForm();
+        if ($model->load(Yii::$app->request->post()) && $model->validate()) {
+            if ($model->sendEmail()) {
+                Yii::$app->getSession()->setFlash('success', 'Check your email for further instructions.');
+
+                return $this->goHome();
+            } else {
+                Yii::$app->getSession()->setFlash('error', 'Sorry, we are unable to reset password for email provided.');
+            }
+        }
+
+        $this->layout = 'login';
+        return $this->render('requestPasswordResetToken', [
+            'model' => $model,
+        ]);
     }
 
 //    public function actionRegister()
