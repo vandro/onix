@@ -1,5 +1,17 @@
 <?php
+
 return [
+    'modules' => [
+        'gii' => [
+            'class' => 'yii\gii\Module',
+            'generators' => [
+                'crud' => [
+                    'class' => 'yii\gii\generators\crud\Generator',
+                    'templates' => ['Gii-ex' => 'backend/gii-ex/default']
+                ]
+            ]
+        ]
+    ],
     'components' => [
         'db' => [
             'class' => 'yii\db\Connection',
