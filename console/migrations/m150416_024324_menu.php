@@ -13,9 +13,9 @@ class m150416_024324_menu extends Migration
             `name` VARCHAR(45) NOT NULL,
             `url` VARCHAR(45) NOT NULL,
             `icon` VARCHAR(45) NOT NULL,
-            `show` TINYINT NOT NULL,
+            `show` TINYINT NOT NULL default 1,
             `order` TINYINT NOT NULL,
-            `menu_id` INT NOT NULL,
+            `menu_id` INT NULL,
             PRIMARY KEY (`id`),
             INDEX `fk_menu_menu1_idx` (`menu_id` ASC),
             CONSTRAINT `fk_menu_menu1`
@@ -27,7 +27,7 @@ class m150416_024324_menu extends Migration
 
     public function down()
     {
-        $this->delete('menu');
+        $this->dropTable('menu');
         echo "done :)";
     }
     

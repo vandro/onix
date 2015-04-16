@@ -5,6 +5,11 @@
  * Date: 11/03/2015
  * Time: 10:17 PM
  */
+
+use backend\models\Menu;
+//Menu::buildMenu();
+
+//echo yii\helpers\VarDumper::dump(Menu::buildMenu(),10,true);exit;
 ?>
 
 <?php
@@ -69,7 +74,7 @@
                     <li><a href="index2.html"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>
                 </ul>
             </li>
-            <li class="treeview">
+            <li class="treeview">   
                 <a href="#">
                     <i class="fa fa-files-o"></i>
                     <span>Layout Options</span>
