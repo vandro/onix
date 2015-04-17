@@ -7,36 +7,6 @@
  */
 
 use backend\models\Menu;
-//Menu::buildMenu();
-
-//echo yii\helpers\VarDumper::dump(Menu::buildMenu(),10,true);exit;
-?>
-
-<?php
-//            NavBar::begin([
-//                'brandLabel' => 'My Company',
-//                'brandUrl' => Yii::$app->homeUrl,
-//                'options' => [
-//                    'class' => 'navbar-inverse navbar-fixed-top',
-//                ],
-//            ]);
-//            $menuItems = [
-//                ['label' => 'Home', 'url' => ['/site/index']],
-//            ];
-//            if (Yii::$app->user->isGuest) {
-//                $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
-//            } else {
-//                $menuItems[] = [
-//                    'label' => 'Logout (' . Yii::$app->user->identity->username . ')',
-//                    'url' => ['/site/logout'],
-//                    'linkOptions' => ['data-method' => 'post']
-//                ];
-//            }
-//            echo Nav::widget([
-//                'options' => ['class' => 'navbar-nav navbar-right'],
-//                'items' => $menuItems,
-//            ]);
-//            NavBar::end();
 ?>
 
 <aside class="main-sidebar">
@@ -63,7 +33,16 @@ use backend\models\Menu;
         </form>
         <!-- /.search form -->
         <!-- sidebar menu: : style can be found in sidebar.less -->
-        <ul class="sidebar-menu">
+        <?php 
+        echo yii\widgets\Menu::widget([
+            'items' => Menu::buildMenu(),
+            'options' => [
+                'class' => 'sidebar-menu'
+            ],
+            'submenuTemplate' => Menu::SUBMENU_TEMPLATE,
+        ]);
+        ?>
+<!--        <ul class="sidebar-menu">
             <li class="header">MAIN NAVIGATION</li>
             <li class="active treeview">
                 <a href="#">
@@ -195,7 +174,7 @@ use backend\models\Menu;
             <li><a href="#"><i class="fa fa-circle-o text-danger"></i> Important</a></li>
             <li><a href="#"><i class="fa fa-circle-o text-warning"></i> Warning</a></li>
             <li><a href="#"><i class="fa fa-circle-o text-info"></i> Information</a></li>
-        </ul>
+        </ul>-->
     </section>
     <!-- /.sidebar -->
 </aside>

@@ -9,7 +9,7 @@
 
 <header class="main-header">
     <!-- Logo -->
-    <a href="<?= Yii::$app->params['companyUrl'] ?>" class="logo"><b>AS</b>WEBS <b>CMS</b></a>
+    <a href="<?= Yii::$app->params['companyUrl'] ?>" class="logo"><b>ONIX</b> CMS</a>
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top" role="navigation">
         <!-- Sidebar toggle button-->
