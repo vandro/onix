@@ -20,6 +20,10 @@ use Yii;
  */
 class Menu extends \yii\db\ActiveRecord
 {
+    
+    const SUBMENU_TEMPLATE = "\n<ul class='treeview-menu'>\n{items}\n</ul>\n";
+    const MENU_TEMPLATE = '<a href="{url}"><i class="fa {icon}"></i><span>{label}</span><i class="fa fa-angle-left pull-right"></i></a>';
+
     /**
      * @inheritdoc
      */
@@ -75,19 +79,18 @@ class Menu extends \yii\db\ActiveRecord
     /**
      * @return array() menu construido para ser utilizado con Nav::widget()
      */
-    public static function buildMenu(){
-        return self::getChildren(NULL);
-    }
-    
-    /**
-     * 
-     * @param INT or NULL $parentId id del menu padre, null la primera vez
-     * @return [] menus 
-     */
-    protected static function getChildren($parentId){
+    public static function buildMenu($parentId = NULL){
         $menu = [];
+        
         if(is_null($parentId)){
             $where = 'menu_id IS NULL';
+            array_push($menu, [
+                'label' => Yii::t("back", "Dashboard"),
+                'url' => Yii::$app->homeUrl,
+                'visible' => true,
+                'template' => self::buildTemplate("fa-dashboard", false),
+                'submenuTemplate' => self::SUBMENU_TEMPLATE
+            ]);
         }else{
             $where = 'menu_id = :menu_id';
         }
@@ -98,19 +101,26 @@ class Menu extends \yii\db\ActiveRecord
                 ->all();
         
         foreach ($children as $child){
-//            echo \yii\helpers\VarDumper::dump($child->menus,10,true);
             array_push($menu, [
                 'label' => $child->name,
-//                'encode' => '',
                 'url' => $child->url,
                 'visible' => $child->show,
-                'items' => (count($child->menus) > 0) ? self::getChildren($child->id) : [],
-//                'active' => true,
-//                'template' => '',
-//                'submenuTemplate' => ''
+                'items' => (count($child->menus) > 0) ? self::buildMenu($child->id) : [],
+                'template' => self::buildTemplate($child->icon, (count($child->menus) > 0)),
+                'submenuTemplate' => self::SUBMENU_TEMPLATE
             ]);
         }
         
         return $menu;
+    }
+    
+    public static function buildTemplate($icon, $has_submenus = true){
+        $template = str_replace('{icon}', $icon, self::MENU_TEMPLATE);
+        
+        if($has_submenus === false){
+            $template = str_replace('fa-angle-left pull-right', '', $template);
+        }
+        
+        return $template;
     }
 }

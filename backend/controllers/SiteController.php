@@ -68,7 +68,11 @@ class SiteController extends Controller
         }
 
         $model = new LoginForm();
-        if ($model->load(Yii::$app->request->post()) && $model->login()) {
+        
+        if (Yii::$app->request->isAjax && $model->load(Yii::$app->request->post())) {
+            Yii::$app->response->format = Response::FORMAT_JSON;
+            return ActiveForm::validate($model);
+        }elseif ($model->load(Yii::$app->request->post()) && $model->login()) {
             return $this->goBack();
         } else {
             $this->layout = 'login';
@@ -94,7 +98,7 @@ class SiteController extends Controller
 
                 return $this->goHome();
             } else {
-                Yii::$app->getSession()->setFlash('error', 'Sorry, we are unable to reset password for email provided.');
+                Yii::$app->getSession()->setFlash('danger', 'Sorry, we are unable to reset password for email provided.');
             }
         }
 

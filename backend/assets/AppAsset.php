@@ -23,7 +23,7 @@ class AppAsset extends AssetBundle
         'https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css',
         'dist/css/AdminLTE.min.css',
         'dist/css/skins/_all-skins.min.css',
-        'plugins/iCheck/flat/blue.css',
+        'plugins/iCheck/square/blue.css',
         'plugins/morris/morris.css',
         'plugins/jvectormap/jquery-jvectormap-1.2.2.css',
         'plugins/datepicker/datepicker3.css',
@@ -35,7 +35,7 @@ class AppAsset extends AssetBundle
         'bootstrap/js/bootstrap.min.js',
 
         'http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js',
-        'plugins/morris/morris.min.js',
+//        'plugins/morris/morris.min.js',
 
         'plugins/sparkline/jquery.sparkline.min.js',
         'plugins/jvectormap/jquery-jvectormap-1.2.2.min.js',

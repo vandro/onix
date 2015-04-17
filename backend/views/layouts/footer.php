@@ -12,7 +12,3 @@
         <p class="pull-right"><?= Yii::powered() ?> & <?= \yii\helpers\Html::a(Yii::$app->params['companyName'], Yii::$app->params['companyUrl']) ?></p>
     </div>
 </footer>
-
-<?php
-$this->registerJs("$.widget.bridge('uibutton', $.ui.button);", \yii\web\View::POS_END);
-?>
