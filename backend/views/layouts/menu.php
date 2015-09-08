@@ -36,6 +36,7 @@ use backend\models\Menu;
         <?php 
         echo yii\widgets\Menu::widget([
             'items' => Menu::buildMenu(),
+            'activateParents' => true,
             'options' => [
                 'class' => 'sidebar-menu'
             ],

@@ -2433,3 +2433,466 @@ $_SERVER = [
     'REQUEST_TIME_FLOAT' => 1441678874.643
     'REQUEST_TIME' => 1441678874
 ]
+2015-09-08 16:50:42 [127.0.0.1][-][pq5ce37mcalv0if8p42qh5mn25][error][yii\base\ErrorException:1] exception 'yii\base\ErrorException' with message 'Class 'backend\controllers\Response' not found' in /var/www/html/cms_beta/backend/controllers/SiteController.php:73
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2015-09-08 16:50:42 [127.0.0.1][-][pq5ce37mcalv0if8p42qh5mn25][info][application] $_POST = [
+    '_csrf' => 'cFNfWHZDYzMCFgAIQQJXWyZnCmlHJi55NmEoAgcsLlsYNxcHGggsUg=='
+    'LoginForm' => [
+        'username' => 'admin'
+        'password' => 'juanY2Uw'
+        'rememberMe' => '1'
+    ]
+    'ajax' => 'login-form'
+]
+
+$_COOKIE = [
+    '_ga' => 'GA1.1.2047818126.1439657538'
+    '__zlcmid' => 'WEesb44vzI0vpE'
+    'lang' => '9356938b9adc086f34962b4334258cf1e32279b1s:2:\"en\";'
+    '_identity' => '32dca20b64f452a807c4d3a42e3b6ef5b9f223b8c1ba96ddefdb488bd4bb011aa:2:{i:0;s:9:\"_identity\";i:1;s:14:\"[1,\"\",2592000]\";}'
+    'PHPSESSID' => 'pq5ce37mcalv0if8p42qh5mn25'
+    '_csrf' => 'a37bdc2e41722ca0f12d79d21d79247350d7db2935c5e595d37e89a5d8d8a5baa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"rE_P7A4hV4U11eMJF2wZqoMhhdH_lKOa\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => '/cms_beta/backend/web/'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:40.0) Gecko/20100101 Firefox/40.0'
+    'HTTP_ACCEPT' => 'application/json, text/javascript, */*; q=0.01'
+    'HTTP_ACCEPT_LANGUAGE' => 'es,en-US;q=0.7,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_X_CSRF_TOKEN' => 'cFNfWHZDYzMCFgAIQQJXWyZnCmlHJi55NmEoAgcsLlsYNxcHGggsUg=='
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8'
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_REFERER' => 'http://localhost/cms_beta/backend/web/index.php/site/login'
+    'CONTENT_LENGTH' => '201'
+    'HTTP_COOKIE' => '_ga=GA1.1.2047818126.1439657538; __zlcmid=WEesb44vzI0vpE; lang=9356938b9adc086f34962b4334258cf1e32279b1s%3A2%3A%22en%22%3B; _identity=32dca20b64f452a807c4d3a42e3b6ef5b9f223b8c1ba96ddefdb488bd4bb011aa%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A14%3A%22%5B1%2C%22%22%2C2592000%5D%22%3B%7D; PHPSESSID=pq5ce37mcalv0if8p42qh5mn25; _csrf=a37bdc2e41722ca0f12d79d21d79247350d7db2935c5e595d37e89a5d8d8a5baa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22rE_P7A4hV4U11eMJF2wZqoMhhdH_lKOa%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_PRAGMA' => 'no-cache'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.10 (Ubuntu) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Ubuntu)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/cms_beta/backend/web/index.php'
+    'REMOTE_PORT' => '58961'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/cms_beta/backend/web/index.php/site/login'
+    'SCRIPT_NAME' => '/cms_beta/backend/web/index.php'
+    'PATH_INFO' => '/site/login'
+    'PATH_TRANSLATED' => '/var/www/html/site/login'
+    'PHP_SELF' => '/cms_beta/backend/web/index.php/site/login'
+    'REQUEST_TIME_FLOAT' => 1441731042.723
+    'REQUEST_TIME' => 1441731042
+]
+2015-09-08 16:50:45 [127.0.0.1][-][pq5ce37mcalv0if8p42qh5mn25][error][yii\base\ErrorException:1] exception 'yii\base\ErrorException' with message 'Class 'backend\controllers\Response' not found' in /var/www/html/cms_beta/backend/controllers/SiteController.php:73
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2015-09-08 16:50:45 [127.0.0.1][-][pq5ce37mcalv0if8p42qh5mn25][info][application] $_POST = [
+    '_csrf' => 'cFNfWHZDYzMCFgAIQQJXWyZnCmlHJi55NmEoAgcsLlsYNxcHGggsUg=='
+    'LoginForm' => [
+        'username' => 'admin'
+        'password' => 'admin'
+        'rememberMe' => '1'
+    ]
+    'ajax' => 'login-form'
+]
+
+$_COOKIE = [
+    '_ga' => 'GA1.1.2047818126.1439657538'
+    '__zlcmid' => 'WEesb44vzI0vpE'
+    'lang' => '9356938b9adc086f34962b4334258cf1e32279b1s:2:\"en\";'
+    '_identity' => '32dca20b64f452a807c4d3a42e3b6ef5b9f223b8c1ba96ddefdb488bd4bb011aa:2:{i:0;s:9:\"_identity\";i:1;s:14:\"[1,\"\",2592000]\";}'
+    'PHPSESSID' => 'pq5ce37mcalv0if8p42qh5mn25'
+    '_csrf' => 'a37bdc2e41722ca0f12d79d21d79247350d7db2935c5e595d37e89a5d8d8a5baa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"rE_P7A4hV4U11eMJF2wZqoMhhdH_lKOa\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => '/cms_beta/backend/web/'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:40.0) Gecko/20100101 Firefox/40.0'
+    'HTTP_ACCEPT' => 'application/json, text/javascript, */*; q=0.01'
+    'HTTP_ACCEPT_LANGUAGE' => 'es,en-US;q=0.7,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_X_CSRF_TOKEN' => 'cFNfWHZDYzMCFgAIQQJXWyZnCmlHJi55NmEoAgcsLlsYNxcHGggsUg=='
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8'
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_REFERER' => 'http://localhost/cms_beta/backend/web/index.php/site/login'
+    'CONTENT_LENGTH' => '198'
+    'HTTP_COOKIE' => '_ga=GA1.1.2047818126.1439657538; __zlcmid=WEesb44vzI0vpE; lang=9356938b9adc086f34962b4334258cf1e32279b1s%3A2%3A%22en%22%3B; _identity=32dca20b64f452a807c4d3a42e3b6ef5b9f223b8c1ba96ddefdb488bd4bb011aa%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A14%3A%22%5B1%2C%22%22%2C2592000%5D%22%3B%7D; PHPSESSID=pq5ce37mcalv0if8p42qh5mn25; _csrf=a37bdc2e41722ca0f12d79d21d79247350d7db2935c5e595d37e89a5d8d8a5baa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22rE_P7A4hV4U11eMJF2wZqoMhhdH_lKOa%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_PRAGMA' => 'no-cache'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.10 (Ubuntu) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Ubuntu)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/cms_beta/backend/web/index.php'
+    'REMOTE_PORT' => '58981'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/cms_beta/backend/web/index.php/site/login'
+    'SCRIPT_NAME' => '/cms_beta/backend/web/index.php'
+    'PATH_INFO' => '/site/login'
+    'PATH_TRANSLATED' => '/var/www/html/site/login'
+    'PHP_SELF' => '/cms_beta/backend/web/index.php/site/login'
+    'REQUEST_TIME_FLOAT' => 1441731045.165
+    'REQUEST_TIME' => 1441731045
+]
+2015-09-08 16:50:50 [127.0.0.1][-][pq5ce37mcalv0if8p42qh5mn25][error][yii\base\ErrorException:1] exception 'yii\base\ErrorException' with message 'Class 'backend\controllers\Response' not found' in /var/www/html/cms_beta/backend/controllers/SiteController.php:73
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2015-09-08 16:50:50 [127.0.0.1][-][pq5ce37mcalv0if8p42qh5mn25][info][application] $_POST = [
+    '_csrf' => 'cFNfWHZDYzMCFgAIQQJXWyZnCmlHJi55NmEoAgcsLlsYNxcHGggsUg=='
+    'LoginForm' => [
+        'username' => 'admin'
+        'password' => 'admin'
+        'rememberMe' => '1'
+    ]
+    'ajax' => 'login-form'
+]
+
+$_COOKIE = [
+    '_ga' => 'GA1.1.2047818126.1439657538'
+    '__zlcmid' => 'WEesb44vzI0vpE'
+    'lang' => '9356938b9adc086f34962b4334258cf1e32279b1s:2:\"en\";'
+    '_identity' => '32dca20b64f452a807c4d3a42e3b6ef5b9f223b8c1ba96ddefdb488bd4bb011aa:2:{i:0;s:9:\"_identity\";i:1;s:14:\"[1,\"\",2592000]\";}'
+    'PHPSESSID' => 'pq5ce37mcalv0if8p42qh5mn25'
+    '_csrf' => 'a37bdc2e41722ca0f12d79d21d79247350d7db2935c5e595d37e89a5d8d8a5baa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"rE_P7A4hV4U11eMJF2wZqoMhhdH_lKOa\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => '/cms_beta/backend/web/'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:40.0) Gecko/20100101 Firefox/40.0'
+    'HTTP_ACCEPT' => 'application/json, text/javascript, */*; q=0.01'
+    'HTTP_ACCEPT_LANGUAGE' => 'es,en-US;q=0.7,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_X_CSRF_TOKEN' => 'cFNfWHZDYzMCFgAIQQJXWyZnCmlHJi55NmEoAgcsLlsYNxcHGggsUg=='
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8'
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_REFERER' => 'http://localhost/cms_beta/backend/web/index.php/site/login'
+    'CONTENT_LENGTH' => '198'
+    'HTTP_COOKIE' => '_ga=GA1.1.2047818126.1439657538; __zlcmid=WEesb44vzI0vpE; lang=9356938b9adc086f34962b4334258cf1e32279b1s%3A2%3A%22en%22%3B; _identity=32dca20b64f452a807c4d3a42e3b6ef5b9f223b8c1ba96ddefdb488bd4bb011aa%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A14%3A%22%5B1%2C%22%22%2C2592000%5D%22%3B%7D; PHPSESSID=pq5ce37mcalv0if8p42qh5mn25; _csrf=a37bdc2e41722ca0f12d79d21d79247350d7db2935c5e595d37e89a5d8d8a5baa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22rE_P7A4hV4U11eMJF2wZqoMhhdH_lKOa%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_PRAGMA' => 'no-cache'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.10 (Ubuntu) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Ubuntu)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/cms_beta/backend/web/index.php'
+    'REMOTE_PORT' => '58982'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/cms_beta/backend/web/index.php/site/login'
+    'SCRIPT_NAME' => '/cms_beta/backend/web/index.php'
+    'PATH_INFO' => '/site/login'
+    'PATH_TRANSLATED' => '/var/www/html/site/login'
+    'PHP_SELF' => '/cms_beta/backend/web/index.php/site/login'
+    'REQUEST_TIME_FLOAT' => 1441731050.925
+    'REQUEST_TIME' => 1441731050
+]
+2015-09-08 16:50:59 [127.0.0.1][-][pq5ce37mcalv0if8p42qh5mn25][error][yii\base\ErrorException:1] exception 'yii\base\ErrorException' with message 'Class 'backend\controllers\Response' not found' in /var/www/html/cms_beta/backend/controllers/SiteController.php:73
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2015-09-08 16:50:59 [127.0.0.1][-][pq5ce37mcalv0if8p42qh5mn25][info][application] $_POST = [
+    '_csrf' => 'cFNfWHZDYzMCFgAIQQJXWyZnCmlHJi55NmEoAgcsLlsYNxcHGggsUg=='
+    'LoginForm' => [
+        'username' => 'admin'
+        'password' => 'admin'
+        'rememberMe' => '1'
+    ]
+    'ajax' => 'login-form'
+]
+
+$_COOKIE = [
+    '_ga' => 'GA1.1.2047818126.1439657538'
+    '__zlcmid' => 'WEesb44vzI0vpE'
+    'lang' => '9356938b9adc086f34962b4334258cf1e32279b1s:2:\"en\";'
+    '_identity' => '32dca20b64f452a807c4d3a42e3b6ef5b9f223b8c1ba96ddefdb488bd4bb011aa:2:{i:0;s:9:\"_identity\";i:1;s:14:\"[1,\"\",2592000]\";}'
+    'PHPSESSID' => 'pq5ce37mcalv0if8p42qh5mn25'
+    '_csrf' => 'a37bdc2e41722ca0f12d79d21d79247350d7db2935c5e595d37e89a5d8d8a5baa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"rE_P7A4hV4U11eMJF2wZqoMhhdH_lKOa\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => '/cms_beta/backend/web/'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:40.0) Gecko/20100101 Firefox/40.0'
+    'HTTP_ACCEPT' => 'application/json, text/javascript, */*; q=0.01'
+    'HTTP_ACCEPT_LANGUAGE' => 'es,en-US;q=0.7,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_X_CSRF_TOKEN' => 'cFNfWHZDYzMCFgAIQQJXWyZnCmlHJi55NmEoAgcsLlsYNxcHGggsUg=='
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8'
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_REFERER' => 'http://localhost/cms_beta/backend/web/index.php/site/login'
+    'CONTENT_LENGTH' => '198'
+    'HTTP_COOKIE' => '_ga=GA1.1.2047818126.1439657538; __zlcmid=WEesb44vzI0vpE; lang=9356938b9adc086f34962b4334258cf1e32279b1s%3A2%3A%22en%22%3B; _identity=32dca20b64f452a807c4d3a42e3b6ef5b9f223b8c1ba96ddefdb488bd4bb011aa%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A14%3A%22%5B1%2C%22%22%2C2592000%5D%22%3B%7D; PHPSESSID=pq5ce37mcalv0if8p42qh5mn25; _csrf=a37bdc2e41722ca0f12d79d21d79247350d7db2935c5e595d37e89a5d8d8a5baa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22rE_P7A4hV4U11eMJF2wZqoMhhdH_lKOa%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_PRAGMA' => 'no-cache'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.10 (Ubuntu) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Ubuntu)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/cms_beta/backend/web/index.php'
+    'REMOTE_PORT' => '58983'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/cms_beta/backend/web/index.php/site/login'
+    'SCRIPT_NAME' => '/cms_beta/backend/web/index.php'
+    'PATH_INFO' => '/site/login'
+    'PATH_TRANSLATED' => '/var/www/html/site/login'
+    'PHP_SELF' => '/cms_beta/backend/web/index.php/site/login'
+    'REQUEST_TIME_FLOAT' => 1441731059.953
+    'REQUEST_TIME' => 1441731059
+]
+2015-09-08 16:55:13 [127.0.0.1][-][pq5ce37mcalv0if8p42qh5mn25][error][yii\base\ErrorException:1] exception 'yii\base\ErrorException' with message 'Class 'backend\controllers\ActiveForm' not found' in /var/www/html/cms_beta/backend/controllers/SiteController.php:76
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2015-09-08 16:55:13 [127.0.0.1][-][pq5ce37mcalv0if8p42qh5mn25][info][application] $_POST = [
+    '_csrf' => 'cFNfWHZDYzMCFgAIQQJXWyZnCmlHJi55NmEoAgcsLlsYNxcHGggsUg=='
+    'LoginForm' => [
+        'username' => 'admin'
+        'password' => 'admin'
+        'rememberMe' => '1'
+    ]
+    'ajax' => 'login-form'
+]
+
+$_COOKIE = [
+    '_ga' => 'GA1.1.2047818126.1439657538'
+    '__zlcmid' => 'WEesb44vzI0vpE'
+    'lang' => '9356938b9adc086f34962b4334258cf1e32279b1s:2:\"en\";'
+    '_identity' => '32dca20b64f452a807c4d3a42e3b6ef5b9f223b8c1ba96ddefdb488bd4bb011aa:2:{i:0;s:9:\"_identity\";i:1;s:14:\"[1,\"\",2592000]\";}'
+    'PHPSESSID' => 'pq5ce37mcalv0if8p42qh5mn25'
+    '_csrf' => 'a37bdc2e41722ca0f12d79d21d79247350d7db2935c5e595d37e89a5d8d8a5baa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"rE_P7A4hV4U11eMJF2wZqoMhhdH_lKOa\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => '/cms_beta/backend/web/'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:40.0) Gecko/20100101 Firefox/40.0'
+    'HTTP_ACCEPT' => 'application/json, text/javascript, */*; q=0.01'
+    'HTTP_ACCEPT_LANGUAGE' => 'es,en-US;q=0.7,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_X_CSRF_TOKEN' => 'cFNfWHZDYzMCFgAIQQJXWyZnCmlHJi55NmEoAgcsLlsYNxcHGggsUg=='
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8'
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_PRAGMA' => 'no-cache'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_REFERER' => 'http://localhost/cms_beta/backend/web/index.php/site/login'
+    'CONTENT_LENGTH' => '198'
+    'HTTP_COOKIE' => '_ga=GA1.1.2047818126.1439657538; __zlcmid=WEesb44vzI0vpE; lang=9356938b9adc086f34962b4334258cf1e32279b1s%3A2%3A%22en%22%3B; _identity=32dca20b64f452a807c4d3a42e3b6ef5b9f223b8c1ba96ddefdb488bd4bb011aa%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A14%3A%22%5B1%2C%22%22%2C2592000%5D%22%3B%7D; PHPSESSID=pq5ce37mcalv0if8p42qh5mn25; _csrf=a37bdc2e41722ca0f12d79d21d79247350d7db2935c5e595d37e89a5d8d8a5baa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22rE_P7A4hV4U11eMJF2wZqoMhhdH_lKOa%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.10 (Ubuntu) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Ubuntu)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/cms_beta/backend/web/index.php'
+    'REMOTE_PORT' => '59108'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/cms_beta/backend/web/index.php/site/login'
+    'SCRIPT_NAME' => '/cms_beta/backend/web/index.php'
+    'PATH_INFO' => '/site/login'
+    'PATH_TRANSLATED' => '/var/www/html/site/login'
+    'PHP_SELF' => '/cms_beta/backend/web/index.php/site/login'
+    'REQUEST_TIME_FLOAT' => 1441731313.663
+    'REQUEST_TIME' => 1441731313
+]
+2015-09-08 17:37:06 [127.0.0.1][1][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'show = 1 ORDER BY `order`' at line 1' in /var/www/html/cms_beta/vendor/yiisoft/yii2/db/Command.php:822
+Stack trace:
+#0 /var/www/html/cms_beta/vendor/yiisoft/yii2/db/Command.php(822): PDOStatement->execute()
+#1 /var/www/html/cms_beta/vendor/yiisoft/yii2/db/Command.php(350): yii\db\Command->queryInternal('fetchAll', NULL)
+#2 /var/www/html/cms_beta/vendor/yiisoft/yii2/db/Query.php(206): yii\db\Command->queryAll()
+#3 /var/www/html/cms_beta/vendor/yiisoft/yii2/db/ActiveQuery.php(130): yii\db\Query->all(NULL)
+#4 /var/www/html/cms_beta/backend/models/Menu.php(105): yii\db\ActiveQuery->all()
+#5 /var/www/html/cms_beta/backend/models/Menu.php(125): backend\models\Menu::buildMenu(1)
+#6 /var/www/html/cms_beta/backend/views/layouts/menu.php(38): backend\models\Menu::buildMenu()
+#7 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/View.php(325): require('/var/www/html/c...')
+#8 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/View.php(247): yii\base\View->renderPhpFile('/var/www/html/c...', Array)
+#9 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/View.php(149): yii\base\View->renderFile('/var/www/html/c...', Array, NULL)
+#10 /var/www/html/cms_beta/backend/views/layouts/main.php(28): yii\base\View->render('//layouts/menu')
+#11 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/View.php(325): require('/var/www/html/c...')
+#12 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/View.php(247): yii\base\View->renderPhpFile('/var/www/html/c...', Array)
+#13 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/Controller.php(382): yii\base\View->renderFile('/var/www/html/c...', Array, Object(backend\controllers\MenuController))
+#14 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/Controller.php(368): yii\base\Controller->renderContent('<div class="men...')
+#15 /var/www/html/cms_beta/backend/controllers/MenuController.php(41): yii\base\Controller->render('index', Array)
+#16 [internal function]: backend\controllers\MenuController->actionIndex()
+#17 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#18 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#19 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('index', Array)
+#20 /var/www/html/cms_beta/vendor/yiisoft/yii2/web/Application.php(83): yii\base\Module->runAction('menu/index', Array)
+#21 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#22 /var/www/html/cms_beta/backend/web/index.php(18): yii\base\Application->run()
+#23 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'show = 1 ORDER BY `order`' at line 1
+The SQL being executed was: SELECT * FROM `menu` WHERE menu_id = 1 AND show = 1 ORDER BY `order`' in /var/www/html/cms_beta/vendor/yiisoft/yii2/db/Schema.php:534
+Stack trace:
+#0 /var/www/html/cms_beta/vendor/yiisoft/yii2/db/Command.php(837): yii\db\Schema->convertException(Object(PDOException), 'SELECT * FROM `...')
+#1 /var/www/html/cms_beta/vendor/yiisoft/yii2/db/Command.php(350): yii\db\Command->queryInternal('fetchAll', NULL)
+#2 /var/www/html/cms_beta/vendor/yiisoft/yii2/db/Query.php(206): yii\db\Command->queryAll()
+#3 /var/www/html/cms_beta/vendor/yiisoft/yii2/db/ActiveQuery.php(130): yii\db\Query->all(NULL)
+#4 /var/www/html/cms_beta/backend/models/Menu.php(105): yii\db\ActiveQuery->all()
+#5 /var/www/html/cms_beta/backend/models/Menu.php(125): backend\models\Menu::buildMenu(1)
+#6 /var/www/html/cms_beta/backend/views/layouts/menu.php(38): backend\models\Menu::buildMenu()
+#7 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/View.php(325): require('/var/www/html/c...')
+#8 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/View.php(247): yii\base\View->renderPhpFile('/var/www/html/c...', Array)
+#9 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/View.php(149): yii\base\View->renderFile('/var/www/html/c...', Array, NULL)
+#10 /var/www/html/cms_beta/backend/views/layouts/main.php(28): yii\base\View->render('//layouts/menu')
+#11 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/View.php(325): require('/var/www/html/c...')
+#12 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/View.php(247): yii\base\View->renderPhpFile('/var/www/html/c...', Array)
+#13 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/Controller.php(382): yii\base\View->renderFile('/var/www/html/c...', Array, Object(backend\controllers\MenuController))
+#14 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/Controller.php(368): yii\base\Controller->renderContent('<div class="men...')
+#15 /var/www/html/cms_beta/backend/controllers/MenuController.php(41): yii\base\Controller->render('index', Array)
+#16 [internal function]: backend\controllers\MenuController->actionIndex()
+#17 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#18 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#19 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('index', Array)
+#20 /var/www/html/cms_beta/vendor/yiisoft/yii2/web/Application.php(83): yii\base\Module->runAction('menu/index', Array)
+#21 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#22 /var/www/html/cms_beta/backend/web/index.php(18): yii\base\Application->run()
+#23 {main}
+Additional Information:
+Array
+(
+    [0] => 42000
+    [1] => 1064
+    [2] => You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'show = 1 ORDER BY `order`' at line 1
+)
+
+2015-09-08 17:37:06 [127.0.0.1][1][-][info][application] $_COOKIE = [
+    '_ga' => 'GA1.1.2047818126.1439657538'
+    '__zlcmid' => 'WEesb44vzI0vpE'
+    'lang' => '9356938b9adc086f34962b4334258cf1e32279b1s:2:\"en\";'
+    '_identity' => '4b4b05aa534208e9e9f0691f4133d16ffbfe7879dfed9094b05e77aeb58ef636a:2:{i:0;s:9:\"_identity\";i:1;s:14:\"[1,\"\",2592000]\";}'
+    'PHPSESSID' => 'rltbqet1o75rkha2vfc7pci3l3'
+    '_csrf' => 'a37bdc2e41722ca0f12d79d21d79247350d7db2935c5e595d37e89a5d8d8a5baa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"rE_P7A4hV4U11eMJF2wZqoMhhdH_lKOa\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => '/cms_beta/backend/web/'
+    '__id' => 1
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:40.0) Gecko/20100101 Firefox/40.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'es,en-US;q=0.7,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => '_ga=GA1.1.2047818126.1439657538; __zlcmid=WEesb44vzI0vpE; lang=9356938b9adc086f34962b4334258cf1e32279b1s%3A2%3A%22en%22%3B; _identity=4b4b05aa534208e9e9f0691f4133d16ffbfe7879dfed9094b05e77aeb58ef636a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A14%3A%22%5B1%2C%22%22%2C2592000%5D%22%3B%7D; PHPSESSID=rltbqet1o75rkha2vfc7pci3l3; _csrf=a37bdc2e41722ca0f12d79d21d79247350d7db2935c5e595d37e89a5d8d8a5baa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22rE_P7A4hV4U11eMJF2wZqoMhhdH_lKOa%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.10 (Ubuntu) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Ubuntu)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/cms_beta/backend/web/index.php'
+    'REMOTE_PORT' => '59566'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/cms_beta/backend/web/index.php/menu/index'
+    'SCRIPT_NAME' => '/cms_beta/backend/web/index.php'
+    'PATH_INFO' => '/menu/index'
+    'PATH_TRANSLATED' => '/var/www/html/menu/index'
+    'PHP_SELF' => '/cms_beta/backend/web/index.php/menu/index'
+    'REQUEST_TIME_FLOAT' => 1441733826.496
+    'REQUEST_TIME' => 1441733826
+]

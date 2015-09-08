@@ -10,6 +10,9 @@ use common\models\LoginForm;
 use common\models\PasswordResetRequestForm;
 use common\models\ResetPasswordForm;
 use yii\filters\VerbFilter;
+use yii\web\Response;
+use yii\widgets\ActiveForm;
+
 /**
  * Site controller
  */
