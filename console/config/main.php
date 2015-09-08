@@ -15,14 +15,7 @@ return [
         'gii' => 'yii\gii\Module',
     ],
     'components' => [
-        'log' => [
-            'targets' => [
-                [
-                    'class' => 'yii\log\FileTarget',
-                    'levels' => ['error', 'warning'],
-                ],
-            ],
-        ],
+
     ],
     'params' => $params,
 ];

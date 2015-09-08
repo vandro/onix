@@ -21,12 +21,20 @@ return [
             // Disable index.php
 //            'showScriptName' => false,
             // Disable r= routes
-//            'enablePrettyUrl' => true,
+            'enablePrettyUrl' => true,
             'rules' => [
 //                '<controller:\w+>/' => 'backend/<controller>/admin  ',
 //                '<controller:\w+>/<action:\w+>' => 'backend/<controller>/<action>',
 //                '<controller:\w+>/<id:\d+>' => 'backend/<controller>/view',
 //                '<controller:\w+>/<action:\w+>/<id:\d+>' => 'backend/<controller>/<action>',
+            ],
+        ],
+        'log' => [
+            'targets' => [
+                [
+                    'class' => 'yii\log\DbTarget',
+                    'levels' => ['error', 'warning'],
+                ],
             ],
         ],
     ],

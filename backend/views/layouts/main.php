@@ -38,8 +38,6 @@ AppAsset::register($this);
                     <?= Breadcrumbs::widget([
                         'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
                     ]) ?>
-<!--                    <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>-->
-<!--                    <li class="active">Dashboard</li>-->
                 </ol>
             </section>
 

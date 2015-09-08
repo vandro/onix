@@ -3,6 +3,7 @@
 namespace backend\models;
 
 use Yii;
+use yii\helpers\Url;
 
 /**
  * This is the model class for table "menu".
@@ -103,7 +104,7 @@ class Menu extends \yii\db\ActiveRecord
         foreach ($children as $child){
             array_push($menu, [
                 'label' => $child->name,
-                'url' => $child->url,
+                'url' => Url::to(['//' . $child->url]),
                 'visible' => $child->show,
                 'items' => (count($child->menus) > 0) ? self::buildMenu($child->id) : [],
                 'template' => self::buildTemplate($child->icon, (count($child->menus) > 0)),
