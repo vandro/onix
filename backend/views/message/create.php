@@ -6,16 +6,17 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model common\models\Message */
 
-$this->title = Yii::t('back', 'Create Message');
-$this->params['breadcrumbs'][] = ['label' => Yii::t('back', 'Messages'), 'url' => ['index']];
-$this->params['breadcrumbs'][] = $this->title;
+$this->params['breadcrumbs'][] = ['label' => Yii::t('back', ucwords(Yii::$app->controller->id)), 'url' => ['index']];
+$this->params['breadcrumbs'][] = Yii::t('back', ucwords(Yii::$app->controller->action->id));
 ?>
-<div class="message-create">
-
-    <h1><?= Html::encode($this->title) ?></h1>
-
-    <?= $this->render('_form', [
-        'model' => $model,
-    ]) ?>
-
+<div class="row">
+    <div class="col-md-12">
+        <div class="menu-index box box-primary">
+            <div class="box-header with-border">
+            </div>
+            <?= $this->render('_form', [
+            'model' => $model,
+            ]) ?>
+        </div>
+    </div>
 </div>

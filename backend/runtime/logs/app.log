@@ -2896,3 +2896,1086 @@ $_SERVER = [
     'REQUEST_TIME_FLOAT' => 1441733826.496
     'REQUEST_TIME' => 1441733826
 ]
+2015-09-08 19:42:27 [127.0.0.1][-][-][error][yii\base\InvalidParamException] exception 'yii\base\InvalidParamException' with message 'The view file does not exist: /var/www/html/cms_beta/backend/onix/crud/form.php' in /var/www/html/cms_beta/vendor/yiisoft/yii2/base/View.php:226
+Stack trace:
+#0 /var/www/html/cms_beta/vendor/yiisoft/yii2-gii/views/default/view.php(38): yii\base\View->renderFile('/var/www/html/c...', Array)
+#1 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/View.php(325): require('/var/www/html/c...')
+#2 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/View.php(247): yii\base\View->renderPhpFile('/var/www/html/c...', Array)
+#3 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/View.php(149): yii\base\View->renderFile('/var/www/html/c...', Array, Object(yii\gii\controllers\DefaultController))
+#4 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/Controller.php(367): yii\base\View->render('view', Array, Object(yii\gii\controllers\DefaultController))
+#5 /var/www/html/cms_beta/vendor/yiisoft/yii2-gii/controllers/DefaultController.php(56): yii\base\Controller->render('view', Array)
+#6 [internal function]: yii\gii\controllers\DefaultController->actionView('OnixCrud')
+#7 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#8 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#9 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('view', Array)
+#10 /var/www/html/cms_beta/vendor/yiisoft/yii2/web/Application.php(83): yii\base\Module->runAction('gii/default/vie...', Array)
+#11 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 /var/www/html/cms_beta/backend/web/index.php(18): yii\base\Application->run()
+#13 {main}
+2015-09-08 19:42:27 [127.0.0.1][-][-][info][application] $_GET = [
+    'id' => 'OnixCrud'
+]
+
+$_COOKIE = [
+    '_ga' => 'GA1.1.2047818126.1439657538'
+    '__zlcmid' => 'WEesb44vzI0vpE'
+    'lang' => '9356938b9adc086f34962b4334258cf1e32279b1s:2:\"en\";'
+    '_identity' => '4b4b05aa534208e9e9f0691f4133d16ffbfe7879dfed9094b05e77aeb58ef636a:2:{i:0;s:9:\"_identity\";i:1;s:14:\"[1,\"\",2592000]\";}'
+    'PHPSESSID' => 'rltbqet1o75rkha2vfc7pci3l3'
+    '_csrf' => 'a37bdc2e41722ca0f12d79d21d79247350d7db2935c5e595d37e89a5d8d8a5baa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"rE_P7A4hV4U11eMJF2wZqoMhhdH_lKOa\";}'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:40.0) Gecko/20100101 Firefox/40.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'es,en-US;q=0.7,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://localhost/cms_beta/backend/web/gii'
+    'HTTP_COOKIE' => '_ga=GA1.1.2047818126.1439657538; __zlcmid=WEesb44vzI0vpE; lang=9356938b9adc086f34962b4334258cf1e32279b1s%3A2%3A%22en%22%3B; _identity=4b4b05aa534208e9e9f0691f4133d16ffbfe7879dfed9094b05e77aeb58ef636a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A14%3A%22%5B1%2C%22%22%2C2592000%5D%22%3B%7D; PHPSESSID=rltbqet1o75rkha2vfc7pci3l3; _csrf=a37bdc2e41722ca0f12d79d21d79247350d7db2935c5e595d37e89a5d8d8a5baa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22rE_P7A4hV4U11eMJF2wZqoMhhdH_lKOa%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.10 (Ubuntu) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Ubuntu)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/cms_beta/backend/web/index.php'
+    'REMOTE_PORT' => '33382'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'id=OnixCrud'
+    'REQUEST_URI' => '/cms_beta/backend/web/index.php/gii/default/view?id=OnixCrud'
+    'SCRIPT_NAME' => '/cms_beta/backend/web/index.php'
+    'PATH_INFO' => '/gii/default/view'
+    'PATH_TRANSLATED' => '/var/www/html/gii/default/view'
+    'PHP_SELF' => '/cms_beta/backend/web/index.php/gii/default/view'
+    'REQUEST_TIME_FLOAT' => 1441741347.849
+    'REQUEST_TIME' => 1441741347
+]
+2015-09-08 19:44:01 [127.0.0.1][-][-][error][yii\base\ErrorException:256] exception 'yii\base\ErrorException' with message 'Exception (Unknown Property) 'yii\base\UnknownPropertyException' with message 'Getting unknown property: backend\onix\crud\Generator::modelClass' 
+
+in /var/www/html/cms_beta/vendor/yiisoft/yii2/base/Component.php:143
+
+Stack trace:
+#0 /var/www/html/cms_beta/vendor/yiisoft/yii2/helpers/BaseHtml.php(1886): yii\base\Component->__get('modelClass')
+#1 /var/www/html/cms_beta/vendor/yiisoft/yii2/helpers/BaseHtml.php(1154): yii\helpers\BaseHtml::getAttributeValue(Object(backend\onix\crud\Generator), 'modelClass')
+#2 /var/www/html/cms_beta/vendor/yiisoft/yii2/helpers/BaseHtml.php(1191): yii\helpers\BaseHtml::activeInput('text', Object(backend\onix\crud\Generator), 'modelClass', Array)
+#3 /var/www/html/cms_beta/vendor/yiisoft/yii2/widgets/ActiveField.php(184): yii\helpers\BaseHtml::activeTextInput(Object(backend\onix\crud\Generator), 'modelClass', Array)
+#4 /var/www/html/cms_beta/vendor/yiisoft/yii2/widgets/ActiveField.php(156): yii\widgets\ActiveField->render()
+#5 /var/www/html/cms_beta/backend/onix/crud/form.php(6): yii\widgets\ActiveField->__toString()
+#6 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/View.php(325): require('/var/www/html/c...')
+#7 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/View.php(247): yii\base\View->renderPhpFile('/var/www/html/c...', Array)
+#8 /var/www/html/cms_beta/vendor/yiisoft/yii2-gii/views/default/view.php(38): yii\base\View->renderFile('/var/www/html/c...', Array)
+#9 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/View.php(325): require('/var/www/html/c...')
+#10 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/View.php(247): yii\base\View->renderPhpFile('/var/www/html/c...', Array)
+#11 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/View.php(149): yii\base\View->renderFile('/var/www/html/c...', Array, Object(yii\gii\controllers\DefaultController))
+#12 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/Controller.php(367): yii\base\View->render('view', Array, Object(yii\gii\controllers\DefaultController))
+#13 /var/www/html/cms_beta/vendor/yiisoft/yii2-gii/controllers/DefaultController.php(56): yii\base\Controller->render('view', Array)
+#14 [internal function]: yii\gii\controllers\DefaultController->actionView('OnixCrud')
+#15 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#16 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#17 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('view', Array)
+#18 /var/www/html/cms_beta/vendor/yiisoft/yii2/web/Application.php(83): yii\base\Module->runAction('gii/default/vie...', Array)
+#19 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#20 /var/www/html/cms_beta/backend/web/index.php(18): yii\base\Application->run()
+#21 {main}' in /var/www/html/cms_beta/vendor/yiisoft/yii2/base/ErrorHandler.php:234
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleError(256, 'Exception (Unkn...', '/var/www/html/c...', 234, Array)
+#1 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/ErrorHandler.php(234): trigger_error('Exception (Unkn...', 256)
+#2 /var/www/html/cms_beta/vendor/yiisoft/yii2/widgets/ActiveField.php(158): yii\base\ErrorHandler::convertExceptionToError(Object(yii\base\UnknownPropertyException))
+#3 /var/www/html/cms_beta/backend/onix/crud/form.php(6): yii\widgets\ActiveField->__toString()
+#4 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/View.php(325): require('/var/www/html/c...')
+#5 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/View.php(247): yii\base\View->renderPhpFile('/var/www/html/c...', Array)
+#6 /var/www/html/cms_beta/vendor/yiisoft/yii2-gii/views/default/view.php(38): yii\base\View->renderFile('/var/www/html/c...', Array)
+#7 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/View.php(325): require('/var/www/html/c...')
+#8 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/View.php(247): yii\base\View->renderPhpFile('/var/www/html/c...', Array)
+#9 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/View.php(149): yii\base\View->renderFile('/var/www/html/c...', Array, Object(yii\gii\controllers\DefaultController))
+#10 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/Controller.php(367): yii\base\View->render('view', Array, Object(yii\gii\controllers\DefaultController))
+#11 /var/www/html/cms_beta/vendor/yiisoft/yii2-gii/controllers/DefaultController.php(56): yii\base\Controller->render('view', Array)
+#12 [internal function]: yii\gii\controllers\DefaultController->actionView('OnixCrud')
+#13 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#14 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#15 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('view', Array)
+#16 /var/www/html/cms_beta/vendor/yiisoft/yii2/web/Application.php(83): yii\base\Module->runAction('gii/default/vie...', Array)
+#17 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#18 /var/www/html/cms_beta/backend/web/index.php(18): yii\base\Application->run()
+#19 {main}
+    in /var/www/html/cms_beta/backend/onix/crud/form.php:6
+2015-09-08 19:44:01 [127.0.0.1][-][-][info][application] $_GET = [
+    'id' => 'OnixCrud'
+]
+
+$_COOKIE = [
+    '_ga' => 'GA1.1.2047818126.1439657538'
+    '__zlcmid' => 'WEesb44vzI0vpE'
+    'lang' => '9356938b9adc086f34962b4334258cf1e32279b1s:2:\"en\";'
+    '_identity' => '4b4b05aa534208e9e9f0691f4133d16ffbfe7879dfed9094b05e77aeb58ef636a:2:{i:0;s:9:\"_identity\";i:1;s:14:\"[1,\"\",2592000]\";}'
+    'PHPSESSID' => 'rltbqet1o75rkha2vfc7pci3l3'
+    '_csrf' => 'a37bdc2e41722ca0f12d79d21d79247350d7db2935c5e595d37e89a5d8d8a5baa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"rE_P7A4hV4U11eMJF2wZqoMhhdH_lKOa\";}'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:40.0) Gecko/20100101 Firefox/40.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'es,en-US;q=0.7,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://localhost/cms_beta/backend/web/gii'
+    'HTTP_COOKIE' => '_ga=GA1.1.2047818126.1439657538; __zlcmid=WEesb44vzI0vpE; lang=9356938b9adc086f34962b4334258cf1e32279b1s%3A2%3A%22en%22%3B; _identity=4b4b05aa534208e9e9f0691f4133d16ffbfe7879dfed9094b05e77aeb58ef636a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A14%3A%22%5B1%2C%22%22%2C2592000%5D%22%3B%7D; PHPSESSID=rltbqet1o75rkha2vfc7pci3l3; _csrf=a37bdc2e41722ca0f12d79d21d79247350d7db2935c5e595d37e89a5d8d8a5baa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22rE_P7A4hV4U11eMJF2wZqoMhhdH_lKOa%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.10 (Ubuntu) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Ubuntu)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/cms_beta/backend/web/index.php'
+    'REMOTE_PORT' => '33384'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'id=OnixCrud'
+    'REQUEST_URI' => '/cms_beta/backend/web/index.php/gii/default/view?id=OnixCrud'
+    'SCRIPT_NAME' => '/cms_beta/backend/web/index.php'
+    'PATH_INFO' => '/gii/default/view'
+    'PATH_TRANSLATED' => '/var/www/html/gii/default/view'
+    'PHP_SELF' => '/cms_beta/backend/web/index.php/gii/default/view'
+    'REQUEST_TIME_FLOAT' => 1441741441.255
+    'REQUEST_TIME' => 1441741441
+]
+2015-09-08 19:44:01 [127.0.0.1][-][-][error][yii\base\ErrorException:256] exception 'yii\base\ErrorException' with message 'Exception (Unknown Property) 'yii\base\UnknownPropertyException' with message 'Getting unknown property: backend\onix\crud\Generator::modelClass' 
+
+in /var/www/html/cms_beta/vendor/yiisoft/yii2/base/Component.php:143
+
+Stack trace:
+#0 /var/www/html/cms_beta/vendor/yiisoft/yii2/helpers/BaseHtml.php(1886): yii\base\Component->__get('modelClass')
+#1 /var/www/html/cms_beta/vendor/yiisoft/yii2/helpers/BaseHtml.php(1154): yii\helpers\BaseHtml::getAttributeValue(Object(backend\onix\crud\Generator), 'modelClass')
+#2 /var/www/html/cms_beta/vendor/yiisoft/yii2/helpers/BaseHtml.php(1191): yii\helpers\BaseHtml::activeInput('text', Object(backend\onix\crud\Generator), 'modelClass', Array)
+#3 /var/www/html/cms_beta/vendor/yiisoft/yii2/widgets/ActiveField.php(184): yii\helpers\BaseHtml::activeTextInput(Object(backend\onix\crud\Generator), 'modelClass', Array)
+#4 /var/www/html/cms_beta/vendor/yiisoft/yii2/widgets/ActiveField.php(156): yii\widgets\ActiveField->render()
+#5 /var/www/html/cms_beta/backend/onix/crud/form.php(6): yii\widgets\ActiveField->__toString()
+#6 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/View.php(325): require('/var/www/html/c...')
+#7 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/View.php(247): yii\base\View->renderPhpFile('/var/www/html/c...', Array)
+#8 /var/www/html/cms_beta/vendor/yiisoft/yii2-gii/views/default/view.php(38): yii\base\View->renderFile('/var/www/html/c...', Array)
+#9 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/View.php(325): require('/var/www/html/c...')
+#10 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/View.php(247): yii\base\View->renderPhpFile('/var/www/html/c...', Array)
+#11 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/View.php(149): yii\base\View->renderFile('/var/www/html/c...', Array, Object(yii\gii\controllers\DefaultController))
+#12 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/Controller.php(367): yii\base\View->render('view', Array, Object(yii\gii\controllers\DefaultController))
+#13 /var/www/html/cms_beta/vendor/yiisoft/yii2-gii/controllers/DefaultController.php(56): yii\base\Controller->render('view', Array)
+#14 [internal function]: yii\gii\controllers\DefaultController->actionView('OnixCrud')
+#15 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#16 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#17 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('view', Array)
+#18 /var/www/html/cms_beta/vendor/yiisoft/yii2/web/Application.php(83): yii\base\Module->runAction('gii/default/vie...', Array)
+#19 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#20 /var/www/html/cms_beta/backend/web/index.php(18): yii\base\Application->run()
+#21 {main}' in /var/www/html/cms_beta/vendor/yiisoft/yii2/base/ErrorHandler.php:234
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleError(256, 'Exception (Unkn...', '/var/www/html/c...', 234, Array)
+#1 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/ErrorHandler.php(234): trigger_error('Exception (Unkn...', 256)
+#2 /var/www/html/cms_beta/vendor/yiisoft/yii2/widgets/ActiveField.php(158): yii\base\ErrorHandler::convertExceptionToError(Object(yii\base\UnknownPropertyException))
+#3 /var/www/html/cms_beta/backend/onix/crud/form.php(6): yii\widgets\ActiveField->__toString()
+#4 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/View.php(325): require('/var/www/html/c...')
+#5 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/View.php(247): yii\base\View->renderPhpFile('/var/www/html/c...', Array)
+#6 /var/www/html/cms_beta/vendor/yiisoft/yii2-gii/views/default/view.php(38): yii\base\View->renderFile('/var/www/html/c...', Array)
+#7 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/View.php(325): require('/var/www/html/c...')
+#8 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/View.php(247): yii\base\View->renderPhpFile('/var/www/html/c...', Array)
+#9 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/View.php(149): yii\base\View->renderFile('/var/www/html/c...', Array, Object(yii\gii\controllers\DefaultController))
+#10 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/Controller.php(367): yii\base\View->render('view', Array, Object(yii\gii\controllers\DefaultController))
+#11 /var/www/html/cms_beta/vendor/yiisoft/yii2-gii/controllers/DefaultController.php(56): yii\base\Controller->render('view', Array)
+#12 [internal function]: yii\gii\controllers\DefaultController->actionView('OnixCrud')
+#13 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#14 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#15 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('view', Array)
+#16 /var/www/html/cms_beta/vendor/yiisoft/yii2/web/Application.php(83): yii\base\Module->runAction('gii/default/vie...', Array)
+#17 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#18 /var/www/html/cms_beta/backend/web/index.php(18): yii\base\Application->run()
+#19 {main}
+    in /var/www/html/cms_beta/backend/onix/crud/form.php:6
+2015-09-08 19:44:01 [127.0.0.1][-][-][info][application] $_GET = [
+    'id' => 'OnixCrud'
+]
+
+$_COOKIE = [
+    '_ga' => 'GA1.1.2047818126.1439657538'
+    '__zlcmid' => 'WEesb44vzI0vpE'
+    'lang' => '9356938b9adc086f34962b4334258cf1e32279b1s:2:\"en\";'
+    '_identity' => '4b4b05aa534208e9e9f0691f4133d16ffbfe7879dfed9094b05e77aeb58ef636a:2:{i:0;s:9:\"_identity\";i:1;s:14:\"[1,\"\",2592000]\";}'
+    'PHPSESSID' => 'rltbqet1o75rkha2vfc7pci3l3'
+    '_csrf' => 'a37bdc2e41722ca0f12d79d21d79247350d7db2935c5e595d37e89a5d8d8a5baa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"rE_P7A4hV4U11eMJF2wZqoMhhdH_lKOa\";}'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:40.0) Gecko/20100101 Firefox/40.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'es,en-US;q=0.7,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://localhost/cms_beta/backend/web/gii'
+    'HTTP_COOKIE' => '_ga=GA1.1.2047818126.1439657538; __zlcmid=WEesb44vzI0vpE; lang=9356938b9adc086f34962b4334258cf1e32279b1s%3A2%3A%22en%22%3B; _identity=4b4b05aa534208e9e9f0691f4133d16ffbfe7879dfed9094b05e77aeb58ef636a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A14%3A%22%5B1%2C%22%22%2C2592000%5D%22%3B%7D; PHPSESSID=rltbqet1o75rkha2vfc7pci3l3; _csrf=a37bdc2e41722ca0f12d79d21d79247350d7db2935c5e595d37e89a5d8d8a5baa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22rE_P7A4hV4U11eMJF2wZqoMhhdH_lKOa%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.10 (Ubuntu) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Ubuntu)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/cms_beta/backend/web/index.php'
+    'REMOTE_PORT' => '33385'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'id=OnixCrud'
+    'REQUEST_URI' => '/cms_beta/backend/web/index.php/gii/default/view?id=OnixCrud'
+    'SCRIPT_NAME' => '/cms_beta/backend/web/index.php'
+    'PATH_INFO' => '/gii/default/view'
+    'PATH_TRANSLATED' => '/var/www/html/gii/default/view'
+    'PHP_SELF' => '/cms_beta/backend/web/index.php/gii/default/view'
+    'REQUEST_TIME_FLOAT' => 1441741441.451
+    'REQUEST_TIME' => 1441741441
+]
+2015-09-08 19:46:17 [127.0.0.1][-][-][error][yii\base\ErrorException:256] exception 'yii\base\ErrorException' with message 'Exception (Unknown Property) 'yii\base\UnknownPropertyException' with message 'Getting unknown property: backend\onix\crud\Generator::searchModelClass' 
+
+in /var/www/html/cms_beta/vendor/yiisoft/yii2/base/Component.php:143
+
+Stack trace:
+#0 /var/www/html/cms_beta/vendor/yiisoft/yii2/helpers/BaseHtml.php(1886): yii\base\Component->__get('searchModelClas...')
+#1 /var/www/html/cms_beta/vendor/yiisoft/yii2/helpers/BaseHtml.php(1154): yii\helpers\BaseHtml::getAttributeValue(Object(backend\onix\crud\Generator), 'searchModelClas...')
+#2 /var/www/html/cms_beta/vendor/yiisoft/yii2/helpers/BaseHtml.php(1191): yii\helpers\BaseHtml::activeInput('text', Object(backend\onix\crud\Generator), 'searchModelClas...', Array)
+#3 /var/www/html/cms_beta/vendor/yiisoft/yii2/widgets/ActiveField.php(184): yii\helpers\BaseHtml::activeTextInput(Object(backend\onix\crud\Generator), 'searchModelClas...', Array)
+#4 /var/www/html/cms_beta/vendor/yiisoft/yii2/widgets/ActiveField.php(156): yii\widgets\ActiveField->render()
+#5 /var/www/html/cms_beta/backend/onix/crud/form.php(7): yii\widgets\ActiveField->__toString()
+#6 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/View.php(325): require('/var/www/html/c...')
+#7 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/View.php(247): yii\base\View->renderPhpFile('/var/www/html/c...', Array)
+#8 /var/www/html/cms_beta/vendor/yiisoft/yii2-gii/views/default/view.php(38): yii\base\View->renderFile('/var/www/html/c...', Array)
+#9 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/View.php(325): require('/var/www/html/c...')
+#10 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/View.php(247): yii\base\View->renderPhpFile('/var/www/html/c...', Array)
+#11 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/View.php(149): yii\base\View->renderFile('/var/www/html/c...', Array, Object(yii\gii\controllers\DefaultController))
+#12 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/Controller.php(367): yii\base\View->render('view', Array, Object(yii\gii\controllers\DefaultController))
+#13 /var/www/html/cms_beta/vendor/yiisoft/yii2-gii/controllers/DefaultController.php(56): yii\base\Controller->render('view', Array)
+#14 [internal function]: yii\gii\controllers\DefaultController->actionView('OnixCrud')
+#15 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#16 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#17 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('view', Array)
+#18 /var/www/html/cms_beta/vendor/yiisoft/yii2/web/Application.php(83): yii\base\Module->runAction('gii/default/vie...', Array)
+#19 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#20 /var/www/html/cms_beta/backend/web/index.php(18): yii\base\Application->run()
+#21 {main}' in /var/www/html/cms_beta/vendor/yiisoft/yii2/base/ErrorHandler.php:234
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleError(256, 'Exception (Unkn...', '/var/www/html/c...', 234, Array)
+#1 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/ErrorHandler.php(234): trigger_error('Exception (Unkn...', 256)
+#2 /var/www/html/cms_beta/vendor/yiisoft/yii2/widgets/ActiveField.php(158): yii\base\ErrorHandler::convertExceptionToError(Object(yii\base\UnknownPropertyException))
+#3 /var/www/html/cms_beta/backend/onix/crud/form.php(7): yii\widgets\ActiveField->__toString()
+#4 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/View.php(325): require('/var/www/html/c...')
+#5 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/View.php(247): yii\base\View->renderPhpFile('/var/www/html/c...', Array)
+#6 /var/www/html/cms_beta/vendor/yiisoft/yii2-gii/views/default/view.php(38): yii\base\View->renderFile('/var/www/html/c...', Array)
+#7 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/View.php(325): require('/var/www/html/c...')
+#8 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/View.php(247): yii\base\View->renderPhpFile('/var/www/html/c...', Array)
+#9 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/View.php(149): yii\base\View->renderFile('/var/www/html/c...', Array, Object(yii\gii\controllers\DefaultController))
+#10 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/Controller.php(367): yii\base\View->render('view', Array, Object(yii\gii\controllers\DefaultController))
+#11 /var/www/html/cms_beta/vendor/yiisoft/yii2-gii/controllers/DefaultController.php(56): yii\base\Controller->render('view', Array)
+#12 [internal function]: yii\gii\controllers\DefaultController->actionView('OnixCrud')
+#13 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#14 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#15 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('view', Array)
+#16 /var/www/html/cms_beta/vendor/yiisoft/yii2/web/Application.php(83): yii\base\Module->runAction('gii/default/vie...', Array)
+#17 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#18 /var/www/html/cms_beta/backend/web/index.php(18): yii\base\Application->run()
+#19 {main}
+    in /var/www/html/cms_beta/backend/onix/crud/form.php:7
+2015-09-08 19:46:17 [127.0.0.1][-][-][info][application] $_GET = [
+    'id' => 'OnixCrud'
+]
+
+$_COOKIE = [
+    '_ga' => 'GA1.1.2047818126.1439657538'
+    '__zlcmid' => 'WEesb44vzI0vpE'
+    'lang' => '9356938b9adc086f34962b4334258cf1e32279b1s:2:\"en\";'
+    '_identity' => '4b4b05aa534208e9e9f0691f4133d16ffbfe7879dfed9094b05e77aeb58ef636a:2:{i:0;s:9:\"_identity\";i:1;s:14:\"[1,\"\",2592000]\";}'
+    'PHPSESSID' => 'rltbqet1o75rkha2vfc7pci3l3'
+    '_csrf' => 'a37bdc2e41722ca0f12d79d21d79247350d7db2935c5e595d37e89a5d8d8a5baa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"rE_P7A4hV4U11eMJF2wZqoMhhdH_lKOa\";}'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:40.0) Gecko/20100101 Firefox/40.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'es,en-US;q=0.7,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://localhost/cms_beta/backend/web/gii'
+    'HTTP_COOKIE' => '_ga=GA1.1.2047818126.1439657538; __zlcmid=WEesb44vzI0vpE; lang=9356938b9adc086f34962b4334258cf1e32279b1s%3A2%3A%22en%22%3B; _identity=4b4b05aa534208e9e9f0691f4133d16ffbfe7879dfed9094b05e77aeb58ef636a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A14%3A%22%5B1%2C%22%22%2C2592000%5D%22%3B%7D; PHPSESSID=rltbqet1o75rkha2vfc7pci3l3; _csrf=a37bdc2e41722ca0f12d79d21d79247350d7db2935c5e595d37e89a5d8d8a5baa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22rE_P7A4hV4U11eMJF2wZqoMhhdH_lKOa%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.10 (Ubuntu) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Ubuntu)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/cms_beta/backend/web/index.php'
+    'REMOTE_PORT' => '33390'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'id=OnixCrud'
+    'REQUEST_URI' => '/cms_beta/backend/web/index.php/gii/default/view?id=OnixCrud'
+    'SCRIPT_NAME' => '/cms_beta/backend/web/index.php'
+    'PATH_INFO' => '/gii/default/view'
+    'PATH_TRANSLATED' => '/var/www/html/gii/default/view'
+    'PHP_SELF' => '/cms_beta/backend/web/index.php/gii/default/view'
+    'REQUEST_TIME_FLOAT' => 1441741577.968
+    'REQUEST_TIME' => 1441741577
+]
+2015-09-08 19:46:29 [127.0.0.1][-][-][error][yii\base\ErrorException:256] exception 'yii\base\ErrorException' with message 'Exception (Unknown Property) 'yii\base\UnknownPropertyException' with message 'Getting unknown property: backend\onix\crud\Generator::controllerClass' 
+
+in /var/www/html/cms_beta/vendor/yiisoft/yii2/base/Component.php:143
+
+Stack trace:
+#0 /var/www/html/cms_beta/vendor/yiisoft/yii2/helpers/BaseHtml.php(1886): yii\base\Component->__get('controllerClass')
+#1 /var/www/html/cms_beta/vendor/yiisoft/yii2/helpers/BaseHtml.php(1154): yii\helpers\BaseHtml::getAttributeValue(Object(backend\onix\crud\Generator), 'controllerClass')
+#2 /var/www/html/cms_beta/vendor/yiisoft/yii2/helpers/BaseHtml.php(1191): yii\helpers\BaseHtml::activeInput('text', Object(backend\onix\crud\Generator), 'controllerClass', Array)
+#3 /var/www/html/cms_beta/vendor/yiisoft/yii2/widgets/ActiveField.php(184): yii\helpers\BaseHtml::activeTextInput(Object(backend\onix\crud\Generator), 'controllerClass', Array)
+#4 /var/www/html/cms_beta/vendor/yiisoft/yii2/widgets/ActiveField.php(156): yii\widgets\ActiveField->render()
+#5 /var/www/html/cms_beta/backend/onix/crud/form.php(8): yii\widgets\ActiveField->__toString()
+#6 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/View.php(325): require('/var/www/html/c...')
+#7 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/View.php(247): yii\base\View->renderPhpFile('/var/www/html/c...', Array)
+#8 /var/www/html/cms_beta/vendor/yiisoft/yii2-gii/views/default/view.php(38): yii\base\View->renderFile('/var/www/html/c...', Array)
+#9 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/View.php(325): require('/var/www/html/c...')
+#10 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/View.php(247): yii\base\View->renderPhpFile('/var/www/html/c...', Array)
+#11 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/View.php(149): yii\base\View->renderFile('/var/www/html/c...', Array, Object(yii\gii\controllers\DefaultController))
+#12 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/Controller.php(367): yii\base\View->render('view', Array, Object(yii\gii\controllers\DefaultController))
+#13 /var/www/html/cms_beta/vendor/yiisoft/yii2-gii/controllers/DefaultController.php(56): yii\base\Controller->render('view', Array)
+#14 [internal function]: yii\gii\controllers\DefaultController->actionView('OnixCrud')
+#15 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#16 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#17 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('view', Array)
+#18 /var/www/html/cms_beta/vendor/yiisoft/yii2/web/Application.php(83): yii\base\Module->runAction('gii/default/vie...', Array)
+#19 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#20 /var/www/html/cms_beta/backend/web/index.php(18): yii\base\Application->run()
+#21 {main}' in /var/www/html/cms_beta/vendor/yiisoft/yii2/base/ErrorHandler.php:234
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleError(256, 'Exception (Unkn...', '/var/www/html/c...', 234, Array)
+#1 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/ErrorHandler.php(234): trigger_error('Exception (Unkn...', 256)
+#2 /var/www/html/cms_beta/vendor/yiisoft/yii2/widgets/ActiveField.php(158): yii\base\ErrorHandler::convertExceptionToError(Object(yii\base\UnknownPropertyException))
+#3 /var/www/html/cms_beta/backend/onix/crud/form.php(8): yii\widgets\ActiveField->__toString()
+#4 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/View.php(325): require('/var/www/html/c...')
+#5 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/View.php(247): yii\base\View->renderPhpFile('/var/www/html/c...', Array)
+#6 /var/www/html/cms_beta/vendor/yiisoft/yii2-gii/views/default/view.php(38): yii\base\View->renderFile('/var/www/html/c...', Array)
+#7 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/View.php(325): require('/var/www/html/c...')
+#8 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/View.php(247): yii\base\View->renderPhpFile('/var/www/html/c...', Array)
+#9 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/View.php(149): yii\base\View->renderFile('/var/www/html/c...', Array, Object(yii\gii\controllers\DefaultController))
+#10 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/Controller.php(367): yii\base\View->render('view', Array, Object(yii\gii\controllers\DefaultController))
+#11 /var/www/html/cms_beta/vendor/yiisoft/yii2-gii/controllers/DefaultController.php(56): yii\base\Controller->render('view', Array)
+#12 [internal function]: yii\gii\controllers\DefaultController->actionView('OnixCrud')
+#13 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#14 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#15 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('view', Array)
+#16 /var/www/html/cms_beta/vendor/yiisoft/yii2/web/Application.php(83): yii\base\Module->runAction('gii/default/vie...', Array)
+#17 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#18 /var/www/html/cms_beta/backend/web/index.php(18): yii\base\Application->run()
+#19 {main}
+    in /var/www/html/cms_beta/backend/onix/crud/form.php:8
+2015-09-08 19:46:29 [127.0.0.1][-][-][info][application] $_GET = [
+    'id' => 'OnixCrud'
+]
+
+$_COOKIE = [
+    '_ga' => 'GA1.1.2047818126.1439657538'
+    '__zlcmid' => 'WEesb44vzI0vpE'
+    'lang' => '9356938b9adc086f34962b4334258cf1e32279b1s:2:\"en\";'
+    '_identity' => '4b4b05aa534208e9e9f0691f4133d16ffbfe7879dfed9094b05e77aeb58ef636a:2:{i:0;s:9:\"_identity\";i:1;s:14:\"[1,\"\",2592000]\";}'
+    'PHPSESSID' => 'rltbqet1o75rkha2vfc7pci3l3'
+    '_csrf' => 'a37bdc2e41722ca0f12d79d21d79247350d7db2935c5e595d37e89a5d8d8a5baa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"rE_P7A4hV4U11eMJF2wZqoMhhdH_lKOa\";}'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:40.0) Gecko/20100101 Firefox/40.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'es,en-US;q=0.7,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://localhost/cms_beta/backend/web/gii'
+    'HTTP_COOKIE' => '_ga=GA1.1.2047818126.1439657538; __zlcmid=WEesb44vzI0vpE; lang=9356938b9adc086f34962b4334258cf1e32279b1s%3A2%3A%22en%22%3B; _identity=4b4b05aa534208e9e9f0691f4133d16ffbfe7879dfed9094b05e77aeb58ef636a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A14%3A%22%5B1%2C%22%22%2C2592000%5D%22%3B%7D; PHPSESSID=rltbqet1o75rkha2vfc7pci3l3; _csrf=a37bdc2e41722ca0f12d79d21d79247350d7db2935c5e595d37e89a5d8d8a5baa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22rE_P7A4hV4U11eMJF2wZqoMhhdH_lKOa%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.10 (Ubuntu) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Ubuntu)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/cms_beta/backend/web/index.php'
+    'REMOTE_PORT' => '33391'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'id=OnixCrud'
+    'REQUEST_URI' => '/cms_beta/backend/web/index.php/gii/default/view?id=OnixCrud'
+    'SCRIPT_NAME' => '/cms_beta/backend/web/index.php'
+    'PATH_INFO' => '/gii/default/view'
+    'PATH_TRANSLATED' => '/var/www/html/gii/default/view'
+    'PHP_SELF' => '/cms_beta/backend/web/index.php/gii/default/view'
+    'REQUEST_TIME_FLOAT' => 1441741589.748
+    'REQUEST_TIME' => 1441741589
+]
+2015-09-08 19:46:37 [127.0.0.1][-][-][error][yii\base\ErrorException:256] exception 'yii\base\ErrorException' with message 'Exception (Unknown Property) 'yii\base\UnknownPropertyException' with message 'Getting unknown property: backend\onix\crud\Generator::viewPath' 
+
+in /var/www/html/cms_beta/vendor/yiisoft/yii2/base/Component.php:143
+
+Stack trace:
+#0 /var/www/html/cms_beta/vendor/yiisoft/yii2/helpers/BaseHtml.php(1886): yii\base\Component->__get('viewPath')
+#1 /var/www/html/cms_beta/vendor/yiisoft/yii2/helpers/BaseHtml.php(1154): yii\helpers\BaseHtml::getAttributeValue(Object(backend\onix\crud\Generator), 'viewPath')
+#2 /var/www/html/cms_beta/vendor/yiisoft/yii2/helpers/BaseHtml.php(1191): yii\helpers\BaseHtml::activeInput('text', Object(backend\onix\crud\Generator), 'viewPath', Array)
+#3 /var/www/html/cms_beta/vendor/yiisoft/yii2/widgets/ActiveField.php(184): yii\helpers\BaseHtml::activeTextInput(Object(backend\onix\crud\Generator), 'viewPath', Array)
+#4 /var/www/html/cms_beta/vendor/yiisoft/yii2/widgets/ActiveField.php(156): yii\widgets\ActiveField->render()
+#5 /var/www/html/cms_beta/backend/onix/crud/form.php(9): yii\widgets\ActiveField->__toString()
+#6 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/View.php(325): require('/var/www/html/c...')
+#7 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/View.php(247): yii\base\View->renderPhpFile('/var/www/html/c...', Array)
+#8 /var/www/html/cms_beta/vendor/yiisoft/yii2-gii/views/default/view.php(38): yii\base\View->renderFile('/var/www/html/c...', Array)
+#9 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/View.php(325): require('/var/www/html/c...')
+#10 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/View.php(247): yii\base\View->renderPhpFile('/var/www/html/c...', Array)
+#11 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/View.php(149): yii\base\View->renderFile('/var/www/html/c...', Array, Object(yii\gii\controllers\DefaultController))
+#12 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/Controller.php(367): yii\base\View->render('view', Array, Object(yii\gii\controllers\DefaultController))
+#13 /var/www/html/cms_beta/vendor/yiisoft/yii2-gii/controllers/DefaultController.php(56): yii\base\Controller->render('view', Array)
+#14 [internal function]: yii\gii\controllers\DefaultController->actionView('OnixCrud')
+#15 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#16 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#17 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('view', Array)
+#18 /var/www/html/cms_beta/vendor/yiisoft/yii2/web/Application.php(83): yii\base\Module->runAction('gii/default/vie...', Array)
+#19 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#20 /var/www/html/cms_beta/backend/web/index.php(18): yii\base\Application->run()
+#21 {main}' in /var/www/html/cms_beta/vendor/yiisoft/yii2/base/ErrorHandler.php:234
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleError(256, 'Exception (Unkn...', '/var/www/html/c...', 234, Array)
+#1 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/ErrorHandler.php(234): trigger_error('Exception (Unkn...', 256)
+#2 /var/www/html/cms_beta/vendor/yiisoft/yii2/widgets/ActiveField.php(158): yii\base\ErrorHandler::convertExceptionToError(Object(yii\base\UnknownPropertyException))
+#3 /var/www/html/cms_beta/backend/onix/crud/form.php(9): yii\widgets\ActiveField->__toString()
+#4 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/View.php(325): require('/var/www/html/c...')
+#5 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/View.php(247): yii\base\View->renderPhpFile('/var/www/html/c...', Array)
+#6 /var/www/html/cms_beta/vendor/yiisoft/yii2-gii/views/default/view.php(38): yii\base\View->renderFile('/var/www/html/c...', Array)
+#7 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/View.php(325): require('/var/www/html/c...')
+#8 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/View.php(247): yii\base\View->renderPhpFile('/var/www/html/c...', Array)
+#9 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/View.php(149): yii\base\View->renderFile('/var/www/html/c...', Array, Object(yii\gii\controllers\DefaultController))
+#10 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/Controller.php(367): yii\base\View->render('view', Array, Object(yii\gii\controllers\DefaultController))
+#11 /var/www/html/cms_beta/vendor/yiisoft/yii2-gii/controllers/DefaultController.php(56): yii\base\Controller->render('view', Array)
+#12 [internal function]: yii\gii\controllers\DefaultController->actionView('OnixCrud')
+#13 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#14 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#15 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('view', Array)
+#16 /var/www/html/cms_beta/vendor/yiisoft/yii2/web/Application.php(83): yii\base\Module->runAction('gii/default/vie...', Array)
+#17 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#18 /var/www/html/cms_beta/backend/web/index.php(18): yii\base\Application->run()
+#19 {main}
+    in /var/www/html/cms_beta/backend/onix/crud/form.php:9
+2015-09-08 19:46:37 [127.0.0.1][-][-][info][application] $_GET = [
+    'id' => 'OnixCrud'
+]
+
+$_COOKIE = [
+    '_ga' => 'GA1.1.2047818126.1439657538'
+    '__zlcmid' => 'WEesb44vzI0vpE'
+    'lang' => '9356938b9adc086f34962b4334258cf1e32279b1s:2:\"en\";'
+    '_identity' => '4b4b05aa534208e9e9f0691f4133d16ffbfe7879dfed9094b05e77aeb58ef636a:2:{i:0;s:9:\"_identity\";i:1;s:14:\"[1,\"\",2592000]\";}'
+    'PHPSESSID' => 'rltbqet1o75rkha2vfc7pci3l3'
+    '_csrf' => 'a37bdc2e41722ca0f12d79d21d79247350d7db2935c5e595d37e89a5d8d8a5baa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"rE_P7A4hV4U11eMJF2wZqoMhhdH_lKOa\";}'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:40.0) Gecko/20100101 Firefox/40.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'es,en-US;q=0.7,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://localhost/cms_beta/backend/web/gii'
+    'HTTP_COOKIE' => '_ga=GA1.1.2047818126.1439657538; __zlcmid=WEesb44vzI0vpE; lang=9356938b9adc086f34962b4334258cf1e32279b1s%3A2%3A%22en%22%3B; _identity=4b4b05aa534208e9e9f0691f4133d16ffbfe7879dfed9094b05e77aeb58ef636a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A14%3A%22%5B1%2C%22%22%2C2592000%5D%22%3B%7D; PHPSESSID=rltbqet1o75rkha2vfc7pci3l3; _csrf=a37bdc2e41722ca0f12d79d21d79247350d7db2935c5e595d37e89a5d8d8a5baa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22rE_P7A4hV4U11eMJF2wZqoMhhdH_lKOa%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.10 (Ubuntu) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Ubuntu)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/cms_beta/backend/web/index.php'
+    'REMOTE_PORT' => '33392'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'id=OnixCrud'
+    'REQUEST_URI' => '/cms_beta/backend/web/index.php/gii/default/view?id=OnixCrud'
+    'SCRIPT_NAME' => '/cms_beta/backend/web/index.php'
+    'PATH_INFO' => '/gii/default/view'
+    'PATH_TRANSLATED' => '/var/www/html/gii/default/view'
+    'PHP_SELF' => '/cms_beta/backend/web/index.php/gii/default/view'
+    'REQUEST_TIME_FLOAT' => 1441741597.939
+    'REQUEST_TIME' => 1441741597
+]
+2015-09-08 19:46:47 [127.0.0.1][-][-][error][yii\base\ErrorException:256] exception 'yii\base\ErrorException' with message 'Exception (Unknown Property) 'yii\base\UnknownPropertyException' with message 'Getting unknown property: backend\onix\crud\Generator::baseControllerClass' 
+
+in /var/www/html/cms_beta/vendor/yiisoft/yii2/base/Component.php:143
+
+Stack trace:
+#0 /var/www/html/cms_beta/vendor/yiisoft/yii2/helpers/BaseHtml.php(1886): yii\base\Component->__get('baseControllerC...')
+#1 /var/www/html/cms_beta/vendor/yiisoft/yii2/helpers/BaseHtml.php(1154): yii\helpers\BaseHtml::getAttributeValue(Object(backend\onix\crud\Generator), 'baseControllerC...')
+#2 /var/www/html/cms_beta/vendor/yiisoft/yii2/helpers/BaseHtml.php(1191): yii\helpers\BaseHtml::activeInput('text', Object(backend\onix\crud\Generator), 'baseControllerC...', Array)
+#3 /var/www/html/cms_beta/vendor/yiisoft/yii2/widgets/ActiveField.php(184): yii\helpers\BaseHtml::activeTextInput(Object(backend\onix\crud\Generator), 'baseControllerC...', Array)
+#4 /var/www/html/cms_beta/vendor/yiisoft/yii2/widgets/ActiveField.php(156): yii\widgets\ActiveField->render()
+#5 /var/www/html/cms_beta/backend/onix/crud/form.php(10): yii\widgets\ActiveField->__toString()
+#6 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/View.php(325): require('/var/www/html/c...')
+#7 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/View.php(247): yii\base\View->renderPhpFile('/var/www/html/c...', Array)
+#8 /var/www/html/cms_beta/vendor/yiisoft/yii2-gii/views/default/view.php(38): yii\base\View->renderFile('/var/www/html/c...', Array)
+#9 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/View.php(325): require('/var/www/html/c...')
+#10 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/View.php(247): yii\base\View->renderPhpFile('/var/www/html/c...', Array)
+#11 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/View.php(149): yii\base\View->renderFile('/var/www/html/c...', Array, Object(yii\gii\controllers\DefaultController))
+#12 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/Controller.php(367): yii\base\View->render('view', Array, Object(yii\gii\controllers\DefaultController))
+#13 /var/www/html/cms_beta/vendor/yiisoft/yii2-gii/controllers/DefaultController.php(56): yii\base\Controller->render('view', Array)
+#14 [internal function]: yii\gii\controllers\DefaultController->actionView('OnixCrud')
+#15 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#16 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#17 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('view', Array)
+#18 /var/www/html/cms_beta/vendor/yiisoft/yii2/web/Application.php(83): yii\base\Module->runAction('gii/default/vie...', Array)
+#19 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#20 /var/www/html/cms_beta/backend/web/index.php(18): yii\base\Application->run()
+#21 {main}' in /var/www/html/cms_beta/vendor/yiisoft/yii2/base/ErrorHandler.php:234
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleError(256, 'Exception (Unkn...', '/var/www/html/c...', 234, Array)
+#1 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/ErrorHandler.php(234): trigger_error('Exception (Unkn...', 256)
+#2 /var/www/html/cms_beta/vendor/yiisoft/yii2/widgets/ActiveField.php(158): yii\base\ErrorHandler::convertExceptionToError(Object(yii\base\UnknownPropertyException))
+#3 /var/www/html/cms_beta/backend/onix/crud/form.php(10): yii\widgets\ActiveField->__toString()
+#4 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/View.php(325): require('/var/www/html/c...')
+#5 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/View.php(247): yii\base\View->renderPhpFile('/var/www/html/c...', Array)
+#6 /var/www/html/cms_beta/vendor/yiisoft/yii2-gii/views/default/view.php(38): yii\base\View->renderFile('/var/www/html/c...', Array)
+#7 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/View.php(325): require('/var/www/html/c...')
+#8 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/View.php(247): yii\base\View->renderPhpFile('/var/www/html/c...', Array)
+#9 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/View.php(149): yii\base\View->renderFile('/var/www/html/c...', Array, Object(yii\gii\controllers\DefaultController))
+#10 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/Controller.php(367): yii\base\View->render('view', Array, Object(yii\gii\controllers\DefaultController))
+#11 /var/www/html/cms_beta/vendor/yiisoft/yii2-gii/controllers/DefaultController.php(56): yii\base\Controller->render('view', Array)
+#12 [internal function]: yii\gii\controllers\DefaultController->actionView('OnixCrud')
+#13 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#14 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#15 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('view', Array)
+#16 /var/www/html/cms_beta/vendor/yiisoft/yii2/web/Application.php(83): yii\base\Module->runAction('gii/default/vie...', Array)
+#17 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#18 /var/www/html/cms_beta/backend/web/index.php(18): yii\base\Application->run()
+#19 {main}
+    in /var/www/html/cms_beta/backend/onix/crud/form.php:10
+2015-09-08 19:46:47 [127.0.0.1][-][-][info][application] $_GET = [
+    'id' => 'OnixCrud'
+]
+
+$_COOKIE = [
+    '_ga' => 'GA1.1.2047818126.1439657538'
+    '__zlcmid' => 'WEesb44vzI0vpE'
+    'lang' => '9356938b9adc086f34962b4334258cf1e32279b1s:2:\"en\";'
+    '_identity' => '4b4b05aa534208e9e9f0691f4133d16ffbfe7879dfed9094b05e77aeb58ef636a:2:{i:0;s:9:\"_identity\";i:1;s:14:\"[1,\"\",2592000]\";}'
+    'PHPSESSID' => 'rltbqet1o75rkha2vfc7pci3l3'
+    '_csrf' => 'a37bdc2e41722ca0f12d79d21d79247350d7db2935c5e595d37e89a5d8d8a5baa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"rE_P7A4hV4U11eMJF2wZqoMhhdH_lKOa\";}'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:40.0) Gecko/20100101 Firefox/40.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'es,en-US;q=0.7,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://localhost/cms_beta/backend/web/gii'
+    'HTTP_COOKIE' => '_ga=GA1.1.2047818126.1439657538; __zlcmid=WEesb44vzI0vpE; lang=9356938b9adc086f34962b4334258cf1e32279b1s%3A2%3A%22en%22%3B; _identity=4b4b05aa534208e9e9f0691f4133d16ffbfe7879dfed9094b05e77aeb58ef636a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A14%3A%22%5B1%2C%22%22%2C2592000%5D%22%3B%7D; PHPSESSID=rltbqet1o75rkha2vfc7pci3l3; _csrf=a37bdc2e41722ca0f12d79d21d79247350d7db2935c5e595d37e89a5d8d8a5baa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22rE_P7A4hV4U11eMJF2wZqoMhhdH_lKOa%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.10 (Ubuntu) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Ubuntu)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/cms_beta/backend/web/index.php'
+    'REMOTE_PORT' => '33393'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'id=OnixCrud'
+    'REQUEST_URI' => '/cms_beta/backend/web/index.php/gii/default/view?id=OnixCrud'
+    'SCRIPT_NAME' => '/cms_beta/backend/web/index.php'
+    'PATH_INFO' => '/gii/default/view'
+    'PATH_TRANSLATED' => '/var/www/html/gii/default/view'
+    'PHP_SELF' => '/cms_beta/backend/web/index.php/gii/default/view'
+    'REQUEST_TIME_FLOAT' => 1441741607.26
+    'REQUEST_TIME' => 1441741607
+]
+2015-09-08 19:46:55 [127.0.0.1][-][-][error][yii\base\UnknownPropertyException] exception 'yii\base\UnknownPropertyException' with message 'Getting unknown property: backend\onix\crud\Generator::indexWidgetType' in /var/www/html/cms_beta/vendor/yiisoft/yii2/base/Component.php:143
+Stack trace:
+#0 /var/www/html/cms_beta/vendor/yiisoft/yii2/helpers/BaseHtml.php(1886): yii\base\Component->__get('indexWidgetType')
+#1 /var/www/html/cms_beta/vendor/yiisoft/yii2/helpers/BaseHtml.php(1555): yii\helpers\BaseHtml::getAttributeValue(Object(backend\onix\crud\Generator), 'indexWidgetType')
+#2 /var/www/html/cms_beta/vendor/yiisoft/yii2/helpers/BaseHtml.php(1411): yii\helpers\BaseHtml::activeListInput('dropDownList', Object(backend\onix\crud\Generator), 'indexWidgetType', Array, Array)
+#3 /var/www/html/cms_beta/vendor/yiisoft/yii2/widgets/ActiveField.php(580): yii\helpers\BaseHtml::activeDropDownList(Object(backend\onix\crud\Generator), 'indexWidgetType', Array, Array)
+#4 /var/www/html/cms_beta/backend/onix/crud/form.php(14): yii\widgets\ActiveField->dropDownList(Array)
+#5 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/View.php(325): require('/var/www/html/c...')
+#6 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/View.php(247): yii\base\View->renderPhpFile('/var/www/html/c...', Array)
+#7 /var/www/html/cms_beta/vendor/yiisoft/yii2-gii/views/default/view.php(38): yii\base\View->renderFile('/var/www/html/c...', Array)
+#8 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/View.php(325): require('/var/www/html/c...')
+#9 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/View.php(247): yii\base\View->renderPhpFile('/var/www/html/c...', Array)
+#10 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/View.php(149): yii\base\View->renderFile('/var/www/html/c...', Array, Object(yii\gii\controllers\DefaultController))
+#11 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/Controller.php(367): yii\base\View->render('view', Array, Object(yii\gii\controllers\DefaultController))
+#12 /var/www/html/cms_beta/vendor/yiisoft/yii2-gii/controllers/DefaultController.php(56): yii\base\Controller->render('view', Array)
+#13 [internal function]: yii\gii\controllers\DefaultController->actionView('OnixCrud')
+#14 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#15 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#16 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('view', Array)
+#17 /var/www/html/cms_beta/vendor/yiisoft/yii2/web/Application.php(83): yii\base\Module->runAction('gii/default/vie...', Array)
+#18 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#19 /var/www/html/cms_beta/backend/web/index.php(18): yii\base\Application->run()
+#20 {main}
+2015-09-08 19:46:55 [127.0.0.1][-][-][info][application] $_GET = [
+    'id' => 'OnixCrud'
+]
+
+$_COOKIE = [
+    '_ga' => 'GA1.1.2047818126.1439657538'
+    '__zlcmid' => 'WEesb44vzI0vpE'
+    'lang' => '9356938b9adc086f34962b4334258cf1e32279b1s:2:\"en\";'
+    '_identity' => '4b4b05aa534208e9e9f0691f4133d16ffbfe7879dfed9094b05e77aeb58ef636a:2:{i:0;s:9:\"_identity\";i:1;s:14:\"[1,\"\",2592000]\";}'
+    'PHPSESSID' => 'rltbqet1o75rkha2vfc7pci3l3'
+    '_csrf' => 'a37bdc2e41722ca0f12d79d21d79247350d7db2935c5e595d37e89a5d8d8a5baa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"rE_P7A4hV4U11eMJF2wZqoMhhdH_lKOa\";}'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:40.0) Gecko/20100101 Firefox/40.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'es,en-US;q=0.7,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://localhost/cms_beta/backend/web/gii'
+    'HTTP_COOKIE' => '_ga=GA1.1.2047818126.1439657538; __zlcmid=WEesb44vzI0vpE; lang=9356938b9adc086f34962b4334258cf1e32279b1s%3A2%3A%22en%22%3B; _identity=4b4b05aa534208e9e9f0691f4133d16ffbfe7879dfed9094b05e77aeb58ef636a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A14%3A%22%5B1%2C%22%22%2C2592000%5D%22%3B%7D; PHPSESSID=rltbqet1o75rkha2vfc7pci3l3; _csrf=a37bdc2e41722ca0f12d79d21d79247350d7db2935c5e595d37e89a5d8d8a5baa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22rE_P7A4hV4U11eMJF2wZqoMhhdH_lKOa%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.10 (Ubuntu) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Ubuntu)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/cms_beta/backend/web/index.php'
+    'REMOTE_PORT' => '33394'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'id=OnixCrud'
+    'REQUEST_URI' => '/cms_beta/backend/web/index.php/gii/default/view?id=OnixCrud'
+    'SCRIPT_NAME' => '/cms_beta/backend/web/index.php'
+    'PATH_INFO' => '/gii/default/view'
+    'PATH_TRANSLATED' => '/var/www/html/gii/default/view'
+    'PHP_SELF' => '/cms_beta/backend/web/index.php/gii/default/view'
+    'REQUEST_TIME_FLOAT' => 1441741615.895
+    'REQUEST_TIME' => 1441741615
+]
+2015-09-08 19:52:58 [127.0.0.1][-][-][error][yii\base\ErrorException:1] exception 'yii\base\ErrorException' with message 'Class 'backend\onix\crud\ReflectionClass' not found' in /var/www/html/cms_beta/backend/onix/crud/Generator.php:45
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2015-09-08 19:52:58 [127.0.0.1][-][-][info][application] $_GET = [
+    'id' => 'OnixCrud'
+]
+
+$_COOKIE = [
+    '_ga' => 'GA1.1.2047818126.1439657538'
+    '__zlcmid' => 'WEesb44vzI0vpE'
+    'lang' => '9356938b9adc086f34962b4334258cf1e32279b1s:2:\"en\";'
+    '_identity' => '4b4b05aa534208e9e9f0691f4133d16ffbfe7879dfed9094b05e77aeb58ef636a:2:{i:0;s:9:\"_identity\";i:1;s:14:\"[1,\"\",2592000]\";}'
+    'PHPSESSID' => 'rltbqet1o75rkha2vfc7pci3l3'
+    '_csrf' => 'a37bdc2e41722ca0f12d79d21d79247350d7db2935c5e595d37e89a5d8d8a5baa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"rE_P7A4hV4U11eMJF2wZqoMhhdH_lKOa\";}'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:40.0) Gecko/20100101 Firefox/40.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'es,en-US;q=0.7,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://localhost/cms_beta/backend/web/index.php/gii/default/view?id=crud'
+    'HTTP_COOKIE' => '_ga=GA1.1.2047818126.1439657538; __zlcmid=WEesb44vzI0vpE; lang=9356938b9adc086f34962b4334258cf1e32279b1s%3A2%3A%22en%22%3B; _identity=4b4b05aa534208e9e9f0691f4133d16ffbfe7879dfed9094b05e77aeb58ef636a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A14%3A%22%5B1%2C%22%22%2C2592000%5D%22%3B%7D; PHPSESSID=rltbqet1o75rkha2vfc7pci3l3; _csrf=a37bdc2e41722ca0f12d79d21d79247350d7db2935c5e595d37e89a5d8d8a5baa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22rE_P7A4hV4U11eMJF2wZqoMhhdH_lKOa%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.10 (Ubuntu) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Ubuntu)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/cms_beta/backend/web/index.php'
+    'REMOTE_PORT' => '33433'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'id=OnixCrud'
+    'REQUEST_URI' => '/cms_beta/backend/web/index.php/gii/default/view?id=OnixCrud'
+    'SCRIPT_NAME' => '/cms_beta/backend/web/index.php'
+    'PATH_INFO' => '/gii/default/view'
+    'PATH_TRANSLATED' => '/var/www/html/gii/default/view'
+    'PHP_SELF' => '/cms_beta/backend/web/index.php/gii/default/view'
+    'REQUEST_TIME_FLOAT' => 1441741978.486
+    'REQUEST_TIME' => 1441741978
+]
+2015-09-08 20:09:34 [127.0.0.1][-][-][error][yii\base\InvalidConfigException] exception 'yii\base\InvalidConfigException' with message 'Object configuration must be an array containing a "class" element.' in /var/www/html/cms_beta/vendor/yiisoft/yii2/BaseYii.php:348
+Stack trace:
+#0 /var/www/html/cms_beta/vendor/yiisoft/yii2-gii/Module.php(116): yii\BaseYii::createObject(Array)
+#1 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/Controller.php(139): yii\gii\Module->beforeAction(Object(yii\base\InlineAction))
+#2 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('index', Array)
+#3 /var/www/html/cms_beta/vendor/yiisoft/yii2/web/Application.php(83): yii\base\Module->runAction('gii/default/ind...', Array)
+#4 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#5 /var/www/html/cms_beta/backend/web/index.php(18): yii\base\Application->run()
+#6 {main}
+2015-09-08 20:09:34 [127.0.0.1][-][-][info][application] $_COOKIE = [
+    '_csrf' => 'ba2b4fb3d3996bd5b19fa35f6ad1875726f9f9adad7ff50ffb4575ccc507e277a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"VSgQVZpXDJ4R9ScLWteVrrN-pnoygBTJ\";}'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:40.0) Gecko/20100101 Firefox/40.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'es,en-US;q=0.7,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://localhost/cms_beta/backend/web/index.php/gii/default/view?id=OnixCrud'
+    'HTTP_COOKIE' => '_csrf=ba2b4fb3d3996bd5b19fa35f6ad1875726f9f9adad7ff50ffb4575ccc507e277a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22VSgQVZpXDJ4R9ScLWteVrrN-pnoygBTJ%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.10 (Ubuntu) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Ubuntu)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/cms_beta/backend/web/index.php'
+    'REMOTE_PORT' => '33558'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/cms_beta/backend/web/index.php/gii/default/index'
+    'SCRIPT_NAME' => '/cms_beta/backend/web/index.php'
+    'PATH_INFO' => '/gii/default/index'
+    'PATH_TRANSLATED' => '/var/www/html/gii/default/index'
+    'PHP_SELF' => '/cms_beta/backend/web/index.php/gii/default/index'
+    'REQUEST_TIME_FLOAT' => 1441742974.909
+    'REQUEST_TIME' => 1441742974
+]
+2015-09-08 20:09:49 [127.0.0.1][-][-][error][yii\base\InvalidConfigException] exception 'yii\base\InvalidConfigException' with message 'Object configuration must be an array containing a "class" element.' in /var/www/html/cms_beta/vendor/yiisoft/yii2/BaseYii.php:348
+Stack trace:
+#0 /var/www/html/cms_beta/vendor/yiisoft/yii2-gii/Module.php(116): yii\BaseYii::createObject(Array)
+#1 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/Controller.php(139): yii\gii\Module->beforeAction(Object(yii\base\InlineAction))
+#2 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('index', Array)
+#3 /var/www/html/cms_beta/vendor/yiisoft/yii2/web/Application.php(83): yii\base\Module->runAction('gii/default/ind...', Array)
+#4 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#5 /var/www/html/cms_beta/backend/web/index.php(18): yii\base\Application->run()
+#6 {main}
+2015-09-08 20:09:49 [127.0.0.1][-][-][info][application] $_COOKIE = [
+    '_csrf' => 'ba2b4fb3d3996bd5b19fa35f6ad1875726f9f9adad7ff50ffb4575ccc507e277a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"VSgQVZpXDJ4R9ScLWteVrrN-pnoygBTJ\";}'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:40.0) Gecko/20100101 Firefox/40.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'es,en-US;q=0.7,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://localhost/cms_beta/backend/web/index.php/gii/default/view?id=OnixCrud'
+    'HTTP_COOKIE' => '_csrf=ba2b4fb3d3996bd5b19fa35f6ad1875726f9f9adad7ff50ffb4575ccc507e277a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22VSgQVZpXDJ4R9ScLWteVrrN-pnoygBTJ%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.10 (Ubuntu) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Ubuntu)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/cms_beta/backend/web/index.php'
+    'REMOTE_PORT' => '33560'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/cms_beta/backend/web/index.php/gii/default/index'
+    'SCRIPT_NAME' => '/cms_beta/backend/web/index.php'
+    'PATH_INFO' => '/gii/default/index'
+    'PATH_TRANSLATED' => '/var/www/html/gii/default/index'
+    'PHP_SELF' => '/cms_beta/backend/web/index.php/gii/default/index'
+    'REQUEST_TIME_FLOAT' => 1441742989.422
+    'REQUEST_TIME' => 1441742989
+]
+2015-09-08 20:36:59 [127.0.0.1][-][-][error][yii\base\ErrorException:4] exception 'yii\base\ErrorException' with message 'syntax error, unexpected 'back' (T_STRING)' in /var/www/html/cms_beta/backend/views/log/index.php:16
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2015-09-08 20:36:59 [127.0.0.1][-][-][info][application] $_COOKIE = [
+    '_csrf' => 'ba2b4fb3d3996bd5b19fa35f6ad1875726f9f9adad7ff50ffb4575ccc507e277a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"VSgQVZpXDJ4R9ScLWteVrrN-pnoygBTJ\";}'
+    'PHPSESSID' => '02g58ppnov2cm3hf533p2jse95'
+    '_identity' => '4b4b05aa534208e9e9f0691f4133d16ffbfe7879dfed9094b05e77aeb58ef636a:2:{i:0;s:9:\"_identity\";i:1;s:14:\"[1,\"\",2592000]\";}'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:40.0) Gecko/20100101 Firefox/40.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'es,en-US;q=0.7,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://localhost/cms_beta/backend/web/index.php/message/index'
+    'HTTP_COOKIE' => '_csrf=ba2b4fb3d3996bd5b19fa35f6ad1875726f9f9adad7ff50ffb4575ccc507e277a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22VSgQVZpXDJ4R9ScLWteVrrN-pnoygBTJ%22%3B%7D; PHPSESSID=02g58ppnov2cm3hf533p2jse95; _identity=4b4b05aa534208e9e9f0691f4133d16ffbfe7879dfed9094b05e77aeb58ef636a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A14%3A%22%5B1%2C%22%22%2C2592000%5D%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.10 (Ubuntu) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Ubuntu)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/cms_beta/backend/web/index.php'
+    'REMOTE_PORT' => '33684'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/cms_beta/backend/web/index.php/log/index'
+    'SCRIPT_NAME' => '/cms_beta/backend/web/index.php'
+    'PATH_INFO' => '/log/index'
+    'PATH_TRANSLATED' => '/var/www/html/log/index'
+    'PHP_SELF' => '/cms_beta/backend/web/index.php/log/index'
+    'REQUEST_TIME_FLOAT' => 1441744619.588
+    'REQUEST_TIME' => 1441744619
+]
+2015-09-08 20:40:26 [127.0.0.1][-][-][error][yii\base\ErrorException:4] exception 'yii\base\ErrorException' with message 'syntax error, unexpected '=>' (T_DOUBLE_ARROW)' in /var/www/html/cms_beta/backend/views/log/view.php:10
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2015-09-08 20:40:26 [127.0.0.1][-][-][info][application] $_GET = [
+    'id' => '1'
+]
+
+$_COOKIE = [
+    '_csrf' => 'ba2b4fb3d3996bd5b19fa35f6ad1875726f9f9adad7ff50ffb4575ccc507e277a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"VSgQVZpXDJ4R9ScLWteVrrN-pnoygBTJ\";}'
+    'PHPSESSID' => '02g58ppnov2cm3hf533p2jse95'
+    '_identity' => '4b4b05aa534208e9e9f0691f4133d16ffbfe7879dfed9094b05e77aeb58ef636a:2:{i:0;s:9:\"_identity\";i:1;s:14:\"[1,\"\",2592000]\";}'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:40.0) Gecko/20100101 Firefox/40.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'es,en-US;q=0.7,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://localhost/cms_beta/backend/web/index.php/log/index'
+    'HTTP_COOKIE' => '_csrf=ba2b4fb3d3996bd5b19fa35f6ad1875726f9f9adad7ff50ffb4575ccc507e277a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22VSgQVZpXDJ4R9ScLWteVrrN-pnoygBTJ%22%3B%7D; PHPSESSID=02g58ppnov2cm3hf533p2jse95; _identity=4b4b05aa534208e9e9f0691f4133d16ffbfe7879dfed9094b05e77aeb58ef636a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A14%3A%22%5B1%2C%22%22%2C2592000%5D%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.10 (Ubuntu) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Ubuntu)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/cms_beta/backend/web/index.php'
+    'REMOTE_PORT' => '33738'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'id=1'
+    'REQUEST_URI' => '/cms_beta/backend/web/index.php/log/view?id=1'
+    'SCRIPT_NAME' => '/cms_beta/backend/web/index.php'
+    'PATH_INFO' => '/log/view'
+    'PATH_TRANSLATED' => '/var/www/html/log/view'
+    'PHP_SELF' => '/cms_beta/backend/web/index.php/log/view'
+    'REQUEST_TIME_FLOAT' => 1441744826.866
+    'REQUEST_TIME' => 1441744826
+]
+2015-09-08 20:41:27 [127.0.0.1][-][-][error][yii\base\ErrorException:4] exception 'yii\base\ErrorException' with message 'syntax error, unexpected '',' (T_CONSTANT_ENCAPSED_STRING)' in /var/www/html/cms_beta/backend/views/log/view.php:22
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2015-09-08 20:41:27 [127.0.0.1][-][-][info][application] $_GET = [
+    'id' => '1'
+]
+
+$_COOKIE = [
+    '_csrf' => 'ba2b4fb3d3996bd5b19fa35f6ad1875726f9f9adad7ff50ffb4575ccc507e277a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"VSgQVZpXDJ4R9ScLWteVrrN-pnoygBTJ\";}'
+    'PHPSESSID' => '02g58ppnov2cm3hf533p2jse95'
+    '_identity' => '4b4b05aa534208e9e9f0691f4133d16ffbfe7879dfed9094b05e77aeb58ef636a:2:{i:0;s:9:\"_identity\";i:1;s:14:\"[1,\"\",2592000]\";}'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:40.0) Gecko/20100101 Firefox/40.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'es,en-US;q=0.7,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://localhost/cms_beta/backend/web/index.php/log/index'
+    'HTTP_COOKIE' => '_csrf=ba2b4fb3d3996bd5b19fa35f6ad1875726f9f9adad7ff50ffb4575ccc507e277a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22VSgQVZpXDJ4R9ScLWteVrrN-pnoygBTJ%22%3B%7D; PHPSESSID=02g58ppnov2cm3hf533p2jse95; _identity=4b4b05aa534208e9e9f0691f4133d16ffbfe7879dfed9094b05e77aeb58ef636a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A14%3A%22%5B1%2C%22%22%2C2592000%5D%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.10 (Ubuntu) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Ubuntu)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/cms_beta/backend/web/index.php'
+    'REMOTE_PORT' => '33742'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'id=1'
+    'REQUEST_URI' => '/cms_beta/backend/web/index.php/log/view?id=1'
+    'SCRIPT_NAME' => '/cms_beta/backend/web/index.php'
+    'PATH_INFO' => '/log/view'
+    'PATH_TRANSLATED' => '/var/www/html/log/view'
+    'PHP_SELF' => '/cms_beta/backend/web/index.php/log/view'
+    'REQUEST_TIME_FLOAT' => 1441744887.527
+    'REQUEST_TIME' => 1441744887
+]
+2015-09-08 20:47:49 [127.0.0.1][-][-][error][yii\base\ErrorException:4] exception 'yii\base\ErrorException' with message 'syntax error, unexpected 'back' (T_STRING)' in /var/www/html/cms_beta/backend/views/message/update.php:8
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2015-09-08 20:47:49 [127.0.0.1][-][-][info][application] $_GET = [
+    'id' => '1'
+    'language' => 'en-US'
+]
+
+$_COOKIE = [
+    '_csrf' => 'ba2b4fb3d3996bd5b19fa35f6ad1875726f9f9adad7ff50ffb4575ccc507e277a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"VSgQVZpXDJ4R9ScLWteVrrN-pnoygBTJ\";}'
+    'PHPSESSID' => '02g58ppnov2cm3hf533p2jse95'
+    '_identity' => '4b4b05aa534208e9e9f0691f4133d16ffbfe7879dfed9094b05e77aeb58ef636a:2:{i:0;s:9:\"_identity\";i:1;s:14:\"[1,\"\",2592000]\";}'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:40.0) Gecko/20100101 Firefox/40.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'es,en-US;q=0.7,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://localhost/cms_beta/backend/web/index.php/message/index'
+    'HTTP_COOKIE' => '_csrf=ba2b4fb3d3996bd5b19fa35f6ad1875726f9f9adad7ff50ffb4575ccc507e277a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22VSgQVZpXDJ4R9ScLWteVrrN-pnoygBTJ%22%3B%7D; PHPSESSID=02g58ppnov2cm3hf533p2jse95; _identity=4b4b05aa534208e9e9f0691f4133d16ffbfe7879dfed9094b05e77aeb58ef636a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A14%3A%22%5B1%2C%22%22%2C2592000%5D%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.10 (Ubuntu) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Ubuntu)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/cms_beta/backend/web/index.php'
+    'REMOTE_PORT' => '33850'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'id=1&language=en-US'
+    'REQUEST_URI' => '/cms_beta/backend/web/index.php/message/update?id=1&language=en-US'
+    'SCRIPT_NAME' => '/cms_beta/backend/web/index.php'
+    'PATH_INFO' => '/message/update'
+    'PATH_TRANSLATED' => '/var/www/html/message/update'
+    'PHP_SELF' => '/cms_beta/backend/web/index.php/message/update'
+    'REQUEST_TIME_FLOAT' => 1441745269.36
+    'REQUEST_TIME' => 1441745269
+]

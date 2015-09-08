@@ -4,15 +4,15 @@ namespace backend\controllers;
 
 use Yii;
 use common\models\Message;
-use common\models\SearchMessage;
-use yii\web\Controller;
+use yii\data\ActiveDataProvider;
+use common\controllers\BackController;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
  * MessageController implements the CRUD actions for Message model.
  */
-class MessageController extends Controller
+class MessageController extends BackController
 {
     public function behaviors()
     {
@@ -32,11 +32,11 @@ class MessageController extends Controller
      */
     public function actionIndex()
     {
-        $searchModel = new SearchMessage();
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+        $dataProvider = new ActiveDataProvider([
+            'query' => Message::find(),
+        ]);
 
         return $this->render('index', [
-            'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
         ]);
     }

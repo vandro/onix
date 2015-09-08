@@ -7,8 +7,10 @@ return [
             'generators' => [
                 'crud' => [
                     'class' => 'yii\gii\generators\crud\Generator',
-                    'templates' => ['Gii-ex' => 'backend/gii-ex/default']
-                ]
+                    'templates' => [
+                        'onix' => '@backend/onix/crud/default'
+                    ]
+                ],
             ]
         ]
     ],

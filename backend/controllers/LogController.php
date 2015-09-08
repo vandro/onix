@@ -4,15 +4,15 @@ namespace backend\controllers;
 
 use Yii;
 use backend\models\Log;
-use backend\models\LogSearch;
-use yii\web\Controller;
+use yii\data\ActiveDataProvider;
+use common\controllers\BackController;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
  * LogController implements the CRUD actions for Log model.
  */
-class LogController extends Controller
+class LogController extends BackController
 {
     public function behaviors()
     {
@@ -32,11 +32,11 @@ class LogController extends Controller
      */
     public function actionIndex()
     {
-        $searchModel = new LogSearch();
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+        $dataProvider = new ActiveDataProvider([
+            'query' => Log::find(),
+        ]);
 
         return $this->render('index', [
-            'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
         ]);
     }
