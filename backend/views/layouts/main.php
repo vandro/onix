@@ -1,8 +1,6 @@
 <?php
 use backend\assets\AppAsset;
 use yii\helpers\Html;
-use yii\bootstrap\Nav;
-use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
 
 /* @var $this \yii\web\View */
@@ -31,14 +29,13 @@ AppAsset::register($this);
             <!-- Content Header (Page header) -->
             <section class="content-header">
                 <h1>
-                    Dashboard
-                    <small>Control panel</small>
+                    <?= ucwords(Yii::$app->controller->id) ?>
+                    <small><?= ucwords(Yii::$app->controller->action->id) ?></small>
                 </h1>
-                <ol class="breadcrumb">
-                    <?= Breadcrumbs::widget([
-                        'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
-                    ]) ?>
-                </ol>
+                <?= Breadcrumbs::widget([
+                    'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
+                    'tag' => 'ol'
+                ]) ?>
             </section>
 
             <!-- Main content -->
@@ -51,8 +48,8 @@ AppAsset::register($this);
         <?= $this->render('//layouts/footer') ?>
 
     </div><!-- ./wrapper -->
-
-    <?php $this->endBody() ?>
+    <?php
+    $this->endBody() ?>
 </body>
 </html>
 <?php $this->endPage() ?>

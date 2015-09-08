@@ -10,31 +10,38 @@ use yii\grid\GridView;
 $this->title = Yii::t('back', 'Menus');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="menu-index">
+<div class="row">
+    <div class="col-md-12">
+        <div class="menu-index box box-primary">
+            <div class="box-header with-border">
+                <?= Html::a(Yii::t('back', 'Create Menu'), ['create'], ['class' => 'btn btn-success']) ?>
+            </div>
+            <div class="box-body">
+                <?php \yii\widgets\Pjax::begin();
 
-    <h1><?= Html::encode($this->title) ?></h1>
-    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
+                echo GridView::widget([
+                    'dataProvider' => $dataProvider,
+                    'filterModel' => $searchModel,
+                    'columns' => [
+                        ['class' => 'yii\grid\SerialColumn'],
+                        'id',
+                        'name',
+                        'url',
+                        'icon',
+                        'show',
+                        // 'order',
+                        // 'menu_id',
 
-    <p>
-        <?= Html::a(Yii::t('back', 'Create Menu'), ['create'], ['class' => 'btn btn-success']) ?>
-    </p>
+                        ['class' => 'yii\grid\ActionColumn'],
+                    ],
+                    'tableOptions' => [
+                        'class' => 'table table-hover'
+                    ]
+                ]);
 
-    <?= GridView::widget([
-        'dataProvider' => $dataProvider,
-        'filterModel' => $searchModel,
-        'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
-
-            'id',
-            'name',
-            'url:url',
-            'icon',
-            'show',
-            // 'order',
-            // 'menu_id',
-
-            ['class' => 'yii\grid\ActionColumn'],
-        ],
-    ]); ?>
-
+                \yii\widgets\Pjax::end();
+                ?>
+            </div>
+        </div>
+    </div>
 </div>
