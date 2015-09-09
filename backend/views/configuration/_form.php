@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
+use dosamigos\ckeditor\CKEditor;
 
 /* @var $this yii\web\View */
 /* @var $model backend\models\Configuration */
@@ -38,7 +39,16 @@ use yii\bootstrap\ActiveForm;
 
     <?= $form->field($model, 'port')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'template')->textarea(['rows' => 6]) ?>
+    <?= $form->field($model, 'template')->widget(CKEditor::className(), [
+        'options' => ['rows' => 6],
+        'preset' => 'basic',
+        'clientOptions' => [
+            'allowedContent' => true,
+            'toolbarGroups' => [
+                ['name' => 'editing', 'groups' => ['tools']],
+            ]
+        ]
+    ]) ?>
 
     <div class="form-group">
         <div class="btn-group col-md-offset-5" role="group">

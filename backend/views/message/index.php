@@ -13,25 +13,24 @@ $this->params['breadcrumbs'][] = $this->title;
     <div class="col-md-12">
         <div class="menu-index box box-primary">
             <div class="box-header with-border">
-                <?=   Html::a(Yii::t('back', 'Create Message'), ['create'], ['class' => 'btn btn-success']) ?>
+                <?php /*echo Html::a(Yii::t('back', 'Create Message'), ['create'], ['class' => 'btn btn-success'])*/ ?>
             </div>
             <div class="box-body">
 
-                                    <?php  
-                    \yii\widgets\Pjax::begin();
-                    echo GridView::widget([
+                <?php
+                \yii\widgets\Pjax::begin();
+                echo GridView::widget([
                     'dataProvider' => $dataProvider,
                     'columns' => [
-                                'id',
-            'language',
-            'translation:ntext',
-
-                    ['class' => 'yii\grid\ActionColumn'],
+                        'id',
+                        'language',
+                        'translation:ntext',
+                        ['class' => 'yii\grid\ActionColumn'],
                     ],
-                    ]);
-                    \yii\widgets\Pjax::end();
-                    ?>
-                            </div>
+                ]);
+                \yii\widgets\Pjax::end();
+                ?>
+            </div>
         </div>
     </div>
 </div>

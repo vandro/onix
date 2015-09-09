@@ -2,6 +2,7 @@
 
 namespace backend\controllers;
 
+use common\models\EmailTemplate;
 use Yii;
 use backend\models\Configuration;
 use yii\data\ActiveDataProvider;
@@ -84,6 +85,14 @@ class ConfigurationController extends BackController
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
+
+            /**
+             * Carga el email con estilos
+             */
+            $model->template = $this->renderFile('@backend/views/templates/default_email.php', [
+                'content' => $model->template
+            ]);
+
             return $this->render('update', [
                 'model' => $model,
             ]);
@@ -117,5 +126,23 @@ class ConfigurationController extends BackController
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');
         }
+    }
+
+    /**
+     *
+     */
+    public function actionViewEmailTemplate()
+    {
+
+        $configurationModel = Configuration::find()->one();
+        $content = '';
+
+        if(!is_null($configurationModel)){
+            $content = $configurationModel->template;
+        }
+
+        return $this->renderFile('@backend/views/templates/default_email.php', [
+            'content' => $content
+        ]);
     }
 }

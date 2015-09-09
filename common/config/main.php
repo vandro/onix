@@ -37,5 +37,8 @@ return [
                 ],
             ],
         ],
+        'mailer' => [
+            'class' => 'yii\swiftmailer\Mailer',
+        ],
     ],
 ];

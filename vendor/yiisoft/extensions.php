@@ -237,4 +237,13 @@ return array (
       '@yii/gii' => $vendorDir . '/yiisoft/yii2-gii',
     ),
   ),
+  '2amigos/yii2-ckeditor-widget' => 
+  array (
+    'name' => '2amigos/yii2-ckeditor-widget',
+    'version' => '1.0.4.0',
+    'alias' => 
+    array (
+      '@dosamigos/ckeditor' => $vendorDir . '/2amigos/yii2-ckeditor-widget/src',
+    ),
+  ),
 );

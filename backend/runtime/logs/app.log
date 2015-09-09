@@ -4404,3 +4404,73 @@ $_SERVER = [
     'REQUEST_TIME_FLOAT' => 1441748739.888
     'REQUEST_TIME' => 1441748739
 ]
+2015-09-09 14:23:51 [127.0.0.1][-][-][error][yii\base\InvalidConfigException] exception 'yii\base\InvalidConfigException' with message 'The attribute configuration requires the "attribute" element to determine the value and display label.' in /var/www/html/cms_beta/vendor/yiisoft/yii2/widgets/DetailView.php:214
+Stack trace:
+#0 /var/www/html/cms_beta/vendor/yiisoft/yii2/widgets/DetailView.php(124): yii\widgets\DetailView->normalizeAttributes()
+#1 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/Object.php(107): yii\widgets\DetailView->init()
+#2 [internal function]: yii\base\Object->__construct(Array)
+#3 /var/www/html/cms_beta/vendor/yiisoft/yii2/di/Container.php(372): ReflectionClass->newInstanceArgs(Array)
+#4 /var/www/html/cms_beta/vendor/yiisoft/yii2/di/Container.php(151): yii\di\Container->build('yii\\widgets\\Det...', Array, Array)
+#5 /var/www/html/cms_beta/vendor/yiisoft/yii2/BaseYii.php(344): yii\di\Container->get('yii\\widgets\\Det...', Array, Array)
+#6 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/Widget.php(97): yii\BaseYii::createObject(Array)
+#7 /var/www/html/cms_beta/backend/views/configuration/view.php(41): yii\base\Widget::widget(Array)
+#8 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/View.php(325): require('/var/www/html/c...')
+#9 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/View.php(247): yii\base\View->renderPhpFile('/var/www/html/c...', Array)
+#10 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/View.php(149): yii\base\View->renderFile('/var/www/html/c...', Array, Object(backend\controllers\ConfigurationController))
+#11 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/Controller.php(371): yii\base\View->render('view', Array, Object(backend\controllers\ConfigurationController))
+#12 /var/www/html/cms_beta/backend/controllers/ConfigurationController.php(54): yii\base\Controller->render('view', Array)
+#13 [internal function]: backend\controllers\ConfigurationController->actionView('1')
+#14 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#15 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#16 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('view', Array)
+#17 /var/www/html/cms_beta/vendor/yiisoft/yii2/web/Application.php(84): yii\base\Module->runAction('configuration/v...', Array)
+#18 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#19 /var/www/html/cms_beta/backend/web/index.php(18): yii\base\Application->run()
+#20 {main}
+2015-09-09 14:23:51 [127.0.0.1][-][-][info][application] $_GET = [
+    'id' => '1'
+]
+
+$_COOKIE = [
+    '_identity' => '4b4b05aa534208e9e9f0691f4133d16ffbfe7879dfed9094b05e77aeb58ef636a:2:{i:0;s:9:\"_identity\";i:1;s:14:\"[1,\"\",2592000]\";}'
+    'PHPSESSID' => '2ivbte270ph4eb9pknffdtvft6'
+    '_csrf' => '8c400cae846e37149979bce68053752a6cf413cc9fbd4fabeae540bbaab7ff59a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"ow2_3zYUzGCtYZZr7CIWYeKoHenM3YYj\";}'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:40.0) Gecko/20100101 Firefox/40.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'es,en-US;q=0.7,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://localhost/cms_beta/backend/web/index.php/configuration/update?id=1'
+    'HTTP_COOKIE' => '_identity=4b4b05aa534208e9e9f0691f4133d16ffbfe7879dfed9094b05e77aeb58ef636a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A14%3A%22%5B1%2C%22%22%2C2592000%5D%22%3B%7D; PHPSESSID=2ivbte270ph4eb9pknffdtvft6; _csrf=8c400cae846e37149979bce68053752a6cf413cc9fbd4fabeae540bbaab7ff59a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22ow2_3zYUzGCtYZZr7CIWYeKoHenM3YYj%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.10 (Ubuntu) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Ubuntu)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/cms_beta/backend/web/index.php'
+    'REMOTE_PORT' => '40662'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'id=1'
+    'REQUEST_URI' => '/cms_beta/backend/web/index.php/configuration/view?id=1'
+    'SCRIPT_NAME' => '/cms_beta/backend/web/index.php'
+    'PATH_INFO' => '/configuration/view'
+    'PATH_TRANSLATED' => '/var/www/html/configuration/view'
+    'PHP_SELF' => '/cms_beta/backend/web/index.php/configuration/view'
+    'REQUEST_TIME_FLOAT' => 1441808631.823
+    'REQUEST_TIME' => 1441808631
+]

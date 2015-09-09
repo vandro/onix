@@ -13,7 +13,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <div class="col-md-12">
         <div class="menu-index box box-primary">
             <div class="box-header with-border">
-                <?=   Html::a(Yii::t('back', 'Create Configuration'), ['create'], ['class' => 'btn btn-success']) ?>
+                <?php //echo  Html::a(Yii::t('back', 'Create Configuration'), ['create'], ['class' => 'btn btn-success']) ?>
             </div>
             <div class="box-body">
 
@@ -32,7 +32,10 @@ $this->params['breadcrumbs'][] = $this->title;
             // 'port',
             // 'template:ntext',
 
-                    ['class' => 'yii\grid\ActionColumn'],
+                    [
+                        'class' => 'yii\grid\ActionColumn',
+                        'template' => '{view}{update}'
+                    ],
                     ],
                     ]);
                     \yii\widgets\Pjax::end();
