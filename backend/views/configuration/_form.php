@@ -6,26 +6,26 @@ use dosamigos\ckeditor\CKEditor;
 
 /* @var $this yii\web\View */
 /* @var $model backend\models\Configuration */
-/* @var $form yii\widgets\ActiveForm */
+/* @var $form ActiveForm */
 ?>
 
 <div class="configuration-form box-body">
 
     <?php $form = ActiveForm::begin([
-        'layout' => 'horizontal',
+        'layout'      => 'horizontal',
         'fieldConfig' => [
-            'template' => "{label}\n{beginWrapper}\n{input}\n{hint}\n{error}\n{endWrapper}",
+            'template'             => "{label}\n{beginWrapper}\n{input}\n{hint}\n{error}\n{endWrapper}",
             'horizontalCssClasses' => [
-                'label' => 'col-sm-2',
-                'offset' => 'col-sm-offset-2',
+                'label'   => 'col-sm-2',
+                'offset'  => 'col-sm-offset-2',
                 'wrapper' => 'col-sm-8',
-                'error' => '',
-                'hint' => '',
+                'error'   => '',
+                'hint'    => '',
             ],
         ],
     ]); ?>
 
-        <?= $form->field($model, 'company')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'company')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'email_name')->textInput(['maxlength' => true]) ?>
 
@@ -40,12 +40,13 @@ use dosamigos\ckeditor\CKEditor;
     <?= $form->field($model, 'port')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'template')->widget(CKEditor::className(), [
-        'options' => ['rows' => 6],
-        'preset' => 'basic',
+        'options'       => ['rows' => 6],
+        'preset'        => 'basic',
         'clientOptions' => [
             'allowedContent' => true,
-            'toolbarGroups' => [
+            'toolbarGroups'  => [
                 ['name' => 'editing', 'groups' => ['tools']],
+                ['name' => 'document', 'groups' => ['mode', 'document', 'doctools']],
             ]
         ]
     ]) ?>
@@ -55,7 +56,7 @@ use dosamigos\ckeditor\CKEditor;
             <?= Html::submitButton($model->isNewRecord ? Yii::t('back', 'Create') : Yii::t('back', 'Update'),
                 ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
             <?= Html::a(Yii::t('back', 'Cancel'), \yii\helpers\Url::to(['index']),
-            ['class' => 'btn btn-danger', 'data-confirm' => Yii::t('back', 'Are you sure you want to cancel?')])
+                ['class' => 'btn btn-danger', 'data-confirm' => Yii::t('back', 'Are you sure you want to cancel?')])
             ?>
         </div>
     </div>

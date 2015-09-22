@@ -3,8 +3,10 @@
 namespace backend\controllers;
 
 use common\models\EmailTemplate;
+use kartik\widgets\Growl;
 use Yii;
 use backend\models\Configuration;
+use yii\base\DynamicModel;
 use yii\data\ActiveDataProvider;
 use common\controllers\BackController;
 use yii\web\NotFoundHttpException;
@@ -19,7 +21,7 @@ class ConfigurationController extends BackController
     {
         return [
             'verbs' => [
-                'class' => VerbFilter::className(),
+                'class'   => VerbFilter::className(),
                 'actions' => [
                     'delete' => ['post'],
                 ],
@@ -44,7 +46,9 @@ class ConfigurationController extends BackController
 
     /**
      * Displays a single Configuration model.
+     *
      * @param integer $id
+     *
      * @return mixed
      */
     public function actionView($id)
@@ -75,7 +79,9 @@ class ConfigurationController extends BackController
     /**
      * Updates an existing Configuration model.
      * If update is successful, the browser will be redirected to the 'view' page.
+     *
      * @param integer $id
+     *
      * @return mixed
      */
     public function actionUpdate($id)
@@ -85,7 +91,6 @@ class ConfigurationController extends BackController
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
-
             /**
              * Carga el email con estilos
              */
@@ -102,7 +107,9 @@ class ConfigurationController extends BackController
     /**
      * Deletes an existing Configuration model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
+     *
      * @param integer $id
+     *
      * @return mixed
      */
     public function actionDelete($id)
@@ -115,13 +122,15 @@ class ConfigurationController extends BackController
     /**
      * Finds the Configuration model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
+     *
      * @param integer $id
+     *
      * @return Configuration the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = Configuration::findOne($id)) !== null) {
+        if (( $model = Configuration::findOne($id) ) !== null) {
             return $model;
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');
@@ -129,15 +138,14 @@ class ConfigurationController extends BackController
     }
 
     /**
-     *
+     * View the email template saved in DB
      */
     public function actionViewEmailTemplate()
     {
-
         $configurationModel = Configuration::find()->one();
-        $content = '';
+        $content            = '';
 
-        if(!is_null($configurationModel)){
+        if ( ! is_null($configurationModel)) {
             $content = $configurationModel->template;
         }
 
@@ -145,4 +153,45 @@ class ConfigurationController extends BackController
             'content' => $content
         ]);
     }
+
+    /**
+     * Send test email with the email template
+     */
+    public function actionSendTestEmail()
+    {
+        $model = new DynamicModel(['email']);
+        $model->addRule(['email'], 'required');
+        $model->addRule(['email'], 'email');
+
+        if (isset( $_POST['DynamicModel'] )) {
+            $model->attributes = $_POST['DynamicModel'];
+
+            if ($model->validate()) {
+                /**
+                 * @var Configuration $template_model
+                 */
+
+                $html_text      = Yii::t('back', 'This is a test mail');
+                $template_model = Configuration::find()->one();
+
+                if ( ! is_null($template_model)) {
+
+                    $sent_success = \Yii::$app->mailer->sendWithTemplate($model->email,
+                        \Yii::t('app', 'Test email for ') . $model->email,
+                        $html_text
+                    );
+
+                    if ($sent_success) {
+                        Yii::$app->getSession()->setFlash(Growl::TYPE_SUCCESS, Yii::t('back', 'The test mail was sent successfully'));
+                        $this->redirect('index');
+                    }
+                }
+            }
+        }
+
+        return $this->render('formSendTestEmail', [
+            'model' => $model
+        ]);
+    }
 }
+

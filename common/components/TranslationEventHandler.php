@@ -3,8 +3,8 @@
 namespace common\components;
 
 use yii\i18n\MissingTranslationEvent;
-use common\models\SourceMessage;
-use common\models\Message;
+use backend\models\SourceMessage;
+use backend\models\Message;
 
 class TranslationEventHandler
 {

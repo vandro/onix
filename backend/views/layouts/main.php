@@ -19,37 +19,40 @@ AppAsset::register($this);
     <?php $this->head() ?>
 </head>
 <body class="skin-blue wysihtml5-supported">
-    <?php $this->beginBody() ?>
-    <div class="wrapper">
-        <?= $this->render('//layouts/header') ?>
+<?php $this->beginBody() ?>
+<div class="wrapper">
+    <?= $this->render('//layouts/header') ?>
 
-        <?= $this->render('//layouts/menu') ?>
+    <?= $this->render('//layouts/menu') ?>
 
-        <div class="content-wrapper">
-            <!-- Content Header (Page header) -->
-            <section class="content-header">
-                <h1>
-                    <?= ucwords(Yii::$app->controller->id) ?>
-                    <small><?= ucwords(Yii::$app->controller->action->id) ?></small>
-                </h1>
-                <?= Breadcrumbs::widget([
-                    'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
-                    'tag' => 'ol'
-                ]) ?>
-            </section>
+    <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+            <h1>
+                <?= ucwords(Yii::$app->controller->id) ?>
+                <small><?= ucwords(Yii::$app->controller->action->id) ?></small>
+            </h1>
+            <?= Breadcrumbs::widget([
+                'links' => isset( $this->params['breadcrumbs'] ) ? $this->params['breadcrumbs'] : [],
+                'tag'   => 'ol'
+            ]) ?>
+        </section>
 
-            <!-- Main content -->
-            <section class="content">
-                <?= $content ?>
-            </section><!-- /.content -->
+        <!-- Main content -->
+        <section class="content">
+            <?= $content ?>
+        </section>
+        <!-- /.content -->
 
-        </div><!-- /.content-wrapper -->
+    </div>
+    <!-- /.content-wrapper -->
 
-        <?= $this->render('//layouts/footer') ?>
+    <?= $this->render('//layouts/footer') ?>
 
-    </div><!-- ./wrapper -->
-    <?php
-    $this->endBody() ?>
+</div>
+<!-- ./wrapper -->
+<?php
+$this->endBody() ?>
 </body>
 </html>
 <?php $this->endPage() ?>

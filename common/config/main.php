@@ -1,44 +1,67 @@
 <?php
 
 return [
+    'language'   => 'es-co',
     'vendorPath' => dirname(dirname(__DIR__)) . '/vendor',
+    'modules'    => [],
     'components' => [
-        'cache' => [
+        'cache'       => [
             'class' => 'yii\caching\FileCache',
         ],
-        'i18n' => [
+        'i18n'        => [
             'translations' => [
-                '*' => [
-                    'class' => yii\i18n\DbMessageSource::className(),
-                    'forceTranslation' => true,
-                    'sourceLanguage' => 'es-CO',
-                    'on missingTranslation' => ['common\components\TranslationEventHandler', 'handleMissingTranslation'],
+                '*'          => [
+                    'class'                 => yii\i18n\DbMessageSource::className(),
+                    'forceTranslation'      => true,
+                    'sourceLanguage'        => 'es-CO',
+                    'on missingTranslation' => [
+                        'common\components\TranslationEventHandler',
+                        'handleMissingTranslation'
+                    ],
+                ],
+                'rbac-admin' => [
+                    'class'                 => yii\i18n\DbMessageSource::className(),
+                    'forceTranslation'      => true,
+                    'on missingTranslation' => [
+                        'common\components\TranslationEventHandler',
+                        'handleMissingTranslation'
+                    ],
                 ]
             ],
         ],
-        'urlManager' => [
-            'class' => 'yii\web\UrlManager',
-            // Disable index.php
-//            'showScriptName' => false,
-            // Disable r= routes
-            'enablePrettyUrl' => true,
-            'rules' => [
-//                '<controller:\w+>/' => 'backend/<controller>/admin  ',
-//                '<controller:\w+>/<action:\w+>' => 'backend/<controller>/<action>',
-//                '<controller:\w+>/<id:\d+>' => 'backend/<controller>/view',
-//                '<controller:\w+>/<action:\w+>/<id:\d+>' => 'backend/<controller>/<action>',
+        'urlManager'  => [
+            'class'                        => 'codemix\localeurls\UrlManager',
+            'showScriptName'               => false,
+            'enablePrettyUrl'              => true,
+            'languages'                    => [
+                'en-us',
+                'es-co'
             ],
+            'enableDefaultLanguageUrlCode' => true,
+            'enableLanguagePersistence'    => true,
         ],
-        'log' => [
+        'log'         => [
             'targets' => [
                 [
-                    'class' => 'yii\log\DbTarget',
+                    'class'  => 'yii\log\DbTarget',
                     'levels' => ['error', 'warning'],
                 ],
             ],
         ],
-        'mailer' => [
-            'class' => 'yii\swiftmailer\Mailer',
+        'mailer'      => [
+            'class'     => 'common\components\OnixMailer',
+            'transport' => [
+                'class' => 'Swift_SmtpTransport'
+            ],
         ],
+        'authManager' => [
+            'class' => 'yii\rbac\DbManager',
+        ],
+    ],
+    'as access'  => [
+        'class'        => 'mdm\admin\components\AccessControl',
+        'allowActions' => [
+            '*',
+        ]
     ],
 ];

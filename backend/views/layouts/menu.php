@@ -7,6 +7,7 @@
  */
 
 use backend\models\Menu;
+
 ?>
 
 <aside class="main-sidebar">
@@ -15,7 +16,8 @@ use backend\models\Menu;
         <!-- Sidebar user panel -->
         <div class="user-panel">
             <div class="pull-left image">
-                <?= \yii\helpers\Html::img('@web/dist/img/user2-160x160.jpg', ['class' => 'img-circle', 'alt' => 'User Image']) ?>
+                <?= \yii\helpers\Html::img('@web/uploads/' . Yii::$app->user->identity->picture,
+                    ['class' => 'img-circle', 'alt' => 'User Image']) ?>
             </div>
             <div class="pull-left info">
                 <p><?= Yii::$app->user->identity->username ?></p>
@@ -27,17 +29,18 @@ use backend\models\Menu;
             <div class="input-group">
                 <input type="text" name="q" class="form-control" placeholder="Search..."/>
               <span class="input-group-btn">
-                <button type='submit' name='search' id='search-btn' class="btn btn-flat"><i class="fa fa-search"></i></button>
+                <button type='submit' name='search' id='search-btn' class="btn btn-flat"><i class="fa fa-search"></i>
+                </button>
               </span>
             </div>
         </form>
         <!-- /.search form -->
         <!-- sidebar menu: : style can be found in sidebar.less -->
-        <?php 
+        <?php
         echo yii\widgets\Menu::widget([
-            'items' => Menu::buildMenu(),
+            'items'           => Menu::buildMenu(),
             'activateParents' => true,
-            'options' => [
+            'options'         => [
                 'class' => 'sidebar-menu'
             ],
             'submenuTemplate' => Menu::SUBMENU_TEMPLATE,

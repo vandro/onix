@@ -7,7 +7,7 @@ class m150908_212902_create_conf_table extends Migration
 {
     public function up()
     {
-        $this->execute("CREATE TABLE IF NOT EXISTS `cms-beta`.`configuration` (
+        $this->execute("CREATE TABLE IF NOT EXISTS `configuration` (
   `id` INT NOT NULL AUTO_INCREMENT COMMENT '',
   `company` VARCHAR(120) NOT NULL COMMENT '',
   `email_name` VARCHAR(120) NOT NULL COMMENT '',

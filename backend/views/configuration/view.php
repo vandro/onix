@@ -15,6 +15,7 @@ $this->params['breadcrumbs'][] = $this->title;
         <div class="menu-index box box-primary">
             <div class="box-header with-border">
                 <?= Html::a(Yii::t('back', 'Update'), ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
+                <?= Html::a(Yii::t('back', 'Send Test Email'), ['send-test-email'], ['class' => 'btn btn-success']) ?>
                 <?php /*echo Html::a(Yii::t('back', 'Delete'), ['delete', 'id' => $model->id], [
                         'class' => 'btn btn-danger',
                         'data' => [
@@ -33,9 +34,7 @@ $this->params['breadcrumbs'][] = $this->title;
                         'host',
                         'encryption',
                         'username',
-//                        'password',
                         'port',
-//                        'template',
                         [
                             'attribute' => 'template',
                             'format' => 'raw',

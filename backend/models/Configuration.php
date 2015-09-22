@@ -19,6 +19,7 @@ use Yii;
  */
 class Configuration extends \yii\db\ActiveRecord
 {
+    const EMAIL_CONTENT_TEMPLATE = '__CONTENT__';
     /**
      * @inheritdoc
      */

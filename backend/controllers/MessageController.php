@@ -4,7 +4,7 @@ namespace backend\controllers;
 
 use Yii;
 use common\models\Message;
-use yii\data\ActiveDataProvider;
+use backend\models\SearchMessage;
 use common\controllers\BackController;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -32,11 +32,11 @@ class MessageController extends BackController
      */
     public function actionIndex()
     {
-        $dataProvider = new ActiveDataProvider([
-            'query' => Message::find(),
-        ]);
+        $searchModel = new SearchMessage();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
+            'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
         ]);
     }
@@ -44,13 +44,12 @@ class MessageController extends BackController
     /**
      * Displays a single Message model.
      * @param integer $id
-     * @param string $language
      * @return mixed
      */
-    public function actionView($id, $language)
+    public function actionView($id)
     {
         return $this->render('view', [
-            'model' => $this->findModel($id, $language),
+            'model' => $this->findModel($id),
         ]);
     }
 
@@ -64,7 +63,7 @@ class MessageController extends BackController
         $model = new Message();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id, 'language' => $model->language]);
+            return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('create', [
                 'model' => $model,
@@ -76,15 +75,14 @@ class MessageController extends BackController
      * Updates an existing Message model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
-     * @param string $language
      * @return mixed
      */
-    public function actionUpdate($id, $language)
+    public function actionUpdate($id)
     {
-        $model = $this->findModel($id, $language);
+        $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id, 'language' => $model->language]);
+            return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('update', [
                 'model' => $model,
@@ -96,12 +94,11 @@ class MessageController extends BackController
      * Deletes an existing Message model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
-     * @param string $language
      * @return mixed
      */
-    public function actionDelete($id, $language)
+    public function actionDelete($id)
     {
-        $this->findModel($id, $language)->delete();
+        $this->findModel($id)->delete();
 
         return $this->redirect(['index']);
     }
@@ -110,13 +107,12 @@ class MessageController extends BackController
      * Finds the Message model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @param string $language
      * @return Message the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
-    protected function findModel($id, $language)
+    protected function findModel($id)
     {
-        if (($model = Message::findOne(['id' => $id, 'language' => $language])) !== null) {
+        if (($model = Message::findOne(['id' => $id])) !== null) {
             return $model;
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');

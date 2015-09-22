@@ -42,7 +42,8 @@ class Menu extends \yii\db\ActiveRecord
         return [
             [['name', 'url', 'icon', 'order'], 'required'],
             [['show', 'order', 'menu_id'], 'integer'],
-            [['name', 'url', 'icon'], 'string', 'max' => 45]
+            [['name', 'icon'], 'string', 'max' => 45],
+            [['url'], 'string', 'max' => 255]
         ];
     }
 
@@ -118,7 +119,7 @@ class Menu extends \yii\db\ActiveRecord
             }
 
             array_push($menu, [
-                'label' => $child->name,
+                'label' => Yii::t('back', $child->name),
                 'url' => Url::to(['//' . $child->url]),
                 'visible' => $child->show,
                 'active' => $active,

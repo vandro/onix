@@ -11,7 +11,7 @@ class m150416_024324_menu extends Migration
         CREATE TABLE IF NOT EXISTS `menu` (
             `id` INT NOT NULL AUTO_INCREMENT,
             `name` VARCHAR(45) NOT NULL,
-            `url` VARCHAR(45) NOT NULL,
+            `url` VARCHAR(255) NOT NULL,
             `icon` VARCHAR(45) NOT NULL,
             `show` TINYINT NOT NULL default 1,
             `order` TINYINT NOT NULL,
