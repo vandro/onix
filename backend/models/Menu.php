@@ -44,7 +44,14 @@ class Menu extends \yii\db\ActiveRecord
             [['show', 'order', 'menu_id'], 'integer'],
             [['name', 'icon'], 'string', 'max' => 45],
             [['url'], 'string', 'max' => 255],
-            [['menu_id'], 'filterParent']
+            [['menu_id'], 'filterParent'],
+            [['url'], 'matchWilcards'],
+            /*[
+                ['url'],
+                'in',
+                'range'   => static::getSavedRoutes(),
+                'message' => Yii::t('back', 'Route "{value}" not assigned.')
+            ]*/
         ];
     }
 
@@ -81,9 +88,14 @@ class Menu extends \yii\db\ActiveRecord
     }
 
     /**
+     * Puede recibir como parametro el id del padre o el objeto para ahorrar la consulta
+     *
+     * @param integer|null $parentId
+     * @param Menu|null $parent_Obj
+     *
      * @return array() menu construido para ser utilizado con Nav::widget()
      */
-    public static function buildMenu($parentId = null)
+    public static function buildMenu($parentId = null, $parent_Obj = null)
     {
         $menu = [];
 
@@ -97,15 +109,19 @@ class Menu extends \yii\db\ActiveRecord
                 'template'        => self::buildTemplate("fa-dashboard", false),
                 'submenuTemplate' => self::SUBMENU_TEMPLATE
             ]);
-        } else {
+        } elseif (is_numeric($parentId)) {
             $where = 'menu_id = :menu_id';
         }
 
-        $children = self::find()
-                        ->with('menus')
-                        ->where($where, is_null($parentId) ? [] : [':menu_id' => $parentId])
-                        ->orderBy('order ASC')
-                        ->all();
+        if ($parent_Obj instanceof Menu) {
+            $children = $parent_Obj->menus;
+        } else {
+            $children = self::find()
+                            ->with('menus')
+                            ->where($where, is_null($parentId) ? [] : [':menu_id' => $parentId])
+                            ->orderBy('order ASC')
+                            ->all();
+        }
 
         foreach ($children as $key => $child) {
 
@@ -116,16 +132,27 @@ class Menu extends \yii\db\ActiveRecord
                 $active = self::findActiveChild($child->menus);
             }
 
-            array_push($menu, [
-                'label'           => Yii::t('back', $child->name),
-                'url'             => Url::to(['//' . $child->url]),
-                'visible'         => $child->show,
-                'active'          => $active,
-                'items'           => ( count($child->menus) > 0 ) ? self::buildMenu($child->id) : [],
-                'template'        => self::buildTemplate($child->icon, ( count($child->menus) > 0 )),
-                'submenuTemplate' => self::SUBMENU_TEMPLATE
-            ]);
+            if ($child->url == "#" || self::validateRoute($child->url)) {
+
+                $children_menu = [];
+
+                if (( count($child->menus) > 0 )) {
+                    $children_menu = self::buildMenu($child->id);
+                }
+
+                array_push($menu, [
+                    'label'           => Yii::t('back', $child->name),
+                    'url'             => Url::to(['//' . $child->url]),
+                    'visible'         => ( $child->show == 1 ),
+                    'active'          => $active,
+                    'items'           => $children_menu,
+                    'template'        => self::buildTemplate($child->icon, ( count($children_menu) > 0 )),
+                    'submenuTemplate' => self::SUBMENU_TEMPLATE
+                ]);
+            }
         }
+
+        $menu = self::clearEmpty($menu);
 
         return $menu;
     }
@@ -175,7 +202,7 @@ class Menu extends \yii\db\ActiveRecord
             $has_active_children = self::findActiveChild($child->menus);
 
             if ($has_active_children) {
-                return true;
+                $active = true;
             }
         } //Si el menu corresponde a un modulo que funciona con la ruta "modulo/controlador"
         elseif (isset( Yii::$app->modules[$identifier_menu] )) {
@@ -194,19 +221,96 @@ class Menu extends \yii\db\ActiveRecord
      */
     public function filterParent()
     {
-        $value = $this->menu_id;
+        $value  = $this->menu_id;
         $parent = self::findOne(['id' => $value]);
         if ($parent) {
-            $id = $this->id;
+            $id        = $this->id;
             $parent_id = $parent->id;
-            while ($parent) {
+            while($parent) {
                 if ($parent->id == $id) {
                     $this->addError('menu_id', Yii::t('back', 'A loop has been detected, please select another parent'));
+
                     return;
                 }
                 $parent = $parent->menu;
             }
-            $this->parent = $parent_id;
+            $this->menu_id = $parent_id;
         }
+    }
+
+    /**
+     * Get saved routes. //Solo lo deja tocar las rutas que tenga asignadas
+     * @return array
+     */
+    public static function getSavedRoutes()
+    {
+        $result = [];
+        foreach (Yii::$app->getAuthManager()->getPermissions() as $name => $value) {
+            if ($name[0] === '/') {
+                $name[0]  = "";
+                $result[] = trim($name);
+            }
+        }
+
+        return $result;
+    }
+
+    /**
+     * @param $attribute
+     * @param $value
+     */
+    public function matchWilcards()
+    {
+        $no_errors = self::validateRoute();
+
+        if ($no_errors == true) {
+            return true;
+        } else {
+            $this->addError('url', Yii::t('back', 'Route "{value}" not assigned to current user.', ["value" => $this->url]));
+        }
+
+    }
+
+    public function validateRoute($route = false)
+    {
+        if ( ! is_string($route) && $route == false) {
+            $route = $this->url;
+        }
+
+        $allowed_routes = self::getSavedRoutes();
+
+        foreach ($allowed_routes as $possible_route) {
+            if ($possible_route == "*") {
+                return true;
+            } else {
+                $count = 0;
+                str_replace(str_replace('/*', '', $possible_route), '', $route, $count);
+
+                if ($count > 0) {
+                    return true;
+                }
+            }
+        }
+
+        return false;
+    }
+
+    /**
+     * @param $array array
+     *
+     * @return array menu limpio
+     */
+    public static function clearEmpty($menu_items)
+    {
+        foreach ($menu_items as $key => $menu_item) {
+            if (isset( $menu_item['label'] ) && $menu_item['label'] != Yii::t("back", "Dashboard")) {
+                if (empty( $menu_item['items'] ) && $menu_item['url'] == '') {
+                    VarDumper::dump($menu_item, 10, true);
+                    unset( $menu_items[$key] );
+                }
+            }
+        }
+
+        return array_values($menu_items);
     }
 }

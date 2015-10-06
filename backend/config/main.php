@@ -34,6 +34,15 @@ return [
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
+        'authManager'  => [
+            'class' => 'yii\rbac\DbManager',
+        ],
+    ],
+    'as access'           => [
+        'class'        => 'mdm\admin\components\AccessControl',
+        'allowActions' => [
+            '*',
+        ]
     ],
     'params'              => $params,
 ];

@@ -1,22 +1,19 @@
 <?php
 namespace backend\controllers;
 
-use common\models\User;
 use Yii;
 use yii\filters\AccessControl;
-use yii\helpers\VarDumper;
-use yii\web\Controller;
 use common\models\LoginForm;
 use common\models\PasswordResetRequestForm;
-use common\models\ResetPasswordForm;
 use yii\filters\VerbFilter;
 use yii\web\Response;
 use yii\widgets\ActiveForm;
+use common\controllers\BackController;
 
 /**
  * Site controller
  */
-class SiteController extends Controller
+class SiteController extends BackController
 {
     /**
      * @inheritdoc

@@ -17,18 +17,6 @@ use yii\filters\VerbFilter;
  */
 class ConfigurationController extends BackController
 {
-    public function behaviors()
-    {
-        return [
-            'verbs' => [
-                'class'   => VerbFilter::className(),
-                'actions' => [
-                    'delete' => ['post'],
-                ],
-            ],
-        ];
-    }
-
     /**
      * Lists all Configuration models.
      * @return mixed

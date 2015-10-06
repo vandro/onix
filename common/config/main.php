@@ -5,10 +5,10 @@ return [
     'vendorPath' => dirname(dirname(__DIR__)) . '/vendor',
     'modules'    => [],
     'components' => [
-        'cache'       => [
+        'cache'      => [
             'class' => 'yii\caching\FileCache',
         ],
-        'i18n'        => [
+        'i18n'       => [
             'translations' => [
                 '*'          => [
                     'class'                 => yii\i18n\DbMessageSource::className(),
@@ -29,7 +29,7 @@ return [
                 ]
             ],
         ],
-        'urlManager'  => [
+        'urlManager' => [
             'class'                        => 'codemix\localeurls\UrlManager',
             'showScriptName'               => false,
             'enablePrettyUrl'              => true,
@@ -40,7 +40,7 @@ return [
             'enableDefaultLanguageUrlCode' => true,
             'enableLanguagePersistence'    => true,
         ],
-        'log'         => [
+        'log'        => [
             'targets' => [
                 [
                     'class'  => 'yii\log\DbTarget',
@@ -48,20 +48,13 @@ return [
                 ],
             ],
         ],
-        'mailer'      => [
+        'mailer'     => [
             'class'     => 'common\components\OnixMailer',
             'transport' => [
                 'class' => 'Swift_SmtpTransport'
             ],
         ],
-        'authManager' => [
-            'class' => 'yii\rbac\DbManager',
-        ],
+
     ],
-    'as access'  => [
-        'class'        => 'mdm\admin\components\AccessControl',
-        'allowActions' => [
-            '*',
-        ]
-    ],
+
 ];

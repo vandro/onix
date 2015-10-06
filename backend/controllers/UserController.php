@@ -18,18 +18,6 @@ use yii\web\UploadedFile;
  */
 class UserController extends BackController
 {
-    public function behaviors()
-    {
-        return [
-            'verbs' => [
-                'class'   => VerbFilter::className(),
-                'actions' => [
-                    'delete' => ['post'],
-                ],
-            ],
-        ];
-    }
-
     /**
      * Lists all User models.
      * @return mixed
