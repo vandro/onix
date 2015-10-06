@@ -4757,6 +4757,11 @@ Gradient Background colors
     max-width: 160px;
 }
 
+.file-preview-frame > img {
+    max-height: 200px;
+    max-width: 200px;
+}
+
 /*
  * Misc: print
  * -----------

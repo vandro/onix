@@ -13,7 +13,7 @@ use kartik\growl\Growl;
             <p class="pull-left">&copy; <?= Yii::$app->params['companyName'] . ' ' . date('Y') ?></p>
 
             <p class="pull-right"><?= Yii::powered() ?> & <?= \yii\helpers\Html::a(Yii::$app->params['companyName'],
-                    Yii::$app->params['companyUrl']) ?></p>
+                    Yii::$app->params['companyUrl'], ['target' => '_blank']) ?></p>
         </div>
     </footer>
 

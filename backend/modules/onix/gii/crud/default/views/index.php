@@ -13,7 +13,7 @@ echo "<?php\n";
 ?>
 
 use yii\helpers\Html;
-use<?= $generator->indexWidgetType === 'grid' ? "yii\\grid\\GridView" : "yii\\widgets\\ListView" ?>;
+use <?= $generator->indexWidgetType === 'grid' ? "yii\\grid\\GridView" : "yii\\widgets\\ListView" ?>;
 
 /* @var $this yii\web\View */
 <?= !empty($generator->searchModelClass) ? "/* @var \$searchModel " . ltrim($generator->searchModelClass,
@@ -27,8 +27,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <div class="col-md-12">
         <div class="menu-index box box-primary">
             <div class="box-header with-border">
-                <?= "<?=  " ?> Html::a(Yii::t('back',
-                'Create <?= Inflector::camel2words(StringHelper::basename($generator->modelClass)) ?>'), ['create'],
+                <?= "<?=  " ?> Html::a(Yii::t('back', 'Create') . ' ' . Yii::t('back', '<?= Inflector::camel2words(StringHelper::basename($generator->modelClass)) ?>'), ['create'],
                 ['class' => 'btn btn-success']) ?>
             </div>
             <div class="box-body">
