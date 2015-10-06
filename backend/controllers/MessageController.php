@@ -14,18 +14,6 @@ use yii\filters\VerbFilter;
  */
 class MessageController extends BackController
 {
-    public function behaviors()
-    {
-        return [
-            'verbs' => [
-                'class' => VerbFilter::className(),
-                'actions' => [
-                    'delete' => ['post'],
-                ],
-            ],
-        ];
-    }
-
     /**
      * Lists all Message models.
      * @return mixed

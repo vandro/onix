@@ -273,22 +273,33 @@ class Menu extends \yii\db\ActiveRecord
 
     public function validateRoute($route = false)
     {
-        if ( ! is_string($route) && $route == false) {
-            $route = $this->url;
+        $user = Yii::$app->getUser();
+
+        if ($user->can('/*')) {
+            return true;
+        }
+
+        if (is_string($route)) {
+            $route = explode('?', $route)[0];
+        }
+
+        if (is_string($route) && $route != false) {
+            $route_segmented                              = explode('/', $route);
+            $route_segmented[count($route_segmented) - 1] = '*';
+            $route_alt                                    = implode('/', $route_segmented);
+
+            return $user->can('/' . $route) or $user->can('/' . $route_alt);
         }
 
         $allowed_routes = self::getSavedRoutes();
 
         foreach ($allowed_routes as $possible_route) {
-            if ($possible_route == "*") {
-                return true;
-            } else {
-                $count = 0;
-                str_replace(str_replace('/*', '', $possible_route), '', $route, $count);
+            $route_segmented                              = explode('/', $possible_route);
+            $route_segmented[count($route_segmented) - 1] = '*';
+            $route_alt                                    = implode('/', $route_segmented);
 
-                if ($count > 0) {
-                    return true;
-                }
+            if ($user->can('/' . $possible_route) || $user->can('/' . $route_alt)) {
+                return true;
             }
         }
 
@@ -304,8 +315,8 @@ class Menu extends \yii\db\ActiveRecord
     {
         foreach ($menu_items as $key => $menu_item) {
             if (isset( $menu_item['label'] ) && $menu_item['label'] != Yii::t("back", "Dashboard")) {
-                if (empty( $menu_item['items'] ) && $menu_item['url'] == '') {
-                    VarDumper::dump($menu_item, 10, true);
+                $clean_url = str_replace(strtolower(Yii::$app->request->baseUrl . '/' . Yii::$app->language . '/'), '', $menu_item['url']);
+                if (empty( $menu_item['items'] ) && ( $clean_url == '' || $clean_url == '#' )) {
                     unset( $menu_items[$key] );
                 }
             }

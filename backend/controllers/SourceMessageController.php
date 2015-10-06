@@ -14,17 +14,6 @@ use yii\filters\VerbFilter;
  * SourceMessageController implements the CRUD actions for SourceMessage model.
  */
 class SourceMessageController extends BackController {
-	public function behaviors() {
-		return [
-			'verbs' => [
-				'class'   => VerbFilter::className(),
-				'actions' => [
-					'delete' => [ 'post' ],
-				],
-			],
-		];
-	}
-
 	/**
 	 * Lists all SourceMessage models.
 	 * @return mixed
