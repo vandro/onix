@@ -18,6 +18,10 @@ return [
         ]
     ],
     'components'          => [
+        'session'      => [
+            'class' => \yii\web\DbSession::className(),
+
+        ],
         'user'         => [
             'identityClass'   => 'common\models\User',
             'enableAutoLogin' => true,

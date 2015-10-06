@@ -45,7 +45,6 @@ use backend\models\Menu;
             ],
             'submenuTemplate' => Menu::SUBMENU_TEMPLATE,
         ]);
-//        exit;
         ?>
     </section>
     <!-- /.sidebar -->

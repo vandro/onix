@@ -38040,3 +38040,130 @@ $_SERVER = [
     'REQUEST_TIME_FLOAT' => 1442950591.982
     'REQUEST_TIME' => 1442950591
 ]
+2015-10-06 08:23:56 [127.0.0.1][1][-][error][yii\i18n\PhpMessageSource::loadMessages] The message file for category 'app' does not exist: /var/www/html/cms_beta/backend/messages/es-CO/app.php Fallback file does not exist as well: /var/www/html/cms_beta/backend/messages/es/app.php
+    in /var/www/html/cms_beta/backend/controllers/ConfigurationController.php:168
+2015-10-06 08:23:56 [127.0.0.1][1][-][info][application] $_POST = [
+    '_csrf' => 'R3o4YVhwNFchOH8.aEQEGn9KCTAIBF04L0J6B25BVQcxKncQKwpQGw=='
+    'DynamicModel' => [
+        'email' => 'devsolarte@gmail.com'
+    ]
+]
+
+$_COOKIE = [
+    '_language' => '9668d1671fba272ff8f742338f02674d5275736751009301b4f63d8649568dd1a:2:{i:0;s:9:\"_language\";i:1;s:5:\"es-CO\";}'
+    '__atuvc' => '166|38,142|39'
+    '_identity' => '4b4b05aa534208e9e9f0691f4133d16ffbfe7879dfed9094b05e77aeb58ef636a:2:{i:0;s:9:\"_identity\";i:1;s:14:\"[1,\"\",2592000]\";}'
+    '_csrf' => 'a209be683f8e2b72a4a5da20eb021d4e0045d502101088f1090cb7409b1ac3b6a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"fBG_040M801QPtioh8Bf61aPvPOqszdL\";}'
+    'PHPSESSID' => 'd10bj4o10402nvotm7rnck1ea1'
+]
+
+$_SESSION = [
+    '__flash' => [
+        'success' => 1
+    ]
+    '__id' => 1
+    '_language' => 'es-CO'
+    'success' => 'The test mail was sent successfully'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:40.0) Gecko/20100101 Firefox/40.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'es,en-US;q=0.7,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://localhost/cms_beta/backend/web/es-co/configuration/send-test-email'
+    'HTTP_COOKIE' => '_language=9668d1671fba272ff8f742338f02674d5275736751009301b4f63d8649568dd1a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_language%22%3Bi%3A1%3Bs%3A5%3A%22es-CO%22%3B%7D; __atuvc=166%7C38%2C142%7C39; _identity=4b4b05aa534208e9e9f0691f4133d16ffbfe7879dfed9094b05e77aeb58ef636a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A14%3A%22%5B1%2C%22%22%2C2592000%5D%22%3B%7D; _csrf=a209be683f8e2b72a4a5da20eb021d4e0045d502101088f1090cb7409b1ac3b6a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22fBG_040M801QPtioh8Bf61aPvPOqszdL%22%3B%7D; PHPSESSID=d10bj4o10402nvotm7rnck1ea1'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'CONTENT_LENGTH' => '113'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.10 (Ubuntu) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Ubuntu)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/cms_beta/backend/web/index.php'
+    'REMOTE_PORT' => '46607'
+    'REDIRECT_URL' => '/cms_beta/backend/web/es-co/configuration/send-test-email'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/cms_beta/backend/web/es-co/configuration/send-test-email'
+    'SCRIPT_NAME' => '/cms_beta/backend/web/index.php'
+    'PHP_SELF' => '/cms_beta/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1444119836.864
+    'REQUEST_TIME' => 1444119836
+]
+2015-10-06 08:25:30 [127.0.0.1][1][d10bj4o10402nvotm7rnck1ea1][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "gii".' in /var/www/html/cms_beta/vendor/yiisoft/yii2/base/Module.php:461
+Stack trace:
+#0 /var/www/html/cms_beta/vendor/yiisoft/yii2/web/Application.php(84): yii\base\Module->runAction('gii', Array)
+#1 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /var/www/html/cms_beta/backend/web/index.php(18): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Página no encontrada.' in /var/www/html/cms_beta/vendor/yiisoft/yii2/web/Application.php:96
+Stack trace:
+#0 /var/www/html/cms_beta/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 /var/www/html/cms_beta/backend/web/index.php(18): yii\base\Application->run()
+#2 {main}
+2015-10-06 08:25:30 [127.0.0.1][1][d10bj4o10402nvotm7rnck1ea1][info][application] $_COOKIE = [
+    '_language' => '9668d1671fba272ff8f742338f02674d5275736751009301b4f63d8649568dd1a:2:{i:0;s:9:\"_language\";i:1;s:5:\"es-CO\";}'
+    '__atuvc' => '166|38,142|39'
+    '_identity' => '4b4b05aa534208e9e9f0691f4133d16ffbfe7879dfed9094b05e77aeb58ef636a:2:{i:0;s:9:\"_identity\";i:1;s:14:\"[1,\"\",2592000]\";}'
+    '_csrf' => 'a209be683f8e2b72a4a5da20eb021d4e0045d502101088f1090cb7409b1ac3b6a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"fBG_040M801QPtioh8Bf61aPvPOqszdL\";}'
+    'PHPSESSID' => 'd10bj4o10402nvotm7rnck1ea1'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+    '_language' => 'es-CO'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:40.0) Gecko/20100101 Firefox/40.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'es,en-US;q=0.7,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://localhost/cms_beta/backend/web/'
+    'HTTP_COOKIE' => '_language=9668d1671fba272ff8f742338f02674d5275736751009301b4f63d8649568dd1a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_language%22%3Bi%3A1%3Bs%3A5%3A%22es-CO%22%3B%7D; __atuvc=166%7C38%2C142%7C39; _identity=4b4b05aa534208e9e9f0691f4133d16ffbfe7879dfed9094b05e77aeb58ef636a%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A14%3A%22%5B1%2C%22%22%2C2592000%5D%22%3B%7D; _csrf=a209be683f8e2b72a4a5da20eb021d4e0045d502101088f1090cb7409b1ac3b6a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22fBG_040M801QPtioh8Bf61aPvPOqszdL%22%3B%7D; PHPSESSID=d10bj4o10402nvotm7rnck1ea1'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.10 (Ubuntu) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Ubuntu)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/cms_beta/backend/web/index.php'
+    'REMOTE_PORT' => '47650'
+    'REDIRECT_URL' => '/cms_beta/backend/web/es-co/gii'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/cms_beta/backend/web/es-co/gii'
+    'SCRIPT_NAME' => '/cms_beta/backend/web/index.php'
+    'PHP_SELF' => '/cms_beta/backend/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1444119930.718
+    'REQUEST_TIME' => 1444119930
+]
