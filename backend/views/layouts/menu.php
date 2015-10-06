@@ -37,6 +37,8 @@ use backend\models\Menu;
         <!-- /.search form -->
         <!-- sidebar menu: : style can be found in sidebar.less -->
         <?php
+        //        \yii\helpers\VarDumper::dump(Menu::buildMenu(),10,true);exit;
+
         echo yii\widgets\Menu::widget([
             'items'           => Menu::buildMenu(),
             'activateParents' => true,

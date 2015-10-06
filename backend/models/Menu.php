@@ -53,12 +53,12 @@ class Menu extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id' => Yii::t('back', 'ID'),
-            'name' => Yii::t('back', 'Name'),
-            'url' => Yii::t('back', 'Url'),
-            'icon' => Yii::t('back', 'Icon'),
-            'show' => Yii::t('back', 'Show'),
-            'order' => Yii::t('back', 'Order'),
+            'id'      => Yii::t('back', 'ID'),
+            'name'    => Yii::t('back', 'Name'),
+            'url'     => Yii::t('back', 'Url'),
+            'icon'    => Yii::t('back', 'Icon'),
+            'show'    => Yii::t('back', 'Show'),
+            'order'   => Yii::t('back', 'Order'),
             'menu_id' => Yii::t('back', 'Menu ID'),
         ];
     }
@@ -89,11 +89,11 @@ class Menu extends \yii\db\ActiveRecord
         if (is_null($parentId)) {
             $where = 'menu_id IS NULL';
             array_push($menu, [
-                'label' => Yii::t("back", "Dashboard"),
-                'url' => Yii::$app->homeUrl,
-                'visible' => true,
-                'active' => Yii::$app->controller->id == 'site' ? true : false,
-                'template' => self::buildTemplate("fa-dashboard", false),
+                'label'           => Yii::t("back", "Dashboard"),
+                'url'             => Yii::$app->homeUrl,
+                'visible'         => true,
+                'active'          => Yii::$app->controller->id == 'site' ? true : false,
+                'template'        => self::buildTemplate("fa-dashboard", false),
                 'submenuTemplate' => self::SUBMENU_TEMPLATE
             ]);
         } else {
@@ -101,17 +101,13 @@ class Menu extends \yii\db\ActiveRecord
         }
 
         $children = self::find()
-            ->where($where, is_null($parentId) ? [] : [':menu_id' => $parentId])
-            ->orderBy('order ASC')
-            ->all();
+                        ->where($where, is_null($parentId) ? [] : [':menu_id' => $parentId])
+                        ->orderBy('order ASC')
+                        ->all();
 
         foreach ($children as $key => $child) {
 
-            $active = false;
-
-            if(Yii::$app->controller->id == reset(explode('/', $child->url))){
-                $active = true;
-            }
+            $active = self::areEqualToRequest($child);
 
             //Buscamos activos, si los hay, se activa el padre
             if (count($child->menus) > 0) {
@@ -119,12 +115,12 @@ class Menu extends \yii\db\ActiveRecord
             }
 
             array_push($menu, [
-                'label' => Yii::t('back', $child->name),
-                'url' => Url::to(['//' . $child->url]),
-                'visible' => $child->show,
-                'active' => $active,
-                'items' => (count($child->menus) > 0) ? self::buildMenu($child->id) : [],
-                'template' => self::buildTemplate($child->icon, (count($child->menus) > 0)),
+                'label'           => Yii::t('back', $child->name),
+                'url'             => Url::to(['//' . $child->url]),
+                'visible'         => $child->show,
+                'active'          => $active,
+                'items'           => ( count($child->menus) > 0 ) ? self::buildMenu($child->id) : [],
+                'template'        => self::buildTemplate($child->icon, ( count($child->menus) > 0 )),
                 'submenuTemplate' => self::SUBMENU_TEMPLATE
             ]);
         }
@@ -152,18 +148,42 @@ class Menu extends \yii\db\ActiveRecord
      */
     public static function findActiveChild($parent)
     {
-        foreach ($parent as $key => $child) {
-            if (Yii::$app->controller->id == reset(explode('/', $child->url))) {
-                return true;
-            } elseif (count($child->menus) > 0) {
-                $has_active_children = self::findActiveChild($child->menus);
+        $has_active_children = false;
 
-                if ($has_active_children) {
-                    return true;
-                }
+        foreach ($parent as $key => $child) {
+            $has_active_children = self::areEqualToRequest($child, true);
+
+            if ($has_active_children == true) {
+                break;
             }
         }
 
-        return false;
+        return $has_active_children;
+    }
+
+    public static function areEqualToRequest($child, $recursive = false)
+    {
+        $identifier_menu = reset(explode('/', $child->url));
+        $active          = false;
+
+        //Si el menu correspondel al controlador
+        if (Yii::$app->controller->id == $identifier_menu) {
+            $active = true;
+        } elseif (count($child->menus) > 0 && $recursive == true) {
+            $has_active_children = self::findActiveChild($child->menus);
+
+            if ($has_active_children) {
+                return true;
+            }
+        } //Si el menu corresponde a un modulo que funciona con la ruta "modulo/controlador"
+        elseif (isset( Yii::$app->modules[$identifier_menu] )) {
+            $identifier_module_controller = explode('/', $child->url);
+
+            if (isset( $identifier_module_controller[1] ) && Yii::$app->controller->id == $identifier_module_controller[1]) {
+                $active = true;
+            }
+        }
+
+        return $active;
     }
 }
