@@ -43,7 +43,8 @@ class Menu extends \yii\db\ActiveRecord
             [['name', 'url', 'icon', 'order'], 'required'],
             [['show', 'order', 'menu_id'], 'integer'],
             [['name', 'icon'], 'string', 'max' => 45],
-            [['url'], 'string', 'max' => 255]
+            [['url'], 'string', 'max' => 255],
+            [['menu_id'], 'filterParent']
         ];
     }
 
@@ -101,6 +102,7 @@ class Menu extends \yii\db\ActiveRecord
         }
 
         $children = self::find()
+                        ->with('menus')
                         ->where($where, is_null($parentId) ? [] : [':menu_id' => $parentId])
                         ->orderBy('order ASC')
                         ->all();
@@ -185,5 +187,26 @@ class Menu extends \yii\db\ActiveRecord
         }
 
         return $active;
+    }
+
+    /**
+     * Use to loop detected.
+     */
+    public function filterParent()
+    {
+        $value = $this->menu_id;
+        $parent = self::findOne(['id' => $value]);
+        if ($parent) {
+            $id = $this->id;
+            $parent_id = $parent->id;
+            while ($parent) {
+                if ($parent->id == $id) {
+                    $this->addError('menu_id', Yii::t('back', 'A loop has been detected, please select another parent'));
+                    return;
+                }
+                $parent = $parent->menu;
+            }
+            $this->parent = $parent_id;
+        }
     }
 }
