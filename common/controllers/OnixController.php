@@ -1,6 +1,6 @@
 <?php
 /**
- * Created by BaseBackend development team.
+ * Created by Onix development team.
  * User: Andrés Felipe Solarte <devsolarte@gmail.com>
  * Date: 8/09/15
  * Time: 02:57 PM
@@ -10,10 +10,19 @@
 
 namespace common\controllers;
 
-
+use backend\models\Configuration;
+use Yii;
 use yii\web\Controller;
 
 class OnixController extends Controller
 {
+    /**
+     * @inheritdoc
+     */
+    public function __construct($id, $module, $config = [])
+    {
+        parent::__construct($id, $module, $config);
 
+        Yii::$app->name = Configuration::find()->one()->company;
+    }
 }

@@ -19,22 +19,6 @@ use yii\filters\VerbFilter;
 
 class BackController extends OnixController
 {
-    /**
-     * @inheritdoc
-     */
-    /*public function beforeAction($action)
-    {
-        if (parent::beforeAction($action)) {
-            if (Yii::$app->user->isGuest && Yii::$app->controller->action->id != 'login') {
-                $this->redirect(['//site/login']);
-            }
-
-            return true;
-        }
-
-        return false;
-    }*/
-
     public function behaviors()
     {
         return [

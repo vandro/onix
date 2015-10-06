@@ -1,7 +1,7 @@
 <?php
 /* @var $this yii\web\View */
 
-$this->title = 'My Yii Application';
+$this->title = Yii::t('back', 'Dashboard');
 ?>
 <div class="row">
     <div class="col-md-12">

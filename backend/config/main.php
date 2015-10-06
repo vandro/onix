@@ -39,10 +39,7 @@ return [
         ],
     ],
     'as access'           => [
-        'class'        => 'mdm\admin\components\AccessControl',
-        'allowActions' => [
-            '*',
-        ]
+        'class' => \mdm\admin\components\AccessControl::className()
     ],
     'params'              => $params,
 ];

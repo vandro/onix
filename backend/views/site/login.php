@@ -6,7 +6,7 @@ use yii\bootstrap\ActiveForm;
 /* @var $this yii\web\View */
 /* @var $form yii\bootstrap\ActiveForm */
 /* @var $model \common\models\LoginForm */
-$this->title = 'Login';
+$this->title = Yii::t('back', 'Login');
 ?>
 
 <div class="login-box">
