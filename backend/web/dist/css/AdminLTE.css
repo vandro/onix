@@ -77,6 +77,10 @@ body {
     z-index: 820;
 }
 
+.main-footer > .container{
+    width: 100%;
+}
+
 .layout-top-nav .content-wrapper,
 .layout-top-nav .right-side,
 .layout-top-nav .main-footer {
