@@ -11,7 +11,7 @@ $this->title = Yii::t('back', 'Login');
 
 <div class="login-box">
     <div class="login-logo">
-        <a href="<?= Yii::$app->params['companyUrl'] ?>"><b>ONIX</b> CMS</a>
+        <a href="<?= \yii\helpers\Url::to(Yii::$app->request->baseUrl) ?>"><b>ONIX</b> CMS</a>
     </div>
     <!-- /.login-logo -->
     <?php foreach (Yii::$app->session->getAllFlashes() as $key => $flash): ?>

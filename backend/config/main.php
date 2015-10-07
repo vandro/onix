@@ -42,7 +42,11 @@ return [
         ],
     ],
     'as access'           => [
-        'class' => \mdm\admin\components\AccessControl::className()
+        'class' => \mdm\admin\components\AccessControl::className(),
+        'allowActions' => [
+            'site/login',
+            'site/request-password-reset'
+        ]
     ],
     'params'              => $params,
 ];

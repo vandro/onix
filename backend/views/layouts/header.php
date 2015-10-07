@@ -14,7 +14,7 @@ use \yii\bootstrap\Nav;
 
 <header class="main-header">
     <!-- Logo -->
-    <a href="<?= Yii::$app->params['companyUrl'] ?>" class="logo"><b>ONIX</b> CMS</a>
+    <a href="<?= \yii\helpers\Url::to(Yii::$app->request->baseUrl) ?>" class="logo"><b>ONIX</b> CMS</a>
     <!-- Header Navbar: style can be found in header.less -->
     <?php
 
