@@ -20,6 +20,8 @@ use Yii;
 class Configuration extends \yii\db\ActiveRecord
 {
     const EMAIL_CONTENT_TEMPLATE = '__CONTENT__';
+    const EMAIL_COMPANY_NAME_TEMPLATE = '__COMPANY_NAME__';
+
     /**
      * @inheritdoc
      */
@@ -34,11 +36,12 @@ class Configuration extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['company', 'email_name', 'host', 'encryption', 'username', 'password', 'port', 'template'], 'required'],
+            [['company', 'template', 'encryption', 'email_name', 'host', 'username', 'password', 'port'], 'required'],
             [['template'], 'string'],
             [['company', 'email_name', 'host', 'username', 'password'], 'string', 'max' => 120],
             [['encryption'], 'string', 'max' => 20],
-            [['port'], 'string', 'max' => 45]
+            [['port'], 'string', 'max' => 45],
+            [['encryption', 'email_name', 'host', 'username', 'password', 'port'], 'safe']
         ];
     }
 
@@ -48,15 +51,15 @@ class Configuration extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id' => Yii::t('back', 'ID'),
-            'company' => Yii::t('back', 'Company'),
+            'id'         => Yii::t('back', 'ID'),
+            'company'    => Yii::t('back', 'Company'),
             'email_name' => Yii::t('back', 'Email Name'),
-            'host' => Yii::t('back', 'Host'),
+            'host'       => Yii::t('back', 'Host'),
             'encryption' => Yii::t('back', 'Encryption'),
-            'username' => Yii::t('back', 'Username'),
-            'password' => Yii::t('back', 'Password'),
-            'port' => Yii::t('back', 'Port'),
-            'template' => Yii::t('back', 'Template'),
+            'username'   => Yii::t('back', 'Username'),
+            'password'   => Yii::t('back', 'Password'),
+            'port'       => Yii::t('back', 'Port'),
+            'template'   => Yii::t('back', 'Template'),
         ];
     }
 }

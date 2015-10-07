@@ -6,7 +6,7 @@ use yii\grid\GridView;
 /* @var $this yii\web\View */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = Yii::t('back', 'Configurations');
+$this->title                   = Yii::t('back', 'Configurations');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="row">
@@ -17,30 +17,29 @@ $this->params['breadcrumbs'][] = $this->title;
             </div>
             <div class="box-body">
 
-                                    <?php  
-                    \yii\widgets\Pjax::begin();
-                    echo GridView::widget([
+                <?php
+                \yii\widgets\Pjax::begin();
+                echo GridView::widget([
                     'dataProvider' => $dataProvider,
-                    'columns' => [
-                                'id',
-            'company',
-            'email_name:email',
-            'host',
-            'encryption',
-            // 'username',
-            // 'password',
-            // 'port',
-            // 'template:ntext',
-
-                    [
-                        'class' => 'yii\grid\ActionColumn',
-                        'template' => '{view}{update}'
+                    'columns'      => [
+                        'id',
+                        'company',
+                        'email_name',
+                        'username:email',
+//                        'host',
+                        'encryption',
+                        // 'password',
+                        // 'port',
+                        // 'template:ntext',
+                        [
+                            'class'    => 'yii\grid\ActionColumn',
+                            'template' => '{view}{update}'
+                        ],
                     ],
-                    ],
-                    ]);
-                    \yii\widgets\Pjax::end();
-                    ?>
-                            </div>
+                ]);
+                \yii\widgets\Pjax::end();
+                ?>
+            </div>
         </div>
     </div>
 </div>

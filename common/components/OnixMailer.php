@@ -8,6 +8,7 @@
 
 namespace common\components;
 
+use Yii;
 use backend\models\Configuration;
 use kartik\growl\Growl;
 use yii\swiftmailer\Mailer;
@@ -46,29 +47,23 @@ class OnixMailer extends Mailer
          * @var Configuration $general_settings
          */
 
-        $result           = false;
+        $result = false;
+        $cc     = [];
+
         $general_settings = Configuration::find()->one();
-        $email_template   = str_replace(Configuration::EMAIL_CONTENT_TEMPLATE, $body, $general_settings->template);
+        $email_template   = str_replace(Configuration::EMAIL_COMPANY_NAME_TEMPLATE, $general_settings->company, str_replace(Configuration::EMAIL_CONTENT_TEMPLATE, $body, $general_settings->template));
+        $transport_def    = new \Swift_SmtpTransport();
 
-        //Si es local, no envia mails
-        $this->useFileTransport = \Yii::$app->request->getUserIP() == '127.0.0.1';
+        $transport_def->setHost($general_settings->host);
+        $transport_def->setUsername($general_settings->username);
+        $transport_def->setPassword($general_settings->password);
+        $transport_def->setEncryption(strtolower($general_settings->encryption));
+        $transport_def->setPort($general_settings->port);
 
-        //Cuando este en un host, se debe enviar email desde la cuenta configurada
-        if ($this->useFileTransport == false) {
-            $transport_def = [
-                'class'      => 'Swift_SmtpTransport',
-                'host'       => $general_settings->host,
-                'username'   => $general_settings->username,
-                'password'   => $general_settings->password,
-                'port'       => $general_settings->port,
-                'encryption' => $general_settings->encryption,
-            ];
-
-            $this->setTransport($transport_def);
-        }
+        $this->setTransport($transport_def);
 
         try {
-            $result = $this->compose()->setFrom('andres.felipe.az@hotmail.com')->setTo($to)->setSubject($subject)->setHtmlBody($email_template)->send();
+            $result = $this->compose()->setFrom([$general_settings->username => $general_settings->email_name])->setTo($to)->setCc($cc)->setSubject($subject)->setHtmlBody($email_template)->send();
         } catch (\Swift_IoException $e) {
             \Yii::$app->session->setFlash(Growl::TYPE_DANGER, $e->getMessage());
         }

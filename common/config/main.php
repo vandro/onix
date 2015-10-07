@@ -30,7 +30,7 @@ return [
             ],
         ],
         'urlManager' => [
-            'class'                        => 'codemix\localeurls\UrlManager',
+            'class'                        => \codemix\localeurls\UrlManager::className(),
             'showScriptName'               => false,
             'enablePrettyUrl'              => true,
             'languages'                    => [
@@ -43,18 +43,13 @@ return [
         'log'        => [
             'targets' => [
                 [
-                    'class'  => 'yii\log\DbTarget',
+                    'class'  => \yii\log\DbTarget::className(),
                     'levels' => ['error', 'warning'],
                 ],
             ],
         ],
         'mailer'     => [
-            'class'     => 'common\components\OnixMailer',
-            'transport' => [
-                'class' => 'Swift_SmtpTransport'
-            ],
+            'class'     => \common\components\OnixMailer::className(),
         ],
-
     ],
-
 ];
