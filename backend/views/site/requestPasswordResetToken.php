@@ -7,22 +7,24 @@ use yii\bootstrap\ActiveForm;
 /* @var $form yii\bootstrap\ActiveForm */
 /* @var $model \frontend\models\PasswordResetRequestForm */
 
-$this->title = Yii::t('back', 'Request password reset');
+$this->title                   = Yii::t('back', 'Request password reset');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 
 <div class="login-box">
-    <div class="login-logo">
-        <a href="<?= \yii\helpers\Url::to(Yii::$app->request->baseUrl) ?>"><b>ONIX</b> CMS</a>
-    </div>
+    <?php if (Yii::$app->controller->layout == 'login') : ?>
+        <div class="login-logo">
+            <a href="<?= \yii\helpers\Url::to(Yii::$app->request->baseUrl) ?>"><b>ONIX</b> CMS</a>
+        </div>
+    <?php endif ?>
     <!-- /.login-logo -->
     <div class="login-box-body">
         <p class="login-box-msg"><?= Yii::t('back', 'Please fill out your email. A link to reset password will be sent there.') ?></p>
-            <?php $form = ActiveForm::begin(['id' => 'request-password-reset-form']); ?>
+        <?php $form = ActiveForm::begin(['id' => 'request-password-reset-form']); ?>
         <div class="form-group has-feedback">
             <?=
             $form->field($model, 'email')->textInput([
-                'class' => 'form-control',
+                'class'       => 'form-control',
                 'placeholder' => $model->getAttributeLabel('email')
             ])->label(false)
             ?>

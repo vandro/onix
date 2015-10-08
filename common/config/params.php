@@ -1,8 +1,8 @@
 <?php
 return [
-    'companyName' => 'As-Webs',
-    'companyUrl' => 'http://as-webs.com',
-    'adminEmail' => 'admin@example.com',
-    'supportEmail' => 'support@example.com',
+    'companyName'                   => 'ONIX Labs',
+    'companyUrl'                    => '#',
+    'adminEmail'                    => 'devsolarte@gmail.com',
+    'supportEmail'                  => 'devsolarte@gmail.com',
     'user.passwordResetTokenExpire' => 3600,
 ];

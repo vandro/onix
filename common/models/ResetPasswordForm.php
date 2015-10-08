@@ -12,6 +12,7 @@ use Yii;
 class ResetPasswordForm extends Model
 {
     public $password;
+    public $confirm_password;
 
     /**
      * @var \common\models\User
@@ -46,6 +47,7 @@ class ResetPasswordForm extends Model
         return [
             ['password', 'required'],
             ['password', 'string', 'min' => 6],
+            ['confirm_password', 'compare', 'compareAttribute' => 'password', 'message' => Yii::t('back', 'The password and the password confirmation must match')]
         ];
     }
 

@@ -13,7 +13,7 @@ return [
                 '*'          => [
                     'class'                 => yii\i18n\DbMessageSource::className(),
                     'forceTranslation'      => true,
-                    'sourceLanguage'        => 'es-CO',
+                    'sourceLanguage'        => 'es',
                     'on missingTranslation' => [
                         'common\components\TranslationEventHandler',
                         'handleMissingTranslation'
@@ -34,8 +34,8 @@ return [
             'showScriptName'               => false,
             'enablePrettyUrl'              => true,
             'languages'                    => [
-                'en-us',
-                'es-co'
+                'es',
+                'en'
             ],
             'enableDefaultLanguageUrlCode' => true,
             'enableLanguagePersistence'    => true,
@@ -49,7 +49,7 @@ return [
             ],
         ],
         'mailer'     => [
-            'class'     => \common\components\OnixMailer::className(),
+            'class' => \common\components\OnixMailer::className(),
         ],
     ],
 ];

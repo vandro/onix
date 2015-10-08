@@ -39,13 +39,15 @@ return [
         ],
         'authManager'  => [
             'class' => 'yii\rbac\DbManager',
+            'defaultRoles' => ['Guest']
         ],
     ],
     'as access'           => [
         'class' => \mdm\admin\components\AccessControl::className(),
         'allowActions' => [
             'site/login',
-            'site/request-password-reset'
+            'site/request-password-reset',
+            'site/reset-password',
         ]
     ],
     'params'              => $params,

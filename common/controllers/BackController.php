@@ -12,6 +12,7 @@
 
 namespace common\controllers;
 
+use backend\models\Configuration;
 use Yii;
 use mdm\admin\components\AccessControl;
 use yii\filters\VerbFilter;
@@ -19,18 +20,33 @@ use yii\filters\VerbFilter;
 
 class BackController extends OnixController
 {
+    /**
+     * @inheritdoc
+     */
     public function behaviors()
     {
         return [
             'access' => [
                 'class' => AccessControl::className(),
             ],
-            'verbs' => [
-                'class' => VerbFilter::className(),
+            'verbs'  => [
+                'class'   => VerbFilter::className(),
                 'actions' => [
                     'delete' => ['post'],
                 ],
             ],
         ];
+    }
+
+    public function __construct($id, $module, $config = [])
+    {
+        parent::__construct($id, $module, $config = []);
+
+        //Lee la configuracion una sola vez
+        $global_configuration = Configuration::find()->one();
+
+        if ( ! is_null($global_configuration)) {
+            Yii::$app->params['global'] = $global_configuration->attributes;
+        }
     }
 }

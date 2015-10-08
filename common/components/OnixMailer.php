@@ -50,20 +50,20 @@ class OnixMailer extends Mailer
         $result = false;
         $cc     = [];
 
-        $general_settings = Configuration::find()->one();
-        $email_template   = str_replace(Configuration::EMAIL_COMPANY_NAME_TEMPLATE, $general_settings->company, str_replace(Configuration::EMAIL_CONTENT_TEMPLATE, $body, $general_settings->template));
+        $general_settings = Yii::$app->params['global'];
+        $email_template   = str_replace(Configuration::EMAIL_COMPANY_NAME_TEMPLATE, $general_settings['company'], str_replace(Configuration::EMAIL_CONTENT_TEMPLATE, $body, $general_settings['template']));
         $transport_def    = new \Swift_SmtpTransport();
 
-        $transport_def->setHost($general_settings->host);
-        $transport_def->setUsername($general_settings->username);
-        $transport_def->setPassword($general_settings->password);
-        $transport_def->setEncryption(strtolower($general_settings->encryption));
-        $transport_def->setPort($general_settings->port);
+        $transport_def->setHost($general_settings['host']);
+        $transport_def->setUsername($general_settings['username']);
+        $transport_def->setPassword($general_settings['password']);
+        $transport_def->setEncryption(strtolower($general_settings['encryption']));
+        $transport_def->setPort($general_settings['port']);
 
         $this->setTransport($transport_def);
 
         try {
-            $result = $this->compose()->setFrom([$general_settings->username => $general_settings->email_name])->setTo($to)->setCc($cc)->setSubject($subject)->setHtmlBody($email_template)->send();
+            $result = $this->compose()->setFrom([$general_settings['username'] => $general_settings['email_name']])->setTo($to)->setCc($cc)->setSubject($subject)->setHtmlBody($email_template)->send();
         } catch (\Swift_IoException $e) {
             \Yii::$app->session->setFlash(Growl::TYPE_DANGER, $e->getMessage());
         }

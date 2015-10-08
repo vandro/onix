@@ -4387,7 +4387,9 @@ fieldset[disabled] .btn-vk.active {
 .alert-success,
 .label-success,
 .modal-success .modal-body {
-    background-color: #00a65a !important;
+    background-color: #3AA273 !important;
+    border-radius: 0px;
+    border-color: #3AA273 !important;
 }
 
 .bg-navy {
