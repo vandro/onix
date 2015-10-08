@@ -12,9 +12,8 @@
 
 namespace common\controllers;
 
-use backend\models\Configuration;
 use Yii;
-use mdm\admin\components\AccessControl;
+use backend\modules\onix\admin\components\AccessControl;
 use yii\filters\VerbFilter;
 
 
@@ -36,17 +35,5 @@ class BackController extends OnixController
                 ],
             ],
         ];
-    }
-
-    public function __construct($id, $module, $config = [])
-    {
-        parent::__construct($id, $module, $config = []);
-
-        //Lee la configuracion una sola vez
-        $global_configuration = Configuration::find()->one();
-
-        if ( ! is_null($global_configuration)) {
-            Yii::$app->params['global'] = $global_configuration->attributes;
-        }
     }
 }

@@ -43,7 +43,7 @@ return [
         ],
     ],
     'as access'           => [
-        'class' => \mdm\admin\components\AccessControl::className(),
+        'class' => \backend\modules\onix\admin\components\AccessControl::className(),
         'allowActions' => [
             'site/login',
             'site/request-password-reset',
