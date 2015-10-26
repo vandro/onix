@@ -5,7 +5,7 @@
 
 $this->params['breadcrumbs'][] = ['label' => Yii::t('back', 'Menus'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->name, 'url' => ['view', 'id' => $model->id]];
-$this->params['breadcrumbs'][] = Yii::t('back', 'Update');
+$this->params['breadcrumbs'][] = Yii::t('back', 'Actualizar');
 
 ?>
 <div class="row">

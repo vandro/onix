@@ -6,7 +6,7 @@ use yii\grid\GridView;
 /* @var $this yii\web\View */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = Yii::t('back', 'Logs');
+$this->title = Yii::t('back', 'Registros del sistema');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="row">

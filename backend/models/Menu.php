@@ -62,12 +62,12 @@ class Menu extends \yii\db\ActiveRecord
     {
         return [
             'id'      => Yii::t('back', 'ID'),
-            'name'    => Yii::t('back', 'Name'),
+            'name'    => Yii::t('back', 'Nombre'),
             'url'     => Yii::t('back', 'Url'),
-            'icon'    => Yii::t('back', 'Icon'),
-            'show'    => Yii::t('back', 'Show'),
-            'order'   => Yii::t('back', 'Order'),
-            'menu_id' => Yii::t('back', 'Menu ID'),
+            'icon'    => Yii::t('back', 'Icono'),
+            'show'    => Yii::t('back', 'Mostrar'),
+            'order'   => Yii::t('back', 'Orden'),
+            'menu_id' => Yii::t('back', 'Menu Padre'),
         ];
     }
 
@@ -102,7 +102,7 @@ class Menu extends \yii\db\ActiveRecord
         if (is_null($parentId)) {
             $where = 'menu_id IS NULL';
             array_push($menu, [
-                'label'           => Yii::t("back", "Dashboard"),
+                'label'           => Yii::t("back", "Panel de control"),
                 'url'             => Yii::$app->homeUrl,
                 'visible'         => true,
                 'active'          => Yii::$app->controller->id == 'site' ? true : false,
@@ -228,7 +228,7 @@ class Menu extends \yii\db\ActiveRecord
             $parent_id = $parent->id;
             while($parent) {
                 if ($parent->id == $id) {
-                    $this->addError('menu_id', Yii::t('back', 'A loop has been detected, please select another parent'));
+                    $this->addError('menu_id', Yii::t('back', 'Se ha detectado un bucle infinito, por favor seleccione otro padre'));
 
                     return;
                 }
@@ -266,12 +266,12 @@ class Menu extends \yii\db\ActiveRecord
         if ($no_errors == true) {
             return true;
         } else {
-            $this->addError('url', Yii::t('back', 'Route "{value}" not assigned to current user.', ["value" => $this->url]));
+            $this->addError('url', Yii::t('back', 'Ruta "{value}" no asignada al usuario actual.', ["value" => $this->url]));
         }
 
     }
 
-    public function validateRoute($route = false)
+    public static function validateRoute($route = false)
     {
         $user = Yii::$app->getUser();
 
@@ -314,7 +314,7 @@ class Menu extends \yii\db\ActiveRecord
     public static function clearEmpty($menu_items)
     {
         foreach ($menu_items as $key => $menu_item) {
-            if (isset( $menu_item['label'] ) && $menu_item['label'] != Yii::t("back", "Dashboard")) {
+            if (isset( $menu_item['label'] ) && $menu_item['label'] != Yii::t("back", "Panel de control")) {
                 $clean_url = str_replace(strtolower(Yii::$app->request->baseUrl . '/' . Yii::$app->language . '/'), '', $menu_item['url']);
                 if (empty( $menu_item['items'] ) && ( $clean_url == '' || $clean_url == '#' )) {
                     unset( $menu_items[$key] );

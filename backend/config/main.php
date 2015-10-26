@@ -38,12 +38,12 @@ return [
             'errorAction' => 'site/error',
         ],
         'authManager'  => [
-            'class' => 'yii\rbac\DbManager',
+            'class'        => 'yii\rbac\DbManager',
             'defaultRoles' => ['Guest']
         ],
     ],
     'as access'           => [
-        'class' => \backend\modules\onix\admin\components\AccessControl::className(),
+        'class'        => \backend\modules\onix\admin\components\AccessControl::className(),
         'allowActions' => [
             'site/login',
             'site/request-password-reset',

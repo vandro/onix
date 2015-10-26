@@ -14,15 +14,15 @@ use yii\helpers\Html;
 <div class="configuration-form box-body">
 
     <?php $form = ActiveForm::begin([
-        'layout' => 'horizontal',
+        'layout'      => 'horizontal',
         'fieldConfig' => [
-            'template' => "{label}\n{beginWrapper}\n{input}\n{hint}\n{error}\n{endWrapper}",
+            'template'             => "{label}\n{beginWrapper}\n{input}\n{hint}\n{error}\n{endWrapper}",
             'horizontalCssClasses' => [
-                'label' => 'col-sm-2',
-                'offset' => 'col-sm-offset-2',
+                'label'   => 'col-sm-2',
+                'offset'  => 'col-sm-offset-2',
                 'wrapper' => 'col-sm-8',
-                'error' => '',
-                'hint' => '',
+                'error'   => '',
+                'hint'    => '',
             ],
         ],
     ]); ?>
@@ -31,9 +31,9 @@ use yii\helpers\Html;
 
     <div class="form-group">
         <div class="btn-group col-md-offset-5" role="group">
-            <?= Html::submitButton(Yii::t('back', 'Send'), ['class' => 'btn btn-primary']) ?>
-            <?= Html::a(Yii::t('back', 'Cancel'), \yii\helpers\Url::to(['index']),
-                ['class' => 'btn btn-danger', 'data-confirm' => Yii::t('back', 'Are you sure you want to cancel?')])
+            <?= Html::submitButton(Yii::t('back', 'Enviar'), ['class' => 'btn btn-primary']) ?>
+            <?= Html::a(Yii::t('back', 'Cancelar'), \yii\helpers\Url::to(['index']),
+                ['class' => 'btn btn-danger', 'data-confirm' => Yii::t('back', 'Esta seguro que desea cancelar?')])
             ?>
         </div>
     </div>

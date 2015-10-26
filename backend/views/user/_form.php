@@ -44,9 +44,9 @@ use kartik\file\FileInput;
     <?= $form->field($model, 'email')->textInput() ?>
     <?= $form->field($model, 'status')->widget(Select2::classname(), [
         'data'     => [
-            User::STATUS_DELETED   => Yii::t('back', 'Deleted'),
-            User::STATUS_ACTIVE    => Yii::t('back', 'Active'),
-            User::STATUS_SUSPENDED => Yii::t('back', 'Suspended')
+            User::STATUS_DELETED   => Yii::t('back', 'Borrado'),
+            User::STATUS_ACTIVE    => Yii::t('back', 'Activo'),
+            User::STATUS_SUSPENDED => Yii::t('back', 'Suspendido')
         ],
         'language' => Yii::$app->language,
         'theme'    => Select2::THEME_BOOTSTRAP
@@ -64,20 +64,20 @@ use kartik\file\FileInput;
     ]); ?>
 
     <div class="form-group">
-        <label class="control-label col-sm-2"><?= Yii::t('back', 'Change Password') ?></label>
+        <label class="control-label col-sm-2"><?= Yii::t('back', 'Cambiar contraseña') ?></label>
 
         <div class="col-sm-8">
-            <?= Html::a(Yii::t('back', 'Click Here to Change the password'),
+            <?= Html::a(Yii::t('back', 'Clic aqui para cambiar la contraseña'),
                 ['change-password', 'email' => $model->email]) ?>
         </div>
     </div>
 
     <div class="form-group">
         <div class="btn-group col-md-offset-5" role="group">
-            <?= Html::submitButton($model->isNewRecord ? Yii::t('back', 'Create') : Yii::t('back', 'Update'),
+            <?= Html::submitButton($model->isNewRecord ? Yii::t('back', 'Crear') : Yii::t('back', 'Actualizar'),
                 ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
-            <?= Html::a(Yii::t('back', 'Cancel'), \yii\helpers\Url::to(['index']),
-                ['class' => 'btn btn-danger', 'data-confirm' => Yii::t('back', 'Are you sure you want to cancel?')])
+            <?= Html::a(Yii::t('back', 'Cancelar'), \yii\helpers\Url::to(['index']),
+                ['class' => 'btn btn-danger', 'data-confirm' => Yii::t('back', 'Esta seguro que desea cancelar?')])
             ?>
         </div>
     </div>

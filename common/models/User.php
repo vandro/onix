@@ -208,15 +208,31 @@ class User extends ActiveRecord implements IdentityInterface
     {
         return [
             'id'                   => Yii::t('back', 'ID'),
-            'username'             => Yii::t('back', 'Username'),
-            'auth_key'             => Yii::t('back', 'Auth Key'),
-            'password_hash'        => Yii::t('back', 'Password Hash'),
-            'password_reset_token' => Yii::t('back', 'Password Reset Token'),
+            'username'             => Yii::t('back', 'Nombre de usuario'),
+            'auth_key'             => Yii::t('back', 'Llave de autorizacion'),
+            'password_hash'        => Yii::t('back', 'Contraseña encriptada'),
+            'password_reset_token' => Yii::t('back', 'Token de restablecimiento de contraseña'),
             'email'                => Yii::t('back', 'Email'),
-            'status'               => Yii::t('back', 'Status'),
-            'picture'              => Yii::t('back', 'Picture'),
-            'created_at'           => Yii::t('back', 'Created At'),
-            'updated_at'           => Yii::t('back', 'Updated At'),
+            'status'               => Yii::t('back', 'Estado'),
+            'picture'              => Yii::t('back', 'Foto de perfil'),
+            'new_image'            => Yii::t('back', 'Foto de perfil'),
+            'created_at'           => Yii::t('back', 'Creado'),
+            'updated_at'           => Yii::t('back', 'Actualizado'),
         ];
+    }
+
+    public function getStatus($status = null)
+    {
+        $values = [
+            self::STATUS_DELETED   => Yii::t('back', 'Borrado'),
+            self::STATUS_ACTIVE    => Yii::t('back', 'Activo'),
+            self::STATUS_SUSPENDED => Yii::t('back', 'Suspendido')
+        ];
+
+        if ( ! is_null($status)) {
+            return isset( $values[$status] ) ? $values[$status] : null;
+        } else {
+            return $values;
+        }
     }
 }

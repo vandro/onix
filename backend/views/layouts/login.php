@@ -6,6 +6,9 @@ use yii\helpers\Html;
 /* @var $content string */
 
 AppAsset::register($this);
+
+$this->registerJsFile(Yii::getAlias('@web') . '/bootstrap/js/bootstrap.min.js', ['depends' => \yii\web\JqueryAsset::className()]);
+$this->registerJsFile(Yii::getAlias('@web') . '/plugins/iCheck/icheck.min.js', ['depends' => \yii\web\JqueryAsset::className()]);
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
@@ -21,11 +24,7 @@ AppAsset::register($this);
 <?php $this->beginBody() ?>
 
 <?php echo $content ?>
-<footer class="footer">
-    <div class="container">
-        <p class="pull-left">&copy; <?= Yii::$app->params['companyName'] . ' ' . date('Y') ?></p>
-        <p class="pull-right"><?= Yii::powered() ?> & <?= \yii\helpers\Html::a(Yii::$app->params['companyName'], Yii::$app->params['companyUrl']) ?></p>
-    </div>
+
 </footer>
 <?php $this->endBody() ?>
 </body>

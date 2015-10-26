@@ -52,14 +52,14 @@ class Configuration extends \yii\db\ActiveRecord
     {
         return [
             'id'         => Yii::t('back', 'ID'),
-            'company'    => Yii::t('back', 'Company'),
-            'email_name' => Yii::t('back', 'Email Name'),
-            'host'       => Yii::t('back', 'Host'),
-            'encryption' => Yii::t('back', 'Encryption'),
-            'username'   => Yii::t('back', 'Username'),
-            'password'   => Yii::t('back', 'Password'),
-            'port'       => Yii::t('back', 'Port'),
-            'template'   => Yii::t('back', 'Template'),
+            'company'    => Yii::t('back', 'Empresa'),
+            'email_name' => Yii::t('back', 'Nombre Alias para el email'),
+            'host'       => Yii::t('back', 'Servidor SMTP'),
+            'encryption' => Yii::t('back', 'Tipo de encriptacion'),
+            'username'   => Yii::t('back', 'Email'),
+            'password'   => Yii::t('back', 'Contraseña'),
+            'port'       => Yii::t('back', 'Puerto'),
+            'template'   => Yii::t('back', 'Plantilla de email'),
         ];
     }
 }

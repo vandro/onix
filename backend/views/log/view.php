@@ -6,8 +6,8 @@ use yii\widgets\DetailView;
 /* @var $this yii\web\View */
 /* @var $model backend\models\Log */
 
-$this->title = $model->id;
-$this->params['breadcrumbs'][] = ['label' => Yii::t('back', 'Logs'), 'url' => ['index']];
+$this->title                   = $model->id;
+$this->params['breadcrumbs'][] = ['label' => Yii::t('back', 'Registros del sistema'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="row">
@@ -25,15 +25,15 @@ $this->params['breadcrumbs'][] = $this->title;
             </div>
             <div class="box-body">
                 <?= DetailView::widget([
-                'model' => $model,
-                'attributes' => [
-                            'id',
-            'level',
-            'category',
-            'log_time',
-            'prefix:ntext',
-            'message:ntext',
-                ],
+                    'model'      => $model,
+                    'attributes' => [
+                        'id',
+                        'level',
+                        'category',
+                        'log_time',
+                        'prefix:ntext',
+                        'message:ntext',
+                    ],
                 ]) ?>
             </div>
         </div>

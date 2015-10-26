@@ -15,15 +15,15 @@ use backend\models\Menu;
 ?>
 <div class="box-body">
     <?php $form = ActiveForm::begin([
-        'layout' => 'horizontal',
+        'layout'      => 'horizontal',
         'fieldConfig' => [
-            'template' => "{label}\n{beginWrapper}\n{input}\n{hint}\n{error}\n{endWrapper}",
+            'template'             => "{label}\n{beginWrapper}\n{input}\n{hint}\n{error}\n{endWrapper}",
             'horizontalCssClasses' => [
-                'label' => 'col-sm-2',
-                'offset' => 'col-sm-offset-2',
+                'label'   => 'col-sm-2',
+                'offset'  => 'col-sm-offset-2',
                 'wrapper' => 'col-sm-8',
-                'error' => '',
-                'hint' => '',
+                'error'   => '',
+                'hint'    => '',
             ],
         ],
     ]); ?>
@@ -43,27 +43,27 @@ JS;
     $this->registerJs($format, View::POS_HEAD);
 
     echo $form->field($model, 'icon')->widget(Select2::classname(), [
-        'data' => ArrayHelper::map(FaIcon::find()->all(), 'class', 'class'),
-        'language' => Yii::$app->language,
-        'theme' => Select2::THEME_BOOTSTRAP,
-        'options' => ['placeholder' => Yii::t('back', 'Select an icon ...')],
+        'data'          => ArrayHelper::map(FaIcon::find()->all(), 'class', 'class'),
+        'language'      => Yii::$app->language,
+        'theme'         => Select2::THEME_BOOTSTRAP,
+        'options'       => ['placeholder' => Yii::t('back', 'Seleccione un icono ...')],
         'pluginOptions' => [
-            'templateResult' => new JsExpression('format'),
+            'templateResult'    => new JsExpression('format'),
             'templateSelection' => new JsExpression('format'),
-            'escapeMarkup' => $escape,
-            'allowClear' => false
+            'escapeMarkup'      => $escape,
+            'allowClear'        => false
         ],
     ]); ?>
 
-    <?= $form->field($model, 'show')->radioList(array('1'=> Yii::t('back', 'Yes'),'0'=> Yii::t('back', 'No')));  ?>
+    <?= $form->field($model, 'show')->radioList(array('1' => Yii::t('back', 'Si'), '0' => Yii::t('back', 'No'))); ?>
 
     <?= $form->field($model, 'order')->textInput() ?>
 
     <?= $form->field($model, 'menu_id')->widget(Select2::classname(), [
-        'data' => ArrayHelper::map(Menu::find()->where(($model->isNewRecord) ? '1 = 1' : 'id != ' . $model->id)->all(), 'id', 'name'),
-        'language' => Yii::$app->language,
-        'theme' => Select2::THEME_BOOTSTRAP,
-        'options' => ['placeholder' => Yii::t('back', 'Select an option ...')],
+        'data'          => ArrayHelper::map(Menu::find()->where(( $model->isNewRecord ) ? '1 = 1' : 'id != ' . $model->id)->all(), 'id', 'name'),
+        'language'      => Yii::$app->language,
+        'theme'         => Select2::THEME_BOOTSTRAP,
+        'options'       => ['placeholder' => Yii::t('back', 'Seleccione una opcion ...')],
         'pluginOptions' => [
             'allowClear' => true
         ],
@@ -71,9 +71,12 @@ JS;
 
     <div class="form-group">
         <div class="btn-group col-md-offset-5" role="group">
-            <?= Html::submitButton($model->isNewRecord ? Yii::t('back', 'Create') : Yii::t('back', 'Update'),
+            <?= Html::submitButton($model->isNewRecord ? Yii::t('back', 'Crear') : Yii::t('back', 'Actualizar'),
                 ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary ']) ?>
-            <?= Html::a(Yii::t('back', 'Cancel'), \yii\helpers\Url::to(['index']), ['class' => 'btn btn-danger', 'data-confirm' => Yii::t('back', 'Are you sure you want to cancel?')]) ?>
+            <?= Html::a(Yii::t('back', 'Cancelar'), \yii\helpers\Url::to(['index']), [
+                'class'        => 'btn btn-danger',
+                'data-confirm' => Yii::t('back', 'Esta seguro que desea cancelar?')
+            ]) ?>
         </div>
     </div>
 

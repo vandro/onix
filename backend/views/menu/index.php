@@ -7,22 +7,22 @@ use yii\grid\GridView;
 /* @var $searchModel backend\models\SearchMenu */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = Yii::t('back', 'Menus');
+$this->title                   = Yii::t('back', 'Menus');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="row">
     <div class="col-md-12">
         <div class="menu-index box box-primary">
             <div class="box-header with-border">
-                <?= Html::a(Yii::t('back', 'Create Menu'), ['create'], ['class' => 'btn btn-success']) ?>
+                <?= Html::a(Yii::t('back', 'Crear') . ' Menu', ['create'], ['class' => 'btn btn-success']) ?>
             </div>
             <div class="box-body">
                 <?php \yii\widgets\Pjax::begin();
 
                 echo GridView::widget([
                     'dataProvider' => $dataProvider,
-                    'filterModel' => $searchModel,
-                    'columns' => [
+                    'filterModel'  => $searchModel,
+                    'columns'      => [
                         'id',
                         'name',
                         'url',

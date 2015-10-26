@@ -7,7 +7,7 @@ use yii\bootstrap\ActiveForm;
 /* @var $form yii\bootstrap\ActiveForm */
 /* @var $model \frontend\models\PasswordResetRequestForm */
 
-$this->title                   = Yii::t('back', 'Request password reset');
+$this->title                   = Yii::t('back', 'Solucitud de restablecer contraseña');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 
@@ -19,7 +19,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php endif ?>
     <!-- /.login-logo -->
     <div class="login-box-body">
-        <p class="login-box-msg"><?= Yii::t('back', 'Please choose your new password') ?></p>
+        <p class="login-box-msg"><?= Yii::t('back', 'Crear nueva contraseña') ?></p>
         <?php $form = ActiveForm::begin([
             'id'                     => 'reset-password-form',
             'enableClientValidation' => true
@@ -44,7 +44,7 @@ $this->params['breadcrumbs'][] = $this->title;
             <!-- /.col -->
             <div class="col-xs-8"></div>
             <div class="col-xs-4">
-                <?= Html::submitButton('Send', ['class' => 'btn btn-primary btn-block btn-flat']) ?>
+                <?= Html::submitButton(Yii::t('app', 'Enviar'), ['class' => 'btn btn-primary btn-block btn-flat']) ?>
             </div>
             <!-- /.col -->
         </div>
