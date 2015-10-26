@@ -7,21 +7,21 @@ use yii\helpers\Html;
 /* @var $message string */
 /* @var $exception Exception */
 
-$this->title = $name;
+$this->title                   = $name;
+$this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="site-error">
+<div class="error-page">
+    <h2 class="headline text-yellow"> <?= $exception->statusCode ?></h2>
 
-    <h1><?= Html::encode($this->title) ?></h1>
+    <div class="error-content">
+        <h3><i class="fa fa-warning text-yellow"></i> Oops! <?= Yii::t('back', 'Hubo un error') ?>.</h3>
 
-    <div class="alert alert-danger">
-        <?= nl2br(Html::encode($message)) ?>
+        <p>
+            <?= Yii::t('app', nl2br(Html::encode($message))) ?>
+            <?= Yii::t('app', 'Tal vez quieras') ?>
+            <a href="<?= \yii\helpers\Url::to(['//site/index']) ?>"><?= Yii::t('app', 'ir a la página principal') ?></a>
+        </p>
     </div>
-
-    <p>
-        The above error occurred while the Web server was processing your request.
-    </p>
-    <p>
-        Please contact us if you think this is a server error. Thank you.
-    </p>
-
-</div>
+    <!-- /.error-content -->
+</div><!-- /.error-page -->
+</section><!-- /.content -->

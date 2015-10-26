@@ -23,13 +23,14 @@ use backend\models\Menu;
                 </div>
                 <div class="pull-left info">
                     <p><?= Yii::$app->user->identity->username ?></p>
-                    <a href="#"><i class="fa fa-circle text-success"></i> <?= Yii::t('back', 'Online') ?></a>
+                    <a href="#"><i class="fa fa-circle text-success"></i> <?= Yii::t('back', 'Conectado') ?></a>
                 </div>
             </div>
             <!-- search form -->
             <form action="#" method="get" class="sidebar-form">
                 <div class="input-group">
-                    <input type="text" name="q" id="livefilter-input" class="form-control" placeholder="Search..."/>
+                    <input type="text" name="q" id="livefilter-input" class="form-control"
+                           placeholder="<?= Yii::t('app', 'Buscar') ?>..."/>
               <span class="input-group-btn">
                 <button type='submit' name='search' id='search-btn' class="btn btn-flat"><i class="fa fa-search"></i>
                 </button>

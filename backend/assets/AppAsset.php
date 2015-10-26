@@ -23,7 +23,7 @@ class AppAsset extends AssetBundle
         'css/font-awesome.min.css',
         'dist/css/AdminLTE.css',
         'dist/css/skins/_all-skins.min.css',
-//        'plugins/iCheck/square/blue.css',
+        'plugins/iCheck/square/blue.css',
 //        'plugins/morris/morris.css',
 //        'plugins/jvectormap/jquery-jvectormap-1.2.2.css',
 //        'plugins/datepicker/datepicker3.css',

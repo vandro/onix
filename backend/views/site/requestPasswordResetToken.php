@@ -7,7 +7,7 @@ use yii\bootstrap\ActiveForm;
 /* @var $form yii\bootstrap\ActiveForm */
 /* @var $model \frontend\models\PasswordResetRequestForm */
 
-$this->title                   = Yii::t('back', 'Request password reset');
+$this->title                   = Yii::t('back', 'Solicitar restablecer contraseña');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 
@@ -19,7 +19,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php endif ?>
     <!-- /.login-logo -->
     <div class="login-box-body">
-        <p class="login-box-msg"><?= Yii::t('back', 'Please fill out your email. A link to reset password will be sent there.') ?></p>
+        <p class="login-box-msg"><?= Yii::t('back', 'Por favor escriba su email. Se enviara un link para que pueda restablecer su contraseña.') ?></p>
         <?php $form = ActiveForm::begin(['id' => 'request-password-reset-form']); ?>
         <div class="form-group has-feedback">
             <?=
@@ -32,9 +32,12 @@ $this->params['breadcrumbs'][] = $this->title;
         </div>
         <div class="row">
             <!-- /.col -->
-            <div class="col-xs-8"></div>
             <div class="col-xs-4">
-                <?= Html::submitButton('Send', ['class' => 'btn btn-primary btn-block btn-flat']) ?>
+                <?= Html::a(Yii::t('app', 'Cancelar'), ['//site/login'], ['class' => 'btn btn-danger btn-block btn-flat']) ?>
+            </div>
+            <div class="col-xs-4"></div>
+            <div class="col-xs-4">
+                <?= Html::submitButton(Yii::t('app', 'Enviar'), ['class' => 'btn btn-primary btn-block btn-flat']) ?>
             </div>
             <!-- /.col -->
         </div>

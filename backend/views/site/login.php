@@ -25,7 +25,7 @@ $this->title = Yii::t('back', 'Login');
 <!--        <div class="overlay">
             <i class="fa fa-refresh fa-spin"></i>
         </div>-->
-        <p class="login-box-msg"><?= Yii::t('back', 'Sign in to start your session') ?></p>
+        <p class="login-box-msg"><?= Yii::t('back', 'Identifiquese para acceder') ?></p>
         <?php $form = ActiveForm::begin([
             'id' => 'login-form',
             'enableAjaxValidation' => true,
@@ -49,18 +49,18 @@ $this->title = Yii::t('back', 'Login');
             <span class="glyphicon glyphicon-lock form-control-feedback"></span>
         </div>
         <div class="row">
-            <div class="col-xs-8">
+            <div class="col-xs-7">
                 <?= $form->field($model, 'rememberMe')->checkbox() ?>
             </div>  
             <!-- /.col -->
-            <div class="col-xs-4">
-                <?= Html::submitButton(Yii::t('back', 'Sign In'), ['class' => 'btn btn-primary btn-block btn-flat']) ?>
+            <div class="col-xs-5">
+                <?= Html::submitButton(Yii::t('back', 'Iniciar sesion'), ['class' => 'btn btn-primary btn-block btn-flat']) ?>
             </div>
             <!-- /.col -->
         </div>
         <?php ActiveForm::end(); ?>
         <!-- /.social-auth-links -->
-        <?= \yii\helpers\Html::a(Yii::t('back', 'I forgot my password'), ['request-password-reset']) ?><br>
+        <?= \yii\helpers\Html::a(Yii::t('back', 'Olvide mi contraseña'), ['request-password-reset']) ?><br>
     </div>
     <!-- /.login-box-body -->
 </div><!-- /.login-box -->
