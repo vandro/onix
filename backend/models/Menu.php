@@ -62,12 +62,12 @@ class Menu extends \yii\db\ActiveRecord
     {
         return [
             'id'      => Yii::t('back', 'ID'),
-            'name'    => Yii::t('back', 'Name'),
+            'name'    => Yii::t('back', 'Nombre'),
             'url'     => Yii::t('back', 'Url'),
-            'icon'    => Yii::t('back', 'Icon'),
-            'show'    => Yii::t('back', 'Show'),
-            'order'   => Yii::t('back', 'Order'),
-            'menu_id' => Yii::t('back', 'Menu ID'),
+            'icon'    => Yii::t('back', 'Icono'),
+            'show'    => Yii::t('back', 'Mostrar'),
+            'order'   => Yii::t('back', 'Orden'),
+            'menu_id' => Yii::t('back', 'Menu Padre'),
         ];
     }
 

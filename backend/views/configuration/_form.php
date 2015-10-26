@@ -53,10 +53,10 @@ use dosamigos\ckeditor\CKEditor;
 
     <div class="form-group">
         <div class="btn-group col-md-offset-5" role="group">
-            <?= Html::submitButton($model->isNewRecord ? Yii::t('back', 'Create') : Yii::t('back', 'Update'),
+            <?= Html::submitButton($model->isNewRecord ? Yii::t('back', 'Crear') : Yii::t('back', 'Actualizar'),
                 ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
-            <?= Html::a(Yii::t('back', 'Cancel'), \yii\helpers\Url::to(['index']),
-                ['class' => 'btn btn-danger', 'data-confirm' => Yii::t('back', 'Are you sure you want to cancel?')])
+            <?= Html::a(Yii::t('back', 'Cancelar'), \yii\helpers\Url::to(['index']),
+                ['class' => 'btn btn-danger', 'data-confirm' => Yii::t('back', 'Esta seguro que desea cancelar?')])
             ?>
         </div>
     </div>

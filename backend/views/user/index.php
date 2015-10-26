@@ -7,7 +7,7 @@ use yii\grid\GridView;
 /* @var $searchModel common\models\SearchUser */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title                   = Yii::t('back', 'Users');
+$this->title                   = Yii::t('back', 'Usuarios');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="row">

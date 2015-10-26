@@ -7,7 +7,7 @@ use yii\helpers\Html;
 
 $this->params['breadcrumbs'][] = ['label' => Yii::t('back', 'Source Messages'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['view', 'id' => $model->id]];
-$this->params['breadcrumbs'][] = Yii::t('back', Yii::t('back', 'Update'));
+$this->params['breadcrumbs'][] = Yii::t('back', Yii::t('back', 'Actualizar'));
 ?>
 
 <div class="source-message-update row">

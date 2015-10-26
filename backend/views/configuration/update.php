@@ -5,9 +5,9 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model backend\models\Configuration */
 
-$this->params['breadcrumbs'][] = ['label' => Yii::t('back', 'Configurations'), 'url' => ['index']];
-$this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['view', 'id' => $model->id]];
-$this->params['breadcrumbs'][] = Yii::t('back', Yii::t('back', 'Update'));
+$this->params['breadcrumbs'][] = ['label' => Yii::t('back', 'Configuracion'), 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => $model->company, 'url' => ['view', 'id' => $model->id]];
+$this->params['breadcrumbs'][] = Yii::t('back', Yii::t('back', 'Actualizar'));
 ?>
 
 <div class="configuration-update row">
@@ -16,7 +16,7 @@ $this->params['breadcrumbs'][] = Yii::t('back', Yii::t('back', 'Update'));
             <div class="box-header with-border">
             </div>
             <?= $this->render('_form', [
-            'model' => $model,
+                'model' => $model,
             ]) ?>
         </div>
     </div>
