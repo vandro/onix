@@ -146,6 +146,7 @@ class Menu extends \yii\db\ActiveRecord
                     'visible'         => ( $child->show == 1 ),
                     'active'          => $active,
                     'items'           => $children_menu,
+                    'options'         => ( count($children_menu) > 0 ) ? ['class' => 'treeview'] : [],
                     'template'        => self::buildTemplate($child->icon, ( count($children_menu) > 0 )),
                     'submenuTemplate' => self::SUBMENU_TEMPLATE
                 ]);

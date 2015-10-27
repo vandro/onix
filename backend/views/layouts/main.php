@@ -45,7 +45,7 @@ AppAsset::register($this);
     <title><?= Html::encode(Yii::$app->name . ' - ' . $this->title) ?></title>
     <?php $this->head() ?>
 </head>
-<body class="hold-transition skin-blue sidebar-mini wysihtml5-supported">
+<body class="hold-transition skin-blue sidebar-mini">
 <?php $this->beginBody() ?>
 <div class="wrapper">
     <?= $this->render('//layouts/header') ?>

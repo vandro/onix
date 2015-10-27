@@ -99,6 +99,6 @@ $("#livefilter-input").keyup(function () {
 });
 JS;
 
-$this->registerJs($menu_Script, $this::POS_END);
+$this->registerJs($menu_Script, $this::POS_READY);
 
 ?>
