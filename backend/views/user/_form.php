@@ -4,7 +4,7 @@ use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
 use common\models\User;
 use kartik\select2\Select2;
-use kartik\file\FileInput;
+use zxbodya\yii2\elfinder\ElFinderInput;
 
 /* @var $this yii\web\View */
 /* @var $model common\models\User */
@@ -52,16 +52,12 @@ use kartik\file\FileInput;
         'theme'    => Select2::THEME_BOOTSTRAP
     ]); ?>
 
-    <?= $form->field($model, 'new_image')->widget(FileInput::classname(), [
-        'options'       => [
-            'accept' => 'image/*'
-        ],
-        'pluginOptions' => [
-            'showUpload'     => false,
-            'showRemove'     => false,
-            'initialPreview' => $model->isNewRecord ? [] : [Html::img(Yii::getAlias('@web') . '/uploads/' . $model->picture)]
+    <?= $form->field($model, 'picture')->widget(ElFinderInput::className(), [
+        'connectorRoute' => 'el-finder/back-connector',
+        'options'        => [
+            'class' => 'form-group'
         ]
-    ]); ?>
+    ]) ?>
 
     <div class="form-group">
         <label class="control-label col-sm-2"><?= Yii::t('back', 'Cambiar contraseña') ?></label>

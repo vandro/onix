@@ -45,14 +45,14 @@ use \yii\bootstrap\Nav;
 			</li>',
             '<li class="dropdown user user-menu">
 				<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-					' . \yii\helpers\Html::img('@web/uploads/' . Yii::$app->user->identity->picture,
+					' . \yii\helpers\Html::img(Yii::$app->user->identity->picture,
                 ['class' => 'user-image', 'alt' => 'Foto de perfil']) . '
 					<span class="hidden-xs">' . Yii::$app->user->identity->username . '</span>
 				</a>
 				<ul class="dropdown-menu">
 					<!-- User image -->
 					<li class="user-header">
-						' . \yii\helpers\Html::img('@web/uploads/' . Yii::$app->user->identity->picture,
+						' . \yii\helpers\Html::img(Yii::$app->user->identity->picture,
                 ['class' => 'img-circle', 'alt' => 'Foto de perfil']) . '
 						<p>
 							' . Yii::$app->user->identity->username . ' - [' . implode(', ', array_keys(Yii::$app->authManager->getRolesByUser(Yii::$app->user->identity->getId()))) . ']

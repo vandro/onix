@@ -25,51 +25,64 @@ class ElFinderInput extends InputWidget
     public function init()
     {
 
-        if (empty($this->connectorRoute)) {
+        if (empty( $this->connectorRoute )) {
             throw new Exception('$connectorRoute must be set!');
         }
-        $this->settings['url'] = Url::toRoute($this->connectorRoute);
+        $this->settings['url']  = Url::toRoute($this->connectorRoute);
         $this->settings['lang'] = Yii::$app->language;
     }
 
     public function run()
     {
-        if (!isset($this->options['id'])) {
+        if ( ! isset( $this->options['id'] )) {
             $this->options['id'] = $this->getId();
         }
 
-        $contoptions = $this->options;
+        $contoptions       = $this->options;
         $contoptions['id'] = $this->options['id'] . 'container';
+
         echo Html::beginTag('div', $contoptions);
-        $inputOptions = array('id' => $this->options['id'], 'style' => 'float:left;' /*, 'readonly' => 'readonly'*/);
+
+        echo Html::beginTag('div', ['class' => 'col-sm-8']);
+        $inputOptions = array(
+            'id'       => $this->options['id'],
+            'readonly' => 'readonly',
+            'class'    => 'form-control'
+        );
         if ($this->hasModel()) {
             echo Html::activeTextInput($this->model, $this->attribute, $inputOptions);
         } else {
             echo Html::textInput($this->name, $this->value, $inputOptions);
         }
+        echo Html::endTag('div');
 
-        echo Html::button('Browse', array('id' => $this->options['id'] . 'browse', 'class' => 'btn'));
+        echo Html::beginTag('div', ['class' => 'col-sm-4']);
+        echo Html::button(Yii::t('back', 'Buscar'), array('id'    => $this->options['id'] . 'browse',
+                                                          'class' => 'btn col-sm-12'
+        ));
+        echo Html::endTag('div');
+
         echo Html::endTag('div');
 
         $settings = array_merge(
             array(
-                'places' => "",
+                'places'          => "",
                 'rememberLastDir' => false,
             ),
             $this->settings
         );
 
-        $settings['dialog'] = array(
+        $settings['dialog']                = array(
             'zIndex' => 400001,
-            'width' => 900,
-            'modal' => true,
-            'title' => "Files",
+            'width'  => 900,
+            'modal'  => true,
+            'title'  => "Files",
         );
-        $settings['editorCallback'] = new JsExpression('function(url) {$(\'#\'+aFieldId).attr(\'value\',url);}');
+        $settings['editorCallback']        = new JsExpression('function(url) {$(\'#\'+aFieldId).attr(\'value\',url);}');
         $settings['closeOnEditorCallback'] = true;
-        $connectorUrl = Json::encode($this->settings['url']);
-        $settings = Json::encode($settings);
-        $script = <<<EOD
+        $connectorUrl                      = Json::encode($this->settings['url']);
+        $settings                          = Json::encode($settings);
+        $script                            = <<<EOD
         window.elfinderBrowse = function(field_id, connector) {
             var aFieldId = field_id, aWin = this;
             if($("#elFinderBrowser").length == 0) {

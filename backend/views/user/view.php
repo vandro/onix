@@ -40,7 +40,7 @@ $this->params['breadcrumbs'][] = $this->title;
                         [
                             'attribute' => 'picture',
                             'format'    => ['image'],
-                            'value'     => Yii::getAlias('@web') . '/uploads/' . $model->picture
+                            'value'     => $model->picture
                         ],
                         'created_at',
                         'updated_at',

@@ -18,7 +18,7 @@ use backend\models\Menu;
             <!-- Sidebar user panel -->
             <div class="user-panel">
                 <div class="pull-left image">
-                    <?= \yii\helpers\Html::img('@web/uploads/' . Yii::$app->user->identity->picture,
+                    <?= \yii\helpers\Html::img(Yii::$app->user->identity->picture,
                         ['class' => 'img-circle', 'alt' => 'User Image']) ?>
                 </div>
                 <div class="pull-left info">

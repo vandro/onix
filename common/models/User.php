@@ -30,11 +30,6 @@ class User extends ActiveRecord implements IdentityInterface
     const STATUS_SUSPENDED = 20;
 
     /**
-     * @var UploadedFile $new_image
-     */
-    public $new_image;
-
-    /**
      * @inheritdoc
      */
     public static function tableName()
@@ -60,7 +55,7 @@ class User extends ActiveRecord implements IdentityInterface
         return [
             ['status', 'default', 'value' => self::STATUS_ACTIVE],
             ['status', 'in', 'range' => [self::STATUS_ACTIVE, self::STATUS_DELETED]],
-            [['new_image'], 'file', 'skipOnEmpty' => true, 'extensions' => 'png, jpg', 'maxFiles' => 1],
+            ['picture', 'required'],
         ];
     }
 

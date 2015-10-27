@@ -10,7 +10,6 @@ namespace backend\controllers;
 
 use Yii;
 use common\controllers\BackController;
-use yii\helpers\Url;
 use zxbodya\yii2\elfinder\ConnectorAction;
 
 class ElFinderController extends BackController
@@ -18,11 +17,20 @@ class ElFinderController extends BackController
     public function actions()
     {
         return [
-            'connector' => [
+            'connector'     => [
                 'class'    => ConnectorAction::className(),
                 'settings' => [
                     'root'       => Yii::getAlias('@frontend') . '/web/uploads/',
                     'URL'        => Yii::$app->urlManagerFrontEnd->baseUrl . '/uploads/',
+                    'rootAlias'  => Yii::t('back', 'Directorio Principal'),
+                    'mimeDetect' => 'none'
+                ]
+            ],
+            'back-connector' => [
+                'class'    => ConnectorAction::className(),
+                'settings' => [
+                    'root'       => Yii::getAlias('@backend') . '/web/uploads/',
+                    'URL'        => Yii::$app->urlManager->baseUrl . '/uploads/',
                     'rootAlias'  => Yii::t('back', 'Directorio Principal'),
                     'mimeDetect' => 'none'
                 ]

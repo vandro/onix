@@ -64,17 +64,6 @@ class UserController extends BackController
 
             $model->setPassword(Yii::$app->security->generateRandomString(12));
 
-            $model->new_image = UploadedFile::getInstance($model, 'new_image');
-
-            if ( ! is_null($model->new_image)) {
-                $save_path_route = realpath(dirname(__FILE__) . '/../web/uploads/') . '/';
-                $file_name       = 'profileImg_' . time() . '.' . $model->new_image->extension;
-                $full_route_name = $save_path_route . $file_name;
-                $model->picture  = $file_name;
-
-                $model->new_image->saveAs($full_route_name);
-            }
-
             if ( ! $model->validate($model->attributes)) {
                 return $this->render('create', [
                     'model' => $model,
@@ -103,25 +92,12 @@ class UserController extends BackController
     {
         $model = $this->findModel($id);
 
-        $model->new_image = Yii::getAlias('@web') . '/uploads/' . $model->picture;
-
         if (isset( $_POST['User'] )) {
 
             foreach ($_POST['User'] as $key => $value) {
                 if (isset( $model->{$key} )) {
                     $model->{$key} = $_POST['User'][$key];
                 }
-            }
-
-            $model->new_image = UploadedFile::getInstance($model, 'new_image');
-
-            if ( ! is_null($model->new_image)) {
-                $save_path_route = realpath(dirname(__FILE__) . '/../web/uploads/') . '/';
-                $file_name       = 'profileImg_' . time() . '.' . $model->new_image->extension;
-                $full_route_name = $save_path_route . $file_name;
-                $model->picture  = $file_name;
-
-                $model->new_image->saveAs($full_route_name);
             }
 
             if ( ! $model->validate($model->attributes)) {
