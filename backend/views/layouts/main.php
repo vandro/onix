@@ -30,6 +30,14 @@ AppAsset::register($this);
     <link rel="icon" type="image/png" sizes="96x96" href="<?= Yii::$app->request->baseUrl ?>/favicon-96x96.png">
     <link rel="icon" type="image/png" sizes="16x16" href="<?= Yii::$app->request->baseUrl ?>/favicon-16x16.png">
     <link rel="manifest" href="<?= Yii::$app->request->baseUrl ?>/manifest.json">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="<?= Yii::$app->request->baseUrl ?>/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
@@ -37,7 +45,7 @@ AppAsset::register($this);
     <title><?= Html::encode(Yii::$app->name . ' - ' . $this->title) ?></title>
     <?php $this->head() ?>
 </head>
-<body class="skin-blue wysihtml5-supported">
+<body class="hold-transition skin-blue sidebar-mini wysihtml5-supported">
 <?php $this->beginBody() ?>
 <div class="wrapper">
     <?= $this->render('//layouts/header') ?>

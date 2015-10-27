@@ -53,6 +53,7 @@ use backend\models\Menu;
         </section>
         <!-- /.sidebar -->
     </aside>
+    <div class="control-sidebar-bg"></div>
 <?php
 $menu_Script = <<<JS
 //we want this function to fire whenever the user types in the search-box
