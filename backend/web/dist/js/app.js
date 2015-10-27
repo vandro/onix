@@ -146,9 +146,9 @@ $(function () {
   }
 
   //Activate Bootstrap tooltip
-  if (o.enableBSToppltip) {
+  /*if (o.enableBSToppltip) {
     $(o.BSTooltipSelector).tooltip();
-  }
+  }*/
 
   //Activate box widget
   if (o.enableBoxWidget) {
