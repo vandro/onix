@@ -18,14 +18,14 @@ return [
         ]
     ],
     'components'          => [
-        'session'      => [
+        'session'            => [
             'class' => \yii\web\DbSession::className(),
         ],
-        'user'         => [
+        'user'               => [
             'identityClass'   => 'common\models\User',
             'enableAutoLogin' => false,
         ],
-        'log'          => [
+        'log'                => [
             'traceLevel' => YII_DEBUG ? 3 : 0,
             'targets'    => [
                 [
@@ -34,12 +34,50 @@ return [
                 ],
             ],
         ],
-        'errorHandler' => [
+        'errorHandler'       => [
             'errorAction' => 'site/error',
         ],
-        'authManager'  => [
+        'authManager'        => [
             'class'        => 'yii\rbac\DbManager',
             'defaultRoles' => ['Guest']
+        ],
+        'urlManager'         => [
+            'class'                        => \codemix\localeurls\UrlManager::className(),
+            'showScriptName'               => false,
+            'enablePrettyUrl'              => true,
+            'languages'                    => [
+                'es',
+                'en'
+            ],
+            'enableDefaultLanguageUrlCode' => true,
+            'enableLanguagePersistence'    => true,
+        ],
+        'urlManagerFrontEnd' => [
+            'class'           => 'yii\web\urlManager',
+            'baseUrl'         => '/' . end(explode('/', realpath(__DIR__ . '/../../'))) . '/frontend/web',
+            'enablePrettyUrl' => false,
+            'showScriptName'  => false
+        ],
+        'i18n'               => [
+            'translations' => [
+                '*'          => [
+                    'class'                 => yii\i18n\DbMessageSource::className(),
+                    'forceTranslation'      => true,
+                    'sourceLanguage'        => 'es',
+                    'on missingTranslation' => [
+                        'common\components\TranslationEventHandler',
+                        'handleMissingTranslation'
+                    ],
+                ],
+                'rbac-admin' => [
+                    'class'                 => yii\i18n\DbMessageSource::className(),
+                    'forceTranslation'      => true,
+                    'on missingTranslation' => [
+                        'common\components\TranslationEventHandler',
+                        'handleMissingTranslation'
+                    ],
+                ]
+            ],
         ],
     ],
     'as access'           => [

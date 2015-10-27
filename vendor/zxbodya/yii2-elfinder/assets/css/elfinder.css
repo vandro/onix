@@ -1036,7 +1036,7 @@ tr.el-finder-droppable td.icon p {
 
 .el-finder-ql {
     position: absolute;
-    width: 420px;
+    width: auto !important;
     height: auto;
     padding: 12px 9px;
     text-align: center;
@@ -1134,4 +1134,8 @@ tr.el-finder-droppable td.icon p {
 
 .el-finder-ql .ui-resizable-e, .el-finder-ql .ui-resizable-s {
     background: transparent !important;
+}
+
+.ui-dialog-titlebar-close {
+    url(../images/fileclose.png) - 3 px - 2 px no-repeat
 }
