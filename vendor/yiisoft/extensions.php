@@ -264,4 +264,40 @@ return array (
       '@codemix/localeurls' => $vendorDir . '/codemix/yii2-localeurls',
     ),
   ),
+  '2amigos/yii2-tinymce-widget' => 
+  array (
+    'name' => '2amigos/yii2-tinymce-widget',
+    'version' => '1.1.1.0',
+    'alias' => 
+    array (
+      '@dosamigos/tinymce' => $vendorDir . '/2amigos/yii2-tinymce-widget/src',
+    ),
+  ),
+  'yiisoft/yii2-jui' => 
+  array (
+    'name' => 'yiisoft/yii2-jui',
+    'version' => '2.0.4.0',
+    'alias' => 
+    array (
+      '@yii/jui' => $vendorDir . '/yiisoft/yii2-jui',
+    ),
+  ),
+  'zxbodya/yii2-elfinder' => 
+  array (
+    'name' => 'zxbodya/yii2-elfinder',
+    'version' => '9999999-dev',
+    'alias' => 
+    array (
+      '@zxbodya/yii2/elfinder' => $vendorDir . '/zxbodya/yii2-elfinder',
+    ),
+  ),
+  'zxbodya/yii2-tinymce' => 
+  array (
+    'name' => 'zxbodya/yii2-tinymce',
+    'version' => '9999999-dev',
+    'alias' => 
+    array (
+      '@zxbodya/yii2/tinymce' => $vendorDir . '/zxbodya/yii2-tinymce',
+    ),
+  ),
 );

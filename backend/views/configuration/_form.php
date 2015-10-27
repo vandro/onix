@@ -2,7 +2,7 @@
 
 use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
-use dosamigos\ckeditor\CKEditor;
+use zxbodya\yii2\tinymce\TinyMce;
 
 /* @var $this yii\web\View */
 /* @var $model backend\models\Configuration */
@@ -39,15 +39,10 @@ use dosamigos\ckeditor\CKEditor;
 
     <?= $form->field($model, 'port')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'template')->widget(CKEditor::className(), [
-        'options'       => ['rows' => 6],
-        'preset'        => 'basic',
-        'clientOptions' => [
-            'allowedContent' => true,
-            'toolbarGroups'  => [
-                ['name' => 'editing', 'groups' => ['tools']],
-                ['name' => 'document', 'groups' => ['mode', 'document', 'doctools']],
-            ]
+    <?= $form->field($model, 'template')->widget(TinyMce::className(), [
+        'fileManager' => [
+            'class'          => \zxbodya\yii2\elfinder\TinyMceElFinder::className(),
+            'connectorRoute' => 'el-finder/connector',
         ]
     ]) ?>
 
