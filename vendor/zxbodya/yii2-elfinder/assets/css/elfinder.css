@@ -1137,5 +1137,32 @@ tr.el-finder-droppable td.icon p {
 }
 
 .ui-dialog-titlebar-close {
-    url(../images/fileclose.png) - 3 px - 2 px no-repeat
+url(../images/fileclose.png) - 3 px - 2 px no-repeat
+}
+
+/*
+FILE INPUT
+*/
+.file-preview {
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    padding: 5px;
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+.file-preview-frame {
+    display: table;
+    margin: 8px;
+    height: 160px;
+    border: 1px solid #ddd;
+    box-shadow: 1px 1px 5px 0 #a2958a;
+    padding: 6px;
+    float: left;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.file-preview-frame:not(.file-preview-error):hover {
+    box-shadow: 3px 3px 5px 0 #333;
 }

@@ -56,7 +56,8 @@ use zxbodya\yii2\elfinder\ElFinderInput;
         'connectorRoute' => 'el-finder/back-connector',
         'options'        => [
             'class' => 'form-group'
-        ]
+        ],
+        'imagePreview'   => true
     ]) ?>
 
     <div class="form-group">

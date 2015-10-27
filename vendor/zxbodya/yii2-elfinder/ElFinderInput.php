@@ -21,6 +21,7 @@ class ElFinderInput extends InputWidget
      */
     public $settings = array();
     public $connectorRoute = false;
+    public $imagePreview = false;
 
     public function init()
     {
@@ -34,6 +35,8 @@ class ElFinderInput extends InputWidget
 
     public function run()
     {
+        $img_container_id = null;
+
         if ( ! isset( $this->options['id'] )) {
             $this->options['id'] = $this->getId();
         }
@@ -43,7 +46,25 @@ class ElFinderInput extends InputWidget
 
         echo Html::beginTag('div', $contoptions);
 
+        echo Html::beginTag('div', ['class' => 'col-sm-12']);
+
+        if ($this->imagePreview == true) {
+            $img_container_id = 'elfinder_img_preview_' . uniqid();
+            echo '<div class="file-preview ">
+                    <div class="file-drop-disabled">
+                        <div class="file-preview-thumbnails">
+                            <div class="file-preview-frame file-preview-initial">
+                                <img src="' . $this->model->{$this->attribute} . '" id="' . $img_container_id . '" alt="">
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>';
+        }
+
+        echo Html::beginTag('div', ['class' => 'row']);
         echo Html::beginTag('div', ['class' => 'col-sm-8']);
+
         $inputOptions = array(
             'id'       => $this->options['id'],
             'readonly' => 'readonly',
@@ -57,11 +78,14 @@ class ElFinderInput extends InputWidget
         echo Html::endTag('div');
 
         echo Html::beginTag('div', ['class' => 'col-sm-4']);
-        echo Html::button(Yii::t('back', 'Buscar'), array('id'    => $this->options['id'] . 'browse',
-                                                          'class' => 'btn col-sm-12'
+        echo Html::button(Yii::t('back', 'Buscar'), array(
+            'id'    => $this->options['id'] . 'browse',
+            'class' => 'btn col-sm-12'
         ));
         echo Html::endTag('div');
+        echo Html::endTag('div');
 
+        echo Html::endTag('div');
         echo Html::endTag('div');
 
         $settings = array_merge(
@@ -72,13 +96,18 @@ class ElFinderInput extends InputWidget
             $this->settings
         );
 
-        $settings['dialog']                = array(
+        $settings['dialog'] = array(
             'zIndex' => 400001,
             'width'  => 900,
             'modal'  => true,
             'title'  => "Files",
         );
-        $settings['editorCallback']        = new JsExpression('function(url) {$(\'#\'+aFieldId).attr(\'value\',url);}');
+
+        if ($this->imagePreview == true) {
+            $settings['editorCallback'] = new JsExpression('function(url) {$(\'#\'+aFieldId).attr(\'value\',url); $("#' . $img_container_id . '").attr("src", url)}');
+        } else {
+            $settings['editorCallback'] = new JsExpression('function(url) {$(\'#\'+aFieldId).attr(\'value\',url);}');
+        }
         $settings['closeOnEditorCallback'] = true;
         $connectorUrl                      = Json::encode($this->settings['url']);
         $settings                          = Json::encode($settings);
@@ -94,16 +123,15 @@ class ElFinderInput extends InputWidget
             else {
                 $("#elFinderBrowser").elfinder("open", connector);
             }
-        }
+        };
 EOD;
 
         $view = $this->getView();
         ElFinderAsset::register($view);
         $view->registerJs($script, View::POS_READY, $key = 'ServerFileInput#global');
 
-        $js = //'$("#'.$id.'").focus(function(){window.elfinderBrowse("'.$name.'")});'.
-            '$("#' . $this->options['id'] . 'browse")'
-            . '.click(function(){window.elfinderBrowse("' . $this->options['id'] . '", ' . $connectorUrl . ')});';
+        $js = '$("#' . $this->options['id'] . 'browse")'
+              . '.click(function(){window.elfinderBrowse("' . $this->options['id'] . '", ' . $connectorUrl . ')});';
 
 
         $view->registerJs($js);
