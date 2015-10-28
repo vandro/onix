@@ -8,6 +8,7 @@ use Yii;
  * This is the model class for table "configuration".
  *
  * @property integer $id
+ * @property string $site_url
  * @property string $company
  * @property string $email_name
  * @property string $host
@@ -36,7 +37,10 @@ class Configuration extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['company', 'template', 'encryption', 'email_name', 'host', 'username', 'password', 'port'], 'required'],
+            [
+                ['site_url', 'company', 'template', 'encryption', 'email_name', 'host', 'username', 'password', 'port'],
+                'required'
+            ],
             [['template'], 'string'],
             [['company', 'email_name', 'host', 'username', 'password'], 'string', 'max' => 120],
             [['encryption'], 'string', 'max' => 20],
@@ -52,6 +56,7 @@ class Configuration extends \yii\db\ActiveRecord
     {
         return [
             'id'         => Yii::t('back', 'ID'),
+            'site_url'   => Yii::t('app', 'Site Url'),
             'company'    => Yii::t('back', 'Empresa'),
             'email_name' => Yii::t('back', 'Nombre Alias para el email'),
             'host'       => Yii::t('back', 'Servidor SMTP'),

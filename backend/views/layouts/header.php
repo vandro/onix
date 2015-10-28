@@ -29,6 +29,11 @@ use yii\helpers\Url;
         <div class="navbar-custom-menu">
             <ul class="nav navbar-nav">
                 <!-- User Account: style can be found in dropdown.less -->
+                <li>
+                    <a href="<?php echo Yii::$app->params['global']['site_url'] ?>" target="_blank">
+                        <?= Yii::t('back', 'Ver sitio') ?> <i class="fa fa-globe"></i>
+                    </a>
+                </li>
                 <li class="dropdown user user-menu">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                         <?= Html::img(Yii::$app->user->identity->picture, [

@@ -6,7 +6,7 @@ use yii\widgets\DetailView;
 /* @var $this yii\web\View */
 /* @var $model backend\models\Configuration */
 
-$this->title = $model->company;
+$this->title                   = $model->company;
 $this->params['breadcrumbs'][] = ['label' => Yii::t('back', 'Configuration'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
@@ -14,7 +14,10 @@ $this->params['breadcrumbs'][] = $this->title;
     <div class="col-md-12">
         <div class="menu-index box box-primary">
             <div class="box-header with-border">
-                <?= Html::a(Yii::t('back', 'Actualizar'), ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
+                <?= Html::a(Yii::t('back', 'Actualizar'), [
+                    'update',
+                    'id' => $model->id
+                ], ['class' => 'btn btn-primary']) ?>
                 <?= Html::a(Yii::t('back', 'Enviar email de prueba'), ['send-test-email'], ['class' => 'btn btn-success']) ?>
                 <?php /*echo Html::a(Yii::t('back', 'Delete'), ['delete', 'id' => $model->id], [
                         'class' => 'btn btn-danger',
@@ -26,9 +29,10 @@ $this->params['breadcrumbs'][] = $this->title;
             </div>
             <div class="box-body">
                 <?= DetailView::widget([
-                    'model' => $model,
+                    'model'      => $model,
                     'attributes' => [
                         'id',
+                        'site_url:url',
                         'company',
                         'email_name',
                         'host',
@@ -37,8 +41,8 @@ $this->params['breadcrumbs'][] = $this->title;
                         'port',
                         [
                             'attribute' => 'template',
-                            'format' => 'raw',
-                            'value' => Html::a(Yii::t('back', 'Clic para ver la plantilla'), ['view-email-template'],
+                            'format'    => 'raw',
+                            'value'     => Html::a(Yii::t('back', 'Clic para ver la plantilla'), ['view-email-template'],
                                 ['target' => '_blank']),
                         ],
                     ],

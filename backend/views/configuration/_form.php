@@ -25,6 +25,8 @@ use zxbodya\yii2\tinymce\TinyMce;
         ],
     ]); ?>
 
+    <?= $form->field($model, 'site_url')->textInput(['maxlength' => true]) ?>
+
     <?= $form->field($model, 'company')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'email_name')->textInput(['maxlength' => true]) ?>
