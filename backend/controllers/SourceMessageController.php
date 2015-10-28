@@ -4,11 +4,9 @@ namespace backend\controllers;
 
 use Yii;
 use backend\models\SourceMessage;
-use backend\models\SearchSourceMessage;
-use common\controllers\BackController;
-use yii\helpers\VarDumper;
 use yii\web\NotFoundHttpException;
-use yii\filters\VerbFilter;
+use common\controllers\BackController;
+use backend\models\SearchSourceMessage;
 
 /**
  * SourceMessageController implements the CRUD actions for SourceMessage model.
@@ -43,24 +41,6 @@ class SourceMessageController extends BackController
             'model' => $this->findModel($id),
         ]);
     }
-
-    /**
-     * Creates a new SourceMessage model.
-     * If creation is successful, the browser will be redirected to the 'view' page.
-     * @return mixed
-     */
-    /*public function actionCreate()
-    {
-        $model = new SourceMessage();
-
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
-        } else {
-            return $this->render('create', [
-                'model' => $model,
-            ]);
-        }
-    }*/
 
     /**
      * Updates an existing SourceMessage model.

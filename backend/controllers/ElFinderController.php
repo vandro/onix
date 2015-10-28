@@ -17,7 +17,7 @@ class ElFinderController extends BackController
     public function actions()
     {
         return [
-            'connector'     => [
+            'connector'      => [
                 'class'    => ConnectorAction::className(),
                 'settings' => [
                     'root'       => Yii::getAlias('@frontend') . '/web/uploads/',

@@ -2,10 +2,10 @@
 namespace backend\controllers;
 
 use Yii;
-use yii\helpers\ArrayHelper;
 use yii\web\Response;
 use kartik\growl\Growl;
 use yii\widgets\ActiveForm;
+use yii\helpers\ArrayHelper;
 use common\models\LoginForm;
 use common\models\ResetPasswordForm;
 use common\controllers\BackController;
@@ -123,20 +123,4 @@ class SiteController extends BackController
             'model' => $model,
         ]);
     }
-
-//    public function actionRegister()
-//    {
-//        $model = new User();
-//
-//        $model->username = 'admin';
-//        $model->email = 'admin@admin.com';
-//        $model->setPassword('admin');
-//        $model->status = User::STATUS_ACTIVE;
-//
-//        if($model->save()){
-//            echo "Registered :)";
-//        }else{
-//            echo VarDumper::dump($model->getErrors());
-//        }
-//    }
 }

@@ -2,15 +2,14 @@
 
 namespace backend\controllers;
 
-use common\models\EmailTemplate;
-use kartik\widgets\Growl;
 use Yii;
-use backend\models\Configuration;
+use kartik\widgets\Growl;
 use yii\base\DynamicModel;
 use yii\data\ActiveDataProvider;
-use common\controllers\BackController;
+use common\models\EmailTemplate;
+use backend\models\Configuration;
 use yii\web\NotFoundHttpException;
-use yii\filters\VerbFilter;
+use common\controllers\BackController;
 
 /**
  * ConfigurationController implements the CRUD actions for Configuration model.

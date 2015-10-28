@@ -2,13 +2,11 @@
 
 namespace backend\controllers;
 
-use mdm\admin\components\AccessControl;
 use Yii;
 use backend\models\Log;
 use yii\data\ActiveDataProvider;
-use common\controllers\BackController;
 use yii\web\NotFoundHttpException;
-use yii\filters\VerbFilter;
+use common\controllers\BackController;
 
 /**
  * LogController implements the CRUD actions for Log model.
