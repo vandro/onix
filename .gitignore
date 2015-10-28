@@ -29,19 +29,19 @@ phpunit.phar
 # local phpunit config
 /phpunit.xml
 
+admin/assets/*
 backend/runtime/*
-backend/web/assets/*
 backend/config/main-local.php
 backend/config/params-local.php
 
+assets/*
 frontend/runtime/*
-frontend/web/assets/*
 frontend/config/main-local.php
 frontend/config/params-local.php
 
 common/config/main-local.php
 common/config/params-local.php
 
+console/runtime/*
 console/config/main-local.php
 console/config/params-local.php
-console/runtime/*
