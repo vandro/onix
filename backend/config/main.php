@@ -18,6 +18,11 @@ return [
         ]
     ],
     'components'          => [
+        'request'            => [
+//            SE DESACTIVA LA VALIDACION DEL CSRF POR QUE MUESTRA MUCHOS ERRORES DE "INCAPAZ DE VERIFICAR LOS DATOS ENVIADOS"
+            'cookieValidationKey'  => 'XVV_QDR86twXZLqsbHnTehqwdzeALP8M',
+            'enableCsrfValidation' => false
+        ],
         'session'            => [
             'class' => \yii\web\DbSession::className(),
         ],
