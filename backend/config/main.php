@@ -54,7 +54,7 @@ return [
         ],
         'urlManagerFrontEnd' => [
             'class'           => 'yii\web\urlManager',
-            'baseUrl'         => '/' . end(explode('/', realpath(__DIR__ . '/../../'))) . '/frontend/web',
+            'baseUrl'         => '/' . end(explode('/', realpath(__DIR__ . '/../../'))),
             'enablePrettyUrl' => false,
             'showScriptName'  => false
         ],
