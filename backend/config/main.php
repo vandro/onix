@@ -11,6 +11,9 @@ return [
     'basePath'            => dirname(__DIR__),
     'controllerNamespace' => 'backend\controllers',
     'bootstrap'           => ['log'],
+    'aliases'             => [
+        '@front' => __DIR__ . '/../..'
+    ],
     'modules'             => [
         'admin' => [
             'class'    => \mdm\admin\Module::className(),

@@ -20,7 +20,7 @@ class ElFinderController extends BackController
             'connector'      => [
                 'class'    => ConnectorAction::className(),
                 'settings' => [
-                    'root'       => Yii::getAlias('@frontend') . '/web/uploads/',
+                    'root'       => Yii::getAlias('@webroot') . '/../',
                     'URL'        => Yii::$app->urlManagerFrontEnd->baseUrl . '/uploads/',
                     'rootAlias'  => Yii::t('back', 'Directorio Principal'),
                     'mimeDetect' => 'none'
@@ -29,7 +29,7 @@ class ElFinderController extends BackController
             'back-connector' => [
                 'class'    => ConnectorAction::className(),
                 'settings' => [
-                    'root'       => Yii::getAlias('@backend') . '/web/uploads/',
+                    'root'       => Yii::getAlias('@webroot') . '/uploads/',
                     'URL'        => Yii::$app->urlManager->baseUrl . '/uploads/',
                     'rootAlias'  => Yii::t('back', 'Directorio Principal'),
                     'mimeDetect' => 'none'
