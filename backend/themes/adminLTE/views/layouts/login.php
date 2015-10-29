@@ -1,5 +1,5 @@
 <?php
-use backend\assets\AppAsset;
+use backend\themes\adminLTE\AppAsset;
 use yii\helpers\Html;
 
 /* @var $this \yii\web\View */
