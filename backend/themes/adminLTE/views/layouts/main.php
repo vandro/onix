@@ -1,5 +1,5 @@
 <?php
-use backend\assets\AppAsset;
+use \backend\themes\adminLTE\AppAsset;
 use yii\helpers\Html;
 use yii\widgets\Breadcrumbs;
 
@@ -25,7 +25,8 @@ AppAsset::register($this);
     <link rel="apple-touch-icon" sizes="144x144" href="<?= Yii::$app->request->baseUrl ?>/apple-icon-144x144.png">
     <link rel="apple-touch-icon" sizes="152x152" href="<?= Yii::$app->request->baseUrl ?>/apple-icon-152x152.png">
     <link rel="apple-touch-icon" sizes="180x180" href="<?= Yii::$app->request->baseUrl ?>/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="<?= Yii::$app->request->baseUrl ?>/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="192x192"
+          href="<?= Yii::$app->request->baseUrl ?>/android-icon-192x192.png">
     <link rel="icon" type="image/png" sizes="32x32" href="<?= Yii::$app->request->baseUrl ?>/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="96x96" href="<?= Yii::$app->request->baseUrl ?>/favicon-96x96.png">
     <link rel="icon" type="image/png" sizes="16x16" href="<?= Yii::$app->request->baseUrl ?>/favicon-16x16.png">

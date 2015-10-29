@@ -5,7 +5,7 @@
  * @license http://www.yiiframework.com/license/
  */
 
-namespace backend\assets;
+namespace backend\themes\adminLTE;
 
 use yii\web\AssetBundle;
 
@@ -15,8 +15,7 @@ use yii\web\AssetBundle;
  */
 class AppAsset extends AssetBundle
 {
-    public $basePath = '@webroot';
-    public $baseUrl = '@web';
+    public $sourcePath = '@backend/themes/adminLTE/assets';
     public $css = [
         'css/ionicons.min.css',
         'css/font-awesome.min.css',

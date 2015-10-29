@@ -87,6 +87,12 @@ return [
                 ]
             ],
         ],
+        'view'               => [
+            'theme' => [
+                'basePath' => '@backend/themes/adminLTE',
+                'baseUrl'  => '@web/themes/adminLTE',
+            ],
+        ],
     ],
     'as access'           => [
         'class'        => \backend\modules\onix\admin\components\AccessControl::className(),
