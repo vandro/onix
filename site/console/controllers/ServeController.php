@@ -1,5 +1,5 @@
 <?php
-namespace console\commands;
+namespace console\controllers;
  
 use yii\console\Controller;
  
@@ -16,9 +16,9 @@ class ServeController extends Controller
      * @param string $host hostname of the server.
      * @param string $port port to listen for connections.
      */
-    public function actionIndex($root = "web", $host="localhost", $port= 8080)
+    public function actionIndex($root = "www", $host="localhost", $port= 8080)
     {
-        $basePath = \Yii::$app->basePath;
+        $basePath = \Yii::$app->basePath.DIRECTORY_SEPARATOR.'../..';
  
         $webRoot = $basePath.DIRECTORY_SEPARATOR.$root;
  
