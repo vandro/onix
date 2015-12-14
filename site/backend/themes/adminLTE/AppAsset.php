@@ -24,7 +24,6 @@ class AppAsset extends AssetBundle
         'plugins/iCheck/square/blue.css',
     ];
     public $js = [
-        'bootstrap/js/bootstrap.min.js',
         'plugins/iCheck/icheck.min.js',
         'plugins/slimScroll/jquery.slimscroll.min.js',
         'plugins/fastclick/fastclick.min.js',
@@ -33,5 +32,6 @@ class AppAsset extends AssetBundle
     public $depends = [
         'yii\web\YiiAsset',
         'yii\bootstrap\BootstrapAsset',
+        'yii\bootstrap\BootstrapPluginAsset'
     ];
 }
