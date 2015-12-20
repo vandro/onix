@@ -1,0 +1,220 @@
+2015-12-07 17:40:09 [127.0.0.1][-][-][error][yii\base\InvalidConfigException] exception 'yii\base\InvalidConfigException' with message 'The directory is not writable by the Web process: /var/www/html/OnixLabs/onixcms/www/assets' in /var/www/html/OnixLabs/onixcms/site/vendor/yiisoft/yii2/web/AssetManager.php:213
+Stack trace:
+#0 /var/www/html/OnixLabs/onixcms/site/vendor/yiisoft/yii2/base/Object.php(107): yii\web\AssetManager->init()
+#1 [internal function]: yii\base\Object->__construct(Array)
+#2 /var/www/html/OnixLabs/onixcms/site/vendor/yiisoft/yii2/di/Container.php(366): ReflectionClass->newInstanceArgs(Array)
+#3 /var/www/html/OnixLabs/onixcms/site/vendor/yiisoft/yii2/di/Container.php(151): yii\di\Container->build('yii\\web\\AssetMa...', Array, Array)
+#4 /var/www/html/OnixLabs/onixcms/site/vendor/yiisoft/yii2/BaseYii.php(344): yii\di\Container->get('yii\\web\\AssetMa...', Array, Array)
+#5 /var/www/html/OnixLabs/onixcms/site/vendor/yiisoft/yii2/di/ServiceLocator.php(133): yii\BaseYii::createObject(Array)
+#6 /var/www/html/OnixLabs/onixcms/site/vendor/yiisoft/yii2/base/Application.php(600): yii\di\ServiceLocator->get('assetManager')
+#7 /var/www/html/OnixLabs/onixcms/site/vendor/yiisoft/yii2/web/View.php(223): yii\base\Application->getAssetManager()
+#8 /var/www/html/OnixLabs/onixcms/site/vendor/yiisoft/yii2/web/View.php(283): yii\web\View->getAssetManager()
+#9 /var/www/html/OnixLabs/onixcms/site/vendor/yiisoft/yii2/web/AssetBundle.php(119): yii\web\View->registerAssetBundle('frontend\\themes...')
+#10 /var/www/html/OnixLabs/onixcms/site/frontend/themes/web/views/layouts/main.php(13): yii\web\AssetBundle::register(Object(yii\web\View))
+#11 /var/www/html/OnixLabs/onixcms/site/vendor/yiisoft/yii2/base/View.php(325): require('/var/www/html/O...')
+#12 /var/www/html/OnixLabs/onixcms/site/vendor/yiisoft/yii2/base/View.php(247): yii\base\View->renderPhpFile('/var/www/html/O...', Array)
+#13 /var/www/html/OnixLabs/onixcms/site/vendor/yiisoft/yii2/base/Controller.php(386): yii\base\View->renderFile('/var/www/html/O...', Array, Object(frontend\controllers\SiteController))
+#14 /var/www/html/OnixLabs/onixcms/site/vendor/yiisoft/yii2/base/Controller.php(372): yii\base\Controller->renderContent('<div class="sit...')
+#15 /var/www/html/OnixLabs/onixcms/site/frontend/controllers/SiteController.php(70): yii\base\Controller->render('index')
+#16 [internal function]: frontend\controllers\SiteController->actionIndex()
+#17 /var/www/html/OnixLabs/onixcms/site/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#18 /var/www/html/OnixLabs/onixcms/site/vendor/yiisoft/yii2/base/Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#19 /var/www/html/OnixLabs/onixcms/site/vendor/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('', Array)
+#20 /var/www/html/OnixLabs/onixcms/site/vendor/yiisoft/yii2/web/Application.php(84): yii\base\Module->runAction('', Array)
+#21 /var/www/html/OnixLabs/onixcms/site/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#22 /var/www/html/OnixLabs/onixcms/www/index.php(18): yii\base\Application->run()
+#23 {main}
+2015-12-07 17:40:09 [127.0.0.1][-][-][info][application] $_COOKIE = [
+    '_ga' => 'GA1.1.861288925.1449504238'
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => '/var/www/html/OnixLabs/onixcms/www'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'REMOTE_PORT' => '39632'
+    'SERVER_SOFTWARE' => 'PHP 5.6.4-4ubuntu6.4 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => '/var/www/html/OnixLabs/onixcms/www/index.php'
+    'PHP_SELF' => '/index.php'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.80 Safari/537.36'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'es-ES,es;q=0.8,en;q=0.6'
+    'HTTP_COOKIE' => '_ga=GA1.1.861288925.1449504238'
+    'REQUEST_TIME_FLOAT' => 1449510009.488
+    'REQUEST_TIME' => 1449510009
+]
+2015-12-07 17:40:59 [127.0.0.1][-][-][error][yii\base\InvalidConfigException] exception 'yii\base\InvalidConfigException' with message 'The directory is not writable by the Web process: /var/www/html/OnixLabs/onixcms/www/assets' in /var/www/html/OnixLabs/onixcms/site/vendor/yiisoft/yii2/web/AssetManager.php:213
+Stack trace:
+#0 /var/www/html/OnixLabs/onixcms/site/vendor/yiisoft/yii2/base/Object.php(107): yii\web\AssetManager->init()
+#1 [internal function]: yii\base\Object->__construct(Array)
+#2 /var/www/html/OnixLabs/onixcms/site/vendor/yiisoft/yii2/di/Container.php(366): ReflectionClass->newInstanceArgs(Array)
+#3 /var/www/html/OnixLabs/onixcms/site/vendor/yiisoft/yii2/di/Container.php(151): yii\di\Container->build('yii\\web\\AssetMa...', Array, Array)
+#4 /var/www/html/OnixLabs/onixcms/site/vendor/yiisoft/yii2/BaseYii.php(344): yii\di\Container->get('yii\\web\\AssetMa...', Array, Array)
+#5 /var/www/html/OnixLabs/onixcms/site/vendor/yiisoft/yii2/di/ServiceLocator.php(133): yii\BaseYii::createObject(Array)
+#6 /var/www/html/OnixLabs/onixcms/site/vendor/yiisoft/yii2/base/Application.php(600): yii\di\ServiceLocator->get('assetManager')
+#7 /var/www/html/OnixLabs/onixcms/site/vendor/yiisoft/yii2/web/View.php(223): yii\base\Application->getAssetManager()
+#8 /var/www/html/OnixLabs/onixcms/site/vendor/yiisoft/yii2/web/View.php(283): yii\web\View->getAssetManager()
+#9 /var/www/html/OnixLabs/onixcms/site/vendor/yiisoft/yii2/web/AssetBundle.php(119): yii\web\View->registerAssetBundle('frontend\\themes...')
+#10 /var/www/html/OnixLabs/onixcms/site/frontend/themes/web/views/layouts/main.php(13): yii\web\AssetBundle::register(Object(yii\web\View))
+#11 /var/www/html/OnixLabs/onixcms/site/vendor/yiisoft/yii2/base/View.php(325): require('/var/www/html/O...')
+#12 /var/www/html/OnixLabs/onixcms/site/vendor/yiisoft/yii2/base/View.php(247): yii\base\View->renderPhpFile('/var/www/html/O...', Array)
+#13 /var/www/html/OnixLabs/onixcms/site/vendor/yiisoft/yii2/base/Controller.php(386): yii\base\View->renderFile('/var/www/html/O...', Array, Object(frontend\controllers\SiteController))
+#14 /var/www/html/OnixLabs/onixcms/site/vendor/yiisoft/yii2/base/Controller.php(372): yii\base\Controller->renderContent('<div class="sit...')
+#15 /var/www/html/OnixLabs/onixcms/site/frontend/controllers/SiteController.php(70): yii\base\Controller->render('index')
+#16 [internal function]: frontend\controllers\SiteController->actionIndex()
+#17 /var/www/html/OnixLabs/onixcms/site/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#18 /var/www/html/OnixLabs/onixcms/site/vendor/yiisoft/yii2/base/Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#19 /var/www/html/OnixLabs/onixcms/site/vendor/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('', Array)
+#20 /var/www/html/OnixLabs/onixcms/site/vendor/yiisoft/yii2/web/Application.php(84): yii\base\Module->runAction('', Array)
+#21 /var/www/html/OnixLabs/onixcms/site/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#22 /var/www/html/OnixLabs/onixcms/www/index.php(18): yii\base\Application->run()
+#23 {main}
+2015-12-07 17:40:59 [127.0.0.1][-][-][info][application] $_COOKIE = [
+    '_ga' => 'GA1.1.861288925.1449504238'
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => '/var/www/html/OnixLabs/onixcms/www'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'REMOTE_PORT' => '40210'
+    'SERVER_SOFTWARE' => 'PHP 5.6.4-4ubuntu6.4 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => '/var/www/html/OnixLabs/onixcms/www/index.php'
+    'PHP_SELF' => '/index.php'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.80 Safari/537.36'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'es-ES,es;q=0.8,en;q=0.6'
+    'HTTP_COOKIE' => '_ga=GA1.1.861288925.1449504238'
+    'REQUEST_TIME_FLOAT' => 1449510059.6057
+    'REQUEST_TIME' => 1449510059
+]
+2015-12-07 17:42:55 [127.0.0.1][-][-][error][yii\base\InvalidConfigException] exception 'yii\base\InvalidConfigException' with message 'The directory is not writable by the Web process: /var/www/html/OnixLabs/onixcms/www/assets' in /var/www/html/OnixLabs/onixcms/site/vendor/yiisoft/yii2/web/AssetManager.php:213
+Stack trace:
+#0 /var/www/html/OnixLabs/onixcms/site/vendor/yiisoft/yii2/base/Object.php(107): yii\web\AssetManager->init()
+#1 [internal function]: yii\base\Object->__construct(Array)
+#2 /var/www/html/OnixLabs/onixcms/site/vendor/yiisoft/yii2/di/Container.php(366): ReflectionClass->newInstanceArgs(Array)
+#3 /var/www/html/OnixLabs/onixcms/site/vendor/yiisoft/yii2/di/Container.php(151): yii\di\Container->build('yii\\web\\AssetMa...', Array, Array)
+#4 /var/www/html/OnixLabs/onixcms/site/vendor/yiisoft/yii2/BaseYii.php(344): yii\di\Container->get('yii\\web\\AssetMa...', Array, Array)
+#5 /var/www/html/OnixLabs/onixcms/site/vendor/yiisoft/yii2/di/ServiceLocator.php(133): yii\BaseYii::createObject(Array)
+#6 /var/www/html/OnixLabs/onixcms/site/vendor/yiisoft/yii2/base/Application.php(600): yii\di\ServiceLocator->get('assetManager')
+#7 /var/www/html/OnixLabs/onixcms/site/vendor/yiisoft/yii2/web/View.php(223): yii\base\Application->getAssetManager()
+#8 /var/www/html/OnixLabs/onixcms/site/vendor/yiisoft/yii2/web/View.php(283): yii\web\View->getAssetManager()
+#9 /var/www/html/OnixLabs/onixcms/site/vendor/yiisoft/yii2/web/AssetBundle.php(119): yii\web\View->registerAssetBundle('frontend\\themes...')
+#10 /var/www/html/OnixLabs/onixcms/site/frontend/themes/web/views/layouts/main.php(13): yii\web\AssetBundle::register(Object(yii\web\View))
+#11 /var/www/html/OnixLabs/onixcms/site/vendor/yiisoft/yii2/base/View.php(325): require('/var/www/html/O...')
+#12 /var/www/html/OnixLabs/onixcms/site/vendor/yiisoft/yii2/base/View.php(247): yii\base\View->renderPhpFile('/var/www/html/O...', Array)
+#13 /var/www/html/OnixLabs/onixcms/site/vendor/yiisoft/yii2/base/Controller.php(386): yii\base\View->renderFile('/var/www/html/O...', Array, Object(frontend\controllers\SiteController))
+#14 /var/www/html/OnixLabs/onixcms/site/vendor/yiisoft/yii2/base/Controller.php(372): yii\base\Controller->renderContent('<div class="sit...')
+#15 /var/www/html/OnixLabs/onixcms/site/frontend/controllers/SiteController.php(70): yii\base\Controller->render('index')
+#16 [internal function]: frontend\controllers\SiteController->actionIndex()
+#17 /var/www/html/OnixLabs/onixcms/site/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#18 /var/www/html/OnixLabs/onixcms/site/vendor/yiisoft/yii2/base/Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#19 /var/www/html/OnixLabs/onixcms/site/vendor/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('', Array)
+#20 /var/www/html/OnixLabs/onixcms/site/vendor/yiisoft/yii2/web/Application.php(84): yii\base\Module->runAction('', Array)
+#21 /var/www/html/OnixLabs/onixcms/site/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#22 /var/www/html/OnixLabs/onixcms/www/index.php(18): yii\base\Application->run()
+#23 {main}
+2015-12-07 17:42:55 [127.0.0.1][-][-][info][application] $_COOKIE = [
+    '_ga' => 'GA1.1.861288925.1449504238'
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => '/var/www/html/OnixLabs/onixcms/www'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'REMOTE_PORT' => '41569'
+    'SERVER_SOFTWARE' => 'PHP 5.6.4-4ubuntu6.4 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => '/var/www/html/OnixLabs/onixcms/www/index.php'
+    'PHP_SELF' => '/index.php'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.80 Safari/537.36'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'es-ES,es;q=0.8,en;q=0.6'
+    'HTTP_COOKIE' => '_ga=GA1.1.861288925.1449504238'
+    'REQUEST_TIME_FLOAT' => 1449510175.8996
+    'REQUEST_TIME' => 1449510175
+]
+2015-12-07 17:43:12 [127.0.0.1][-][-][error][yii\base\InvalidConfigException] exception 'yii\base\InvalidConfigException' with message 'The directory is not writable by the Web process: /var/www/html/OnixLabs/onixcms/www/assets' in /var/www/html/OnixLabs/onixcms/site/vendor/yiisoft/yii2/web/AssetManager.php:213
+Stack trace:
+#0 /var/www/html/OnixLabs/onixcms/site/vendor/yiisoft/yii2/base/Object.php(107): yii\web\AssetManager->init()
+#1 [internal function]: yii\base\Object->__construct(Array)
+#2 /var/www/html/OnixLabs/onixcms/site/vendor/yiisoft/yii2/di/Container.php(366): ReflectionClass->newInstanceArgs(Array)
+#3 /var/www/html/OnixLabs/onixcms/site/vendor/yiisoft/yii2/di/Container.php(151): yii\di\Container->build('yii\\web\\AssetMa...', Array, Array)
+#4 /var/www/html/OnixLabs/onixcms/site/vendor/yiisoft/yii2/BaseYii.php(344): yii\di\Container->get('yii\\web\\AssetMa...', Array, Array)
+#5 /var/www/html/OnixLabs/onixcms/site/vendor/yiisoft/yii2/di/ServiceLocator.php(133): yii\BaseYii::createObject(Array)
+#6 /var/www/html/OnixLabs/onixcms/site/vendor/yiisoft/yii2/base/Application.php(600): yii\di\ServiceLocator->get('assetManager')
+#7 /var/www/html/OnixLabs/onixcms/site/vendor/yiisoft/yii2/web/View.php(223): yii\base\Application->getAssetManager()
+#8 /var/www/html/OnixLabs/onixcms/site/vendor/yiisoft/yii2/web/View.php(283): yii\web\View->getAssetManager()
+#9 /var/www/html/OnixLabs/onixcms/site/vendor/yiisoft/yii2/web/AssetBundle.php(119): yii\web\View->registerAssetBundle('frontend\\themes...')
+#10 /var/www/html/OnixLabs/onixcms/site/frontend/themes/web/views/layouts/main.php(13): yii\web\AssetBundle::register(Object(yii\web\View))
+#11 /var/www/html/OnixLabs/onixcms/site/vendor/yiisoft/yii2/base/View.php(325): require('/var/www/html/O...')
+#12 /var/www/html/OnixLabs/onixcms/site/vendor/yiisoft/yii2/base/View.php(247): yii\base\View->renderPhpFile('/var/www/html/O...', Array)
+#13 /var/www/html/OnixLabs/onixcms/site/vendor/yiisoft/yii2/base/Controller.php(386): yii\base\View->renderFile('/var/www/html/O...', Array, Object(frontend\controllers\SiteController))
+#14 /var/www/html/OnixLabs/onixcms/site/vendor/yiisoft/yii2/base/Controller.php(372): yii\base\Controller->renderContent('<div class="sit...')
+#15 /var/www/html/OnixLabs/onixcms/site/frontend/controllers/SiteController.php(70): yii\base\Controller->render('index')
+#16 [internal function]: frontend\controllers\SiteController->actionIndex()
+#17 /var/www/html/OnixLabs/onixcms/site/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#18 /var/www/html/OnixLabs/onixcms/site/vendor/yiisoft/yii2/base/Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#19 /var/www/html/OnixLabs/onixcms/site/vendor/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('', Array)
+#20 /var/www/html/OnixLabs/onixcms/site/vendor/yiisoft/yii2/web/Application.php(84): yii\base\Module->runAction('', Array)
+#21 /var/www/html/OnixLabs/onixcms/site/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#22 /var/www/html/OnixLabs/onixcms/www/index.php(18): yii\base\Application->run()
+#23 {main}
+2015-12-07 17:43:12 [127.0.0.1][-][-][info][application] $_COOKIE = [
+    '_ga' => 'GA1.1.861288925.1449504238'
+]
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => '/var/www/html/OnixLabs/onixcms/www'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'REMOTE_PORT' => '41764'
+    'SERVER_SOFTWARE' => 'PHP 5.6.4-4ubuntu6.4 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '8080'
+    'REQUEST_URI' => '/'
+    'REQUEST_METHOD' => 'GET'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => '/var/www/html/OnixLabs/onixcms/www/index.php'
+    'PHP_SELF' => '/index.php'
+    'HTTP_HOST' => 'localhost:8080'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.80 Safari/537.36'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'es-ES,es;q=0.8,en;q=0.6'
+    'HTTP_COOKIE' => '_ga=GA1.1.861288925.1449504238'
+    'REQUEST_TIME_FLOAT' => 1449510192.8307
+    'REQUEST_TIME' => 1449510192
+]

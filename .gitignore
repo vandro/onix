@@ -19,18 +19,18 @@ composer.phar
 .DS_Store
 
 www/admin/assets/*
-site/backend/runtime/*
-site/backend/config/main-local.php
-site/backend/config/params-local.php
+app/backend/runtime/*
+app/backend/config/main-local.php
+app/backend/config/params-local.php
 
 www/assets/*
-site/frontend/runtime/*
-site/frontend/config/main-local.php
-site/frontend/config/params-local.php
+app/frontend/runtime/*
+app/frontend/config/main-local.php
+app/frontend/config/params-local.php
 
-site/common/config/main-local.php
-site/common/config/params-local.php
+app/common/config/main-local.php
+app/common/config/params-local.php
 
-site/console/runtime/*
-site/console/config/main-local.php
-site/console/config/params-local.php
+app/console/runtime/*
+app/console/config/main-local.php
+app/console/config/params-local.php
