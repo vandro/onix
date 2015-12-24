@@ -34,3 +34,4 @@ app/common/config/params-local.php
 app/console/runtime/*
 app/console/config/main-local.php
 app/console/config/params-local.php
+sonar-project.properties
