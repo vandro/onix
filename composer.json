@@ -23,7 +23,7 @@
         "codemix/yii2-localeurls": "^1.2",
         "mdmsoft/yii2-admin": "~2.0",
         "zxbodya/yii2-elfinder": "*@dev",
-        "zxbodya/yii2-tinymce": "*@dev",
+        "zxbodya/yii2-tinymce": "*@dev"
     },
     "require-dev": {
         "yiisoft/yii2-codeception": "*",
@@ -33,12 +33,12 @@
     },
     "config": {
         "process-timeout": 1800,
-        "vendor-dir" : "site/vendor"
+        "vendor-dir" : "vendor"
     },
     "extra": {
         "asset-installer-paths": {
-            "npm-asset-library": "site/vendor/npm",
-            "bower-asset-library": "site/vendor/bower"
+            "npm-asset-library": "vendor/npm",
+            "bower-asset-library": "vendor/bower"
         }
     }
 }

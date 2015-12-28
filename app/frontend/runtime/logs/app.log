@@ -218,3 +218,70 @@ $_SERVER = [
     'REQUEST_TIME_FLOAT' => 1449510192.8307
     'REQUEST_TIME' => 1449510192
 ]
+2015-12-28 07:54:56 [127.0.0.1][-][-][error][yii\base\InvalidParamException] exception 'yii\base\InvalidParamException' with message 'The file or directory to be published does not exist: /var/www/html/OnixLabs/onixcms/app/vendor/bower/jquery/dist' in /var/www/html/OnixLabs/onixcms/vendor/yiisoft/yii2/web/AssetManager.php:452
+Stack trace:
+#0 /var/www/html/OnixLabs/onixcms/vendor/yiisoft/yii2/web/AssetBundle.php(163): yii\web\AssetManager->publish('/var/www/html/O...', Array)
+#1 /var/www/html/OnixLabs/onixcms/vendor/yiisoft/yii2/web/AssetManager.php(266): yii\web\AssetBundle->publish(Object(yii\web\AssetManager))
+#2 /var/www/html/OnixLabs/onixcms/vendor/yiisoft/yii2/web/AssetManager.php(237): yii\web\AssetManager->loadBundle('yii\\web\\JqueryA...', Array, true)
+#3 /var/www/html/OnixLabs/onixcms/vendor/yiisoft/yii2/web/View.php(284): yii\web\AssetManager->getBundle('yii\\web\\JqueryA...')
+#4 /var/www/html/OnixLabs/onixcms/vendor/yiisoft/yii2/web/View.php(289): yii\web\View->registerAssetBundle('yii\\web\\JqueryA...', NULL)
+#5 /var/www/html/OnixLabs/onixcms/vendor/yiisoft/yii2/web/View.php(289): yii\web\View->registerAssetBundle('yii\\web\\YiiAsse...', NULL)
+#6 /var/www/html/OnixLabs/onixcms/vendor/yiisoft/yii2/web/AssetBundle.php(119): yii\web\View->registerAssetBundle('frontend\\themes...')
+#7 /var/www/html/OnixLabs/onixcms/app/frontend/themes/web/views/layouts/main.php(13): yii\web\AssetBundle::register(Object(yii\web\View))
+#8 /var/www/html/OnixLabs/onixcms/vendor/yiisoft/yii2/base/View.php(325): require('/var/www/html/O...')
+#9 /var/www/html/OnixLabs/onixcms/vendor/yiisoft/yii2/base/View.php(247): yii\base\View->renderPhpFile('/var/www/html/O...', Array)
+#10 /var/www/html/OnixLabs/onixcms/vendor/yiisoft/yii2/base/Controller.php(386): yii\base\View->renderFile('/var/www/html/O...', Array, Object(frontend\controllers\SiteController))
+#11 /var/www/html/OnixLabs/onixcms/vendor/yiisoft/yii2/base/Controller.php(372): yii\base\Controller->renderContent('<div class="sit...')
+#12 /var/www/html/OnixLabs/onixcms/app/frontend/controllers/SiteController.php(70): yii\base\Controller->render('index')
+#13 [internal function]: frontend\controllers\SiteController->actionIndex()
+#14 /var/www/html/OnixLabs/onixcms/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#15 /var/www/html/OnixLabs/onixcms/vendor/yiisoft/yii2/base/Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#16 /var/www/html/OnixLabs/onixcms/vendor/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('', Array)
+#17 /var/www/html/OnixLabs/onixcms/vendor/yiisoft/yii2/web/Application.php(84): yii\base\Module->runAction('', Array)
+#18 /var/www/html/OnixLabs/onixcms/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#19 /var/www/html/OnixLabs/onixcms/www/index.php(27): yii\base\Application->run()
+#20 {main}
+2015-12-28 07:54:56 [127.0.0.1][-][-][info][application] $_COOKIE = [
+    '__distillery' => 'v20150227_78a45033-424b-4828-8604-506d29d0164a'
+    '__atuvc' => '231|51,7|52'
+    '_csrf' => '6878b1e59d07e33550436f0a31b7a9efcbafc7cd19ed6f332a5f5b8f1c84b78fa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"HcnRThBdrHxQUll-E39nSSt4qvYbGsPX\";}'
+    'PHPSESSID' => 'pf6k1npp0e5i2ouj4pr0kmng16'
+    'auth_token' => 'c0d3dfd989e3432a231573d21dec13982d1cc7a6'
+    '_language' => '21500e18355e77b41919af9189491bae2c916d13c5223ba46f65a7d22631084ca:2:{i:0;s:9:\"_language\";i:1;s:2:\"es\";}'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.106 Safari/537.36'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'es-ES,es;q=0.8,en;q=0.6'
+    'HTTP_COOKIE' => '__distillery=v20150227_78a45033-424b-4828-8604-506d29d0164a; __atuvc=231%7C51%2C7%7C52; _csrf=6878b1e59d07e33550436f0a31b7a9efcbafc7cd19ed6f332a5f5b8f1c84b78fa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22HcnRThBdrHxQUll-E39nSSt4qvYbGsPX%22%3B%7D; PHPSESSID=pf6k1npp0e5i2ouj4pr0kmng16; auth_token=c0d3dfd989e3432a231573d21dec13982d1cc7a6; _language=21500e18355e77b41919af9189491bae2c916d13c5223ba46f65a7d22631084ca%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_language%22%3Bi%3A1%3Bs%3A2%3A%22es%22%3B%7D'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.12 (Ubuntu) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.12 (Ubuntu)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/OnixLabs/onixcms/www/index.php'
+    'REMOTE_PORT' => '45498'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/OnixLabs/onixcms/www/'
+    'SCRIPT_NAME' => '/OnixLabs/onixcms/www/index.php'
+    'PHP_SELF' => '/OnixLabs/onixcms/www/index.php'
+    'REQUEST_TIME_FLOAT' => 1451289296.451
+    'REQUEST_TIME' => 1451289296
+]
