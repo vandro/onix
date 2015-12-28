@@ -19,7 +19,7 @@ class AccessControl extends \mdm\admin\components\AccessControl
      */
     public function beforeAction($action)
     {
-        new GlobalHelper();
+        GlobalHelper::initGobals();
         return parent::beforeAction($action);
     }
 }
