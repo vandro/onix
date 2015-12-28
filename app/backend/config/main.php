@@ -7,78 +7,78 @@ $params = array_merge(
 );
 
 return [
-    'id' => 'app-backend',
-    'basePath' => dirname(__DIR__),
+    'id'                  => 'app-backend',
+    'basePath'            => dirname(__DIR__),
     'controllerNamespace' => 'backend\controllers',
-    'bootstrap' => ['log'],
-    'aliases' => [
+    'bootstrap'           => ['log'],
+    'aliases'             => [
         '@front' => __DIR__ . '/../..'
     ],
-    'modules' => [
+    'modules'             => [
         'admin' => [
-            'class' => \mdm\admin\Module::className(),
+            'class'    => \mdm\admin\Module::className(),
             'viewPath' => dirname(dirname(__DIR__)) . '/backend/modules/onix/admin/views'
         ]
     ],
-    'components' => [
-        'request' => [
+    'components'          => [
+        'request'            => [
             'enableCsrfValidation' => YII_DEBUG ? false : true,
-            'cookieValidationKey' => 'XVV_QDR86twXZLqsbHnTehqwdzeALP8M',
+            'cookieValidationKey'  => 'XVV_QDR86twXZLqsbHnTehqwdzeALP8M',
         ],
-        'session' => [
+        'session'            => [
             'class' => \yii\web\DbSession::className(),
         ],
-        'user' => [
-            'identityClass' => 'common\models\User',
+        'user'               => [
+            'identityClass'   => 'common\models\User',
             'enableAutoLogin' => false,
         ],
-        'log' => [
+        'log'                => [
             'traceLevel' => YII_DEBUG ? 3 : 0,
-            'targets' => [
+            'targets'    => [
                 [
-                    'class' => 'yii\log\FileTarget',
+                    'class'  => 'yii\log\FileTarget',
                     'levels' => ['error', 'warning'],
                 ],
             ],
         ],
-        'errorHandler' => [
+        'errorHandler'       => [
             'errorAction' => 'site/error',
         ],
-        'authManager' => [
-            'class' => 'yii\rbac\DbManager',
+        'authManager'        => [
+            'class'        => 'yii\rbac\DbManager',
             'defaultRoles' => ['Guest']
         ],
-        'urlManager' => [
-            'class' => \codemix\localeurls\UrlManager::className(),
-            'showScriptName' => false,
-            'enablePrettyUrl' => true,
-            'languages' => [
+        'urlManager'         => [
+            'class'                        => \codemix\localeurls\UrlManager::className(),
+            'showScriptName'               => false,
+            'enablePrettyUrl'              => true,
+            'languages'                    => [
                 'es',
                 'en'
             ],
             'enableDefaultLanguageUrlCode' => true,
-            'enableLanguagePersistence' => true,
+            'enableLanguagePersistence'    => true,
         ],
         'urlManagerFrontEnd' => [
-            'class' => 'yii\web\urlManager',
-            'baseUrl' => '/' . end(explode('/', realpath(__DIR__ . '/../../'))),
+            'class'           => 'yii\web\urlManager',
+            'baseUrl'         => '',
             'enablePrettyUrl' => false,
-            'showScriptName' => false
+            'showScriptName'  => false
         ],
-        'i18n' => [
+        'i18n'               => [
             'translations' => [
-                '*' => [
-                    'class' => yii\i18n\DbMessageSource::className(),
-                    'forceTranslation' => true,
-                    'sourceLanguage' => 'es',
+                '*'          => [
+                    'class'                 => yii\i18n\DbMessageSource::className(),
+                    'forceTranslation'      => true,
+                    'sourceLanguage'        => 'es',
                     'on missingTranslation' => [
                         'common\components\TranslationEventHandler',
                         'handleMissingTranslation'
                     ],
                 ],
                 'rbac-admin' => [
-                    'class' => yii\i18n\DbMessageSource::className(),
-                    'forceTranslation' => true,
+                    'class'                 => yii\i18n\DbMessageSource::className(),
+                    'forceTranslation'      => true,
                     'on missingTranslation' => [
                         'common\components\TranslationEventHandler',
                         'handleMissingTranslation'
@@ -86,20 +86,20 @@ return [
                 ]
             ],
         ],
-        'view' => [
+        'view'               => [
             'theme' => [
                 'basePath' => '@backend/themes/adminLTE',
-                'baseUrl' => '@web/themes/adminLTE',
+                'baseUrl'  => '@web/themes/adminLTE',
             ],
         ],
     ],
-    'as access' => [
-        'class' => \backend\modules\onix\admin\components\AccessControl::className(),
+    'as access'           => [
+        'class'        => \backend\modules\onix\admin\components\AccessControl::className(),
         'allowActions' => [
             'site/login',
             'site/request-password-reset',
             'site/reset-password',
         ]
     ],
-    'params' => $params,
+    'params'              => $params,
 ];

@@ -56,3 +56,253 @@ $_SERVER = [
     'REQUEST_TIME_FLOAT' => 1451274522.76
     'REQUEST_TIME' => 1451274522
 ]
+2015-12-28 08:14:28 [127.0.0.1][1][-][error][yii\i18n\PhpMessageSource::loadMessages] The message file for category 'app' does not exist: /var/www/html/OnixLabs/onixcms/app/backend/messages/es/app.php
+    in /var/www/html/OnixLabs/onixcms/app/backend/themes/adminLTE/views/layouts/header.php:61
+    in /var/www/html/OnixLabs/onixcms/app/backend/themes/adminLTE/views/layouts/main.php:52
+    in /var/www/html/OnixLabs/onixcms/app/backend/controllers/ConfigurationController.php:90
+2015-12-28 08:14:28 [127.0.0.1][1][-][info][application] $_GET = [
+    'id' => '1'
+]
+
+$_COOKIE = [
+    '__distillery' => 'v20150227_78a45033-424b-4828-8604-506d29d0164a'
+    '__atuvc' => '231|51,7|52'
+    '_csrf' => '6878b1e59d07e33550436f0a31b7a9efcbafc7cd19ed6f332a5f5b8f1c84b78fa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"HcnRThBdrHxQUll-E39nSSt4qvYbGsPX\";}'
+    'auth_token' => 'c0d3dfd989e3432a231573d21dec13982d1cc7a6'
+    'PHPSESSID' => 'jrem8jia4ivc7628u0dqo6rkb3'
+    '_language' => '21500e18355e77b41919af9189491bae2c916d13c5223ba46f65a7d22631084ca:2:{i:0;s:9:\"_language\";i:1;s:2:\"es\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '_language' => 'es'
+    '__returnUrl' => '/OnixLabs/onixcms/www/admin/es/configuration/update?id=1'
+    '__id' => 1
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.106 Safari/537.36'
+    'HTTP_REFERER' => 'http://localhost/OnixLabs/onixcms/www/admin/es/site/login'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'es-ES,es;q=0.8,en;q=0.6'
+    'HTTP_COOKIE' => '__distillery=v20150227_78a45033-424b-4828-8604-506d29d0164a; __atuvc=231%7C51%2C7%7C52; _csrf=6878b1e59d07e33550436f0a31b7a9efcbafc7cd19ed6f332a5f5b8f1c84b78fa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22HcnRThBdrHxQUll-E39nSSt4qvYbGsPX%22%3B%7D; auth_token=c0d3dfd989e3432a231573d21dec13982d1cc7a6; PHPSESSID=jrem8jia4ivc7628u0dqo6rkb3; _language=21500e18355e77b41919af9189491bae2c916d13c5223ba46f65a7d22631084ca%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_language%22%3Bi%3A1%3Bs%3A2%3A%22es%22%3B%7D'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.12 (Ubuntu) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.12 (Ubuntu)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/OnixLabs/onixcms/www/admin/index.php'
+    'REMOTE_PORT' => '46060'
+    'REDIRECT_QUERY_STRING' => 'id=1'
+    'REDIRECT_URL' => '/OnixLabs/onixcms/www/admin/es/configuration/update'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'id=1'
+    'REQUEST_URI' => '/OnixLabs/onixcms/www/admin/es/configuration/update?id=1'
+    'SCRIPT_NAME' => '/OnixLabs/onixcms/www/admin/index.php'
+    'PHP_SELF' => '/OnixLabs/onixcms/www/admin/index.php'
+    'REQUEST_TIME_FLOAT' => 1451290468.755
+    'REQUEST_TIME' => 1451290468
+]
+2015-12-28 08:14:32 [127.0.0.1][1][-][error][yii\i18n\PhpMessageSource::loadMessages] The message file for category 'app' does not exist: /var/www/html/OnixLabs/onixcms/app/backend/messages/es/app.php
+    in /var/www/html/OnixLabs/onixcms/app/backend/themes/adminLTE/views/layouts/header.php:61
+    in /var/www/html/OnixLabs/onixcms/app/backend/themes/adminLTE/views/layouts/main.php:52
+    in /var/www/html/OnixLabs/onixcms/app/backend/controllers/ConfigurationController.php:90
+2015-12-28 08:14:32 [127.0.0.1][1][-][info][application] $_GET = [
+    'id' => '1'
+]
+
+$_COOKIE = [
+    '__distillery' => 'v20150227_78a45033-424b-4828-8604-506d29d0164a'
+    '__atuvc' => '231|51,7|52'
+    '_csrf' => '6878b1e59d07e33550436f0a31b7a9efcbafc7cd19ed6f332a5f5b8f1c84b78fa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"HcnRThBdrHxQUll-E39nSSt4qvYbGsPX\";}'
+    'auth_token' => 'c0d3dfd989e3432a231573d21dec13982d1cc7a6'
+    'PHPSESSID' => 'jrem8jia4ivc7628u0dqo6rkb3'
+    '_language' => '21500e18355e77b41919af9189491bae2c916d13c5223ba46f65a7d22631084ca:2:{i:0;s:9:\"_language\";i:1;s:2:\"es\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '_language' => 'es'
+    '__returnUrl' => '/OnixLabs/onixcms/www/admin/es/configuration/update?id=1'
+    '__id' => 1
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.106 Safari/537.36'
+    'HTTP_REFERER' => 'http://localhost/OnixLabs/onixcms/www/admin/es/site/login'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'es-ES,es;q=0.8,en;q=0.6'
+    'HTTP_COOKIE' => '__distillery=v20150227_78a45033-424b-4828-8604-506d29d0164a; __atuvc=231%7C51%2C7%7C52; _csrf=6878b1e59d07e33550436f0a31b7a9efcbafc7cd19ed6f332a5f5b8f1c84b78fa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22HcnRThBdrHxQUll-E39nSSt4qvYbGsPX%22%3B%7D; auth_token=c0d3dfd989e3432a231573d21dec13982d1cc7a6; PHPSESSID=jrem8jia4ivc7628u0dqo6rkb3; _language=21500e18355e77b41919af9189491bae2c916d13c5223ba46f65a7d22631084ca%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_language%22%3Bi%3A1%3Bs%3A2%3A%22es%22%3B%7D'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.12 (Ubuntu) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.12 (Ubuntu)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/OnixLabs/onixcms/www/admin/index.php'
+    'REMOTE_PORT' => '46060'
+    'REDIRECT_QUERY_STRING' => 'id=1'
+    'REDIRECT_URL' => '/OnixLabs/onixcms/www/admin/es/configuration/update'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'id=1'
+    'REQUEST_URI' => '/OnixLabs/onixcms/www/admin/es/configuration/update?id=1'
+    'SCRIPT_NAME' => '/OnixLabs/onixcms/www/admin/index.php'
+    'PHP_SELF' => '/OnixLabs/onixcms/www/admin/index.php'
+    'REQUEST_TIME_FLOAT' => 1451290472.022
+    'REQUEST_TIME' => 1451290472
+]
+2015-12-28 08:15:05 [127.0.0.1][1][-][error][yii\i18n\PhpMessageSource::loadMessages] The message file for category 'app' does not exist: /var/www/html/OnixLabs/onixcms/app/backend/messages/es/app.php
+    in /var/www/html/OnixLabs/onixcms/app/backend/themes/adminLTE/views/layouts/menu.php:33
+    in /var/www/html/OnixLabs/onixcms/app/backend/themes/adminLTE/views/layouts/main.php:53
+    in /var/www/html/OnixLabs/onixcms/app/backend/controllers/ConfigurationController.php:90
+2015-12-28 08:15:05 [127.0.0.1][1][-][info][application] $_GET = [
+    'id' => '1'
+]
+
+$_COOKIE = [
+    '__distillery' => 'v20150227_78a45033-424b-4828-8604-506d29d0164a'
+    '__atuvc' => '231|51,7|52'
+    '_csrf' => '6878b1e59d07e33550436f0a31b7a9efcbafc7cd19ed6f332a5f5b8f1c84b78fa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"HcnRThBdrHxQUll-E39nSSt4qvYbGsPX\";}'
+    'auth_token' => 'c0d3dfd989e3432a231573d21dec13982d1cc7a6'
+    'PHPSESSID' => 'jrem8jia4ivc7628u0dqo6rkb3'
+    '_language' => '21500e18355e77b41919af9189491bae2c916d13c5223ba46f65a7d22631084ca:2:{i:0;s:9:\"_language\";i:1;s:2:\"es\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '_language' => 'es'
+    '__returnUrl' => '/OnixLabs/onixcms/www/admin/es/configuration/update?id=1'
+    '__id' => 1
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.106 Safari/537.36'
+    'HTTP_REFERER' => 'http://localhost/OnixLabs/onixcms/www/admin/es/debug/default/view?panel=log&tag=5680ef680754d'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'es-ES,es;q=0.8,en;q=0.6'
+    'HTTP_COOKIE' => '__distillery=v20150227_78a45033-424b-4828-8604-506d29d0164a; __atuvc=231%7C51%2C7%7C52; _csrf=6878b1e59d07e33550436f0a31b7a9efcbafc7cd19ed6f332a5f5b8f1c84b78fa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22HcnRThBdrHxQUll-E39nSSt4qvYbGsPX%22%3B%7D; auth_token=c0d3dfd989e3432a231573d21dec13982d1cc7a6; PHPSESSID=jrem8jia4ivc7628u0dqo6rkb3; _language=21500e18355e77b41919af9189491bae2c916d13c5223ba46f65a7d22631084ca%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_language%22%3Bi%3A1%3Bs%3A2%3A%22es%22%3B%7D'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.12 (Ubuntu) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.12 (Ubuntu)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/OnixLabs/onixcms/www/admin/index.php'
+    'REMOTE_PORT' => '46080'
+    'REDIRECT_QUERY_STRING' => 'id=1'
+    'REDIRECT_URL' => '/OnixLabs/onixcms/www/admin/es/configuration/update'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'id=1'
+    'REQUEST_URI' => '/OnixLabs/onixcms/www/admin/es/configuration/update?id=1'
+    'SCRIPT_NAME' => '/OnixLabs/onixcms/www/admin/index.php'
+    'PHP_SELF' => '/OnixLabs/onixcms/www/admin/index.php'
+    'REQUEST_TIME_FLOAT' => 1451290505.746
+    'REQUEST_TIME' => 1451290505
+]
+2015-12-28 08:15:09 [127.0.0.1][1][-][error][yii\i18n\PhpMessageSource::loadMessages] The message file for category 'app' does not exist: /var/www/html/OnixLabs/onixcms/app/backend/messages/es/app.php
+    in /var/www/html/OnixLabs/onixcms/app/backend/themes/adminLTE/views/layouts/menu.php:33
+    in /var/www/html/OnixLabs/onixcms/app/backend/themes/adminLTE/views/layouts/main.php:53
+    in /var/www/html/OnixLabs/onixcms/app/backend/controllers/ConfigurationController.php:90
+2015-12-28 08:15:09 [127.0.0.1][1][-][info][application] $_GET = [
+    'id' => '1'
+]
+
+$_COOKIE = [
+    '__distillery' => 'v20150227_78a45033-424b-4828-8604-506d29d0164a'
+    '__atuvc' => '231|51,7|52'
+    '_csrf' => '6878b1e59d07e33550436f0a31b7a9efcbafc7cd19ed6f332a5f5b8f1c84b78fa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"HcnRThBdrHxQUll-E39nSSt4qvYbGsPX\";}'
+    'auth_token' => 'c0d3dfd989e3432a231573d21dec13982d1cc7a6'
+    'PHPSESSID' => 'jrem8jia4ivc7628u0dqo6rkb3'
+    '_language' => '21500e18355e77b41919af9189491bae2c916d13c5223ba46f65a7d22631084ca:2:{i:0;s:9:\"_language\";i:1;s:2:\"es\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '_language' => 'es'
+    '__returnUrl' => '/OnixLabs/onixcms/www/admin/es/configuration/update?id=1'
+    '__id' => 1
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.106 Safari/537.36'
+    'HTTP_REFERER' => 'http://localhost/OnixLabs/onixcms/www/admin/es/debug/default/view?panel=log&tag=5680ef680754d'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'es-ES,es;q=0.8,en;q=0.6'
+    'HTTP_COOKIE' => '__distillery=v20150227_78a45033-424b-4828-8604-506d29d0164a; __atuvc=231%7C51%2C7%7C52; _csrf=6878b1e59d07e33550436f0a31b7a9efcbafc7cd19ed6f332a5f5b8f1c84b78fa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22HcnRThBdrHxQUll-E39nSSt4qvYbGsPX%22%3B%7D; auth_token=c0d3dfd989e3432a231573d21dec13982d1cc7a6; PHPSESSID=jrem8jia4ivc7628u0dqo6rkb3; _language=21500e18355e77b41919af9189491bae2c916d13c5223ba46f65a7d22631084ca%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_language%22%3Bi%3A1%3Bs%3A2%3A%22es%22%3B%7D'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.12 (Ubuntu) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.12 (Ubuntu)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/OnixLabs/onixcms/www/admin/index.php'
+    'REMOTE_PORT' => '46082'
+    'REDIRECT_QUERY_STRING' => 'id=1'
+    'REDIRECT_URL' => '/OnixLabs/onixcms/www/admin/es/configuration/update'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'id=1'
+    'REQUEST_URI' => '/OnixLabs/onixcms/www/admin/es/configuration/update?id=1'
+    'SCRIPT_NAME' => '/OnixLabs/onixcms/www/admin/index.php'
+    'PHP_SELF' => '/OnixLabs/onixcms/www/admin/index.php'
+    'REQUEST_TIME_FLOAT' => 1451290509.15
+    'REQUEST_TIME' => 1451290509
+]

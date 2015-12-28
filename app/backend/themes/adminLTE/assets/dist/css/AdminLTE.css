@@ -4862,6 +4862,12 @@ table.text-center, table.text-center td, table.text-center th {
     filter: alpha(opacity=100)
 }
 
+.file-preview-image {
+    height: auto !important;
+    max-height: 160px;
+    max-width: 160px;
+}
+
 .chart {
     position: relative;
     overflow: hidden;
@@ -4874,7 +4880,6 @@ table.text-center, table.text-center td, table.text-center th {
 
 .file-preview-frame > img {
     max-height: 200px;
-    max-width: 200px;
 }
 
 .main-footer > .container {

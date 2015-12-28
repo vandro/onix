@@ -30,7 +30,7 @@ use backend\models\Menu;
             <form action="#" method="get" class="sidebar-form">
                 <div class="input-group">
                     <input type="text" name="q" id="livefilter-input" class="form-control"
-                           placeholder="<?= Yii::t('app', 'Buscar') ?>..."/>
+                           placeholder="<?= Yii::t('back', 'Buscar') ?>..."/>
               <span class="input-group-btn">
                 <button type='submit' name='search' id='search-btn' class="btn btn-flat"><i class="fa fa-search"></i>
                 </button>

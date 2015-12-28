@@ -2,7 +2,7 @@
 
 return [
     'language'   => 'es',
-    'vendorPath' => dirname(dirname(__DIR__)) . '/vendor',
+    'vendorPath' => dirname(dirname(__DIR__)) . '/../vendor',
     'modules'    => [],
     'components' => [
         'db' => [

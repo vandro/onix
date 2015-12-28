@@ -20,6 +20,26 @@ use yii\filters\VerbFilter;
 class BackController extends OnixController
 {
     /**
+     * BackController constructor.
+     */
+    public function __construct($id, $module, $config = [])
+    {
+        parent::__construct($id, $module, $config = []);
+
+        $frontEnd_url_config = [
+            'urlManagerFrontEnd' => [
+                'class'           => 'yii\web\urlManager',
+                'baseUrl'         => Yii::$app->params['global']['site_url'],
+                'enablePrettyUrl' => false,
+                'showScriptName'  => false
+            ]
+        ];
+
+        Yii::$app->setComponents($frontEnd_url_config);
+    }
+
+
+    /**
      * @inheritdoc
      */
     public function behaviors()

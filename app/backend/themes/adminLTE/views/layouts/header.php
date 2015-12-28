@@ -58,7 +58,7 @@ use yii\helpers\Url;
                         <li class="user-footer">
                             <div class="pull-left">
                                 <a href="<?= Url::to(['//user/update', 'id' => Yii::$app->user->identity->getId()]) ?>"
-                                   class="btn btn-default btn-flat"><?= Yii::t('app', 'Perfil') ?></a>
+                                   class="btn btn-default btn-flat"><?= Yii::t('back', 'Perfil') ?></a>
                             </div>
                             <div class="pull-right">
                                 <?= Html::a(Yii::t('back', 'Cerrar sesion'), ['/site/logout'], [
