@@ -16,7 +16,7 @@ class ServeController extends Controller
      * @param string $host hostname of the server.
      * @param string $port port to listen for connections.
      */
-    public function actionIndex($root = "www", $host="localhost", $port= 8080)
+    /*public function actionIndex($root = "www", $host="localhost", $port= 8080)
     {
         $basePath = \Yii::$app->basePath.DIRECTORY_SEPARATOR.'../..';
  
@@ -26,5 +26,5 @@ class ServeController extends Controller
         echo "Document root is \"{$webRoot}\"\n";
  
         passthru('"'.PHP_BINARY.'"'." -S {$host}:{$port} -t \"{$webRoot}\"")."\n";
-    }
+    }*/
 }

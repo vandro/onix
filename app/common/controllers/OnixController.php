@@ -10,10 +10,10 @@
 
 namespace common\controllers;
 
-use backend\models\Configuration;
-use common\helpers\GlobalHelper;
 use Yii;
 use yii\web\Controller;
+use common\helpers\GlobalHelper;
+use backend\models\Configuration;
 
 class OnixController extends Controller
 {
@@ -23,8 +23,8 @@ class OnixController extends Controller
     public function __construct($id, $module, $config = [])
     {
         parent::__construct($id, $module, $config);
+        GlobalHelper::initGobals();
 
-        new GlobalHelper();
         Yii::$app->name = Configuration::find()->one()->company;
     }
 }

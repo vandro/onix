@@ -19,7 +19,14 @@ class GlobalHelper
      */
     public function __construct()
     {
-        //Lee la configuracion una sola vez
+        static::initGobals();
+    }
+
+    /**
+     * Inicia la configuración global y lo carga en los parámetros
+     */
+    public static function initGobals()
+    {
         if ( ! isset( Yii::$app->params['global'] )) {
 
             $global_configuration = Configuration::find()->one();
