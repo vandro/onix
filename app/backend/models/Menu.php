@@ -193,7 +193,8 @@ class Menu extends \yii\db\ActiveRecord
 
     public static function areEqualToRequest($child, $recursive = false)
     {
-        $identifier_menu = reset(explode('/', $child->url));
+        $explode_url     = explode('/', $child->url);
+        $identifier_menu = reset($explode_url);
         $active          = false;
 
         //Si el menu correspondel al controlador
@@ -227,9 +228,10 @@ class Menu extends \yii\db\ActiveRecord
         if ($parent) {
             $id        = $this->id;
             $parent_id = $parent->id;
-            while($parent) {
+            while ($parent) {
                 if ($parent->id == $id) {
-                    $this->addError('menu_id', Yii::t('back', 'Se ha detectado un bucle infinito, por favor seleccione otro padre'));
+                    $this->addError('menu_id',
+                        Yii::t('back', 'Se ha detectado un bucle infinito, por favor seleccione otro padre'));
 
                     return;
                 }
@@ -267,7 +269,8 @@ class Menu extends \yii\db\ActiveRecord
         if ($no_errors == true) {
             return true;
         } else {
-            $this->addError('url', Yii::t('back', 'Ruta "{value}" no asignada al usuario actual.', ["value" => $this->url]));
+            $this->addError('url',
+                Yii::t('back', 'Ruta "{value}" no asignada al usuario actual.', ["value" => $this->url]));
         }
 
     }
@@ -316,7 +319,8 @@ class Menu extends \yii\db\ActiveRecord
     {
         foreach ($menu_items as $key => $menu_item) {
             if (isset( $menu_item['label'] ) && $menu_item['label'] != Yii::t("back", "Panel de control")) {
-                $clean_url = str_replace(strtolower(Yii::$app->request->baseUrl . '/' . Yii::$app->language . '/'), '', $menu_item['url']);
+                $clean_url = str_replace(strtolower(Yii::$app->request->baseUrl . '/' . Yii::$app->language . '/'), '',
+                    $menu_item['url']);
                 if (empty( $menu_item['items'] ) && ( $clean_url == '' || $clean_url == '#' )) {
                     unset( $menu_items[$key] );
                 }

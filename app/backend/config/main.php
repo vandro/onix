@@ -1,10 +1,17 @@
 <?php
 $params = array_merge(
     require( __DIR__ . '/../../common/config/params.php' ),
-    require( __DIR__ . '/../../common/config/params-local.php' ),
-    require( __DIR__ . '/params.php' ),
-    require( __DIR__ . '/params-local.php' )
+    require( __DIR__ . '/params.php' )
 );
+
+
+//Si esta en modo debug, carga los parámetros locales
+if (YII_DEBUG) {
+    $params = array_merge($params, [
+        require( __DIR__ . '/../../common/config/params-local.php' ),
+        require( __DIR__ . '/params-local.php' )
+    ]);
+}
 
 return [
     'id'                  => 'app-backend',
@@ -23,8 +30,8 @@ return [
     'components'          => [
         'request'            => [
 //            SE DESACTIVA LA VALIDACION DEL CSRF POR QUE MUESTRA MUCHOS ERRORES DE "INCAPAZ DE VERIFICAR LOS DATOS ENVIADOS"
+            'enableCsrfValidation' => YII_DEBUG ? false : true,
             'cookieValidationKey'  => 'XVV_QDR86twXZLqsbHnTehqwdzeALP8M',
-            'enableCsrfValidation' => false
         ],
         'session'            => [
             'class' => \yii\web\DbSession::className(),

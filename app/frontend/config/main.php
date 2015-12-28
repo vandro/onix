@@ -1,10 +1,17 @@
 <?php
 $params = array_merge(
     require( __DIR__ . '/../../common/config/params.php' ),
-    require( __DIR__ . '/../../common/config/params-local.php' ),
-    require( __DIR__ . '/params.php' ),
-    require( __DIR__ . '/params-local.php' )
+    require( __DIR__ . '/params.php' )
 );
+
+
+//Si esta en modo debug, carga los parámetros locales
+if (YII_DEBUG) {
+    $params = array_merge($params, [
+        require( __DIR__ . '/../../common/config/params-local.php' ),
+        require( __DIR__ . '/params-local.php' )
+    ]);
+}
 
 return [
     'id'                  => 'app-frontend',
@@ -12,6 +19,11 @@ return [
     'bootstrap'           => ['log'],
     'controllerNamespace' => 'frontend\controllers',
     'components'          => [
+        'request'      => [
+            // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
+            'enableCsrfValidation' => YII_DEBUG ? false : true,
+            'cookieValidationKey'  => 'HqKefkLpWwAmKNGm-x98m7cWzGEkhPcQ',
+        ],
         'user'         => [
             'identityClass'   => 'common\models\User',
             'enableAutoLogin' => true,
