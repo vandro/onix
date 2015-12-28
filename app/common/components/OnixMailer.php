@@ -1,6 +1,6 @@
 <?php
 /**
- * Created by BaseBackend development team.
+ * Created by OnixLabs development team.
  * User: Andrés Felipe Solarte <devsolarte@gmail.com>
  * Date: 22/09/15
  * Time: 01:09 AM
