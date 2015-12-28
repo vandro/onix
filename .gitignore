@@ -20,12 +20,12 @@ composer.phar
 
 
 /www/assets/*
-/www/uploads/.tmb
+/www/uploads/.tmb/*
 /www/admin/assets/*
 
 /www/index-test.php
 /www/requirements.php
-/www/admin/uploads/.tmb
+/www/admin/uploads/.tmb/*
 /www/admin/index-test.php
 
 /app/backend/runtime/*
