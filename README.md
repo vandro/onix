@@ -12,10 +12,15 @@ ESTRUCTURA DEL SISTEMA
 Lo primero que se va a ver al entrar a la raiz del proyecto serán dos carpetas y un archivos, 
 
 - site/
+- vendor/
 - www/
 - composer.json
 
 En el directorio site/ esta el código base de la aplicación, el framework, módulos y absolutamente todo lo que tiene que ver con la programación base del backend, frontend etc., el directorio www es la carpeta pública, el equivalente al public_html o htdocs (dependiendo del serevidor), el archivo composer.json ya viene configurado para organizar todas las dependencias instaladas a través de composer, a menos que el usuario sepa lo que hace, este archivo no debe ser modificado bajo ninguna circunstancia.
+
+El directorio vendor/ tiene todas las dependencias del proyecto (framework), librerías de terceros etc.
+
+El directorio www/ es la carpeta pública del proyecto, equivalento a public_html/ o htdocs/ en algunos casos.
 
 - Directorio site/
 ------------------
@@ -28,7 +33,6 @@ Como ya lo había mencionado antes, este directorio almacena todo lo que tiene q
 - environments/
 - frontend/
 - tests/
-- vendor/
 
 
 el directorio backend y frontend son muy similares, a excepción del directorio workbench/ (dentro de backend/), el cual contiene el archivo de la base de datos y los graficos del modelo base en formato .mwb (Mysql Workbench).
@@ -93,7 +97,7 @@ Una vez allí dentro del arreglo 'components', se escriben los parámetros de co
 
 Para ver mas detalles de los parámetros de conexión a la base de datos consultar el [siguiente link](http://www.yiiframework.com/doc-2.0/yii-db-connection.html)
 
-Una vez configurada la base de datos ya podemos acceder a través del navegador, teniendo en cuenta que es un servidor local y la carpeta del proyecto se llama onix_base:
+Una vez configurada la base de datos debemos bajar las dependencias del proyecto, para este caso utilizamos composer, entonces, abrir la terminal o consola de comandos y ejecutar sobre el directorio raíz del proyecto "composer update" sin comillas, podremos ver como se van descargando las dependencias del proyecto, una vez terminado este proceso podeemos acceder a través del navegador, teniendo en cuenta que es un servidor local y la carpeta del proyecto se llama onix_base:
 
 url frontend: http://localhost/onix_base/www
 url backend: http://localhost/onix_base/www/admin
@@ -109,4 +113,4 @@ el administrador maneja un sistema de control de acceso basado en roles (RBAC) y
     Password: admin
 
 
-Una vez completados estos pasos el proyecto ya esta listo para iniciar.
+Y el proyecto ya esta listo para iniciar.
