@@ -23,8 +23,9 @@ class ResetPasswordForm extends Model
     /**
      * Creates a form model given a token.
      *
-     * @param  string                          $token
-     * @param  array                           $config name-value pairs that will be used to initialize the object properties
+     * @param  string $token
+     * @param  array  $config name-value pairs that will be used to initialize the object properties
+     *
      * @throws \yii\base\InvalidParamException if token is empty or not valid
      */
     public function __construct($token, $config = [])
@@ -47,7 +48,12 @@ class ResetPasswordForm extends Model
         return [
             ['password', 'required'],
             ['password', 'string', 'min' => 6],
-            ['confirm_password', 'compare', 'compareAttribute' => 'password', 'message' => Yii::t('back', 'The password and the password confirmation must match')]
+            [
+                'confirm_password',
+                'compare',
+                'compareAttribute' => 'password',
+                'message'          => Yii::t('back', 'The password and the password confirmation must match')
+            ]
         ];
     }
 
@@ -58,7 +64,7 @@ class ResetPasswordForm extends Model
      */
     public function resetPassword()
     {
-        $user = $this->_user;
+        $user           = $this->_user;
         $user->password = $this->password;
         $user->removePasswordResetToken();
 

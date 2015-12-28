@@ -9,13 +9,13 @@ use backend\models\Message;
 class TranslationEventHandler
 {
     /**
-     * 
+     *
      * @param MissingTranslationEvent $event
      */
     public static function handleMissingTranslation(MissingTranslationEvent $event) {
 
         $source_message = SourceMessage::findOne(['category' => $event->category, 'message' => $event->message]);
-        
+
         if($source_message === null){
             $source_message = new SourceMessage();
             $source_message->category = $event->category;
@@ -24,7 +24,7 @@ class TranslationEventHandler
         }
 
         $message = Message::findOne(['id' => $source_message->id, 'language' => $event->language]);
-        
+
         if($message === null){
             $message = new Message();
             $message->id = $source_message->id;

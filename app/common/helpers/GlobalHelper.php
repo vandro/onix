@@ -13,15 +13,6 @@ use backend\models\Configuration;
 
 class GlobalHelper
 {
-
-    /**
-     * GlobalHelper constructor.
-     */
-    public function __construct()
-    {
-        static::initGobals();
-    }
-
     /**
      * Inicia la configuración global y lo carga en los parámetros
      */
