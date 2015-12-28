@@ -40,4 +40,6 @@ composer.phar
 /app/console/config/main-local.php
 /app/console/config/params-local.php
 
+/vendor/*
+
 /sonar-project.properties
