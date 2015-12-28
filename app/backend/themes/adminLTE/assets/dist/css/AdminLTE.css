@@ -5180,7 +5180,3 @@ ESTILOS PARA GII
 .tt-suggestion p {
     margin: 0;
 }
-
-.el-finder-dialog{
-    z-index: 810 !important;
-}

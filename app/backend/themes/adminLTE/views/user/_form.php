@@ -4,7 +4,7 @@ use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
 use common\models\User;
 use kartik\select2\Select2;
-use zxbodya\yii2\elfinder\ElFinderInput;
+use common\widgets\onix\elfinder\OnixElFinderInput;
 
 /* @var $this yii\web\View */
 /* @var $model common\models\User */
@@ -34,7 +34,7 @@ use zxbodya\yii2\elfinder\ElFinderInput;
     <?= $form->field($model, 'username')->textInput() ?>
     <?php
 
-    if ( ! $model->isNewRecord) {
+    if (!$model->isNewRecord) {
         echo $form->field($model, 'auth_key')->textInput(['readonly' => 'readonly']);
         echo $form->field($model, 'password_hash')->textInput(['readonly' => 'readonly']);
         echo $form->field($model, 'password_reset_token')->textInput(['readonly' => 'readonly']);
@@ -52,10 +52,10 @@ use zxbodya\yii2\elfinder\ElFinderInput;
         'theme'    => Select2::THEME_BOOTSTRAP
     ]); ?>
 
-    <?= $form->field($model, 'picture')->widget(ElFinderInput::className(), [
+    <?= $form->field($model, 'picture')->widget(OnixElFinderInput::className(), [
         'connectorRoute' => 'el-finder/back-connector',
         'options'        => [
-            'class' => 'form-group'
+            'class' => 'form-group',
         ],
         'imagePreview'   => true
     ]) ?>

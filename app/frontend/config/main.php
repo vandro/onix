@@ -38,10 +38,6 @@ return [
                 'baseUrl'  => '@web/themes/web',
             ],
         ],
-        'assetManager' => [
-//            'forceCopy'       => YII_DEBUG,
-            'appendTimestamp' => YII_DEBUG
-        ]
     ],
     'params'              => $params,
 ];
