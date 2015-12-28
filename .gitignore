@@ -46,3 +46,4 @@ composer.phar
 !/vendor/bower
 
 /sonar-project.properties
+/.sonar
