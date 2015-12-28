@@ -43,6 +43,7 @@ composer.phar
 /app/console/config/params-local.php
 
 /vendor/*
+!/vendor/bower
 
 /sonar-project.properties
 /.sonar
