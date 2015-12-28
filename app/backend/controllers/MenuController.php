@@ -23,7 +23,7 @@ class MenuController extends BackController
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
-            'searchModel'  => $searchModel,
+            'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
         ]);
     }
@@ -107,7 +107,7 @@ class MenuController extends BackController
      */
     protected function findModel($id)
     {
-        if (( $model = Menu::findOne($id) ) !== null) {
+        if (($model = Menu::findOne($id)) !== null) {
             return $model;
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');

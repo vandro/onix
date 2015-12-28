@@ -42,8 +42,8 @@ class Message extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id'          => 'ID',
-            'language'    => 'Idioma',
+            'id' => 'ID',
+            'language' => 'Idioma',
             'translation' => 'Traduccion',
         ];
     }

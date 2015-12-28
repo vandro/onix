@@ -23,7 +23,7 @@ class SourceMessageController extends BackController
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
-            'searchModel'  => $searchModel,
+            'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
         ]);
     }
@@ -56,9 +56,9 @@ class SourceMessageController extends BackController
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
 
-            if (isset( $_POST['translation'] )) {
+            if (isset($_POST['translation'])) {
                 foreach ($model->messages as $translation) {
-                    if (isset( $_POST['translation'][$translation->language] )) {
+                    if (isset($_POST['translation'][$translation->language])) {
                         $translation->translation = $_POST['translation'][$translation->language];
                         $translation->save();
                     }
@@ -99,7 +99,7 @@ class SourceMessageController extends BackController
      */
     protected function findModel($id)
     {
-        if (( $model = SourceMessage::findOne($id) ) !== null) {
+        if (($model = SourceMessage::findOne($id)) !== null) {
             return $model;
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');

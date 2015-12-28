@@ -43,12 +43,12 @@ class Log extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id'       => Yii::t('back', 'ID'),
-            'level'    => Yii::t('back', 'Nivel'),
+            'id' => Yii::t('back', 'ID'),
+            'level' => Yii::t('back', 'Nivel'),
             'category' => Yii::t('back', 'Categoria'),
             'log_time' => Yii::t('back', 'Hora de registro'),
-            'prefix'   => Yii::t('back', 'Prefijo'),
-            'message'  => Yii::t('back', 'Mensaje'),
+            'prefix' => Yii::t('back', 'Prefijo'),
+            'message' => Yii::t('back', 'Mensaje'),
         ];
     }
 }

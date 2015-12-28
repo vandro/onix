@@ -24,7 +24,11 @@ class Menu extends \yii\db\ActiveRecord
 {
 
     const SUBMENU_TEMPLATE = "\n<ul class='treeview-menu'>\n{items}\n</ul>\n";
-    const MENU_TEMPLATE = '<a href="{url}"><i class="fa {icon}"></i><span>{label}</span><i class="fa fa-angle-left pull-right"></i></a>';
+    const MENU_TEMPLATE = '<a href="{url}">
+                                <i class="fa {icon}"></i>
+                                <span>{label}</span>
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </a>';
 
     /**
      * @inheritdoc
@@ -61,12 +65,12 @@ class Menu extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id'      => Yii::t('back', 'ID'),
-            'name'    => Yii::t('back', 'Nombre'),
-            'url'     => Yii::t('back', 'Url'),
-            'icon'    => Yii::t('back', 'Icono'),
-            'show'    => Yii::t('back', 'Mostrar'),
-            'order'   => Yii::t('back', 'Orden'),
+            'id' => Yii::t('back', 'ID'),
+            'name' => Yii::t('back', 'Nombre'),
+            'url' => Yii::t('back', 'Url'),
+            'icon' => Yii::t('back', 'Icono'),
+            'show' => Yii::t('back', 'Mostrar'),
+            'order' => Yii::t('back', 'Orden'),
             'menu_id' => Yii::t('back', 'Menu Padre'),
         ];
     }
@@ -102,11 +106,11 @@ class Menu extends \yii\db\ActiveRecord
         if (is_null($parentId)) {
             $where = 'menu_id IS NULL';
             array_push($menu, [
-                'label'           => Yii::t("back", "Panel de control"),
-                'url'             => Yii::$app->homeUrl,
-                'visible'         => true,
-                'active'          => Yii::$app->controller->id == 'site' ? true : false,
-                'template'        => self::buildTemplate("fa-dashboard", false),
+                'label' => Yii::t("back", "Panel de control"),
+                'url' => Yii::$app->homeUrl,
+                'visible' => true,
+                'active' => Yii::$app->controller->id == 'site' ? true : false,
+                'template' => self::buildTemplate("fa-dashboard", false),
                 'submenuTemplate' => self::SUBMENU_TEMPLATE
             ]);
         } elseif (is_numeric($parentId)) {
@@ -117,10 +121,10 @@ class Menu extends \yii\db\ActiveRecord
             $children = $parent_Obj->menus;
         } else {
             $children = self::find()
-                            ->with('menus')
-                            ->where($where, is_null($parentId) ? [] : [':menu_id' => $parentId])
-                            ->orderBy('order ASC')
-                            ->all();
+                ->with('menus')
+                ->where($where, is_null($parentId) ? [] : [':menu_id' => $parentId])
+                ->orderBy('order ASC')
+                ->all();
         }
 
         foreach ($children as $key => $child) {
@@ -136,18 +140,18 @@ class Menu extends \yii\db\ActiveRecord
 
                 $children_menu = [];
 
-                if (( count($child->menus) > 0 )) {
+                if ((count($child->menus) > 0)) {
                     $children_menu = self::buildMenu($child->id);
                 }
 
                 array_push($menu, [
-                    'label'           => Yii::t('back', $child->name),
-                    'url'             => Url::to(['//' . $child->url]),
-                    'visible'         => ( $child->show == 1 ),
-                    'active'          => $active,
-                    'items'           => $children_menu,
-                    'options'         => ( count($children_menu) > 0 ) ? ['class' => 'treeview'] : [],
-                    'template'        => self::buildTemplate($child->icon, ( count($children_menu) > 0 )),
+                    'label' => Yii::t('back', $child->name),
+                    'url' => Url::to(['//' . $child->url]),
+                    'visible' => ($child->show == 1),
+                    'active' => $active,
+                    'items' => $children_menu,
+                    'options' => (count($children_menu) > 0) ? ['class' => 'treeview'] : [],
+                    'template' => self::buildTemplate($child->icon, (count($children_menu) > 0)),
                     'submenuTemplate' => self::SUBMENU_TEMPLATE
                 ]);
             }
@@ -207,10 +211,13 @@ class Menu extends \yii\db\ActiveRecord
                 $active = true;
             }
         } //Si el menu corresponde a un modulo que funciona con la ruta "modulo/controlador"
-        elseif (isset( Yii::$app->modules[$identifier_menu] )) {
+        elseif (isset(Yii::$app->modules[$identifier_menu])) {
             $identifier_module_controller = explode('/', $child->url);
 
-            if (isset( $identifier_module_controller[1] ) && Yii::$app->controller->id == $identifier_module_controller[1]) {
+            if (isset($identifier_module_controller[1])
+                && Yii::$app->controller->id == $identifier_module_controller[1]
+            ) {
+
                 $active = true;
             }
         }
@@ -318,11 +325,11 @@ class Menu extends \yii\db\ActiveRecord
     public static function clearEmpty($menu_items)
     {
         foreach ($menu_items as $key => $menu_item) {
-            if (isset( $menu_item['label'] ) && $menu_item['label'] != Yii::t("back", "Panel de control")) {
+            if (isset($menu_item['label']) && $menu_item['label'] != Yii::t("back", "Panel de control")) {
                 $clean_url = str_replace(strtolower(Yii::$app->request->baseUrl . '/' . Yii::$app->language . '/'), '',
                     $menu_item['url']);
-                if (empty( $menu_item['items'] ) && ( $clean_url == '' || $clean_url == '#' )) {
-                    unset( $menu_items[$key] );
+                if (empty($menu_item['items']) && ($clean_url == '' || $clean_url == '#')) {
+                    unset($menu_items[$key]);
                 }
             }
         }

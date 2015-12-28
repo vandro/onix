@@ -25,7 +25,7 @@ class UserController extends BackController
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
-            'searchModel'  => $searchModel,
+            'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
         ]);
     }
@@ -53,7 +53,7 @@ class UserController extends BackController
     {
         $model = new User();
 
-        if (isset( $_POST['User'] )) {
+        if (isset($_POST['User'])) {
 
             foreach ($_POST['User'] as $key => $value) {
                 $model->{$key} = $_POST['User'][$key];
@@ -61,7 +61,7 @@ class UserController extends BackController
 
             $model->setPassword(Yii::$app->security->generateRandomString(12));
 
-            if ( ! $model->validate($model->attributes)) {
+            if (!$model->validate($model->attributes)) {
                 return $this->render('create', [
                     'model' => $model,
                 ]);
@@ -89,15 +89,15 @@ class UserController extends BackController
     {
         $model = $this->findModel($id);
 
-        if (isset( $_POST['User'] )) {
+        if (isset($_POST['User'])) {
 
             foreach ($_POST['User'] as $key => $value) {
-                if (isset( $model->{$key} )) {
+                if (isset($model->{$key})) {
                     $model->{$key} = $_POST['User'][$key];
                 }
             }
 
-            if ( ! $model->validate($model->attributes)) {
+            if (!$model->validate($model->attributes)) {
 
                 return $this->render('update', [
                     'model' => $model,
@@ -160,7 +160,7 @@ class UserController extends BackController
      */
     protected function findModel($id)
     {
-        if (( $model = User::findOne($id) ) !== null) {
+        if (($model = User::findOne($id)) !== null) {
             return $model;
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');

@@ -51,7 +51,7 @@ class SiteController extends BackController
 
     public function actionLogin()
     {
-        if ( ! \Yii::$app->user->isGuest) {
+        if (!\Yii::$app->user->isGuest) {
             return $this->goHome();
         }
 
@@ -84,11 +84,15 @@ class SiteController extends BackController
         $model = new PasswordResetRequestForm();
         if ($model->load(Yii::$app->request->post()) && $model->validate()) {
             if ($model->sendEmail()) {
-                Yii::$app->getSession()->setFlash(Growl::TYPE_SUCCESS, 'Check your email for further instructions.');
+                Yii::$app
+                    ->session
+                    ->setFlash(Growl::TYPE_SUCCESS, 'Check your email for further instructions.');
 
                 return $this->goHome();
             } else {
-                Yii::$app->getSession()->setFlash(Growl::TYPE_DANGER, 'Sorry, we are unable to reset password for email provided.');
+                Yii::$app
+                    ->session
+                    ->setFlash(Growl::TYPE_DANGER, 'Sorry, we are unable to reset password for email provided.');
             }
         }
 
@@ -110,7 +114,7 @@ class SiteController extends BackController
         }
 
         if ($model->load(Yii::$app->request->post()) && $model->validate() && $model->resetPassword()) {
-            Yii::$app->getSession()->setFlash('success', 'New password was saved.');
+            Yii::$app->session->setFlash('success', 'New password was saved.');
 
             return $this->goHome();
         }

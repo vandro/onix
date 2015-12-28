@@ -19,7 +19,7 @@ class MessageController extends BackController
      */
     public function actionIndex()
     {
-        $searchModel = new SearchMessage();
+        $searchModel  = new SearchMessage();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [

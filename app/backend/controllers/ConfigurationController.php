@@ -117,7 +117,7 @@ class ConfigurationController extends BackController
      */
     protected function findModel($id)
     {
-        if (( $model = Configuration::findOne($id) ) !== null) {
+        if (($model = Configuration::findOne($id)) !== null) {
             return $model;
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');
@@ -132,7 +132,7 @@ class ConfigurationController extends BackController
         $configurationModel = Configuration::find()->one();
         $content            = '';
 
-        if ( ! is_null($configurationModel)) {
+        if (!is_null($configurationModel)) {
             $content = $configurationModel->template;
         }
 
@@ -150,7 +150,7 @@ class ConfigurationController extends BackController
         $model->addRule(['email'], 'required');
         $model->addRule(['email'], 'email');
 
-        if (isset( $_POST['DynamicModel'] )) {
+        if (isset($_POST['DynamicModel'])) {
             $model->attributes = $_POST['DynamicModel'];
 
             if ($model->validate()) {
@@ -161,7 +161,7 @@ class ConfigurationController extends BackController
                 $html_text      = Yii::t('back', 'This is a test mail');
                 $template_model = Configuration::find()->one();
 
-                if ( ! is_null($template_model)) {
+                if (!is_null($template_model)) {
 
                     $sent_success = \Yii::$app->mailer->sendWithTemplate($model->email,
                         \Yii::t('app', 'Test email for ') . $model->email,
@@ -169,7 +169,10 @@ class ConfigurationController extends BackController
                     );
 
                     if ($sent_success) {
-                        Yii::$app->getSession()->setFlash(Growl::TYPE_SUCCESS, Yii::t('back', 'The test mail was sent successfully'));
+                        Yii::$app
+                            ->session
+                            ->setFlash(Growl::TYPE_SUCCESS, Yii::t('back', 'The test mail was sent successfully'));
+
                         $this->redirect('index');
                     }
                 }
