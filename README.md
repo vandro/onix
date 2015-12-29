@@ -81,27 +81,33 @@ INSTALACIÓN DEL SISTEMA
 seguir los comandos en el siguiente orden (linux, mac):
 
 1. composer global require "fxp/composer-asset-plugin:~1.1.1"
-2. composer create-project --prefer-dist yiisoft/yii2-app-advanced yii-application
-3. cd yii-application
+2. composer create-project --prefer-dist yiisoft/yii2-app-advanced onix_base
+3. cd onix_base
 3. git init
 4. git remote add origin https://afsolarte@bitbucket.org/afsolarte/onixcms.git
 5. git fetch
 6. git checkout -t -f origin/master
 7. Eliminar los siguientes elementos del directorio raiz
-	--backend/
-	--common/
-	--console/
-	--environments/
-	--frontend/
-	--init
-	--init.bat
-	--tests/
-	--yii.bat
+
+> 	--backend/ 	
+>  --common/ 	
+>  --console/ 
+>  --environments/
+>  --frontend/
+> 	--init
+> --init.bat
+> --tests/
+> --yii.bat
+	
 8. composer update (para actualizar las nuevas dependencias para el CMS)
 9. importar la base de datos que se encuentra en el directorio app/backend/workbench/onixcms.sql
-10. configurar los accesos de bd que estan en app/common/config/main-local.php, dejo un ejemplo de como debería verse la configuración:
+10. configurar los accesos de bd que estan en app/common/config/main-local.php
 
-'components' => [
+Abrir el archivo common/config/main.php ó common/config/main-local.php dependiendo si la aplicación se encuentra en entorno de desarrollo o producción ([mas información acerca de los entornos de desarrollo](http://www.yiiframework.com/doc-2.0/guide-concept-configurations.html#environment-constants))
+
+Una vez allí dentro del arreglo 'components', se escriben los parámetros de conexión, en este caso se verían de la siguiente manera: 
+
+    'components' => [
         'db' => [
             'class'    => 'yii\db\Connection',
             'dsn'      => 'mysql:host=localhost;dbname=onix_base',
@@ -111,8 +117,9 @@ seguir los comandos en el siguiente orden (linux, mac):
         ]
     ],
 
-
 Para ver mas detalles de los parámetros de conexión a la base de datos consultar el [siguiente link](http://www.yiiframework.com/doc-2.0/yii-db-connection.html)
+
+Una vez configurada la base de datos debemos bajar las dependencias del proyecto, para este caso utilizamos composer, entonces, abrir la terminal o consola de comandos y ejecutar sobre el directorio raíz del proyecto "composer update" sin comillas, podremos ver como se van descargando las dependencias del proyecto, una vez terminado este proceso podeemos acceder a través del navegador, teniendo en cuenta que es un servidor local y la carpeta del proyecto se llama onix_base:
 
 url frontend: http://localhost/onix_base/www
 url backend: http://localhost/onix_base/www/admin
@@ -127,6 +134,7 @@ el administrador maneja un sistema de control de acceso basado en roles (RBAC) y
     Usuario: user
     Password: admin
 
+
 Y el proyecto ya esta listo para iniciar.
 
-NOTA: Recuerde que cuando pasa a entorno de producción, ninguno de los archivos de configuración cuyo nombre termina en "-local.php" será cargado, esto con el objetivo de mantener las dos configuraciones siempre separadas, el paso a producción lo detecta automáticamente el sistema mediante la detección de la ip del cliente, si esta es 127.0.0.1 se asume que se encuentra en entorno local y va a mostrar todos los errores de php, excepciones de yii2 y activa el debugger.
+**NOTA:** Recuerde que cuando pasa a entorno de producción, ninguno de los archivos de configuración cuyo nombre termina en "-local.php" será cargado, esto con el objetivo de mantener las dos configuraciones siempre separadas, el paso a producción lo detecta automáticamente el sistema mediante la detección de la ip del cliente, si esta es 127.0.0.1 se asume que se encuentra en entorno local y va a mostrar todos los errores de php, excepciones de yii2 y activa el debugger.
