@@ -79,9 +79,9 @@ Composer, Git
 INSTALACIÓN DEL SISTEMA
 
 1. git clone https://username@bitbucket.org/afsolarte/onixcms.git
-8. composer update (para actualizar las nuevas dependencias para el CMS)
-9. importar la base de datos que se encuentra en el directorio app/backend/workbench/onixcms.sql
-10. configurar los accesos de bd que estan en app/common/config/main-local.php
+2. composer update (para actualizar las nuevas dependencias para el CMS)
+3. importar la base de datos que se encuentra en el directorio app/backend/workbench/onixcms.sql
+4. configurar los accesos de bd que estan en app/common/config/main-local.php
 
 Abrir el archivo common/config/main.php ó common/config/main-local.php dependiendo si la aplicación se encuentra en entorno de desarrollo o producción ([mas información acerca de los entornos de desarrollo](http://www.yiiframework.com/doc-2.0/guide-concept-configurations.html#environment-constants))
 
