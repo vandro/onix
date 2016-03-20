@@ -2,21 +2,21 @@
 namespace frontend\controllers;
 
 use Yii;
+use yii\filters\VerbFilter;
 use common\models\LoginForm;
-use common\models\PasswordResetRequestForm;
-use common\models\ResetPasswordForm;
+use yii\filters\AccessControl;
 use frontend\models\SignupForm;
 use frontend\models\ContactForm;
 use yii\base\InvalidParamException;
 use yii\web\BadRequestHttpException;
-use yii\web\Controller;
-use yii\filters\VerbFilter;
-use yii\filters\AccessControl;
+use common\models\ResetPasswordForm;
+use common\controllers\FrontController;
+use common\models\PasswordResetRequestForm;
 
 /**
  * Site controller
  */
-class SiteController extends Controller
+class SiteController extends FrontController
 {
     /**
      * @inheritdoc

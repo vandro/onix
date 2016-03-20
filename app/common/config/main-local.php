@@ -1,7 +1,11 @@
 <?php
 
 return [
+    'bootstrap' => [
+        'debug'
+    ],
     'modules'    => [
+        'debug' => \yii\debug\Module::className()
     ],
     'components' => [
         'db'           => [
