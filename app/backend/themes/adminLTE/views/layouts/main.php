@@ -16,7 +16,6 @@ AppAsset::register($this);
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <?= Html::csrfMetaTags() ?>
     <link rel="icon" href="<?= Yii::$app->request->baseUrl ?>/favicon.ico">
-    <link rel="manifest" href="<?= Yii::$app->request->baseUrl ?>/manifest.json">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->

@@ -6,9 +6,6 @@ use yii\helpers\Html;
 /* @var $content string */
 
 AppAsset::register($this);
-
-$this->registerJsFile(Yii::getAlias('@web') . '/bootstrap/js/bootstrap.min.js', ['depends' => \yii\web\JqueryAsset::className()]);
-$this->registerJsFile(Yii::getAlias('@web') . '/plugins/iCheck/icheck.min.js', ['depends' => \yii\web\JqueryAsset::className()]);
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
@@ -25,7 +22,6 @@ $this->registerJsFile(Yii::getAlias('@web') . '/plugins/iCheck/icheck.min.js', [
 
 <?php echo $content ?>
 
-</footer>
 <?php $this->endBody() ?>
 </body>
 </html>
