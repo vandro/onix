@@ -22,9 +22,9 @@ $this->title = Yii::t('back', 'Iniciar sesion');
             </div>
         <?php endforeach; ?>
         <div class="box login-box-body">
-            <!--        <div class="overlay">
+                    <div class="login-form-preloader overlay hide">
                         <i class="fa fa-refresh fa-spin"></i>
-                    </div>-->
+                    </div>
             <p class="login-box-msg"><?= Yii::t('back', 'Identifiquese para acceder') ?></p>
             <?php $form = ActiveForm::begin([
                 'id'                   => 'login-form',
@@ -71,6 +71,16 @@ $script = <<< JS
             checkboxClass: 'icheckbox_square-blue',
             radioClass: 'iradio_square-blue',
             increaseArea: '20%' // optional
+        });
+
+        $("#login-form").on("beforeValidate", function(e){
+            $(".login-form-preloader").removeClass("hide");
+        });
+
+        $("#login-form").on("afterValidate", function (event, attribute, messages, deferreds){
+            if(attribute['loginform-password'].length > 0){
+                $(".login-form-preloader").addClass("hide");
+            }
         });
     });
 JS;
