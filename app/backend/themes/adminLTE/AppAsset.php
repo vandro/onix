@@ -21,10 +21,8 @@ class AppAsset extends AssetBundle
         'css/font-awesome.min.css',
         'dist/css/AdminLTE.css',
         'dist/css/skins/_all-skins.min.css',
-        'plugins/iCheck/square/blue.css',
     ];
     public $js = [
-        'plugins/iCheck/icheck.min.js',
         'plugins/slimScroll/jquery.slimscroll.min.js',
         'plugins/fastclick/fastclick.min.js',
         'dist/js/app.js',

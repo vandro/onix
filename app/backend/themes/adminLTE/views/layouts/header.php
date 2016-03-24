@@ -50,7 +50,7 @@ use yii\helpers\Url;
                                 'alt'   => 'Foto de perfil'
                             ]) ?>
                             <p>
-                                <?= Yii::$app->user->identity->username . ' - [' . implode(', ', array_keys(Yii::$app->authManager->getRolesByUser(Yii::$app->user->identity->getId()))) . ']' ?>
+                                <?= Yii::$app->user->identity->username ?>
                                 <small><?= Yii::t('back', 'Registrado desde') . ' ' . Yii::$app->formatter->asDate(Yii::$app->user->identity->created_at, 'long') ?></small>
                             </p>
                         </li>
@@ -61,7 +61,7 @@ use yii\helpers\Url;
                                    class="btn btn-default btn-flat"><?= Yii::t('back', 'Perfil') ?></a>
                             </div>
                             <div class="pull-right">
-                                <?= Html::a(Yii::t('back', 'Cerrar sesion'), ['/site/logout'], [
+                                <?= Html::a(Yii::t('back', 'Salir'), ['/site/logout'], [
                                     'class'       => 'btn btn-default btn-flat',
                                     'data-method' => 'post'
                                 ]) ?>

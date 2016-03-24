@@ -29,8 +29,8 @@ return [
             'class' => \yii\web\DbSession::className(),
         ],
         'user'               => [
-            'identityClass'   => 'common\models\User',
-            'enableAutoLogin' => false,
+            'identityClass'   => \backend\models\User::className(),
+            'enableAutoLogin' => true,
         ],
         'log'                => [
             'traceLevel' => YII_DEBUG ? 3 : 0,
@@ -54,10 +54,10 @@ return [
             'enablePrettyUrl'              => true,
             'languages'                    => [
                 'es',
-                'en'
+//                'en'
             ],
-            'enableDefaultLanguageUrlCode' => true,
-            'enableLanguagePersistence'    => true,
+            'enableDefaultLanguageUrlCode' => false,
+            'enableLanguagePersistence'    => false,
         ],
         'urlManagerFrontEnd' => [
             'class'           => 'yii\web\urlManager',

@@ -11,10 +11,9 @@ use kartik\growl\Growl;
 ?>
     <footer class="footer main-footer">
         <div class="container">
-            <p class="pull-left">&copy; <?= Yii::$app->params['global']['company'] . ' ' . date('Y') ?></p>
+            <p class="pull-left"><?= \yii\helpers\Html::a(Yii::$app->params['companyName'].'&reg;', Yii::$app->params['companyUrl'], ['target' => '_blank']) . ' ' . date('Y') ?></p>
 
-            <p class="pull-right"><?= Yii::powered() ?>
-                & <?= \yii\helpers\Html::a(Yii::$app->params['companyName'], Yii::$app->params['companyUrl'], ['target' => '_blank']) ?></p>
+            <p class="pull-right"><?= Yii::powered() ?></p>
         </div>
     </footer>
 

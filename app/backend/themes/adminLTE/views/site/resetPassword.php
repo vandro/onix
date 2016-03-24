@@ -44,7 +44,7 @@ $this->params['breadcrumbs'][] = $this->title;
             <!-- /.col -->
             <div class="col-xs-8"></div>
             <div class="col-xs-4">
-                <?= Html::submitButton(Yii::t('app', 'Enviar'), ['class' => 'btn btn-primary btn-block btn-flat']) ?>
+                <?= Html::submitButton(Yii::t('back', 'Enviar'), ['class' => 'btn btn-primary btn-block btn-flat']) ?>
             </div>
             <!-- /.col -->
         </div>

@@ -6,10 +6,10 @@ use yii\web\Response;
 use kartik\growl\Growl;
 use yii\widgets\ActiveForm;
 use yii\helpers\ArrayHelper;
-use common\models\LoginForm;
-use common\models\ResetPasswordForm;
+use backend\models\LoginForm;
+use backend\models\ResetPasswordForm;
 use common\controllers\BackController;
-use common\models\PasswordResetRequestForm;
+use backend\models\PasswordResetRequestForm;
 
 /**
  * Site controller
@@ -86,13 +86,13 @@ class SiteController extends BackController
             if ($model->sendEmail()) {
                 Yii::$app
                     ->session
-                    ->setFlash(Growl::TYPE_SUCCESS, 'Check your email for further instructions.');
+                    ->setFlash( Growl::TYPE_SUCCESS, Yii::t( 'back', 'Revisa tu bandeja de entrada y sigue las instrucciones' ) );
 
                 return $this->goHome();
             } else {
                 Yii::$app
                     ->session
-                    ->setFlash(Growl::TYPE_DANGER, 'Sorry, we are unable to reset password for email provided.');
+                    ->setFlash( Growl::TYPE_DANGER, Yii::t( 'back', 'Lo sentimos, no se pudieron enviar las instrucciones al correo indicado.' ) );
             }
         }
 
@@ -114,7 +114,7 @@ class SiteController extends BackController
         }
 
         if ($model->load(Yii::$app->request->post()) && $model->validate() && $model->resetPassword()) {
-            Yii::$app->session->setFlash('success', 'New password was saved.');
+            Yii::$app->session->setFlash(Growl::TYPE_SUCCESS, Yii::t('back', 'La nueva contraseña ha sido guardada.'));
 
             return $this->goHome();
         }

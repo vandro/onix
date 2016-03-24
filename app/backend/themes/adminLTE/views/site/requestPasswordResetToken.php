@@ -18,9 +18,16 @@ $this->params['breadcrumbs'][] = $this->title;
         </div>
     <?php endif ?>
     <!-- /.login-logo -->
-    <div class="login-box-body">
+    <div class="box login-box-body">
+        <div class="login-form-preloader overlay hide">
+            <i class="fa fa-refresh fa-spin"></i>
+        </div>
         <p class="login-box-msg"><?= Yii::t('back', 'Por favor escriba su email. Se enviara un link para que pueda restablecer su contraseña.') ?></p>
-        <?php $form = ActiveForm::begin(['id' => 'request-password-reset-form']); ?>
+        <?php $form = ActiveForm::begin([
+            'id'               => 'request-password-reset-form',
+            'validateOnChange' => false,
+            'validateOnBlur'   => false
+        ]); ?>
         <div class="form-group has-feedback">
             <?=
             $form->field($model, 'email')->textInput([
@@ -46,3 +53,19 @@ $this->params['breadcrumbs'][] = $this->title;
     </div>
     <!-- /.login-box-body -->
 </div><!-- /.login-box -->
+
+<?php
+$script = <<< JS
+    $("#request-password-reset-form").on("beforeValidate", function(e){
+        $(".login-form-preloader").removeClass("hide");
+    });
+
+    $("#request-password-reset-form").on("afterValidate", function (event, attribute, messages, deferreds){
+        if(attribute['passwordresetrequestform-email'].length > 0){
+            $(".login-form-preloader").addClass("hide");
+        }
+    });
+JS;
+
+$this->registerJs($script, \yii\web\View::POS_END);
+?>

@@ -22,14 +22,16 @@ $this->title = Yii::t('back', 'Iniciar sesion');
             </div>
         <?php endforeach; ?>
         <div class="box login-box-body">
-                    <div class="login-form-preloader overlay hide">
-                        <i class="fa fa-refresh fa-spin"></i>
-                    </div>
+            <div class="login-form-preloader overlay hide">
+                <i class="fa fa-refresh fa-spin"></i>
+            </div>
             <p class="login-box-msg"><?= Yii::t('back', 'Identifiquese para acceder') ?></p>
-            <?php $form = ActiveForm::begin([
+            <?php $form = ActiveForm::begin( [
                 'id'                   => 'login-form',
                 'enableAjaxValidation' => true,
-            ]); ?>
+                'validateOnChange'     => false,
+                'validateOnBlur'       => false
+            ] ); ?>
             <div class="form-group has-feedback">
                 <?=
                 $form->field($model, 'username')->textInput([
@@ -37,7 +39,7 @@ $this->title = Yii::t('back', 'Iniciar sesion');
                     'placeholder' => $model->getAttributeLabel('username')
                 ])->label(false)
                 ?>
-                <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+                <span class="glyphicon glyphicon-user form-control-feedback"></span>
             </div>
             <div class="form-group has-feedback">
                 <?=
@@ -62,26 +64,19 @@ $this->title = Yii::t('back', 'Iniciar sesion');
             <!-- /.social-auth-links -->
             <?= \yii\helpers\Html::a(Yii::t('back', 'Olvide mi contraseña'), ['request-password-reset']) ?><br>
         </div>
+        <?= Html::a( Yii::t( 'back', 'Volver a' ) . ' ' . Yii::$app->name, Yii::$app->params['global']['site_url'], [ 'class' => 'btn btn-primary btn-block btn-flat' ] ) ?>
         <!-- /.login-box-body -->
     </div><!-- /.login-box -->
 <?php
 $script = <<< JS
-    $(function () {
-        $('input.icheck').iCheck({
-            checkboxClass: 'icheckbox_square-blue',
-            radioClass: 'iradio_square-blue',
-            increaseArea: '20%' // optional
-        });
+    $("#login-form").on("beforeValidate", function(e){
+        $(".login-form-preloader").removeClass("hide");
+    });
 
-        $("#login-form").on("beforeValidate", function(e){
-            $(".login-form-preloader").removeClass("hide");
-        });
-
-        $("#login-form").on("afterValidate", function (event, attribute, messages, deferreds){
-            if(attribute['loginform-password'].length > 0){
-                $(".login-form-preloader").addClass("hide");
-            }
-        });
+    $("#login-form").on("afterValidate", function (event, attribute, messages, deferreds){
+        if(attribute['loginform-password'].length > 0){
+            $(".login-form-preloader").addClass("hide");
+        }
     });
 JS;
 

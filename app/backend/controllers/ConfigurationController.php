@@ -22,13 +22,15 @@ class ConfigurationController extends BackController
      */
     public function actionIndex()
     {
-        $dataProvider = new ActiveDataProvider([
+        /*$dataProvider = new ActiveDataProvider([
             'query' => Configuration::find(),
         ]);
 
         return $this->render('index', [
             'dataProvider' => $dataProvider,
-        ]);
+        ]);*/
+
+        return $this->actionUpdate(1);
     }
 
     /**

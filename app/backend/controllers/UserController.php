@@ -3,12 +3,12 @@
 namespace backend\controllers;
 
 use Yii;
-use common\models\User;
+use backend\models\User;
 use kartik\growl\Growl;
-use common\models\SearchUser;
+use backend\models\SearchUser;
 use yii\web\NotFoundHttpException;
 use common\controllers\BackController;
-use common\models\PasswordResetRequestForm;
+use backend\models\PasswordResetRequestForm;
 
 /**
  * UserController implements the CRUD actions for User model.

@@ -1,5 +1,5 @@
 <?php
-namespace common\models;
+namespace backend\models;
 
 use common\models\User;
 use kartik\base\Config;
@@ -58,7 +58,7 @@ class PasswordResetRequestForm extends Model
                     ['user' => $user]);
 
                 return \Yii::$app->mailer->sendWithTemplate($this->email,
-                    \Yii::t('app', 'Password reset for ') . $user->username, $email_content);
+                    \Yii::t('app', 'Restablecimiento de contraseña para ') . $user->username, $email_content);
             }
         }
 

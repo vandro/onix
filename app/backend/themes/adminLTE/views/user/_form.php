@@ -2,12 +2,11 @@
 
 use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
-use common\models\User;
 use kartik\select2\Select2;
 use common\widgets\onix\elfinder\OnixElFinderInput;
 
 /* @var $this yii\web\View */
-/* @var $model common\models\User */
+/* @var $model backend\models\User */
 /* @var $form yii\widgets\ActiveForm */
 ?>
 
@@ -44,9 +43,9 @@ use common\widgets\onix\elfinder\OnixElFinderInput;
     <?= $form->field($model, 'email')->textInput() ?>
     <?= $form->field($model, 'status')->widget(Select2::classname(), [
         'data'     => [
-            User::STATUS_DELETED   => Yii::t('back', 'Borrado'),
-            User::STATUS_ACTIVE    => Yii::t('back', 'Activo'),
-            User::STATUS_SUSPENDED => Yii::t('back', 'Suspendido')
+            $model::STATUS_DELETED   => Yii::t('back', 'Borrado'),
+            $model::STATUS_ACTIVE    => Yii::t('back', 'Activo'),
+            $model::STATUS_SUSPENDED => Yii::t('back', 'Suspendido')
         ],
         'language' => Yii::$app->language,
         'theme'    => Select2::THEME_BOOTSTRAP

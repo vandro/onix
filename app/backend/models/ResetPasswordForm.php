@@ -1,5 +1,5 @@
 <?php
-namespace common\models;
+namespace backend\models;
 
 use common\models\User;
 use yii\base\InvalidParamException;
@@ -31,11 +31,11 @@ class ResetPasswordForm extends Model
     public function __construct($token, $config = [])
     {
         if (empty($token) || !is_string($token)) {
-            throw new InvalidParamException('Password reset token cannot be blank.');
+            throw new InvalidParamException('El token para restablecer la contraseña es obligatorio.');
         }
         $this->_user = User::findByPasswordResetToken($token);
         if (!$this->_user) {
-            throw new InvalidParamException('Wrong password reset token.');
+            throw new InvalidParamException('EL token para restablecer la contraseña no corresponde.');
         }
         parent::__construct($config);
     }
@@ -46,14 +46,27 @@ class ResetPasswordForm extends Model
     public function rules()
     {
         return [
-            ['password', 'required'],
-            ['password', 'string', 'min' => 6],
+            [['password', 'confirm_password'], 'required'],
+            [['password', 'confirm_password'], 'string', 'min' => 6],
             [
                 'confirm_password',
                 'compare',
                 'compareAttribute' => 'password',
-                'message'          => Yii::t('back', 'The password and the password confirmation must match')
+                'message'          => Yii::t( 'back', 'El campo {password} y {confirm_password} deben ser identicos', [
+                    'password'         => $this->getAttributeLabel( 'password' ),
+                    'confirm_password' => $this->getAttributeLabel( 'confirm_password' )
+                ] )
             ]
+        ];
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function attributeLabels() {
+        return [
+            'password'         => Yii::t( 'back', 'Contraseña' ),
+            'confirm_password' => Yii::t( 'back', 'Confirmar Contraseña' ),
         ];
     }
 
