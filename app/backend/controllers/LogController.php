@@ -4,6 +4,7 @@ namespace backend\controllers;
 
 use Yii;
 use backend\models\Log;
+use backend\models\LogSearch;
 use yii\data\ActiveDataProvider;
 use yii\web\NotFoundHttpException;
 use common\controllers\BackController;
@@ -19,12 +20,12 @@ class LogController extends BackController
      */
     public function actionIndex()
     {
-        $dataProvider = new ActiveDataProvider([
-            'query' => Log::find(),
-        ]);
+        $searchModel  = new LogSearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
-            'dataProvider' => $dataProvider,
+            'searchModel' => $searchModel,
+            'dataProvider' => $dataProvider
         ]);
     }
 

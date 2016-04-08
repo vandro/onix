@@ -42,8 +42,7 @@ composer.phar
 /app/console/config/main-local.php
 /app/console/config/params-local.php
 
-# HABILITADO VENDOR TEMPORALMENTE MIENTRAS ENCUENTRO UNA MEJOR FORMA DE LEVANTAR EL PROYECTO
-# /vendor/*
+/vendor/*
 
 /sonar-project.properties
 /.sonar

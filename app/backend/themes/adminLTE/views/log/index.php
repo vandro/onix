@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use yii\grid\GridView;
+use yii\log\Logger;
 
 /* @var $this yii\web\View */
 /* @var $dataProvider yii\data\ActiveDataProvider */
@@ -16,27 +17,39 @@ $this->params['breadcrumbs'][] = $this->title;
                 <?php //echo Html::a(Yii::t('back', 'Create Log'), ['create'], ['class' => 'btn btn-success']) ?>
             </div>
             <div class="box-body">
-
                 <?php
                 \yii\widgets\Pjax::begin();
                 echo GridView::widget([
                     'dataProvider' => $dataProvider,
-                    'columns' => [
-                        'id',
-                        'level',
-                        'category',
-                        'log_time',
-                        'prefix:ntext',
-                        // 'message:ntext',
-
-                        [
-                            'class' => 'yii\grid\ActionColumn',
-                            'template' => '{view}'
-                        ],
-                    ],
-                ]);
-                \yii\widgets\Pjax::end();
-                ?>
+                    'filterModel' => $searchModel,
+                    'rowOptions' => function ( $model ) {
+                        return ['class' => str_replace('error', 'danger', Logger::getLevelName($model->level))];
+                    },
+                            'columns' => [
+                                'id',
+                                [
+                                    'attribute' => 'level',
+                                    'filter' => [
+                                        Logger::LEVEL_INFO => Logger::getLevelName(Logger::LEVEL_INFO),
+                                        Logger::LEVEL_WARNING => Logger::getLevelName(Logger::LEVEL_WARNING),
+                                        Logger::LEVEL_ERROR => Logger::getLevelName(Logger::LEVEL_ERROR),
+                                    ],
+                                    'value' => function($model) {
+                                        return Logger::getLevelName($model->level);
+                                    }
+                                ],
+                                'log_time:datetime',
+                                'category',
+                                'prefix:ntext',
+                                // 'message:ntext',
+                                [
+                                    'class' => 'yii\grid\ActionColumn',
+                                    'template' => '{view}{delete}'
+                                ],
+                            ],
+                        ]);
+                        \yii\widgets\Pjax::end();
+                        ?>
             </div>
         </div>
     </div>

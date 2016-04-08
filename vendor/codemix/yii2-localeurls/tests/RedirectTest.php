@@ -51,7 +51,7 @@ class RedirectTest extends TestCase
         $this->mockRequest('/en');
     }
 
-    public function testRedirectsIfLanguageWithUpperCaseCountryInUrl()
+    public function testRedirectsIfLanguageWithUppercaseCountryInUrl()
     {
         $this->expectRedirect('/es-bo/site/page');
         $this->mockUrlManager([
@@ -60,7 +60,16 @@ class RedirectTest extends TestCase
         $this->mockRequest('/es-BO/site/page');
     }
 
-    public function testRedirectsIfLanguageWithUpperCaseWildcardCountryInUrl()
+    public function testNoRedirectIfLanguageWithUppercaseCountryInUrlAndUppercaseEnabled()
+    {
+        $this->mockUrlManager([
+            'languages' => ['en-US', 'deutsch' => 'de', 'es-BO'],
+            'keepUppercaseLanguageCode' => true,
+        ]);
+        $this->mockRequest('/es-BO/site/page');
+    }
+
+    public function testRedirectsIfLanguageWithUppercaseWildcardCountryInUrl()
     {
         $this->expectRedirect('/es-bo/site/page');
         $this->mockUrlManager([
@@ -157,6 +166,16 @@ class RedirectTest extends TestCase
         ]);
     }
 
+    public function testNoRedirectIfNoLanguageInUrlAndAcceptedLanguageMatchesDefaultLanguage()
+    {
+        $this->mockUrlManager([
+            'languages' => ['en-US', 'en', 'de'],
+        ]);
+        $this->mockRequest('/site/page',[
+            'acceptableLanguages' => ['en'],
+        ]);
+    }
+
     public function testRedirectsIfNoLanguageInUrlAndLanguageInSession()
     {
         $this->expectRedirect('/de/site/page');
@@ -185,6 +204,17 @@ class RedirectTest extends TestCase
         $_COOKIE['_language'] = 'de';
         $this->mockUrlManager( [
             'languages' => ['en-US', 'en', 'de'],
+        ]);
+        $this->mockRequest('/site/page');
+    }
+
+    public function testRedirectsNoLanguageInUrlAndUppercaseLanguageInCookieAndUppercaseEnabled()
+    {
+        $this->expectRedirect('/en-US/site/page');
+        $_COOKIE['_language'] = 'en-US';
+        $this->mockUrlManager( [
+            'languages' => ['en-US', 'en', 'de'],
+            'keepUppercaseLanguageCode' => true,
         ]);
         $this->mockRequest('/site/page');
     }

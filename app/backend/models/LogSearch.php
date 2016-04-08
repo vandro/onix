@@ -10,13 +10,12 @@ use backend\models\Log;
 /**
  * LogSearch represents the model behind the search form about `backend\models\Log`.
  */
-class LogSearch extends Log
-{
+class LogSearch extends Log {
+
     /**
      * @inheritdoc
      */
-    public function rules()
-    {
+    public function rules() {
         return [
             [['id', 'level'], 'integer'],
             [['category', 'prefix', 'message'], 'safe'],
@@ -27,8 +26,7 @@ class LogSearch extends Log
     /**
      * @inheritdoc
      */
-    public function scenarios()
-    {
+    public function scenarios() {
         // bypass scenarios() implementation in the parent class
         return Model::scenarios();
     }
@@ -40,8 +38,7 @@ class LogSearch extends Log
      *
      * @return ActiveDataProvider
      */
-    public function search($params)
-    {
+    public function search($params) {
         $query = Log::find();
 
         $dataProvider = new ActiveDataProvider([
@@ -63,9 +60,12 @@ class LogSearch extends Log
         ]);
 
         $query->andFilterWhere(['like', 'category', $this->category])
-            ->andFilterWhere(['like', 'prefix', $this->prefix])
-            ->andFilterWhere(['like', 'message', $this->message]);
+                ->andFilterWhere(['like', 'prefix', $this->prefix])
+                ->andFilterWhere(['like', 'message', $this->message]);
+        
+        $query->orderBy(['id' => SORT_DESC]);
 
         return $dataProvider;
     }
+
 }

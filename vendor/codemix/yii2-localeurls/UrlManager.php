@@ -56,6 +56,12 @@ class UrlManager extends BaseUrlManager
     public $enableLanguagePersistence = true;
 
     /**
+     * @var bool whether to keep upper case language codes in URL. Default is `false` wich will e.g.
+     * redirect `de-AT` to `de-at`.
+     */
+    public $keepUppercaseLanguageCode = false;
+
+    /**
      * @var string the name of the session key that is used to store the language. Default is '_language'.
      */
     public $languageSessionKey = '_language';
@@ -132,7 +138,7 @@ class UrlManager extends BaseUrlManager
             }
         }
         $this->_defaultLanguage = Yii::$app->language;
-        return parent::init();
+        parent::init();
     }
 
     /**
@@ -195,6 +201,14 @@ class UrlManager extends BaseUrlManager
                 $languageRequired = false;
             }
 
+            // Do not use prefix for default language to prevent unnecessary redirect if there's no persistence and no detection
+            if (
+                $languageRequired && $language===$this->getDefaultLanguage() &&
+                !$this->enableDefaultLanguageUrlCode && !$this->enableLanguagePersistence && !$this->enableLanguageDetection
+            ) {
+                $languageRequired = false;
+            }
+
             $url = parent::createUrl($params);
 
             // Unless a language was explicitely specified in the parameters we can return a URL without any prefix
@@ -204,12 +218,12 @@ class UrlManager extends BaseUrlManager
                 return  $url;
             } else {
                 $key = array_search($language, $this->languages);
-                $base = $this->showScriptName ? $this->getScriptUrl() : $this->getBaseUrl();
-                $length = strlen($base);
                 if (is_string($key)) {
                     $language = $key;
                 }
-                $language = strtolower($language);
+                if (!$this->keepUppercaseLanguageCode) {
+                    $language = strtolower($language);
+                }
                 // Remove any trailing slashes unless one is configured as suffix
                 if ($this->suffix!=='/') {
                     if (count($params)!==1) {
@@ -218,7 +232,22 @@ class UrlManager extends BaseUrlManager
                         $url = rtrim($url, '/');
                     }
                 }
-                return $length ? substr_replace($url, "$base/$language", 0, $length) : "/$language$url";
+
+                // /foo/bar -> /de/foo/bar
+                // /base/url/foo/bar -> /base/url/de/foo/bar
+                // /base/index.php/foo/bar -> /base/index.php/de/foo/bar
+                // http://www.example.com/base/url/foo/bar -> http://www.example.com/base/de/foo/bar
+                $needle = $this->showScriptName ? $this->getScriptUrl() : $this->getBaseUrl();
+                // Check for server name URL
+                if (strpos($url, '://')!==false) {
+                    if (($pos = strpos($url, '/', 8))!==false || ($pos = strpos($url, '?', 8))!==false) {
+                        $needle = substr($url, 0, $pos) . $needle;
+                    } else {
+                        $needle = $url . $needle;
+                    }
+                }
+                $needleLength = strlen($needle);
+                return $needleLength ? substr_replace($url, "$needle/$language", 0, $needleLength) : "/$language$url";
             }
         } else {
             return parent::createUrl($params);
@@ -255,10 +284,11 @@ class UrlManager extends BaseUrlManager
                 // Replace alias with language code
                 $language = $this->languages[$code];
             } else {
+                // lowercase language, uppercase country
                 list($language,$country) = $this->matchCode($code);
                 if ($country!==null) {
-                    if ($code==="$language-$country") {
-                        $this->redirectToLanguage(strtolower($code));
+                    if ($code==="$language-$country" && !$this->keepUppercaseLanguageCode) {
+                        $this->redirectToLanguage(strtolower($code));   // Redirect ll-CC to ll-cc
                     } else {
                         $language = "$language-$country";
                     }
@@ -328,7 +358,7 @@ class UrlManager extends BaseUrlManager
             if ($key && is_string($key)) {
                 $language = $key;
             }
-            $this->redirectToLanguage(strtolower($language));
+            $this->redirectToLanguage($this->keepUppercaseLanguageCode ? $language : strtolower($language));
         }
     }
 
@@ -351,7 +381,7 @@ class UrlManager extends BaseUrlManager
      * a configured language, that language is returned.
      *
      * @param string $code the code to match
-     * @return array of [language, country] where both can be null if no match
+     * @return array of [language, country], [language, null] or [null, null] if no match
      */
     protected function matchCode($code)
     {
