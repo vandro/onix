@@ -5,8 +5,6 @@ namespace backend\controllers;
 use Yii;
 use kartik\widgets\Growl;
 use yii\base\DynamicModel;
-use yii\data\ActiveDataProvider;
-use common\models\EmailTemplate;
 use backend\models\Configuration;
 use yii\web\NotFoundHttpException;
 use common\controllers\BackController;

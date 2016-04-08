@@ -1,5 +1,10 @@
 <?php
-$localhost = $_SERVER['REMOTE_ADDR'] == '127.0.0.1' ? true : false;
+$allowed_as_localhost = [
+    '127.0.0.1',
+    '::1'
+];
+
+$localhost = in_array($_SERVER['REMOTE_ADDR'], $allowed_as_localhost);
 
 defined('YII_DEBUG') or define('YII_DEBUG', $localhost);
 defined('YII_ENV') or define('YII_ENV', $localhost ? 'dev' : 'prod');
