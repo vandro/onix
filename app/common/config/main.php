@@ -5,14 +5,15 @@ return [
     'vendorPath' => dirname(dirname(__DIR__)) . '/../vendor',
     'modules'    => [],
     'components' => [
-        'db' => [
-            'class'             => 'yii\db\Connection',
-            'dsn'               => 'mysql:host=localhost;dbname=onix_base',
-            'username'          => 'root',
-            'password'          => '1995',
-            'charset'           => 'utf8',
-            'enableSchemaCache' => true,
-            'emulatePrepare'    => true
+        'db'     => [
+            'class'              => 'yii\db\Connection',
+            'dsn'                => 'mysql:host=localhost;dbname=onix_base',
+            'username'           => 'root',
+            'password'           => '1995',
+            'charset'            => 'utf8',
+            'enableSchemaCache'  => true,
+            'emulatePrepare'     => true,
+            'queryCacheDuration' => 3600 // Duración del caché de los queries
         ],
         'cache'  => [
             'class' => 'yii\caching\FileCache',

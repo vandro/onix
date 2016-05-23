@@ -19,13 +19,13 @@ $config['modules']['gii'] = [
 			'baseControllerClass' => 'common\controllers\BackController',
 			'searchModelClass'    => 'backend\models\Search',
 			'template'            => 'onix',
-			'enableI18N'          => true,
+			'enableI18N'          => false,
 			'messageCategory'     => 'back'
 		],
 		'model' => [
-			'class'           => \yii\gii\generators\model\Generator::className(),
+			'class'           => \backend\modules\onix\gii\model\Generator::className(),
 			'ns'              => 'common\models',
-			'enableI18N'      => true,
+			'enableI18N'      => false,
 			'messageCategory' => 'back'
 		]
 	],
@@ -36,7 +36,7 @@ $config['modules']['gii'] = [
 /**
  * ALLOW ACCESS TO DEBUG TOOLBAR TO THE RBAC
  */
-$config['as access']      = [
+$config['as access'] = [
 	'class'        => \backend\modules\onix\admin\components\AccessControl::className(),
 	'allowActions' => [
 		'debug/default/toolbar'

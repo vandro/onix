@@ -15,45 +15,61 @@ namespace common\controllers;
 use Yii;
 use backend\modules\onix\admin\components\AccessControl;
 use yii\filters\VerbFilter;
+use yii\helpers\ArrayHelper;
 
+/**
+ * Todos los controladores del Backend debe extender de este controlador, eso permite que tenga los compartmientos a
+ * nivel de seguridad y validaciones para las solicitudes, en caso contrario podría producirse un error de seguridad en
+ * la aplicación
+ *
+ * Class BackController
+ * @package common\controllers
+ */
+class BackController extends OnixController {
+	/**
+	 * BackController constructor.
+	 */
+	public function __construct( $id, $module, $config = [ ] ) {
+		parent::__construct( $id, $module, $config = [ ] );
+		self::initBackendParams();
+	}
 
-class BackController extends OnixController
-{
-    /**
-     * BackController constructor.
-     */
-    public function __construct($id, $module, $config = [])
-    {
-        parent::__construct($id, $module, $config = []);
+	/**
+	 * Cargamos los comportamientos globales de acceso tales como la validacion de control de acceso y el filtro de
+	 * peticiones a trvés de verbos
+	 *
+	 * @inheritdoc
+	 */
+	public function behaviors() {
+		return self::initBackendBehaviors();
+	}
 
-        $frontEnd_url_config = [
-            'urlManagerFrontEnd' => [
-                'class'           => 'yii\web\urlManager',
-                'baseUrl'         => Yii::$app->params['global']['site_url'],
-                'enablePrettyUrl' => false,
-                'showScriptName'  => false
-            ]
-        ];
+	/**
+	 * Inicializa los parámetros del backend, esto permite reutilizar estos parámetros cuando se va a instanciar una
+	 * clase que hereda desde otra de mas bajo nivel a esta, ej. Controller.
+	 */
+	public static function initBackendParams() {
+		$frontEnd_url_prev_config = isset( Yii::$app->components['urlManagerFrontEnd'] ) ? Yii::$app->components['urlManagerFrontEnd'] : [ ];
+		$frontEnd_url_config      = [
+			'urlManagerFrontEnd' => ArrayHelper::merge( $frontEnd_url_prev_config, [
+				'baseUrl' => Yii::$app->params['global']['site_url']
+			] )
+		];
 
-        Yii::$app->setComponents($frontEnd_url_config);
-    }
+		Yii::$app->setComponents( $frontEnd_url_config );
+	}
 
-
-    /**
-     * @inheritdoc
-     */
-    public function behaviors()
-    {
-        return [
-            'access' => [
-                'class' => AccessControl::className(),
-            ],
-            'verbs'  => [
-                'class'   => VerbFilter::className(),
-                'actions' => [
-                    'delete' => ['post'],
-                ],
-            ],
-        ];
-    }
+	public static function initBackendBehaviors() {
+		return [
+			'access' => [
+				'class' => AccessControl::className(),
+			],
+			'verbs'  => [
+				'class'   => VerbFilter::className(),
+				'actions' => [
+					'delete' => [ 'post' ],
+				],
+			],
+		];
+	}
 }
