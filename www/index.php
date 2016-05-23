@@ -11,7 +11,6 @@ defined('YII_ENV') or define('YII_ENV', $localhost ? 'dev' : 'prod');
 
 //If debug mode and localhost will load local config
 if (YII_DEBUG && $localhost) {
-
     error_reporting(E_ALL);
     ini_set('display_errors', 1);
 }
