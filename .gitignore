@@ -42,7 +42,8 @@ composer.phar
 /app/console/config/main-local.php
 /app/console/config/params-local.php
 
-# /vendor/*
+/vendor/*
+!/vendor/.gitignore
 
 /sonar-project.properties
 /.sonar
