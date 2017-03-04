@@ -1,23 +1,23 @@
 <?php
 $params = array_merge(
-	require( __DIR__ . '/../../common/config/params.php' ),
-	require( __DIR__ . '/params.php' ),
-	( YII_DEBUG ? require( __DIR__ . '/../../common/config/params-local.php' ) : [ ] ),
-	( YII_DEBUG ? require( __DIR__ . '/params-local.php' ) : [ ] )
+	require(__DIR__ . '/../../common/config/params.php'),
+	require(__DIR__ . '/params.php'),
+	(YII_DEBUG ? require(__DIR__ . '/../../common/config/params-local.php') : []),
+	(YII_DEBUG ? require(__DIR__ . '/params-local.php') : [])
 );
 
 return [
 	'id'                  => 'app-backend',
-	'basePath'            => dirname( __DIR__ ),
+	'basePath'            => dirname(__DIR__),
 	'controllerNamespace' => 'backend\controllers',
-	'bootstrap'           => [ 'log' ],
+	'bootstrap'           => ['log'],
 	'aliases'             => [
 		'@front' => __DIR__ . '/../..'
 	],
 	'modules'             => [
 		'admin' => [
 			'class'    => \mdm\admin\Module::className(),
-			'viewPath' => dirname( dirname( __DIR__ ) ) . '/backend/modules/onix/admin/views'
+			'viewPath' => dirname(dirname(__DIR__)) . '/backend/modules/onix/admin/views'
 		]
 	],
 	'components'          => [
@@ -29,7 +29,7 @@ return [
 			// unique for backend
 			'name'     => '_backendSessionId',
 			// a temporary folder on backend
-			'savePath' => dirname( __DIR__ ) . DIRECTORY_SEPARATOR . 'runtime',
+			'savePath' => dirname(__DIR__) . DIRECTORY_SEPARATOR . 'runtime',
 		],
 		'user'               => [
 			'identityClass'   => \backend\models\User::className(),
@@ -40,11 +40,11 @@ return [
 		],
 		'authManager'        => [
 			'class'        => \mdm\admin\components\DbManager::className(),
-			'defaultRoles' => [ 'Guest' ]
+			'defaultRoles' => ['Guest']
 		],
 		'urlManager'         => [
 			'class'           => \yii\web\UrlManager::className(),
-			'showScriptName'  => false,
+			'showScriptName'  => true,
 			'enablePrettyUrl' => true,
 		],
 		'urlManagerFrontEnd' => [
@@ -57,7 +57,7 @@ return [
 				'back' => [
 					'class'                 => yii\i18n\DbMessageSource::className(),
 					'enableCaching'         => true,
-					'cachingDuration'       => ( 3600 * 24 ), // The messages cache will refresh once per day
+					'cachingDuration'       => (3600 * 24), // The messages cache will refresh once per day
 					'forceTranslation'      => true,
 					'sourceLanguage'        => 'es',
 					'on missingTranslation' => [

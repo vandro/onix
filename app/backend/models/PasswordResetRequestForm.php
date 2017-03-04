@@ -1,12 +1,7 @@
 <?php
 namespace backend\models;
 
-use common\models\User;
-use kartik\base\Config;
 use yii\base\Model;
-use backend\models\Configuration;
-use yii\base\View;
-use yii\helpers\VarDumper;
 
 /**
  * Password reset request form
@@ -27,7 +22,7 @@ class PasswordResetRequestForm extends Model
             [
                 'email',
                 'exist',
-                'targetClass' => '\common\models\User',
+                'targetClass' => '\backend\models\User',
                 'filter'      => ['status' => User::STATUS_ACTIVE],
                 'message'     => 'There is no user with such email.'
             ],

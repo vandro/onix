@@ -30,7 +30,8 @@
         "codemix/yii2-localeurls": "^1.2",
         "mdmsoft/yii2-admin": "~1.0",
         "zxbodya/yii2-elfinder": "*@dev",
-        "zxbodya/yii2-tinymce": "*@dev"
+        "zxbodya/yii2-tinymce": "*@dev",
+        "kartik-v/yii2-export": "*"
     },
     "require-dev": {
         "yiisoft/yii2-codeception": "*",
