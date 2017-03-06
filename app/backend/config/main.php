@@ -15,10 +15,11 @@ return [
 		'@front' => __DIR__ . '/../..'
 	],
 	'modules'             => [
-		'admin' => [
+		'admin'    => [
 			'class'    => \mdm\admin\Module::className(),
 			'viewPath' => dirname(dirname(__DIR__)) . '/backend/modules/onix/admin/views'
-		]
+		],
+		'gridview' => ['class' => 'kartik\grid\Module']
 	],
 	'components'          => [
 		'request'            => [

@@ -62,7 +62,11 @@ class Datos extends \yii\db\ActiveRecord {
 				'safe'
 			],
 			[['tipo', 'tipo_u', 'contesto', 'agenda', 'barrio_id'], 'integer'],
-			[['agenda', 'barrio_id'], 'required'],
+			[
+				['agenda', 'barrio_id', 'tipo', 'tipo_u', 'nombre', 'apellido', 'cedula', 'direccion', 'celular'],
+				'required'
+			],
+			[['email'], 'email'],
 			[['placa'], 'string', 'max' => 10],
 			[['nombre', 'apellido', 'observacion', 'empresa_soat'], 'string', 'max' => 100],
 			[['direccion'], 'string', 'max' => 150],
@@ -96,7 +100,7 @@ class Datos extends \yii\db\ActiveRecord {
 			'email'             => 'Email',
 			'fecha_vencimiento' => 'Fecha Vencimiento',
 			'cedula'            => 'Cédula',
-			'tipo_u'            => 'Tipo U',
+			'tipo_u'            => 'Tipo de Usuario',
 			'contesto'          => '¿Contesto?',
 			'fecha_agenda'      => 'Fecha Agenda',
 			'agenda'            => 'Agenda',
@@ -109,6 +113,45 @@ class Datos extends \yii\db\ActiveRecord {
 			'estado_soat'       => 'Estado Soat',
 			'poliza_soat'       => 'Póliza Soat',
 			'barrio_id'         => 'Barrio',
+		];
+	}
+
+	public function attributeHints() {
+		return [
+			'id'               => 'ID',
+			'placa'            => 'Placa el Automotor',
+			'cedula'           => 'Cédula de quien hace el trámite',
+			'nombre'           => 'Nombre de quien hace el trámite',
+			'apellido'         => 'Apellido de quien hace el trámite',
+			'direccion'        => 'Dirección de quien hace el trámite',
+			'telefono'         => 'Teléfono de quien hace el trámite',
+			'celular'          => 'Celular de quien hace el trámite',
+			'fecha_nacimiento' => 'Fecha Nacimiento de quien hace el trámite',
+			'email'            => 'Email de quien hace el trámite',
+
+			'tipo' => 'Tipo de Vehículo',
+
+			'fecha_revision'    => 'Fecha en la que se hace la revisión del automotor',
+			'fecha_vencimiento' => 'Fecha en la que vence la revisión del automotor',
+
+			'tipo_u' => 'Tipo de Usuario que hace el trámite',
+
+			'contesto'     => 'Parte comercial: ¿El cliente contesto?',
+			'fecha_agenda' => 'Parte comercial: si el cliente contesta, la fecha de agendamiento para la nueva revisión',
+			'agenda'       => 'Parte comercial: ¿Se agendó?',
+			'observacion'  => 'Parte comercial: Observaciónes del contacto con el cliente',
+
+			'cedula_runt' => 'Cédula Runt',
+
+			'fecha_exp_soat'  => 'Fecha Expiración de Soat',
+			'fecha_vig_soat'  => 'Fecha Vigencia Soat',
+			'fecha_venc_soat' => 'Fecha Vence Soat',
+
+
+			'empresa_soat' => 'Empresa Soat',
+			'estado_soat'  => 'Estado Soat',
+			'poliza_soat'  => 'Póliza Soat',
+			'barrio_id'    => 'Barrio',
 		];
 	}
 
