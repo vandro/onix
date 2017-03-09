@@ -2,6 +2,8 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use kartik\select2\Select2;
+use kartik\date\DatePicker;
 
 /* @var $this yii\web\View */
 /* @var $model backend\models\SearchDatos */
@@ -10,68 +12,74 @@ use yii\widgets\ActiveForm;
 
 <div class="datos-search">
 
-    <?php $form = ActiveForm::begin([
-        'action' => ['index'],
-        'method' => 'get',
-    ]); ?>
+	<?php $form = ActiveForm::begin([
+		'action' => ['index'],
+		'method' => 'get',
+	]); ?>
 
-    <?= $form->field($model, 'id') ?>
-
-    <?= $form->field($model, 'placa') ?>
-
-    <?= $form->field($model, 'nombre') ?>
-
-    <?= $form->field($model, 'apellido') ?>
-
-    <?= $form->field($model, 'direccion') ?>
-
-    <?php // echo $form->field($model, 'telefono') ?>
-
-    <?php // echo $form->field($model, 'celular') ?>
-
-    <?php // echo $form->field($model, 'fecha_nacimiento') ?>
-
-    <?php // echo $form->field($model, 'tipo') ?>
-
-    <?php // echo $form->field($model, 'fecha_revision') ?>
-
-    <?php // echo $form->field($model, 'email') ?>
-
-    <?php // echo $form->field($model, 'fecha_vencimiento') ?>
-
-    <?php // echo $form->field($model, 'cedula') ?>
-
-    <?php // echo $form->field($model, 'tipo_u') ?>
-
-    <?php // echo $form->field($model, 'contesto') ?>
-
-    <?php // echo $form->field($model, 'fecha_agenda') ?>
-
-    <?php // echo $form->field($model, 'agenda') ?>
-
-    <?php // echo $form->field($model, 'observacion') ?>
-
-    <?php // echo $form->field($model, 'cedula_runt') ?>
-
-    <?php // echo $form->field($model, 'fecha_exp_soat') ?>
-
-    <?php // echo $form->field($model, 'fecha_vig_soat') ?>
-
-    <?php // echo $form->field($model, 'fecha_venc_soat') ?>
-
-    <?php // echo $form->field($model, 'empresa_soat') ?>
-
-    <?php // echo $form->field($model, 'estado_soat') ?>
-
-    <?php // echo $form->field($model, 'poliza_soat') ?>
-
-    <?php // echo $form->field($model, 'barrio_id') ?>
-
-    <div class="form-group">
-        <?= Html::submitButton('Search', ['class' => 'btn btn-primary']) ?>
-        <?= Html::resetButton('Reset', ['class' => 'btn btn-default']) ?>
+    <div class="row">
+        <div class="col col-sm-6">
+			<?= $form->field($model, 'advanced_seleccion_campo_busqueda')->widget(Select2::className(), [
+				'options'       => [
+					'placeholder' => 'Seleccione un campo ...',
+				],
+				'pluginOptions' => [
+					'allowClear' => true
+				],
+				'data'          => [
+					$model::FIELD_FECHA_VENC_SOAT => $model->getAttributeLabel($model::FIELD_FECHA_VENC_SOAT),
+					$model::FIELD_FECHA_VENC_REV  => $model->getAttributeLabel($model::FIELD_FECHA_VENC_REV),
+					$model::FIELD_FECHA_AGENDA    => $model->getAttributeLabel($model::FIELD_FECHA_AGENDA),
+					$model::FIELD_CUMPLES         => $model->getAttributeLabel($model::FIELD_CUMPLES)
+				],
+			]) ?>
+        </div>
+        <div class="col col-sm-6">
+			<?= $form->field($model, 'tipo')->widget(Select2::className(), [
+				'options'       => [
+					'placeholder' => 'Seleccione un tipo ...',
+				],
+				'pluginOptions' => [
+					'allowClear' => true
+				],
+				'data'          => [
+					0 => 'Público',
+					1 => 'Particular',
+					3 => 'Moto'
+				],
+			]) ?>
+        </div>
     </div>
 
-    <?php ActiveForm::end(); ?>
+    <div class="row">
+        <div class="col col-sm-6">
+			<?= $form->field($model, 'advanced_date_from')->widget(DatePicker::className(), [
+				'pluginOptions' => [
+					'todayHighlight' => true,
+					'todayBtn'       => false,
+					'format'         => 'yyyy-mm-dd',
+					'autoclose'      => true,
+				]
+			]) ?>
+        </div>
+        <div class="col col-sm-6">
+			<?= $form->field($model, 'advanced_date_to')->widget(DatePicker::className(), [
+				'pluginOptions' => [
+					'todayHighlight' => true,
+					'todayBtn'       => false,
+					'format'         => 'yyyy-mm-dd',
+					'autoclose'      => true,
+				]
+			]) ?>
+        </div>
+    </div>
+
+
+    <div class="form-group">
+		<?= Html::submitButton('Buscar', ['class' => 'btn btn-primary']) ?>
+		<?= Html::a('Restablecer', ['//datos'], ['class' => 'btn btn-default']) ?>
+    </div>
+
+	<?php ActiveForm::end(); ?>
 
 </div>

@@ -16,7 +16,6 @@ use kartik\switchinput\SwitchInput;
 
     <div>
 
-
 		<?php $form = ActiveForm::begin([
 			'layout'      => 'horizontal',
 			'fieldConfig' => [
@@ -93,8 +92,6 @@ use kartik\switchinput\SwitchInput;
 			]
 		]) ?>
 
-
-
 		<?= $form->field($model, 'fecha_vencimiento')->widget(DatePicker::className(), [
 			'pluginOptions' => [
 				'todayHighlight' => true,
@@ -133,23 +130,23 @@ use kartik\switchinput\SwitchInput;
 
 		<?= $form->field($model, 'cedula_runt')->textInput(['maxlength' => true]) ?>
 
-		<?= $form->field($model, 'fecha_exp_soat')->widget(DatePicker::className(), [
+		<?php /*$form->field($model, 'fecha_exp_soat')->widget(DatePicker::className(), [
 			'pluginOptions' => [
 				'todayHighlight' => true,
 				'todayBtn'       => true,
 				'format'         => 'yyyy-mm-dd',
 				'autoclose'      => true,
 			]
-		]) ?>
+		])*/ ?>
 
-		<?= $form->field($model, 'fecha_vig_soat')->widget(DatePicker::className(), [
+		<?php /*$form->field($model, 'fecha_vig_soat')->widget(DatePicker::className(), [
 			'pluginOptions' => [
 				'todayHighlight' => true,
 				'todayBtn'       => true,
 				'format'         => 'yyyy-mm-dd',
 				'autoclose'      => true,
 			]
-		]) ?>
+		])*/ ?>
 
 		<?= $form->field($model, 'fecha_venc_soat')->widget(DatePicker::className(), [
 			'pluginOptions' => [
@@ -160,11 +157,11 @@ use kartik\switchinput\SwitchInput;
 			]
 		]) ?>
 
-		<?= $form->field($model, 'empresa_soat')->textInput(['maxlength' => true]) ?>
+		<?php /*$form->field($model, 'empresa_soat')->textInput(['maxlength' => true])*/ ?>
 
-		<?= $form->field($model, 'estado_soat')->textInput(['maxlength' => true]) ?>
+		<?php /*$form->field($model, 'estado_soat')->textInput(['maxlength' => true])*/ ?>
 
-		<?= $form->field($model, 'poliza_soat')->textInput(['maxlength' => true]) ?>
+		<?php /*$form->field($model, 'poliza_soat')->textInput(['maxlength' => true])*/ ?>
 
 		<?= $form->field($model, 'barrio_id')->widget(Select2::className(), [
 			'initValueText' => $model->isNewRecord ? null : ($model->barrio->municipioCode->name . ' - ' . $model->barrio->nombre),

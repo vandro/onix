@@ -20,7 +20,43 @@ $this->params['breadcrumbs'][] = $this->title;
             </div>
             <div class="box-body">
 
+                <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingOne">
+                            <h4 class="panel-title">
+                                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne"
+                                   aria-expanded="true" aria-controls="collapseOne">
+                                    Búsqueda Avanzada
+                                </a>
+                            </h4>
+                        </div>
+						<?php
+						/**
+						 *  Si el formulario de búsqueda avanzada tiene algún dato cargado, se carga abierto, de lo
+						 *  contrario, carga cerrado
+						 */
+						$collapse_in = false;
+
+						if (strlen($searchModel->advanced_seleccion_campo_busqueda) > 0
+						    or strlen($searchModel->advanced_date_from) > 0
+						    or strlen($searchModel->advanced_date_to) > 0
+						    or strlen($searchModel->tipo) > 0
+						) {
+							$collapse_in = true;
+						}
+						?>
+                        <div id="collapseOne" class="panel-collapse collapse <?= $collapse_in ? 'in' : '' ?>"
+                             role="tabpanel"
+                             aria-labelledby="headingOne">
+                            <div class="panel-body">
+								<?= $this->render('_search', ['model' => $searchModel]); ?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
 				<?php
+
 				$gridColumns = [
 					'id',
 					'placa',
@@ -47,12 +83,8 @@ $this->params['breadcrumbs'][] = $this->title;
 					'empresa_soat',
 					'estado_soat',
 					'poliza_soat',
-					'barrio_id',
-					/*'texto_msg' => function ($model) {
-						return 'recuerde que mañana vence su revisión';
-					}*/
+					'barrio_id'
 				];
-
 
 				\yii\widgets\Pjax::begin();
 				// Renders a export dropdown menu
@@ -70,12 +102,13 @@ $this->params['breadcrumbs'][] = $this->title;
 						'apellido',
 						'direccion',
 						// 'telefono',
-						'celular',
-						// 'fecha_nacimiento',
+						// 'celular',
 						// 'tipo',
-						// 'fecha_revision',
 						'email:email',
-						// 'fecha_vencimiento',
+						'fecha_nacimiento',
+						// 'fecha_revision',
+						'fecha_vencimiento',
+						'fecha_venc_soat',
 						// 'cedula',
 						// 'tipo_u',
 						// 'contesto',
@@ -85,7 +118,6 @@ $this->params['breadcrumbs'][] = $this->title;
 						// 'cedula_runt',
 						// 'fecha_exp_soat',
 						// 'fecha_vig_soat',
-						// 'fecha_venc_soat',
 						// 'empresa_soat',
 						// 'estado_soat',
 						// 'poliza_soat',
