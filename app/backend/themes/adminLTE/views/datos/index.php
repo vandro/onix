@@ -26,7 +26,13 @@ $this->params['breadcrumbs'][] = $this->title;
                             <h4 class="panel-title">
                                 <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne"
                                    aria-expanded="true" aria-controls="collapseOne">
-                                    Búsqueda Avanzada
+									<?php
+									if (Yii::$app->request->getQueryParam('sms')) {
+										echo "Lista SMS";
+									} else {
+										echo "Búsqueda Avanzada";
+									}
+									?>
                                 </a>
                             </h4>
                         </div>
@@ -57,52 +63,57 @@ $this->params['breadcrumbs'][] = $this->title;
 
 				<?php
 
-				$gridColumns = [
-					'id',
-					'placa',
-					'nombre',
-					'apellido',
-					'direccion',
-					'telefono',
-					'celular',
-					'fecha_nacimiento',
-					'tipo',
-					'fecha_revision',
-					'email:email',
-					'fecha_vencimiento',
-					'cedula',
-					'tipo_u',
-					'contesto',
-					'fecha_agenda',
-					'agenda',
-					'observacion',
-					'cedula_runt',
-					'fecha_exp_soat',
-					'fecha_vig_soat',
-					'fecha_venc_soat',
-					'empresa_soat',
-					'estado_soat',
-					'poliza_soat',
-					'barrio_id'
-				];
-
-				\yii\widgets\Pjax::begin();
-				// Renders a export dropdown menu
-				echo ExportMenu::widget([
-					'dataProvider' => $dataProvider,
-					'columns'      => $gridColumns
-				]);
-				echo GridView::widget([
-					'dataProvider' => $dataProvider,
-					'filterModel'  => $searchModel,
-					'columns'      => [
+				if (Yii::$app->request->getQueryParam('sms')) {
+					$gridExportColumns = [
+						'celular',
+						'placa',
+						'fecha_vencimiento',
+						'fecha_venc_soat',
+					];
+				} else {
+					$gridExportColumns = [
 						'id',
 						'placa',
 						'nombre',
 						'apellido',
 						'direccion',
-						// 'telefono',
-						// 'celular',
+						'telefono',
+						'celular',
+						'fecha_nacimiento',
+						'tipo',
+						'fecha_revision',
+						'email:email',
+						'fecha_vencimiento',
+						'cedula',
+						'tipo_u',
+						'contesto',
+						'fecha_agenda',
+						'agenda',
+						'observacion',
+						'cedula_runt',
+						'fecha_exp_soat',
+						'fecha_vig_soat',
+						'fecha_venc_soat',
+						'empresa_soat',
+						'estado_soat',
+						'poliza_soat',
+						'barrio_id'
+					];
+				}
+
+				if (Yii::$app->request->getQueryParam('sms')) {
+					$gridColumns = [
+						'celular',
+						'placa',
+						'fecha_vencimiento',
+						'fecha_venc_soat',
+						['class' => 'yii\grid\ActionColumn'],
+					];
+				} else {
+					$gridColumns = [
+						'id',
+						'placa',
+						'celular',
 						// 'tipo',
 						'email:email',
 						'fecha_nacimiento',
@@ -124,7 +135,20 @@ $this->params['breadcrumbs'][] = $this->title;
 						// 'barrio_id',
 
 						['class' => 'yii\grid\ActionColumn'],
-					],
+					];
+				}
+
+
+				\yii\widgets\Pjax::begin();
+				// Renders a export dropdown menu
+				echo ExportMenu::widget([
+					'dataProvider' => $dataProvider,
+					'columns'      => $gridExportColumns
+				]);
+				echo GridView::widget([
+					'dataProvider' => $dataProvider,
+					'filterModel'  => $searchModel,
+					'columns'      => $gridColumns,
 				]);
 				\yii\widgets\Pjax::end();
 				?>

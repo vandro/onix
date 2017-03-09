@@ -19,35 +19,50 @@ use kartik\date\DatePicker;
 
     <div class="row">
         <div class="col col-sm-6">
-			<?= $form->field($model, 'advanced_seleccion_campo_busqueda')->widget(Select2::className(), [
+			<?php
+
+			if (Yii::$app->request->getQueryParam('sms')) {
+				$data_advanced_seleccion_campo_busqueda = [
+					$model::FIELD_FECHA_VENC_SOAT => $model->getAttributeLabel($model::FIELD_FECHA_VENC_SOAT),
+					$model::FIELD_FECHA_VENC_REV  => $model->getAttributeLabel($model::FIELD_FECHA_VENC_REV),
+				];
+			} else {
+				$data_advanced_seleccion_campo_busqueda = [
+					$model::FIELD_FECHA_VENC_SOAT => $model->getAttributeLabel($model::FIELD_FECHA_VENC_SOAT),
+					$model::FIELD_FECHA_VENC_REV  => $model->getAttributeLabel($model::FIELD_FECHA_VENC_REV),
+					$model::FIELD_FECHA_AGENDA    => $model->getAttributeLabel($model::FIELD_FECHA_AGENDA),
+					$model::FIELD_CUMPLES         => $model->getAttributeLabel($model::FIELD_CUMPLES)
+				];
+			}
+
+			echo $form->field($model, 'advanced_seleccion_campo_busqueda')->widget(Select2::className(), [
 				'options'       => [
 					'placeholder' => 'Seleccione un campo ...',
 				],
 				'pluginOptions' => [
 					'allowClear' => true
 				],
-				'data'          => [
-					$model::FIELD_FECHA_VENC_SOAT => $model->getAttributeLabel($model::FIELD_FECHA_VENC_SOAT),
-					$model::FIELD_FECHA_VENC_REV  => $model->getAttributeLabel($model::FIELD_FECHA_VENC_REV),
-					$model::FIELD_FECHA_AGENDA    => $model->getAttributeLabel($model::FIELD_FECHA_AGENDA),
-					$model::FIELD_CUMPLES         => $model->getAttributeLabel($model::FIELD_CUMPLES)
-				],
+				'data'          => $data_advanced_seleccion_campo_busqueda,
 			]) ?>
         </div>
         <div class="col col-sm-6">
-			<?= $form->field($model, 'tipo')->widget(Select2::className(), [
-				'options'       => [
-					'placeholder' => 'Seleccione un tipo ...',
-				],
-				'pluginOptions' => [
-					'allowClear' => true
-				],
-				'data'          => [
-					0 => 'Público',
-					1 => 'Particular',
-					3 => 'Moto'
-				],
-			]) ?>
+			<?php
+			if ( ! Yii::$app->request->getQueryParam('sms')) {
+				echo $form->field($model, 'tipo')->widget(Select2::className(), [
+					'options'       => [
+						'placeholder' => 'Seleccione un tipo ...',
+					],
+					'pluginOptions' => [
+						'allowClear' => true
+					],
+					'data'          => [
+						0 => 'Público',
+						1 => 'Particular',
+						3 => 'Moto'
+					],
+				]);
+			}
+			?>
         </div>
     </div>
 
