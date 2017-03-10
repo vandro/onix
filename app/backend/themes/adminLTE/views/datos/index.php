@@ -146,6 +146,7 @@ $this->params['breadcrumbs'][] = $this->title;
 					'columns'      => $gridExportColumns
 				]);
 				echo GridView::widget([
+					'tableOptions' => ['class' => 'table table-hover table-striped table-bordered'],
 					'dataProvider' => $dataProvider,
 					'filterModel'  => $searchModel,
 					'columns'      => $gridColumns,

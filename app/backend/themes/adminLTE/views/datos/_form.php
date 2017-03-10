@@ -68,6 +68,25 @@ use kartik\switchinput\SwitchInput;
 
 		<?= $form->field($model, 'direccion')->textInput(['maxlength' => true]) ?>
 
+		<?= $form->field($model, 'barrio_id')->widget(Select2::className(), [
+			'initValueText' => $model->isNewRecord ? null : ($model->barrio->municipioCode->name . ' - ' . $model->barrio->nombre),
+			// set the initial display text
+			'options'       => ['placeholder' => 'Buscar un barrio ...'],
+			'pluginOptions' => [
+				'allowClear'         => true,
+				'minimumInputLength' => 3,
+				'language'           => ['errorLoading' => new JsExpression("function () { return 'Esperando resultados...'; }"),],
+				'ajax'               => [
+					'url'      => \yii\helpers\Url::to(['//barrio/search']),
+					'dataType' => 'json',
+					'data'     => new JsExpression('function(params) { return {q:params.term}; }')
+				],
+				'escapeMarkup'       => new JsExpression('function (markup) { return markup; }'),
+				'templateResult'     => new JsExpression('function(barrio) { return barrio.text; }'),
+				'templateSelection'  => new JsExpression('function (barrio) { return barrio.text; }'),
+			],
+		]) ?>
+
 		<?= $form->field($model, 'telefono')->textInput(['maxlength' => true]) ?>
 
 		<?= $form->field($model, 'celular')->textInput(['maxlength' => true]) ?>
@@ -83,12 +102,24 @@ use kartik\switchinput\SwitchInput;
 			]
 		]) ?>
 
+        <!--al seleccionar que aparezca el campo fecha_vencimiento un año adelante-->
 		<?= $form->field($model, 'fecha_revision')->widget(DatePicker::className(), [
 			'pluginOptions' => [
 				'todayHighlight' => true,
 				'todayBtn'       => true,
 				'format'         => 'yyyy-mm-dd',
 				'autoclose'      => true,
+			],
+			'pluginEvents'  => [
+				'changeDate' => "function(e) {
+				    var d = new Date(e.date);
+                    var year = d.getFullYear();
+                    var month = d.getMonth();
+                    var day = d.getDate();
+                    var date_in_future = new Date(year + 1, month, day).toISOString().slice(0,10);
+                    
+                    $('#datos-fecha_vencimiento').val(date_in_future)
+				}"
 			]
 		]) ?>
 
@@ -128,7 +159,7 @@ use kartik\switchinput\SwitchInput;
 
 		<?= $form->field($model, 'observacion')->textarea(['maxlength' => true]) ?>
 
-		<?= $form->field($model, 'cedula_runt')->textInput(['maxlength' => true]) ?>
+		<?php /*$form->field($model, 'cedula_runt')->textInput(['maxlength' => true])*/ ?>
 
 		<?php /*$form->field($model, 'fecha_exp_soat')->widget(DatePicker::className(), [
 			'pluginOptions' => [
@@ -148,6 +179,14 @@ use kartik\switchinput\SwitchInput;
 			]
 		])*/ ?>
 
+		<?= $form->field($model, 'contesto_fecha_venc_soat')->widget(SwitchInput::className(), [
+			'containerOptions' => ['class' => ''],
+			'pluginOptions'    => [
+				'onText'  => 'Si',
+				'offText' => 'No',
+			]
+		]) ?>
+
 		<?= $form->field($model, 'fecha_venc_soat')->widget(DatePicker::className(), [
 			'pluginOptions' => [
 				'todayHighlight' => true,
@@ -161,26 +200,8 @@ use kartik\switchinput\SwitchInput;
 
 		<?php /*$form->field($model, 'estado_soat')->textInput(['maxlength' => true])*/ ?>
 
-		<?php /*$form->field($model, 'poliza_soat')->textInput(['maxlength' => true])*/ ?>
+		<?php /*$form->fielsead($model, 'poliza_soat')->textInput(['maxlength' => true])*/ ?>
 
-		<?= $form->field($model, 'barrio_id')->widget(Select2::className(), [
-			'initValueText' => $model->isNewRecord ? null : ($model->barrio->municipioCode->name . ' - ' . $model->barrio->nombre),
-			// set the initial display text
-			'options'       => ['placeholder' => 'Buscar un barrio ...'],
-			'pluginOptions' => [
-				'allowClear'         => true,
-				'minimumInputLength' => 3,
-				'language'           => ['errorLoading' => new JsExpression("function () { return 'Esperando resultados...'; }"),],
-				'ajax'               => [
-					'url'      => \yii\helpers\Url::to(['//barrio/search']),
-					'dataType' => 'json',
-					'data'     => new JsExpression('function(params) { return {q:params.term}; }')
-				],
-				'escapeMarkup'       => new JsExpression('function (markup) { return markup; }'),
-				'templateResult'     => new JsExpression('function(barrio) { return barrio.text; }'),
-				'templateSelection'  => new JsExpression('function (barrio) { return barrio.text; }'),
-			],
-		]) ?>
 
     </div>
 

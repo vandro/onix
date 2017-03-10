@@ -22,6 +22,7 @@ use Yii;
  * @property string  $cedula
  * @property integer $tipo_u
  * @property integer $contesto
+ * @property integer $contesto_fecha_venc_soat
  * @property string  $fecha_agenda
  * @property integer $agenda
  * @property string  $observacion
@@ -36,18 +37,21 @@ use Yii;
  *
  * @property Barrio  $barrio
  */
-class Datos extends \yii\db\ActiveRecord {
+class Datos extends \yii\db\ActiveRecord
+{
 	/**
 	 * @inheritdoc
 	 */
-	public static function tableName() {
+	public static function tableName()
+	{
 		return 'datos';
 	}
 
 	/**
 	 * @inheritdoc
 	 */
-	public function rules() {
+	public function rules()
+	{
 		return [
 			[
 				[
@@ -61,7 +65,7 @@ class Datos extends \yii\db\ActiveRecord {
 				],
 				'safe'
 			],
-			[['tipo', 'tipo_u', 'contesto', 'agenda', 'barrio_id'], 'integer'],
+			[['tipo', 'tipo_u', 'contesto', 'contesto_fecha_venc_soat', 'agenda', 'barrio_id'], 'integer'],
 			[
 				['agenda', 'barrio_id', 'tipo', 'tipo_u', 'nombre', 'apellido', 'cedula', 'direccion', 'celular'],
 				'required'
@@ -85,7 +89,8 @@ class Datos extends \yii\db\ActiveRecord {
 	/**
 	 * @inheritdoc
 	 */
-	public function attributeLabels() {
+	public function attributeLabels()
+	{
 		return [
 			'id'                => 'ID',
 			'placa'             => 'Placa',
@@ -116,7 +121,8 @@ class Datos extends \yii\db\ActiveRecord {
 		];
 	}
 
-	public function attributeHints() {
+	public function attributeHints()
+	{
 		return [
 			'id'               => 'ID',
 			'placa'            => 'Placa el Automotor',
@@ -136,10 +142,11 @@ class Datos extends \yii\db\ActiveRecord {
 
 			'tipo_u' => 'Tipo de Usuario que hace el trámite',
 
-			'contesto'     => 'Parte comercial: ¿El cliente contesto?',
-			'fecha_agenda' => 'Parte comercial: si el cliente contesta, la fecha de agendamiento para la nueva revisión',
-			'agenda'       => 'Parte comercial: ¿Se agendó?',
-			'observacion'  => 'Parte comercial: Observaciónes del contacto con el cliente',
+			'contesto'                 => 'Parte comercial: ¿El cliente contesto?',
+			'contesto_fecha_venc_soat' => 'Parte comercial: ¿El cliente contesto para vencimiento de Soat?',
+			'fecha_agenda'             => 'Parte comercial: si el cliente contesta, la fecha de agendamiento para la nueva revisión',
+			'agenda'                   => 'Parte comercial: ¿Se agendó?',
+			'observacion'              => 'Parte comercial: Observaciónes del contacto con el cliente',
 
 			'cedula_runt' => 'Cédula Runt',
 
@@ -158,7 +165,42 @@ class Datos extends \yii\db\ActiveRecord {
 	/**
 	 * @return \yii\db\ActiveQuery
 	 */
-	public function getBarrio() {
+	public function getBarrio()
+	{
 		return $this->hasOne(Barrio::className(), ['id' => 'barrio_id']);
+	}
+
+	public function getTipo($idx = null)
+	{
+		$tipos = [
+			0 => 'Público',
+			1 => 'Particular',
+			3 => 'Moto'
+		];
+
+		return isset($tipos[ $idx ]) ? $tipos[ $idx ] : 'Otro Tipo';
+	}
+
+	public function getTipoU($idx)
+	{
+		$tipos = [
+			0 => 'Propietario',
+			1 => 'Conductor'
+		];
+
+		return isset($tipos[ $idx ]) ? $tipos[ $idx ] : 'Otro Tipo';
+	}
+
+	public function getFullBarrio()
+	{
+		if (isset($this->barrio)) {
+			if (isset($this->barrio->municipioCode)) {
+				return $this->barrio->municipioCode->name . ' - ' . $this->barrio->nombre;
+			} else {
+				return $this->barrio->nombre;
+			}
+		} else {
+			return 'Barrio no indicado';
+		}
 	}
 }

@@ -12,7 +12,8 @@ use yii\helpers\VarDumper;
 /**
  * SearchDatos represents the model behind the search form about `common\models\Datos`.
  */
-class SearchDatos extends Datos {
+class SearchDatos extends Datos
+{
 
 
 	const FIELD_FECHA_VENC_SOAT = 'fecha_venc_soat';
@@ -42,7 +43,8 @@ class SearchDatos extends Datos {
 	/**
 	 * @inheritdoc
 	 */
-	public function rules() {
+	public function rules()
+	{
 		return [
 			[['id', 'tipo', 'tipo_u', 'contesto', 'agenda', 'barrio_id'], 'integer'],
 			[
@@ -97,17 +99,27 @@ class SearchDatos extends Datos {
 	/**
 	 * @inheritdoc
 	 */
-	public function scenarios() {
+	public function scenarios()
+	{
 		// bypass scenarios() implementation in the parent class
 		return Model::scenarios();
 	}
 
-	public function attributeLabels() {
+	public function attributeLabels()
+	{
 		return ArrayHelper::merge(parent::attributeLabels(), [
 			'advanced_seleccion_campo_busqueda' => 'Campo de búsqueda',
 			'advanced_date_from'                => 'Fecha desde',
 			'advanced_date_to'                  => 'Fecha hasta',
 			'advanced_fecha_cumples'            => 'Cumpleaños',
+		]);
+	}
+
+	public function attributeHints()
+	{
+		return ArrayHelper::merge(parent::attributeHints(), [
+			'tipo'                              => 'Si no elige ningún tipo, el sistema busca con todos los tipos de vehículo',
+			'advanced_seleccion_campo_busqueda' => 'Campo sobre el cual se va a hacer la búsqueda'
 		]);
 	}
 
@@ -118,7 +130,8 @@ class SearchDatos extends Datos {
 	 *
 	 * @return ActiveDataProvider
 	 */
-	public function search($params) {
+	public function search($params)
+	{
 
 		/*VarDumper::dump($params, 10, true);
 		exit;*/
