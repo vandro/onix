@@ -28,6 +28,10 @@ composer.phar
 /www/admin/uploads/.tmb/*
 /www/admin/index-test.php
 
+/app/api/runtime/*
+/app/api/config/main-local.php
+/app/api/config/params-local.php
+
 /app/backend/runtime/*
 /app/backend/config/main-local.php
 /app/backend/config/params-local.php

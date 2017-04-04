@@ -3110,6 +3110,10 @@ table.text-center, table.text-center td, table.text-center th {
     margin-top: -20px
 }
 
+.modal-backdrop{
+    z-index: 799 !important;
+}
+
 .modal {
     background: rgba(0, 0, 0, 0.3)
 }
@@ -4925,9 +4929,11 @@ table.text-center, table.text-center td, table.text-center th {
     }
 }
 
+
 /*
 ESTILOS PARA GII
 */
+
 
 .jumbotron {
     text-align: center;
@@ -5179,6 +5185,10 @@ ESTILOS PARA GII
     margin: 0;
 }
 
-.ui-widget-overlay {
-    z-index: 800 !important;
+.ui-widget-overlay.ui-front{
+    z-index: 811 !important;
+}
+
+.ui-dialog.ui-widget.ui-widget-content.ui-corner-all.ui-front.el-finder-dialog.ui-draggable.ui-resizable{
+    z-index: 812 !important;
 }
