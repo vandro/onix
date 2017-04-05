@@ -10,12 +10,15 @@ namespace common\helpers;
 
 use Yii;
 use backend\models\Configuration;
+use yii\base\InvalidConfigException;
 
-class GlobalHelper {
+class GlobalHelper
+{
 	/**
 	 * Inicia la configuración global y lo carga en los parámetros
 	 */
-	public static function initGobals() {
+	public static function initGobals()
+	{
 		if ( ! isset(Yii::$app->params['global'])) {
 			$db = Yii::$app->db;
 
@@ -26,6 +29,8 @@ class GlobalHelper {
 
 			if ( ! is_null($global_configuration)) {
 				Yii::$app->params['global'] = $global_configuration->attributes;
+			} else {
+				throw new InvalidConfigException('La tabla ' . Configuration::tableName() . ' no tiene configuraciones válidas para leer');
 			}
 		}
 	}

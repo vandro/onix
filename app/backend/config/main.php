@@ -46,8 +46,8 @@ return [
 		],
 		'urlManager'         => [
 			'class'           => \yii\web\UrlManager::className(),
-			'showScriptName'  => true,
 			'enablePrettyUrl' => true,
+			'showScriptName'  => false,
 		],
 		'urlManagerFrontEnd' => [
 			'class'           => \yii\web\UrlManager::className(),
@@ -56,7 +56,7 @@ return [
 		],
 		'i18n'               => [
 			'translations' => [
-				'back' => [
+				'*' => [
 					'class'                 => yii\i18n\DbMessageSource::className(),
 					'enableCaching'         => true,
 					'cachingDuration'       => (3600 * 24), // The messages cache will refresh once per day
