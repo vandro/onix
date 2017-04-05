@@ -1,0 +1,11 @@
+{
+  "name": "AdminLTE",
+  "version": "1.0",
+  "url": "https://almsaeedstudio.com/themes/AdminLTE",
+  "repositoryUrl": "https://github.com/almasaeed2010/AdminLTE",
+  "documentation": "https://almsaeedstudio.com/themes/AdminLTE/documentation",
+  "previewUrl": "https://almsaeedstudio.com/img/AdminLTE2.1.png",
+  "yiiDeveloperName": "Andrés Felipe Solarte",
+  "yiiDeveloperEmail": "devsolarte@gmail.com",
+  "shortText": "A theme from Almsaeed Studio adapted to yii2 admin"
+}
