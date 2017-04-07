@@ -11,7 +11,7 @@ namespace backend\modules\onix\theme\controllers;
 
 use common\controllers\BackController;
 
-class ThemeController extends BackController
+class DefaultController extends BackController
 {
 	public function actionIndex()
 	{

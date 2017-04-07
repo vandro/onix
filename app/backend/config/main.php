@@ -19,7 +19,6 @@ return [
 			'class'    => \mdm\admin\Module::className(),
 			'viewPath' => dirname(dirname(__DIR__)) . '/backend/modules/onix/admin/views'
 		],
-		'gridview' => ['class' => 'kartik\grid\Module'],
 		'theme'    => ['class' => \backend\modules\onix\theme\Module::className()]
 	],
 	'components'          => [
